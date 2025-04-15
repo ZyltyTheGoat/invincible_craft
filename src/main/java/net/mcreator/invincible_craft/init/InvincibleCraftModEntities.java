@@ -69,7 +69,7 @@ public class InvincibleCraftModEntities {
 	public static final RegistryObject<EntityType<TheGiantEntity>> THE_GIANT = register("the_giant",
 			EntityType.Builder.<TheGiantEntity>of(TheGiantEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TheGiantEntity::new)
 
-					.sized(4f, 8f));
+					.sized(3f, 7.5f));
 	public static final RegistryObject<EntityType<LeapGuideEntity>> LEAP_GUIDE = register("leap_guide", EntityType.Builder.<LeapGuideEntity>of(LeapGuideEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(LeapGuideEntity::new).fireImmune().sized(0.1f, 0.1f));
 
