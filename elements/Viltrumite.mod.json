@@ -1,0 +1,450 @@
+{
+  "_fv": 69,
+  "_type": "livingentity",
+  "definition": {
+    "mobName": "Viltrumite",
+    "mobLabel": "",
+    "mobModelName": "Biped",
+    "mobModelTexture": "base_1.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
+    "solidBoundingBox": {
+      "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
+    "modelLayers": [
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionEyes1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionEyes2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionEyes3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionEyes4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionEyes5"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionHair1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionHair2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionHair3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionHair4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionHair5"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_6.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionHair6"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mouth_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMouth1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mouth_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMouth2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mustache_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMustache1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mustache_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMustache2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mustache_3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMustache3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mustache_4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMustache4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mustache_5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMustache5"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_mustache_6.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionMustache6"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_6.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ViltrumiteDisplayConditionEyes6"
+        }
+      }
+    ],
+    "modelWidth": 0.6,
+    "modelHeight": 1.8,
+    "modelShadowSize": 0.5,
+    "mountedYOffset": 0.0,
+    "hasSpawnEgg": true,
+    "spawnEggBaseColor": {
+      "value": -769,
+      "falpha": 0.0
+    },
+    "spawnEggDotColor": {
+      "value": -1448211,
+      "falpha": 0.0
+    },
+    "creativeTabs": [
+      {
+        "value": "MISC"
+      },
+      {
+        "value": "CUSTOM:InvincibleCraftCreativeTab"
+      }
+    ],
+    "isBoss": false,
+    "bossBarColor": "PINK",
+    "bossBarType": "PROGRESS",
+    "equipmentMainHand": {
+      "value": ""
+    },
+    "equipmentOffHand": {
+      "value": ""
+    },
+    "equipmentHelmet": {
+      "value": ""
+    },
+    "equipmentBody": {
+      "value": "CUSTOM:ViltrumiteSuit.body"
+    },
+    "equipmentLeggings": {
+      "value": "CUSTOM:ViltrumiteSuit.legs"
+    },
+    "equipmentBoots": {
+      "value": ""
+    },
+    "mobBehaviourType": "Mob",
+    "mobCreatureType": "UNDEFINED",
+    "attackStrength": 8,
+    "attackKnockback": 0.2,
+    "knockbackResistance": 0.2,
+    "movementSpeed": 1.0,
+    "stepHeight": 1.2,
+    "armorBaseValue": 10.0,
+    "trackingRange": 128,
+    "followRange": 64,
+    "health": 50,
+    "xpAmount": 50,
+    "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
+    "pushedByFluids": {
+      "fixedValue": true
+    },
+    "flyingMob": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "disableCollisions": false,
+    "ridable": false,
+    "canControlForward": false,
+    "canControlStrafe": false,
+    "immuneToFire": false,
+    "immuneToArrows": false,
+    "immuneToFallDamage": true,
+    "immuneToCactus": false,
+    "immuneToDrowning": false,
+    "immuneToLightning": false,
+    "immuneToPotions": false,
+    "immuneToPlayer": false,
+    "immuneToExplosion": false,
+    "immuneToTrident": false,
+    "immuneToAnvil": false,
+    "immuneToWither": false,
+    "immuneToDragonBreath": false,
+    "mobDrop": {
+      "value": ""
+    },
+    "livingSound": {
+      "value": ""
+    },
+    "hurtSound": {
+      "value": "entity.generic.hurt"
+    },
+    "deathSound": {
+      "value": "entity.generic.death"
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "raidCelebrationSound": {
+      "value": ""
+    },
+    "entityDataEntries": [
+      {
+        "name": "flying",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "recovery",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "eyes",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "hair",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "mustache",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "mouth",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "age",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ClapTimer",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ComboTimer",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ComboAmount",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SlamMeter",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "HitMeterRecovery",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "Slamming",
+        "type": "logic",
+        "value": false
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "SlamIA",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "SlamLogic",
+        "type": "logic",
+        "value": false
+      }
+    ],
+    "whenMobDies": {
+      "name": "ViltrumiteEntityDies"
+    },
+    "whenMobIsHurt": {
+      "name": "ViltrumiteEntityIsHurt"
+    },
+    "onMobTickUpdate": {
+      "name": "ViltrumiteOnEntityTickUpdate"
+    },
+    "onInitialSpawn": {
+      "name": "ViltrumiteOnInitialEntitySpawn"
+    },
+    "hasAI": true,
+    "aiBase": "(none)",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">3</field><field name=\"speed\">1</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">IsViltrumiteRecovered,IsViltrumiteRecovered</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"fly\"><field name=\"speed\">15</field><field name=\"condition\">CanViltrumiteFlyingAttack,CanViltrumiteFlyingAttack</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block><block type=\"attack_fly\" x=\"353\" y=\"409\"><field name=\"radius\">32</field><field name=\"speed\">1.5</field><field name=\"condition\">CanViltrumiteFlyingAttack,CanViltrumiteFlyingAttack</field></block></xml>",
+    "breedable": false,
+    "tameable": false,
+    "breedTriggerItems": [],
+    "ranged": false,
+    "rangedAttackItem": {
+      "value": ""
+    },
+    "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
+    "spawnThisMob": false,
+    "doesDespawnWhenIdle": false,
+    "spawningProbability": 7,
+    "mobSpawningType": "monster",
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 1,
+    "restrictionBiomes": [],
+    "spawnInDungeons": false,
+    "raidSpawnsCount": [
+      4,
+      3,
+      3,
+      4,
+      4,
+      4,
+      2
+    ]
+  }
+}

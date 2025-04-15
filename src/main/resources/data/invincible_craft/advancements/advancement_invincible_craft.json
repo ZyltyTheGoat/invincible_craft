@@ -1,0 +1,23 @@
+{
+  "display": {
+    "background": "invincible_craft:textures/screens/ability_base.png",
+    "icon": {
+      "item": "invincible_craft:power_picker"
+    },
+    "title": {
+      "translate": "advancements.advancement_invincible_craft.title"
+    },
+    "description": {
+      "translate": "advancements.advancement_invincible_craft.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "advancement_invincible_craft_0": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

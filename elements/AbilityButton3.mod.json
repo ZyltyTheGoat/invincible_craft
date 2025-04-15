@@ -1,0 +1,15 @@
+{
+  "_fv": 69,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "C",
+    "keyBindingName": "Ability Button 3",
+    "keyBindingCategoryKey": "invincible_craft",
+    "onKeyPressed": {
+      "name": "AbilityButton3OnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "AbilityButton3OnKeyReleased"
+    }
+  }
+}

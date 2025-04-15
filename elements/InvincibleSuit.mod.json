@@ -1,0 +1,104 @@
+{
+  "_fv": 69,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "mask-invincible-og",
+    "enableBody": true,
+    "textureBody": "chest-invincible-og",
+    "enableLeggings": true,
+    "textureLeggings": "leggings-invincible-og",
+    "enableBoots": true,
+    "textureBoots": "boots_invincible",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:InvincibleCraftArmor"
+      }
+    ],
+    "armorTextureFile": "base",
+    "helmetName": "Invincible Suit (Original) Helmet",
+    "bodyName": "Invincible Suit (Original) Chestplate",
+    "leggingsName": "Invincible Suit (Original) Leggings",
+    "bootsName": "Invincible Suit ",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "ModelInvincibleArmor",
+    "helmetModelPart": "Head",
+    "helmetModelTexture": "invincible_og.png",
+    "bodyModelName": "ModelInvincibleArmor",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "LeftArm",
+    "armsModelPartR": "RightArm",
+    "bodyModelTexture": "invincible_og.png",
+    "leggingsModelName": "ModelInvincibleArmorModel",
+    "leggingsModelPartL": "LeftLeg",
+    "leggingsModelPartR": "RightLeg",
+    "leggingsModelTexture": "invincible_og.png",
+    "bootsModelName": "ModelInvincibleArmorModel",
+    "bootsModelPartL": "LeftBoot",
+    "bootsModelPartR": "RightBoot",
+    "bootsModelTexture": "invincible_og.png",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 1024,
+    "damageValueHelmet": 3,
+    "damageValueBody": 8,
+    "damageValueLeggings": 6,
+    "damageValueBoots": 3,
+    "enchantability": 9,
+    "toughness": 0.0,
+    "knockbackResistance": 0.0,
+    "equipSound": {
+      "value": ""
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:SuitFabric"
+      }
+    ]
+  }
+}

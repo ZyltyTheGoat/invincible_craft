@@ -1,0 +1,12 @@
+{
+  "_fv": 69,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Number",
+    "displayName": "Invincible Craft - XP Multiplier",
+    "description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
+    "category": "PLAYER",
+    "defaultValueLogic": false,
+    "defaultValueNumber": 10
+  }
+}

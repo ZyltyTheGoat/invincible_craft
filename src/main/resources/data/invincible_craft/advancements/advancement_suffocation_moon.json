@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "invincible_craft:power_picker"
+    },
+    "title": {
+      "translate": "advancements.advancement_suffocation_moon.title"
+    },
+    "description": {
+      "translate": "advancements.advancement_suffocation_moon.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "advancement_suffocation_moon_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "invincible_craft:advancement_invincible_craft"
+}

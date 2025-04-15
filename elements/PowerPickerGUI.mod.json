@@ -1,0 +1,127 @@
+{
+  "_fv": 69,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 376,
+    "height": 216,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_power_picker",
+          "text": {
+            "fixedValue": "POWER PICKER"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 42,
+          "y": 26
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_viltrumite",
+          "text": "Viltrumite",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PowerPickerViltrumite"
+          },
+          "width": 77,
+          "height": 20,
+          "x": 42,
+          "y": 80
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_no_power",
+          "text": "No Power",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PowerPickerNoPowers"
+          },
+          "width": 66,
+          "height": 20,
+          "x": 42,
+          "y": 53
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_dimensional_travel",
+          "text": "Dimensional Travel",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PowerPickerDimensionalTravel"
+          },
+          "width": 119,
+          "height": 20,
+          "x": 42,
+          "y": 107
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_duplication",
+          "text": "Duplication",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PowerPickerDuplication"
+          },
+          "width": 82,
+          "height": 20,
+          "x": 42,
+          "y": 134
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_battle_beast",
+          "text": "Battle Beast",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PowerPickerBattleBeast"
+          },
+          "width": 87,
+          "height": 20,
+          "x": 42,
+          "y": 161
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_atom_eve",
+          "text": "Atom Eve",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "PowerPickerAtomEve"
+          },
+          "width": 66,
+          "height": 20,
+          "x": 42,
+          "y": 188
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

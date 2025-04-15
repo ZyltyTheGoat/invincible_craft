@@ -1,0 +1,23 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "plains",
+    "snowy_plains",
+    "sunflower_plains",
+    "meadow",
+    "river",
+    "birch_forest",
+    "dark_forest",
+    "flower_forest",
+    "forest",
+    "old_growth_birch_forest",
+    "windswept_forest",
+    "windswept_savanna"
+  ],
+  "spawners": {
+    "type": "invincible_craft:art_rosenbaum",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

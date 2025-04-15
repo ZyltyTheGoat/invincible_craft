@@ -1,0 +1,25 @@
+{
+  "type": "overworld",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "invincible_craft:infinite_desert_biome",
+      "lakes": false,
+      "features": true,
+      "layers": [
+        {
+          "height": 1,
+          "block": "bedrock"
+        },
+        {
+          "height": 45,
+          "block": "sandstone"
+        },
+        {
+          "height": 5,
+          "block": "sand"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "invincible_craft:custom/battlebeast_mace",
+    "textures": {
+      "0": "invincible_craft:block/battlebeast_mace"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "invincible_craft:item/battle_beast_mace"
+      },
+      "gui_light": "front"
+    }
+  }
+}

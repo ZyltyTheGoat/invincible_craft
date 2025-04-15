@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "invincible_craft:moon_surface",
+  "features": "invincible_craft:moon_craters",
+  "step": "local_modifications"
+}

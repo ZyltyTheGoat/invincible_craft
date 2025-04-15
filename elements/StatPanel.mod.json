@@ -1,0 +1,12 @@
+{
+  "_fv": 69,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "N",
+    "keyBindingName": "Stat Panel",
+    "keyBindingCategoryKey": "invincible_craft",
+    "onKeyPressed": {
+      "name": "StatPanelOnKeyPressed"
+    }
+  }
+}

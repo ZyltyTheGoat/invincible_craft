@@ -1,0 +1,552 @@
+{
+  "_fv": 69,
+  "_type": "livingentity",
+  "definition": {
+    "mobName": "Bandit",
+    "mobLabel": "",
+    "mobModelName": "Biped",
+    "mobModelTexture": "base_1.png",
+    "transparentModelCondition": {
+      "fixedValue": false
+    },
+    "isShakingCondition": {
+      "fixedValue": false
+    },
+    "solidBoundingBox": {
+      "fixedValue": false
+    },
+    "visualScale": {
+      "fixedValue": 1.0
+    },
+    "boundingBoxScale": {
+      "fixedValue": 1.0
+    },
+    "modelLayers": [
+      {
+        "model": "Default",
+        "texture": "base_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBase1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "base_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBase2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "base_3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBase3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_eyes_1.png",
+        "disableHurtOverlay": false,
+        "glow": false
+      },
+      {
+        "model": "Default",
+        "texture": "bottom1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBottom1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "bottom2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBottom2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "bottom3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBottom3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "bottom4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayBottom4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "top1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayTop1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "top2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayTop2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "top3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayTop3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "top4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayTop4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "top5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayTop5"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "top6.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayTop6"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayHair1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayHair2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayHair3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayHair4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "viltrumite_hair_5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayHair5"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "mask1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayHair6"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "mask2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayMask1"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "mask2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayMask2"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "mask3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayMask3"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "mask4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayMask4"
+        }
+      },
+      {
+        "model": "Default",
+        "texture": "mask5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "BanditDisplayMask5"
+        }
+      }
+    ],
+    "modelWidth": 0.6,
+    "modelHeight": 1.8,
+    "modelShadowSize": 0.5,
+    "mountedYOffset": 0.0,
+    "hasSpawnEgg": true,
+    "spawnEggBaseColor": {
+      "value": -13421773,
+      "falpha": 0.0
+    },
+    "spawnEggDotColor": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "creativeTabs": [
+      {
+        "value": "MISC"
+      },
+      {
+        "value": "CUSTOM:InvincibleCraftCreativeTab"
+      }
+    ],
+    "isBoss": false,
+    "bossBarColor": "PINK",
+    "bossBarType": "PROGRESS",
+    "equipmentMainHand": {
+      "value": ""
+    },
+    "equipmentOffHand": {
+      "value": ""
+    },
+    "equipmentHelmet": {
+      "value": ""
+    },
+    "equipmentBody": {
+      "value": ""
+    },
+    "equipmentLeggings": {
+      "value": ""
+    },
+    "equipmentBoots": {
+      "value": ""
+    },
+    "mobBehaviourType": "Mob",
+    "mobCreatureType": "UNDEFINED",
+    "attackStrength": 4,
+    "attackKnockback": 0.2,
+    "knockbackResistance": 0.2,
+    "movementSpeed": 0.4,
+    "stepHeight": 1.2,
+    "armorBaseValue": 0.0,
+    "trackingRange": 128,
+    "followRange": 64,
+    "health": 35,
+    "xpAmount": 5,
+    "waterMob": false,
+    "breatheUnderwater": {
+      "fixedValue": false
+    },
+    "pushedByFluids": {
+      "fixedValue": true
+    },
+    "flyingMob": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "disableCollisions": false,
+    "ridable": false,
+    "canControlForward": false,
+    "canControlStrafe": false,
+    "immuneToFire": false,
+    "immuneToArrows": false,
+    "immuneToFallDamage": true,
+    "immuneToCactus": false,
+    "immuneToDrowning": false,
+    "immuneToLightning": false,
+    "immuneToPotions": false,
+    "immuneToPlayer": false,
+    "immuneToExplosion": false,
+    "immuneToTrident": false,
+    "immuneToAnvil": false,
+    "immuneToWither": false,
+    "immuneToDragonBreath": false,
+    "mobDrop": {
+      "value": ""
+    },
+    "livingSound": {
+      "value": ""
+    },
+    "hurtSound": {
+      "value": "entity.generic.hurt"
+    },
+    "deathSound": {
+      "value": "entity.generic.death"
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "raidCelebrationSound": {
+      "value": ""
+    },
+    "entityDataEntries": [
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "hair",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "bottom",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "top",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "mask",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "base",
+        "type": "integer",
+        "value": 0
+      }
+    ],
+    "whenMobIsHurt": {
+      "name": "SetupAnimations"
+    },
+    "onInitialSpawn": {
+      "name": "BanditOnInitialEntitySpawn"
+    },
+    "hasAI": true,
+    "aiBase": "(none)",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">1.5</field><field name=\"speed\">1.2</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityVillager</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "breedable": false,
+    "tameable": false,
+    "breedTriggerItems": [],
+    "ranged": false,
+    "rangedAttackItem": {
+      "value": ""
+    },
+    "rangedItemType": "Default item",
+    "rangedAttackInterval": 20,
+    "rangedAttackRadius": 10.0,
+    "spawnThisMob": true,
+    "doesDespawnWhenIdle": false,
+    "spawningProbability": 20,
+    "mobSpawningType": "monster",
+    "minNumberOfMobsPerGroup": 4,
+    "maxNumberOfMobsPerGroup": 8,
+    "restrictionBiomes": [
+      {
+        "value": "wooded_badlands_plateau"
+      },
+      {
+        "value": "badlands"
+      },
+      {
+        "value": "bamboo_jungle"
+      },
+      {
+        "value": "basalt_deltas"
+      },
+      {
+        "value": "beaches"
+      },
+      {
+        "value": "birch_forest"
+      },
+      {
+        "value": "cherry_grove"
+      },
+      {
+        "value": "roofed_forest"
+      },
+      {
+        "value": "desert"
+      },
+      {
+        "value": "mutated_forest"
+      },
+      {
+        "value": "forest"
+      },
+      {
+        "value": "frozen_ocean"
+      },
+      {
+        "value": "frozen_peaks"
+      },
+      {
+        "value": "frozen_river"
+      },
+      {
+        "value": "grove"
+      },
+      {
+        "value": "mutated_ice_flats"
+      },
+      {
+        "value": "jagged_peaks"
+      },
+      {
+        "value": "jungle"
+      },
+      {
+        "value": "lukewarm_ocean"
+      },
+      {
+        "value": "mangrove_swamp"
+      },
+      {
+        "value": "meadow"
+      },
+      {
+        "value": "mushroom_fields"
+      },
+      {
+        "value": "mutated_birch_forest"
+      },
+      {
+        "value": "redwood_taiga"
+      },
+      {
+        "value": "mutated_redwood_taiga"
+      },
+      {
+        "value": "plains"
+      },
+      {
+        "value": "river"
+      },
+      {
+        "value": "savanna"
+      },
+      {
+        "value": "savanna_rock"
+      },
+      {
+        "value": "snowy_slopes"
+      },
+      {
+        "value": "cold_beach"
+      },
+      {
+        "value": "snowy_tundra"
+      },
+      {
+        "value": "taiga_cold"
+      },
+      {
+        "value": "jungle_edge"
+      },
+      {
+        "value": "stony_peaks"
+      },
+      {
+        "value": "stone_beach"
+      },
+      {
+        "value": "mutated_plains"
+      },
+      {
+        "value": "swamp"
+      },
+      {
+        "value": "taiga"
+      },
+      {
+        "value": "extreme_hills_with_trees"
+      },
+      {
+        "value": "mutated_extreme_hills"
+      },
+      {
+        "value": "mountains"
+      },
+      {
+        "value": "mutated_savanna"
+      }
+    ],
+    "spawnInDungeons": false,
+    "raidSpawnsCount": [
+      4,
+      3,
+      3,
+      4,
+      4,
+      4,
+      2
+    ]
+  }
+}

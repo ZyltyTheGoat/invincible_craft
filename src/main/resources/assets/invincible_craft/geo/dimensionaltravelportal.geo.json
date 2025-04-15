@@ -1,0 +1,78 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.DimensionalTravelPortal",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 5.5,
+				"visible_bounds_offset": [0, 2.25, 0]
+			},
+			"bones": [
+				{
+					"name": "portal",
+					"pivot": [0, 24, -0.1]
+				},
+				{
+					"name": "bone3",
+					"parent": "portal",
+					"pivot": [0, 24, -0.099],
+					"cubes": [
+						{
+							"origin": [-0.2, 23.8, -0.10025],
+							"size": [0.4, 0.4, 0.0025],
+							"uv": {
+								"north": {"uv": [0, 0], "uv_size": [40, 40]},
+								"east": {"uv": [0, 0], "uv_size": [0, 40]},
+								"south": {"uv": [40, 0], "uv_size": [-40, 40]},
+								"west": {"uv": [0, 0], "uv_size": [0, 40]},
+								"up": {"uv": [0, 0], "uv_size": [40, 0]},
+								"down": {"uv": [0, 0], "uv_size": [40, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone2",
+					"parent": "bone3",
+					"pivot": [0, 24, -0.101],
+					"cubes": [
+						{
+							"origin": [-0.14, 23.86, -0.1015],
+							"size": [0.28, 0.28, 0.005],
+							"uv": {
+								"north": {"uv": [40, 0], "uv_size": [28, 28]},
+								"east": {"uv": [0, 0], "uv_size": [0, 28]},
+								"south": {"uv": [68, 0], "uv_size": [-28, 28]},
+								"west": {"uv": [0, 0], "uv_size": [0, 28]},
+								"up": {"uv": [0, 0], "uv_size": [28, 0]},
+								"down": {"uv": [0, 0], "uv_size": [28, 0]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone",
+					"parent": "bone2",
+					"pivot": [0, 24, -0.103],
+					"cubes": [
+						{
+							"origin": [-0.08, 23.92, -0.10275],
+							"size": [0.16, 0.16, 0.0075],
+							"uv": {
+								"north": {"uv": [40, 56], "uv_size": [16, 16]},
+								"east": {"uv": [0, 0], "uv_size": [0, 16]},
+								"south": {"uv": [56, 56], "uv_size": [-16, 16]},
+								"west": {"uv": [0, 0], "uv_size": [0, 16]},
+								"up": {"uv": [0, 0], "uv_size": [16, 0]},
+								"down": {"uv": [0, 0], "uv_size": [16, 0]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

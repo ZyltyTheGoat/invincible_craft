@@ -1,0 +1,249 @@
+{
+  "_fv": 69,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "ability_viltrumite_punch.png",
+          "use1Xscale": false,
+          "anchorPoint": "TOP_LEFT",
+          "x": 4,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ability_viltrumite_chop.png",
+          "use1Xscale": false,
+          "anchorPoint": "TOP_LEFT",
+          "x": 37,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ability_viltrumite_barrage.png",
+          "use1Xscale": false,
+          "anchorPoint": "TOP_LEFT",
+          "x": 70,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ability_viltrumte_head_crush.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "DisplayHeadCrush"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 70,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ability_viltrumite_grab.png",
+          "use1Xscale": false,
+          "anchorPoint": "TOP_LEFT",
+          "x": 103,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "ability_viltrumite_sonic_clap.png",
+          "use1Xscale": false,
+          "anchorPoint": "TOP_LEFT",
+          "x": 136,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cooldown.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "DoesHaveCDAbility1"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 4,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cooldown.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "DoesHaveCDAbility2"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 37,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cooldown.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "DoesHaveCDAbility3"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 70,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cooldown.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "DoesHaveCDAbility4"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 103,
+          "y": 4
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "cooldown.png",
+          "use1Xscale": false,
+          "displayCondition": {
+            "name": "DoesHaveCDAbility5"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 136,
+          "y": 4
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_value_cooldown_1",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnValueCooldown1"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoesHaveCDAbility1"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 13,
+          "y": 15
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_value_cooldown_2",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnValueCooldown2"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoesHaveCDAbility2"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 46,
+          "y": 15
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_value_cooldown_3",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnValueCooldown3"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoesHaveCDAbility3"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 79,
+          "y": 15
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_value_cooldown_4",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnValueCooldown4"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoesHaveCDAbility4"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 112,
+          "y": 15
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_value_cooldown_5",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnValueCooldown5"
+          },
+          "color": {
+            "value": -65536,
+            "falpha": 0.0
+          },
+          "displayCondition": {
+            "name": "DoesHaveCDAbility5"
+          },
+          "anchorPoint": "TOP_LEFT",
+          "x": 145,
+          "y": 15
+        }
+      }
+    ],
+    "baseTexture": "",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "ViltrumiteAbilityOverlayDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

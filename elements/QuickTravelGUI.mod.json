@@ -1,0 +1,137 @@
+{
+  "_fv": 69,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 216,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_quick_travel",
+          "text": {
+            "fixedValue": "Quick Travel"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 183,
+          "y": 26
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Coordinate X",
+          "name": "travel_x",
+          "width": 120,
+          "height": 20,
+          "x": 156,
+          "y": 44
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Coordinate Y",
+          "name": "travel_y",
+          "width": 120,
+          "height": 20,
+          "x": 156,
+          "y": 80
+        }
+      },
+      {
+        "type": "textfield",
+        "data": {
+          "placeholder": "Coordinate Z",
+          "name": "travel_z",
+          "width": 120,
+          "height": 20,
+          "x": 156,
+          "y": 116
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_confirm",
+          "text": "Confirm",
+          "isUndecorated": false,
+          "onClick": {
+            "name": "QuickPortalConfirmButtonOnClick"
+          },
+          "width": 61,
+          "height": 20,
+          "x": 184,
+          "y": 179
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_earth_icon",
+          "image": "earth_icon.png",
+          "hoveredImage": "eart_icon_hover.png",
+          "onClick": {
+            "name": "EarthIconSelected"
+          },
+          "x": 177,
+          "y": 152
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_moon_icon",
+          "image": "moon_icon.png",
+          "hoveredImage": "moon_icon_hover.png",
+          "onClick": {
+            "name": "MoonIconSelected"
+          },
+          "x": 240,
+          "y": 152
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_teleports_you_to_the_selected_lo",
+          "text": {
+            "fixedValue": "Teleports you to the selected location in the Overworld"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 172,
+          "y": 147
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_teleports_you_to_the_selected_lo1",
+          "text": {
+            "fixedValue": "Teleports you to the selected location on the Moon."
+          },
+          "width": 24,
+          "height": 24,
+          "x": 235,
+          "y": 147
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

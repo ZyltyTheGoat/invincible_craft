@@ -1,0 +1,511 @@
+{
+  "_fv": 69,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 196,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "stat_image_strength.png",
+          "use1Xscale": true,
+          "x": 141,
+          "y": 129
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_strength",
+          "text": {
+            "fixedValue": "§lStrength",
+            "name": "ReturnStrength"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 133
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslplayer_info",
+          "text": {
+            "fixedValue": "§lPLAYER INFO"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 177,
+          "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_name",
+          "text": {
+            "fixedValue": "Name:",
+            "name": "ReturnName"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 53
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_power",
+          "text": {
+            "fixedValue": "Power:",
+            "name": "ReturnPower"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 71
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_age",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnAge"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 62
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_stats",
+          "text": {
+            "fixedValue": "Stats:"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 107
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stat_image_speed.png",
+          "use1Xscale": true,
+          "x": 141,
+          "y": 147
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslspeed",
+          "text": {
+            "fixedValue": "§lSpeed",
+            "name": "ReturnSpeed"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 152
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stat_image_vitality.png",
+          "use1Xscale": true,
+          "x": 141,
+          "y": 165
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslvitality",
+          "text": {
+            "fixedValue": "§lVitality",
+            "name": "ReturnVitality"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 170
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_reputation",
+          "text": {
+            "fixedValue": "Reputation: /"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 89
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "stat_image_intelligence.png",
+          "use1Xscale": true,
+          "x": 141,
+          "y": 183
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_sslintelligence",
+          "text": {
+            "fixedValue": "§lIntelligence",
+            "name": "ReturnIntelligence"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 159,
+          "y": 188
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_plus",
+          "image": "stat_plus.png",
+          "hoveredImage": "stat_plus_hover.png",
+          "onClick": {
+            "name": "AddStrength"
+          },
+          "x": 258,
+          "y": 129
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_plus1",
+          "image": "stat_plus.png",
+          "hoveredImage": "stat_plus_hover.png",
+          "onClick": {
+            "name": "AddSpeed"
+          },
+          "x": 258,
+          "y": 147
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_plus2",
+          "image": "stat_plus.png",
+          "hoveredImage": "stat_plus_hover.png",
+          "onClick": {
+            "name": "AddVitality"
+          },
+          "x": 258,
+          "y": 165
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_plus3",
+          "image": "stat_plus.png",
+          "hoveredImage": "stat_plus_hover.png",
+          "onClick": {
+            "name": "AddIntelligence"
+          },
+          "x": 258,
+          "y": 183
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_level",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnLevel"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 80
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_sp",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSP"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 141,
+          "y": 116
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_proc_return_xp",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnXP"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 142,
+          "y": 75
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "test.png",
+          "use1Xscale": false,
+          "x": 305,
+          "y": 22
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_ssladjust_speed",
+          "text": {
+            "fixedValue": "Adjust Strength"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 319,
+          "y": 35
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_adjust_movement_speed",
+          "text": {
+            "fixedValue": "Adjust Move. Speed"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 310,
+          "y": 73
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_adjust_flight_speed",
+          "text": {
+            "fixedValue": "Adjust Flight Speed"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 309,
+          "y": 108
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat",
+          "image": "stat_.png",
+          "hoveredImage": "stat_hover.png",
+          "onClick": {
+            "name": "AdjustDownStrength"
+          },
+          "displayCondition": {
+            "name": "AdjStrengthDownCon"
+          },
+          "x": 321,
+          "y": 49
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_2",
+          "image": "stat_2.png",
+          "hoveredImage": "stat_2_hover.png",
+          "onClick": {
+            "name": "AdjustUpStrength"
+          },
+          "displayCondition": {
+            "name": "AdjStrengthUpCon"
+          },
+          "x": 377,
+          "y": 49
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat1",
+          "image": "stat_.png",
+          "hoveredImage": "stat_hover.png",
+          "onClick": {
+            "name": "AdjustDownSpeed"
+          },
+          "displayCondition": {
+            "name": "AdjSpeedDownCon"
+          },
+          "x": 321,
+          "y": 87
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_21",
+          "image": "stat_2.png",
+          "hoveredImage": "stat_2_hover.png",
+          "onClick": {
+            "name": "AdjustUpSpeed"
+          },
+          "displayCondition": {
+            "name": "AdjSpeedUpCon"
+          },
+          "x": 377,
+          "y": 87
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat2",
+          "image": "stat_.png",
+          "hoveredImage": "stat_hover.png",
+          "onClick": {
+            "name": "AdjustDownFlying"
+          },
+          "displayCondition": {
+            "name": "AdjFlightDownCon"
+          },
+          "x": 321,
+          "y": 122
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_22",
+          "image": "stat_2.png",
+          "hoveredImage": "stat_2_hover.png",
+          "onClick": {
+            "name": "AdjustUpFlying"
+          },
+          "displayCondition": {
+            "name": "AdjFlightUpCon"
+          },
+          "x": 378,
+          "y": 122
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_strength_adjustment",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnStrengthAdjustment"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 342,
+          "y": 55
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_speed_adjustment",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnSpeedAdjustment"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 343,
+          "y": 93
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "name": "label_proc_return_flight_adjustment",
+          "text": {
+            "fixedValue": "",
+            "name": "ReturnFlightAdjustment"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 343,
+          "y": 128
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

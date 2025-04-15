@@ -1,0 +1,113 @@
+{
+  "followup": {
+    "subtitle": "subtitles.followup",
+    "sounds": [
+      {
+        "name": "invincible_craft:followup",
+        "stream": false
+      }
+    ]
+  },
+  "punch": {
+    "subtitle": "subtitles.punch",
+    "sounds": [
+      {
+        "name": "invincible_craft:punch",
+        "stream": false
+      }
+    ]
+  },
+  "crush": {
+    "subtitle": "subtitles.crush",
+    "sounds": [
+      {
+        "name": "invincible_craft:crush",
+        "stream": false
+      }
+    ]
+  },
+  "blood_sound_1": {
+    "subtitle": "subtitles.blood_sound_1",
+    "sounds": [
+      {
+        "name": "invincible_craft:blood_sound_1",
+        "stream": false
+      }
+    ]
+  },
+  "blood_sound_2": {
+    "subtitle": "subtitles.blood_sound_2",
+    "sounds": [
+      {
+        "name": "invincible_craft:blood_sound_2",
+        "stream": false
+      }
+    ]
+  },
+  "blood_sound_3": {
+    "subtitle": "subtitles.blood_sound_3",
+    "sounds": [
+      {
+        "name": "invincible_craft:blood_sound_3",
+        "stream": false
+      }
+    ]
+  },
+  "skull_crush": {
+    "subtitle": "subtitles.skull_crush",
+    "sounds": [
+      {
+        "name": "invincible_craft:skull_crush_sound",
+        "stream": false
+      }
+    ]
+  },
+  "viltrumite_chop": {
+    "sounds": [
+      {
+        "name": "invincible_craft:viltrumite_chop",
+        "stream": false
+      }
+    ]
+  },
+  "viltrumite_pierce": {
+    "sounds": [
+      {
+        "name": "invincible_craft:viltrumite_pierce",
+        "stream": false
+      }
+    ]
+  },
+  "growl1": {
+    "sounds": [
+      {
+        "name": "invincible_craft:growl1",
+        "stream": false
+      }
+    ]
+  },
+  "growl2": {
+    "sounds": [
+      {
+        "name": "invincible_craft:growl2",
+        "stream": false
+      }
+    ]
+  },
+  "growl3": {
+    "sounds": [
+      {
+        "name": "invincible_craft:growl3",
+        "stream": false
+      }
+    ]
+  },
+  "battle_beast_roar": {
+    "sounds": [
+      {
+        "name": "invincible_craft:battle_beast_roar",
+        "stream": false
+      }
+    ]
+  }
+}

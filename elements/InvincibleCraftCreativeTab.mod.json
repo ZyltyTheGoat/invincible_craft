@@ -1,0 +1,11 @@
+{
+  "_fv": 69,
+  "_type": "tab",
+  "definition": {
+    "name": "Invincible Misc",
+    "icon": {
+      "value": "CUSTOM:PowerPicker"
+    },
+    "showSearch": true
+  }
+}

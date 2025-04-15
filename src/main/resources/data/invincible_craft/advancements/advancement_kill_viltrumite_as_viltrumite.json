@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "invincible_craft:power_picker"
+    },
+    "title": {
+      "translate": "advancements.advancement_kill_viltrumite_as_viltrumite.title"
+    },
+    "description": {
+      "translate": "advancements.advancement_kill_viltrumite_as_viltrumite.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "advancement_kill_viltrumite_as_viltrumite_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "invincible_craft:advancement_viltrumite"
+}

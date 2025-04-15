@@ -1,0 +1,11 @@
+{
+  "_fv": 69,
+  "_type": "tab",
+  "definition": {
+    "name": "Invincible Suits",
+    "icon": {
+      "value": "CUSTOM:InvincibleSuit.body"
+    },
+    "showSearch": true
+  }
+}

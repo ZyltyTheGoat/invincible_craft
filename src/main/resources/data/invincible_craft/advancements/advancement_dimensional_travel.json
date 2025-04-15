@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "invincible_craft:power_picker"
+    },
+    "title": {
+      "translate": "advancements.advancement_dimensional_travel.title"
+    },
+    "description": {
+      "translate": "advancements.advancement_dimensional_travel.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "advancement_dimensional_travel_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "invincible_craft:advancement_invincible_craft"
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "invincible_craft:blocks/moon_stone",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "invincible_craft:moon_stone"
+        }
+      ]
+    }
+  ]
+}

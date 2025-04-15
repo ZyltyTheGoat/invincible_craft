@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "invincible_craft:power_picker"
+    },
+    "title": {
+      "translate": "advancements.advancement_duplication.title"
+    },
+    "description": {
+      "translate": "advancements.advancement_duplication.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "advancement_duplication_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "invincible_craft:advancement_invincible_craft"
+}

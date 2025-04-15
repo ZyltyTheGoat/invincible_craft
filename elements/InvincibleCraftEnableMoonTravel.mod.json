@@ -1,0 +1,12 @@
+{
+  "_fv": 69,
+  "_type": "gamerule",
+  "definition": {
+    "type": "Logic",
+    "displayName": "Invincible Craft - Moon Travel",
+    "description": "Setting this to false disables travelling to Moon.",
+    "category": "PLAYER",
+    "defaultValueLogic": true,
+    "defaultValueNumber": 1
+  }
+}

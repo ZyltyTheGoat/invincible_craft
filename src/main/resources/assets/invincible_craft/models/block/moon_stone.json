@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "invincible_craft:block/end_stone",
+    "up": "invincible_craft:block/end_stone",
+    "north": "invincible_craft:block/end_stone",
+    "east": "invincible_craft:block/end_stone",
+    "south": "invincible_craft:block/end_stone",
+    "west": "invincible_craft:block/end_stone",
+    "particle": "invincible_craft:block/end_stone"
+  },
+  "render_type": "solid"
+}
