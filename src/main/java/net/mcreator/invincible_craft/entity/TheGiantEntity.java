@@ -14,19 +14,21 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
+import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -37,11 +39,15 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
+import net.mcreator.invincible_craft.SlowRotMoveControl;
 
 public class TheGiantEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_IA = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Fatigue = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_Roar = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -57,6 +63,8 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 		xpReward = 0;
 		setNoAi(false);
 		setMaxUpStep(0.6f);
+		setPersistenceRequired();
+		this.moveControl = new SlowRotMoveControl(this);
 	}
 
 	@Override
@@ -65,6 +73,9 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "the_red_giant");
+		this.entityData.define(DATA_IA, 0);
+		this.entityData.define(DATA_Fatigue, 0);
+		this.entityData.define(DATA_Roar, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -83,12 +94,22 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-
+		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Monster.class, true, false));
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Mob.class, true, true));
+		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 	}
 
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override
@@ -105,6 +126,9 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataIA", this.entityData.get(DATA_IA));
+		compound.putInt("DataFatigue", this.entityData.get(DATA_Fatigue));
+		compound.putInt("DataRoar", this.entityData.get(DATA_Roar));
 	}
 
 	@Override
@@ -112,6 +136,12 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataIA"))
+			this.entityData.set(DATA_IA, compound.getInt("DataIA"));
+		if (compound.contains("DataFatigue"))
+			this.entityData.set(DATA_Fatigue, compound.getInt("DataFatigue"));
+		if (compound.contains("DataRoar"))
+			this.entityData.set(DATA_Roar, compound.getInt("DataRoar"));
 	}
 
 	@Override
@@ -126,8 +156,6 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(InvincibleCraftModEntities.THE_GIANT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -142,9 +170,7 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
-
-			) {
+			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("walk"));
 			}
 			if (this.isDeadOrDying()) {

@@ -6319,15 +6319,14 @@
       "name": "TheGiant",
       "type": "animatedentity",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "the_giant",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/client/renderer/TheGiantRenderer.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/model/TheGiantModel.java",
+          "src/main/resources/assets/invincible_craft/models/item/the_giant_spawn_egg.json",
           "src/main/java/net/mcreator/invincible_craft/entity/TheGiantEntity.java",
-          "src/main/resources/data/invincible_craft/forge/biome_modifier/the_giant_biome_modifier.json",
-          "src/main/resources/assets/invincible_craft/models/item/the_giant_spawn_egg.json"
+          "src/main/java/net/mcreator/invincible_craft/entity/model/TheGiantModel.java"
         ]
       },
       "path": "~/Mobs/The Giant"
@@ -7295,6 +7294,85 @@
         ]
       },
       "path": "~/Powers - Abilities/BattleBeast/Bite"
+    },
+    {
+      "name": "SlowRotMoveControl",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "slow_rot_move_control",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/SlowRotMoveControl.java"
+        ]
+      }
+    },
+    {
+      "name": "Impact",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "impact",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/invincible_craft/damage_type/impact.json"
+        ]
+      },
+      "path": "~/DamageTypes"
+    },
+    {
+      "name": "ImpactOnHit",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "impact_on_hit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ImpactOnHitProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/DamageTypes"
+    },
+    {
+      "name": "TheGiantOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "the_giant_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/TheGiantOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/The Giant"
     }
   ],
   "variable_elements": [
@@ -7992,10 +8070,12 @@
       "item.invincible_craft.invincible_suit_chestplate": "Invincible Suit (Original) Chestplate",
       "gui.invincible_craft.stat_panel_gui.label_stats": "Stats:",
       "effect.invincible_craft.flight_slowness": "Flight Slowness",
+      "death.attack.impact.item": "%1$s was killed by %2$s using %3$s",
       "biome.invincible_craft.moon_surface": "Moon Surface",
       "item.invincible_craft.power_picker": "Power Picker",
       "subtitles.viltrumite_pierce": "",
       "key.invincible_craft.fly": "Flight - Start",
+      "death.attack.impact.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.viltrumite_punch.item": "%1$s was crushed by %2$s using %3$s",
       "gui.invincible_craft.power_picker_gui.button_battle_beast": "Battle Beast",
       "gui.invincible_craft.leveling_gui.label_viltrumite": "Viltrumite",
@@ -8015,6 +8095,7 @@
       "item.invincible_craft.invincible_suit_mohawk_boots": "Invincible Suit ",
       "biome.invincible_craft.infinite_desert_biome": "Infinite Desert Biome",
       "item.invincible_craft.orbs_spawner_portal_spawn_egg": "Orb Spawner Portal Spawn Egg",
+      "death.attack.impact": "%1$s died",
       "item.invincible_craft.viltrumite_spawn_egg": "Viltrumite Spawn Egg",
       "gamerule.invincibleCraftEnableImpactFrames.description": "Setting this to false disables Impact Frames.",
       "subtitles.bite_1": "",
@@ -8470,6 +8551,10 @@
       },
       {
         "name": "CosmicHorizonsCompat",
+        "children": []
+      },
+      {
+        "name": "DamageTypes",
         "children": []
       }
     ]
