@@ -109,5 +109,29 @@
         "stream": false
       }
     ]
+  },
+  "bite_1": {
+    "sounds": [
+      {
+        "name": "invincible_craft:bite_1",
+        "stream": false
+      }
+    ]
+  },
+  "bite_2": {
+    "sounds": [
+      {
+        "name": "invincible_craft:bite_2",
+        "stream": false
+      }
+    ]
+  },
+  "bite_3": {
+    "sounds": [
+      {
+        "name": "invincible_craft:bite_3",
+        "stream": false
+      }
+    ]
   }
 }

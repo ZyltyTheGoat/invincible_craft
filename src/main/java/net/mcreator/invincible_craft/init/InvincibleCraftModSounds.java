@@ -28,4 +28,7 @@ public class InvincibleCraftModSounds {
 	public static final RegistryObject<SoundEvent> GROWL2 = REGISTRY.register("growl2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("invincible_craft", "growl2")));
 	public static final RegistryObject<SoundEvent> GROWL3 = REGISTRY.register("growl3", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("invincible_craft", "growl3")));
 	public static final RegistryObject<SoundEvent> BATTLE_BEAST_ROAR = REGISTRY.register("battle_beast_roar", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("invincible_craft", "battle_beast_roar")));
+	public static final RegistryObject<SoundEvent> BITE_1 = REGISTRY.register("bite_1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("invincible_craft", "bite_1")));
+	public static final RegistryObject<SoundEvent> BITE_2 = REGISTRY.register("bite_2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("invincible_craft", "bite_2")));
+	public static final RegistryObject<SoundEvent> BITE_3 = REGISTRY.register("bite_3", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("invincible_craft", "bite_3")));
 }

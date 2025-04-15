@@ -18,6 +18,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -63,6 +65,7 @@ public class AbilityBloodHuntProcedure {
 		double sz = 0;
 		double easedT = 0;
 		double height = 0;
+		double ran = 0;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).battle_beast_blood_hunt > 0) {
 			{
 				double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).battle_beast_blood_hunt - 1;
@@ -138,6 +141,50 @@ public class AbilityBloodHuntProcedure {
 								_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() / 2), (entityiterator.getZ()), 60, 0.25,
 										0.25, 0.25, 0.25);
 							entityiterator.invulnerableTime = 1;
+							ran = Mth.nextInt(RandomSource.create(), 1, 3);
+							if (Math.random() < (1) / ((float) 3)) {
+								if (ran == 1) {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_1")), SoundSource.NEUTRAL, (float) 0.5,
+													(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_1")), SoundSource.NEUTRAL, (float) 0.5,
+													(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+										}
+									}
+								} else if (ran == 1) {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_2")), SoundSource.NEUTRAL, (float) 0.5,
+													(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_2")), SoundSource.NEUTRAL, (float) 0.5,
+													(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+										}
+									}
+								} else {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_3")), SoundSource.NEUTRAL, (float) 0.5,
+													(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+										} else {
+											_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_3")), SoundSource.NEUTRAL, (float) 0.5,
+													(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+										}
+									}
+								}
+							} else if (Math.random() < (1) / ((float) 3)) {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:viltrumite_chop")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:viltrumite_chop")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							}
 						}
 					}
 				}

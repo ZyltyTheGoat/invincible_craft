@@ -7817,6 +7817,30 @@
       ],
       "category": "neutral",
       "subtitle": ""
+    },
+    {
+      "name": "bite_1",
+      "files": [
+        "bite_1"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "bite_2",
+      "files": [
+        "bite_2"
+      ],
+      "category": "neutral",
+      "subtitle": ""
+    },
+    {
+      "name": "bite_3",
+      "files": [
+        "bite_3"
+      ],
+      "category": "neutral",
+      "subtitle": ""
     }
   ],
   "tag_elements": {
@@ -7993,6 +8017,9 @@
       "item.invincible_craft.orbs_spawner_portal_spawn_egg": "Orb Spawner Portal Spawn Egg",
       "item.invincible_craft.viltrumite_spawn_egg": "Viltrumite Spawn Egg",
       "gamerule.invincibleCraftEnableImpactFrames.description": "Setting this to false disables Impact Frames.",
+      "subtitles.bite_1": "",
+      "subtitles.bite_2": "",
+      "subtitles.bite_3": "",
       "death.attack.sonic_clap_damage": "%1$s died",
       "advancements.advancement_dimensional_travel.title": "Stepping Through",
       "entity.invincible_craft.refuge_portal": "Quick Portal",

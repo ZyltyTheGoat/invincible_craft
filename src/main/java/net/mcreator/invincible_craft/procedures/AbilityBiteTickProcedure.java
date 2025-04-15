@@ -16,6 +16,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -60,6 +62,7 @@ public class AbilityBiteTickProcedure {
 		double sz = 0;
 		double easedT = 0;
 		double height = 0;
+		double ran = 0;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).battle_beast_bite_timer > 0) {
 			{
 				double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).battle_beast_bite_timer - 3;
@@ -130,6 +133,67 @@ public class AbilityBiteTickProcedure {
 							if (world instanceof ServerLevel _level)
 								_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() / 2), (entityiterator.getZ()), 45, 0.25,
 										0.25, 0.25, 0.25);
+							ran = Mth.nextInt(RandomSource.create(), 1, 3);
+							if (ran == 1) {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:bite_1")), SoundSource.NEUTRAL, 1,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:bite_1")), SoundSource.NEUTRAL, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							} else if (ran == 1) {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:bite_2")), SoundSource.NEUTRAL, 1,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:bite_2")), SoundSource.NEUTRAL, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							} else {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:bite_3")), SoundSource.NEUTRAL, 1,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:bite_3")), SoundSource.NEUTRAL, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							}
+							ran = Mth.nextInt(RandomSource.create(), 1, 3);
+							if (ran == 1) {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_1")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_1")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							} else if (ran == 1) {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_2")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_2")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							} else {
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_3")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+									} else {
+										_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("invincible_craft:blood_sound_3")), SoundSource.NEUTRAL, (float) 0.5,
+												(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+									}
+								}
+							}
 						}
 					}
 				}
