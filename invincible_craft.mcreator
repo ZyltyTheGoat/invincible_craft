@@ -2160,9 +2160,9 @@
       "registry_name": "viltrumite",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/ViltrumiteRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/viltrumite_spawn_egg.json",
           "src/main/java/net/mcreator/invincible_craft/entity/ViltrumiteEntity.java",
-          "src/main/resources/assets/invincible_craft/models/item/viltrumite_spawn_egg.json"
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/ViltrumiteRenderer.java"
         ]
       },
       "path": "~/Mobs/Viltrumite Normal"

@@ -10,6 +10,8 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.tags.BlockTags;
@@ -48,7 +50,10 @@ public class ViltrumiteOnEntityAttackedProcedure {
 		double sy = 0;
 		double sz = 0;
 		double dmg = 0;
+		double knockbackres = 0;
 		dmg = amount;
+		knockbackres = Math.min(1,
+				Math.max(entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(Attributes.KNOCKBACK_RESISTANCE) ? _livingEntity0.getAttribute(Attributes.KNOCKBACK_RESISTANCE).getValue() : 0, 0));
 		if (sourceentity instanceof ViltrumiteEntity) {
 			if ((sourceentity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_recovery) : 0) <= 0) {
 				if (!(immediatesourceentity instanceof Projectile) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:barrage")))
@@ -75,7 +80,7 @@ public class ViltrumiteOnEntityAttackedProcedure {
 						_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (entity.getX()), (entity.getY() + entity.getBbHeight() / 2), (entity.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
 					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), sourceentity),
 							(float) dmg);
-					entity.setDeltaMovement(new Vec3((2 * sourceentity.getLookAngle().x), (2 * sourceentity.getLookAngle().y), (2 * sourceentity.getLookAngle().z)));
+					entity.setDeltaMovement(new Vec3((2 * sourceentity.getLookAngle().x * (1 - knockbackres / 1)), (2 * sourceentity.getLookAngle().y * (1 - knockbackres / 1)), (2 * sourceentity.getLookAngle().z * (1 - knockbackres / 1))));
 					sx = -3;
 					found = false;
 					for (int index0 = 0; index0 < 6; index0++) {

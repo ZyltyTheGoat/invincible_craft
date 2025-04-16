@@ -32,6 +32,7 @@ public class ViltrumiteComboPunchProcedure {
 		double sx = 0;
 		double sy = 0;
 		double sz = 0;
+		double knockbackres = 0;
 		sx = -6;
 		if (entity instanceof LivingEntity _entity)
 			_entity.swing(InteractionHand.MAIN_HAND, true);
@@ -75,7 +76,9 @@ public class ViltrumiteComboPunchProcedure {
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
 							(float) ((entity instanceof LivingEntity _livingEntity23 && _livingEntity23.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity23.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0) * 0.75));
-					entityiterator.setDeltaMovement(new Vec3((2 * entity.getLookAngle().x), (2 * entity.getLookAngle().y + 0.3), (2 * entity.getLookAngle().z)));
+					knockbackres = Math.min(1, Math.max(
+							entityiterator instanceof LivingEntity _livingEntity26 && _livingEntity26.getAttributes().hasAttribute(Attributes.KNOCKBACK_RESISTANCE) ? _livingEntity26.getAttribute(Attributes.KNOCKBACK_RESISTANCE).getValue() : 0, 0));
+					entityiterator.setDeltaMovement(new Vec3((2 * entity.getLookAngle().x * (1 - knockbackres / 1)), (2 * entity.getLookAngle().y * (1 - knockbackres / 1)), (2 * entity.getLookAngle().z * (1 - knockbackres / 1))));
 				}
 			}
 		}

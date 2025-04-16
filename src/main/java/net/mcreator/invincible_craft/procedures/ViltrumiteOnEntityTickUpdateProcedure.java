@@ -7,6 +7,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
@@ -80,6 +81,8 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 			}
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+			ent = entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null;
+			distance = Math.sqrt(Math.pow(entity.getX() - ent.getX(), 2) + Math.pow(entity.getY() - ent.getY(), 2) + Math.pow(entity.getZ() - ent.getZ(), 2));
 			if (entity instanceof Mob _mob && _mob.getTarget() != null) {
 				LivingEntity target = _mob.getTarget();
 				double deltaX = target.getX() - entity.getX();
@@ -92,12 +95,14 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 					_livingEntity.yHeadRot = targetYaw;
 				}
 			}
-			ent = entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null;
-			distance = Math.sqrt(Math.pow(entity.getX() - ent.getX(), 2) + Math.pow(entity.getY() - ent.getY(), 2) + Math.pow(entity.getZ() - ent.getZ(), 2));
+			if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ChopTimer) : 0) < 100) {
+				if (entity instanceof ViltrumiteEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ChopTimer, (int) ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ChopTimer) : 0) + 1));
+			}
 			if (!(ent.getPersistentData().getString("Holding_Entity")).equals(entity.getStringUUID())) {
 				if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_recovery) : 0) <= 0) {
 					if (CanViltrumiteFlyingAttackProcedure.execute(entity)) {
-						if (entity instanceof LivingEntity _livEnt48 && _livEnt48.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+						if (entity instanceof LivingEntity _livEnt52 && _livEnt52.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							entity.setDeltaMovement(new Vec3(((ent.getX() - entity.getX()) * (1 / distance) * 0.1), ((ent.getY() - entity.getY()) * (1 / distance) * 0.1), ((ent.getZ() - entity.getZ()) * (1 / distance) * 0.1)));
 						} else {
 							entity.setDeltaMovement(new Vec3(((ent.getX() - entity.getX()) * (1 / distance)), ((ent.getY() - entity.getY()) * (1 / distance)), ((ent.getZ() - entity.getZ()) * (1 / distance))));
@@ -109,6 +114,13 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 						if (entity instanceof ViltrumiteEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ClapTimer, 0);
 						SonicClapAttackProcedure.execute(world, entity);
+					}
+					if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ClapTimer) : 0) >= 200) {
+						if (entity instanceof ViltrumiteEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_recovery, 40);
+						if (entity instanceof ViltrumiteEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ChopTimer, 0);
+						ViltrumiteChopAbilityProcedure.execute(world, entity);
 					}
 					if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ComboTimer) : 0) >= 150) {
 						if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ComboAmount) : 0) < 3) {
@@ -139,19 +151,28 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_SlamMeter, 0);
 					}
 				}
-				if (ent instanceof Player) {
-					if ((ent.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
+				if (world.canSeeSkyFromBelowWater(BlockPos.containing(ent.getX(), ent.getY(), ent.getZ()))) {
+					if (ent instanceof Player) {
+						if ((ent.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
+							if (entity instanceof ViltrumiteEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, true);
+						}
+					}
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.4) {
 						if (entity instanceof ViltrumiteEntity _datEntSetL)
 							_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, true);
-					} else {
-						if (entity instanceof ViltrumiteEntity _datEntSetL)
-							_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, false);
 					}
+				} else {
+					if (entity instanceof ViltrumiteEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, false);
 				}
 			} else {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_recovery, 5);
 			}
+		} else {
+			if (entity instanceof ViltrumiteEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, false);
 		}
 	}
 }

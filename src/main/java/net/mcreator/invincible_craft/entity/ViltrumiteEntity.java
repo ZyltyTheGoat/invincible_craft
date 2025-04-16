@@ -67,6 +67,7 @@ public class ViltrumiteEntity extends Monster {
 	public static final EntityDataAccessor<Boolean> DATA_Slamming = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_SlamIA = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_SlamLogic = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_ChopTimer = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 
 	public ViltrumiteEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(InvincibleCraftModEntities.VILTRUMITE.get(), world);
@@ -105,6 +106,7 @@ public class ViltrumiteEntity extends Monster {
 		this.entityData.define(DATA_Slamming, false);
 		this.entityData.define(DATA_SlamIA, 0);
 		this.entityData.define(DATA_SlamLogic, false);
+		this.entityData.define(DATA_ChopTimer, 0);
 	}
 
 	@Override
@@ -247,6 +249,7 @@ public class ViltrumiteEntity extends Monster {
 		compound.putBoolean("DataSlamming", this.entityData.get(DATA_Slamming));
 		compound.putInt("DataSlamIA", this.entityData.get(DATA_SlamIA));
 		compound.putBoolean("DataSlamLogic", this.entityData.get(DATA_SlamLogic));
+		compound.putInt("DataChopTimer", this.entityData.get(DATA_ChopTimer));
 	}
 
 	@Override
@@ -282,6 +285,8 @@ public class ViltrumiteEntity extends Monster {
 			this.entityData.set(DATA_SlamIA, compound.getInt("DataSlamIA"));
 		if (compound.contains("DataSlamLogic"))
 			this.entityData.set(DATA_SlamLogic, compound.getBoolean("DataSlamLogic"));
+		if (compound.contains("DataChopTimer"))
+			this.entityData.set(DATA_ChopTimer, compound.getInt("DataChopTimer"));
 	}
 
 	@Override

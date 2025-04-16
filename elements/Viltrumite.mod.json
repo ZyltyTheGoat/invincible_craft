@@ -402,6 +402,13 @@
         "name": "SlamLogic",
         "type": "logic",
         "value": false
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "ChopTimer",
+        "type": "integer",
+        "value": 0
       }
     ],
     "whenMobDies": {
@@ -418,7 +425,7 @@
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">3</field><field name=\"speed\">1</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">IsViltrumiteRecovered,IsViltrumiteRecovered</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"fly\"><field name=\"speed\">15</field><field name=\"condition\">CanViltrumiteFlyingAttack,CanViltrumiteFlyingAttack</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block><block type=\"attack_fly\" x=\"353\" y=\"409\"><field name=\"radius\">32</field><field name=\"speed\">1.5</field><field name=\"condition\">CanViltrumiteFlyingAttack,CanViltrumiteFlyingAttack</field></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">3</field><field name=\"speed\">1</field><field name=\"longmemory\">TRUE</field><field name=\"condition\">IsViltrumiteRecovered,IsViltrumiteRecovered</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"fly\"><field name=\"speed\">15</field><field name=\"condition\">CanViltrumiteFlyingAttack,CanViltrumiteFlyingAttack</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "breedable": false,
     "tameable": false,
     "breedTriggerItems": [],
