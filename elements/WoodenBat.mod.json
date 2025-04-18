@@ -5,7 +5,7 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "wooden_bat",
+    "texture": "woodenbat",
     "customModelName": "bat:default",
     "blockingModelName": "Normal blocking",
     "name": "Wooden Bat",
