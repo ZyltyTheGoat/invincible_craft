@@ -28,6 +28,7 @@ import net.mcreator.invincible_craft.entity.ExchangeCloneEntity;
 import net.mcreator.invincible_craft.entity.DuplicationCloneEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
 import net.mcreator.invincible_craft.entity.BanditEntity;
+import net.mcreator.invincible_craft.entity.AtomEveFlareFlightEntity;
 import net.mcreator.invincible_craft.entity.ArtRosenbaumEntity;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
@@ -72,6 +73,8 @@ public class InvincibleCraftModEntities {
 					.sized(3f, 7.5f));
 	public static final RegistryObject<EntityType<LeapGuideEntity>> LEAP_GUIDE = register("leap_guide", EntityType.Builder.<LeapGuideEntity>of(LeapGuideEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
 			.setUpdateInterval(3).setCustomClientFactory(LeapGuideEntity::new).fireImmune().sized(0.1f, 0.1f));
+	public static final RegistryObject<EntityType<AtomEveFlareFlightEntity>> ATOM_EVE_FLARE_FLIGHT = register("atom_eve_flare_flight", EntityType.Builder.<AtomEveFlareFlightEntity>of(AtomEveFlareFlightEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AtomEveFlareFlightEntity::new).fireImmune().sized(0.1f, 0.1f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -92,6 +95,7 @@ public class InvincibleCraftModEntities {
 			ExchangeCloneEntity.init();
 			TheGiantEntity.init();
 			LeapGuideEntity.init();
+			AtomEveFlareFlightEntity.init();
 		});
 	}
 
@@ -109,5 +113,6 @@ public class InvincibleCraftModEntities {
 		event.put(EXCHANGE_CLONE.get(), ExchangeCloneEntity.createAttributes().build());
 		event.put(THE_GIANT.get(), TheGiantEntity.createAttributes().build());
 		event.put(LEAP_GUIDE.get(), LeapGuideEntity.createAttributes().build());
+		event.put(ATOM_EVE_FLARE_FLIGHT.get(), AtomEveFlareFlightEntity.createAttributes().build());
 	}
 }

@@ -88,7 +88,11 @@ public class AbilityBloodHuntProcedure {
 			if (world.dayTime() % 3 == 0) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.SCREEN_SHAKE.get(), 3, 0, false, false));
-				entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 2), (entity.getDeltaMovement().y()), (entity.getLookAngle().z * 2)));
+				if (entity.onGround()) {
+					entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 2), (entity.getDeltaMovement().y()), (entity.getLookAngle().z * 2)));
+				} else {
+					entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 2), (entity.getLookAngle().y * 2), (entity.getLookAngle().z * 2)));
+				}
 				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == InvincibleCraftModItems.BATTLE_BEAST_MACE.get()) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.EXPLOSION, x, y, z, 5, 1.5, 1.5, 1.5, 0);
@@ -134,9 +138,9 @@ public class AbilityBloodHuntProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) && !(entityiterator == entity) && entityiterator instanceof LivingEntity) {
-							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:chop"))), entity),
-									(float) (3
-											+ (entity instanceof LivingEntity _livingEntity29 && _livingEntity29.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity29.getAttribute(Attributes.ATTACK_DAMAGE).getValue() : 0) * 1.5));
+							entityiterator.hurt(
+									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:blood_hunt"))), entity), (float) (3
+											+ (entity instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity34.getAttribute(Attributes.ATTACK_DAMAGE).getValue() : 0) * 1.5));
 							if (world instanceof ServerLevel _level)
 								_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() / 2), (entityiterator.getZ()), 60, 0.25,
 										0.25, 0.25, 0.25);

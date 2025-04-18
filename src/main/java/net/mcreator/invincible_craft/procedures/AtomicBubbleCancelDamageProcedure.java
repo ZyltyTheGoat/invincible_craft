@@ -29,16 +29,16 @@ public class AtomicBubbleCancelDamageProcedure {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble) {
-			{
-				double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_damage - amount;
-				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.atom_eve_atomic_bubble_damage = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
 			if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_damage <= 0) {
 				AbilityAtomicBubbleProcedure.execute(world, x, y, z, entity);
 			} else {
+				{
+					double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_damage - amount;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.atom_eve_atomic_bubble_damage = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}

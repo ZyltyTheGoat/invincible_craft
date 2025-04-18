@@ -6335,7 +6335,7 @@
       "name": "BattleBeastMace",
       "type": "item",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "battle_beast_mace",
       "metadata": {
         "files": [
@@ -6343,7 +6343,7 @@
           "src/main/resources/assets/invincible_craft/models/item/battle_beast_mace.json"
         ]
       },
-      "path": "~/Items/Battle Beast Mace"
+      "path": "~/Items/Weapons/Battle Beast Mace"
     },
     {
       "name": "AdvancementBattleBeast",
@@ -6453,7 +6453,7 @@
           }
         ]
       },
-      "path": "~/Items/Battle Beast Mace"
+      "path": "~/Items/Weapons/Battle Beast Mace"
     },
     {
       "name": "LeapGuide",
@@ -7373,6 +7373,162 @@
         ]
       },
       "path": "~/Mobs/The Giant"
+    },
+    {
+      "name": "WoodenBat",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "wooden_bat",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/models/item/wooden_bat.json",
+          "src/main/java/net/mcreator/invincible_craft/item/WoodenBatItem.java"
+        ]
+      },
+      "path": "~/Items/Weapons/Bats"
+    },
+    {
+      "name": "MetalBat",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "metal_bat",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/item/MetalBatItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/metal_bat.json"
+        ]
+      },
+      "path": "~/Items/Weapons/Bats"
+    },
+    {
+      "name": "BloodHunt",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood_hunt",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/invincible_craft/damage_type/blood_hunt.json"
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast/Blood Hunt"
+    },
+    {
+      "name": "BloodHuntDamage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "blood_hunt_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/BloodHuntDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast/Blood Hunt"
+    },
+    {
+      "name": "CanDownslam",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_downslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/potion/CanDownslamMobEffect.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast/Uppercut"
+    },
+    {
+      "name": "Chain",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chain",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/models/item/chain.json",
+          "src/main/java/net/mcreator/invincible_craft/item/ChainItem.java"
+        ]
+      },
+      "path": "~/Items/Weapons/Chain"
+    },
+    {
+      "name": "AtomEveFlareFlight",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_flare_flight",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/AtomEveFlareFlightEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/AtomEveFlareFlightRenderer.java",
+          "src/main/resources/data/invincible_craft/forge/biome_modifier/atom_eve_flare_flight_biome_modifier.json"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Flight"
+    },
+    {
+      "name": "AtomEveFlightFlare",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_flight_flare",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveFlightFlareProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "partialTick",
+            "type": "number"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Flight"
+    },
+    {
+      "name": "AtomEveFlightFlareRotationUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_flight_flare_rotation_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveFlightFlareRotationUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Flight"
     }
   ],
   "variable_elements": [
@@ -7789,6 +7945,18 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "atom_eve_flare_rotation_left",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "atom_eve_flare_rotation_right",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -7925,6 +8093,10 @@
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:MoonStone"
     ],
+    "ITEMS:minecraft:swords": [
+      "~CUSTOM:MetalBat",
+      "~CUSTOM:WoodenBat"
+    ],
     "BLOCKS:minecraft:overworld_carver_replaceables": [
       "~Blocks.SANDSTONE#0",
       "~Blocks.SAND#0",
@@ -7950,13 +8122,17 @@
       "Viltrumite",
       "TheGiant",
       "AstronautHelmet",
-      "BattleBeastMace"
+      "BattleBeastMace",
+      "WoodenBat",
+      "MetalBat"
     ]
   },
   "language_map": {
     "en_us": {
       "gui.invincible_craft.power_picker_gui.button_dimensional_travel": "Dimensional Travel",
       "subtitles.followup": "dash",
+      "entity.invincible_craft.atom_eve_flare_flight": "Atom Eve Flare Flight",
+      "effect.invincible_craft.can_downslam": "Can Downslam",
       "item.invincible_craft.invincible_suit_blue_comic_boots": "Invincible Suit ",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_omniman_suit": "Make Omni-Man Suit - Suit Fabric x4, Red Dye x4, White Dye x4",
       "advancements.advancement_atom_eve.descr": "Get Atome Eve\u0027s power.",
@@ -7975,6 +8151,7 @@
       "item.invincible_craft.omni_man_suit_boots": "Omni Man Suit Boots",
       "entity.invincible_craft.portal_dash_portal": "Dash Portal",
       "item.invincible_craft.invincible_suit_mohawk_chestplate": "Invincible Suit (Mohawk Mark) Chestplate",
+      "item.invincible_craft.wooden_bat": "Wooden Bat",
       "advancements.advancement_kill_viltrumite.title": "Against All Odds",
       "gamerule.invincibleCraftXPMultiplier": "Invincible Craft - XP Multiplier",
       "item.invincible_craft.bandit_spawn_egg": "Bandit Spawn Egg",
@@ -8004,6 +8181,7 @@
       "key.invincible_craft.leave_planet": "Leave Planet",
       "subtitles.growl": "",
       "item.invincible_craft.viltrumite_suit_boots": "Viltrumite Suit Boots",
+      "item.invincible_craft.metal_bat": "Metal Bat",
       "gui.invincible_craft.stat_panel_gui.label_strength": "§lStrength",
       "item.invincible_craft.invincible_suit_blue_comic_helmet": "Invincible Suit (Blue - Comic) Helmet",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
@@ -8024,6 +8202,7 @@
       "gui.invincible_craft.stat_panel_gui.label_ssladjust_speed": "Adjust Strength",
       "key.invincible_craft.ability_button_2": "Ability Button 2",
       "item.invincible_craft.invincible_suit_leggings": "Invincible Suit (Original) Leggings",
+      "death.attack.blood_hunt": "%1$s died",
       "key.invincible_craft.ability_button_1": "Ability Button 1",
       "key.invincible_craft.ability_button_4": "Ability Button 4",
       "key.invincible_craft.ability_button_3": "Ability Button 3",
@@ -8047,6 +8226,7 @@
       "gamerule.invincibleCraftEnableMoonTravel": "Invincible Craft - Moon Travel",
       "item.invincible_craft.dupli_kate_suit_leggings": "Dupli-Kate Leggings",
       "advancements.advancement_atom_eve.title": "Think It, Make It",
+      "item.invincible_craft.chain": "Chain",
       "gui.invincible_craft.quick_travel_gui.tooltip_teleports_you_to_the_selected_lo": "Teleports you to the selected location in the Overworld",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "subtitles.battle_beast_roar": "",
@@ -8067,6 +8247,7 @@
       "entity.invincible_craft.quick_portal": "Quick Portal",
       "advancements.advancement_buy_first_suit.title": "Suited for Battle",
       "gamerule.invincibleCraftCloneLimit.description": "Limits maximum number of clones a player can have. (Deafult - 10)",
+      "death.attack.blood_hunt.item": "%1$s was killed by %2$s using %3$s",
       "item.invincible_craft.invincible_suit_chestplate": "Invincible Suit (Original) Chestplate",
       "gui.invincible_craft.stat_panel_gui.label_stats": "Stats:",
       "effect.invincible_craft.flight_slowness": "Flight Slowness",
@@ -8125,6 +8306,7 @@
       "key.categories.invincible_craft": "Invincible Craft",
       "gui.invincible_craft.test.button_flying_speed": "Flying Speed",
       "gui.invincible_craft.power_picker_gui.button_atom_eve": "Atom Eve",
+      "death.attack.blood_hunt.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_season_32": "Make Invincible Suit (Season 3) - Suit Fabric x4, Gray Dye x4, Cyan Dye x4",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_season_31": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Yellow Dye x4",
       "item.invincible_craft.viltrumite_suit_chestplate": "Viltrumite Suit Chestplate",
@@ -8320,6 +8502,10 @@
               {
                 "name": "Atomic Ray",
                 "children": []
+              },
+              {
+                "name": "Flight",
+                "children": []
               }
             ]
           }
@@ -8408,8 +8594,21 @@
             "children": []
           },
           {
-            "name": "Battle Beast Mace",
-            "children": []
+            "name": "Weapons",
+            "children": [
+              {
+                "name": "Battle Beast Mace",
+                "children": []
+              },
+              {
+                "name": "Bats",
+                "children": []
+              },
+              {
+                "name": "Chain",
+                "children": []
+              }
+            ]
           }
         ]
       },

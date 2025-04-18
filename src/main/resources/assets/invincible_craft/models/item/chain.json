@@ -1,0 +1,7 @@
+{
+  "parent": "invincible_craft:custom/chain",
+  "textures": {
+    "0": "invincible_craft:block/chain",
+    "particle": "invincible_craft:item/battle_beast_mace"
+  }
+}

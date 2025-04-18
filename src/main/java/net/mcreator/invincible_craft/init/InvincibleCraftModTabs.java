@@ -62,6 +62,8 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.THE_GIANT_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.ASTRONAUT_HELMET_HELMET.get());
 				tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
+				tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
+				tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
@@ -69,6 +71,8 @@ public class InvincibleCraftModTabs {
 		if (tabData.getTabKey() == CreativeModeTabs.COMBAT) {
 
 			tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
+			tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
+			tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 

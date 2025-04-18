@@ -1,0 +1,38 @@
+{
+  "_fv": 69,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "wooden_bat",
+    "customModelName": "bat:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Wooden Bat",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:InvincibleCraftCreativeTab"
+      },
+      {
+        "value": "COMBAT"
+      }
+    ],
+    "efficiency": 3.0,
+    "attackSpeed": 1.0,
+    "enchantability": 10,
+    "damageVsEntity": 9.0,
+    "usageCount": 151,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

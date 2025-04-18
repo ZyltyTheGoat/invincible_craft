@@ -15,6 +15,7 @@ import net.mcreator.invincible_craft.potion.StunMobEffect;
 import net.mcreator.invincible_craft.potion.ScreenShakeMobEffect;
 import net.mcreator.invincible_craft.potion.PunchLimitMobEffect;
 import net.mcreator.invincible_craft.potion.FlightSlownessMobEffect;
+import net.mcreator.invincible_craft.potion.CanDownslamMobEffect;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
 public class InvincibleCraftModMobEffects {
@@ -24,4 +25,5 @@ public class InvincibleCraftModMobEffects {
 	public static final RegistryObject<MobEffect> PUNCH_LIMIT = REGISTRY.register("punch_limit", () -> new PunchLimitMobEffect());
 	public static final RegistryObject<MobEffect> STUN = REGISTRY.register("stun", () -> new StunMobEffect());
 	public static final RegistryObject<MobEffect> FLIGHT_SLOWNESS = REGISTRY.register("flight_slowness", () -> new FlightSlownessMobEffect());
+	public static final RegistryObject<MobEffect> CAN_DOWNSLAM = REGISTRY.register("can_downslam", () -> new CanDownslamMobEffect());
 }

@@ -105,7 +105,7 @@ public class AbilityAtomicBubbleProcedure {
 				});
 			}
 			{
-				double _setval = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 1.5;
+				double _setval = (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 0.75;
 				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 					capability.atom_eve_atomic_bubble_damage = _setval;
 					capability.syncPlayerVariables(entity);

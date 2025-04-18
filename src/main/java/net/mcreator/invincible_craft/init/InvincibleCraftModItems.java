@@ -13,16 +13,19 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
 
+import net.mcreator.invincible_craft.item.WoodenBatItem;
 import net.mcreator.invincible_craft.item.ViltrumiteSuitItem;
 import net.mcreator.invincible_craft.item.SuitFabricItem;
 import net.mcreator.invincible_craft.item.PowerPickerItem;
 import net.mcreator.invincible_craft.item.OmniManSuitItem;
+import net.mcreator.invincible_craft.item.MetalBatItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitSinisterItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitMohawkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitBlueShowItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitBlueComicItem;
 import net.mcreator.invincible_craft.item.DupliKateSuitItem;
+import net.mcreator.invincible_craft.item.ChainItem;
 import net.mcreator.invincible_craft.item.BattleBeastMaceItem;
 import net.mcreator.invincible_craft.item.AstronautHelmetItem;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
@@ -66,6 +69,9 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> DUPLI_KATE_SUIT_BOOTS = REGISTRY.register("dupli_kate_suit_boots", () -> new DupliKateSuitItem.Boots());
 	public static final RegistryObject<Item> THE_GIANT_SPAWN_EGG = REGISTRY.register("the_giant_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.THE_GIANT, -4637696, -4665911, new Item.Properties()));
 	public static final RegistryObject<Item> BATTLE_BEAST_MACE = REGISTRY.register("battle_beast_mace", () -> new BattleBeastMaceItem());
+	public static final RegistryObject<Item> WOODEN_BAT = REGISTRY.register("wooden_bat", () -> new WoodenBatItem());
+	public static final RegistryObject<Item> METAL_BAT = REGISTRY.register("metal_bat", () -> new MetalBatItem());
+	public static final RegistryObject<Item> CHAIN = REGISTRY.register("chain", () -> new ChainItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

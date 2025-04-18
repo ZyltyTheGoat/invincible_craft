@@ -1,0 +1,7 @@
+{
+  "parent": "invincible_craft:custom/bat",
+  "textures": {
+    "3": "invincible_craft:block/bat_wooden",
+    "particle": "invincible_craft:item/wooden_bat"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "3": "bat_wooden"
+      },
+      "name": "default"
+    },
+    "metal": {
+      "map": {
+        "3": "bat_metal"
+      },
+      "name": "metal"
+    }
+  }
+}

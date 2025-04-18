@@ -146,6 +146,8 @@ public class InvincibleCraftModVariables {
 				clone.battle_beast_blood_hunt = original.battle_beast_blood_hunt;
 				clone.battle_beast_roar = original.battle_beast_roar;
 				clone.battle_beast_bite_timer = original.battle_beast_bite_timer;
+				clone.atom_eve_flare_rotation_left = original.atom_eve_flare_rotation_left;
+				clone.atom_eve_flare_rotation_right = original.atom_eve_flare_rotation_right;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -255,6 +257,8 @@ public class InvincibleCraftModVariables {
 		public double battle_beast_blood_hunt = 0;
 		public double battle_beast_roar = 0;
 		public double battle_beast_bite_timer = 0;
+		public double atom_eve_flare_rotation_left = 0;
+		public double atom_eve_flare_rotation_right = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -332,6 +336,8 @@ public class InvincibleCraftModVariables {
 			nbt.putDouble("battle_beast_blood_hunt", battle_beast_blood_hunt);
 			nbt.putDouble("battle_beast_roar", battle_beast_roar);
 			nbt.putDouble("battle_beast_bite_timer", battle_beast_bite_timer);
+			nbt.putDouble("atom_eve_flare_rotation_left", atom_eve_flare_rotation_left);
+			nbt.putDouble("atom_eve_flare_rotation_right", atom_eve_flare_rotation_right);
 			return nbt;
 		}
 
@@ -412,6 +418,8 @@ public class InvincibleCraftModVariables {
 			battle_beast_blood_hunt = nbt.getDouble("battle_beast_blood_hunt");
 			battle_beast_roar = nbt.getDouble("battle_beast_roar");
 			battle_beast_bite_timer = nbt.getDouble("battle_beast_bite_timer");
+			atom_eve_flare_rotation_left = nbt.getDouble("atom_eve_flare_rotation_left");
+			atom_eve_flare_rotation_right = nbt.getDouble("atom_eve_flare_rotation_right");
 		}
 	}
 
@@ -514,6 +522,8 @@ public class InvincibleCraftModVariables {
 					variables.battle_beast_blood_hunt = message.data.battle_beast_blood_hunt;
 					variables.battle_beast_roar = message.data.battle_beast_roar;
 					variables.battle_beast_bite_timer = message.data.battle_beast_bite_timer;
+					variables.atom_eve_flare_rotation_left = message.data.atom_eve_flare_rotation_left;
+					variables.atom_eve_flare_rotation_right = message.data.atom_eve_flare_rotation_right;
 				}
 			});
 			context.setPacketHandled(true);
