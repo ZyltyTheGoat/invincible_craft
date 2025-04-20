@@ -5,11 +5,11 @@
     "enableHelmet": false,
     "textureHelmet": "",
     "enableBody": true,
-    "textureBody": "chest-viltrumite",
+    "textureBody": "armor_viltrumite_chestplate",
     "enableLeggings": true,
-    "textureLeggings": "leggings-viltrumite",
+    "textureLeggings": "armor_viltrumite_leggings",
     "enableBoots": true,
-    "textureBoots": "boots_viltrumite_suit",
+    "textureBoots": "armor_viltrumite_boots",
     "creativeTabs": [
       {
         "value": "CUSTOM:InvincibleCraftArmor"

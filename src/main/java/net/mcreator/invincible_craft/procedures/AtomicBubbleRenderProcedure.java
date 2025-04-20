@@ -227,7 +227,7 @@ public class AtomicBubbleRenderProcedure {
 						(float) ((entity.getBbHeight() + 2) / (30 / (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_timer)),
 						(float) ((entity.getBbHeight() + 2) / (30 / (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_timer)),
 						(float) ((entity.getBbHeight() + 2) / (30 / (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_timer)),
-						(int) ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_timer * 6) << 24 | 255 << 16 | 166 << 8 | 168);
+						(int) ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_bubble_timer * 6) << 24 | 255 << 16 | 141 << 8 | 192);
 				release();
 			}
 		}

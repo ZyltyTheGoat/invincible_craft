@@ -97,7 +97,7 @@ public abstract class OmniManSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/omni-man.png";
+			return "invincible_craft:textures/entities/armor_omni_man.png";
 		}
 	}
 
@@ -127,7 +127,7 @@ public abstract class OmniManSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/omni-man.png";
+			return "invincible_craft:textures/entities/armor_omni_man.png";
 		}
 	}
 
@@ -157,7 +157,7 @@ public abstract class OmniManSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/omni-man.png";
+			return "invincible_craft:textures/entities/armor_omni_man.png";
 		}
 	}
 }

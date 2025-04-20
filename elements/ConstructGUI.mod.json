@@ -1,0 +1,187 @@
+{
+  "_fv": 69,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "atom_eve_construct_gui.png",
+          "use1Xscale": false,
+          "x": 78,
+          "y": -19
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_atom_eve_construct_sword",
+          "image": "atom_eve_construct_sword.png",
+          "hoveredImage": "atom_eve_construct_sword_hover.png",
+          "onClick": {
+            "name": "ButtonConstructSword"
+          },
+          "x": 118,
+          "y": 29
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_atom_eve_construct_hammer",
+          "image": "atom_eve_construct_hammer.png",
+          "hoveredImage": "atom_eve_construct_hammer_hover.png",
+          "onClick": {
+            "name": "ButtonConstructHammer"
+          },
+          "x": 214,
+          "y": 5
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_atom_eve_construct_gauntlet",
+          "image": "atom_eve_construct_gauntlet.png",
+          "hoveredImage": "atom_eve_construct_gauntlet_hover.png",
+          "onClick": {
+            "name": "ButtonConstructGauntlet"
+          },
+          "x": 286,
+          "y": 77
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_atom_eve_construct_shield",
+          "image": "atom_eve_construct_shield.png",
+          "hoveredImage": "atom_eve_construct_shield_hover.png",
+          "onClick": {
+            "name": "ButtonConstructShield"
+          },
+          "x": 270,
+          "y": 173
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_atom_eve_construct_trident",
+          "image": "atom_eve_construct_trident.png",
+          "hoveredImage": "atom_eve_construct_trident_hover.png",
+          "onClick": {
+            "name": "ButtonConstructTrident"
+          },
+          "x": 174,
+          "y": 181
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_atom_eve_construct_armor",
+          "image": "atom_eve_construct_armor.png",
+          "hoveredImage": "atom_eve_construct_armor_hover.png",
+          "onClick": {
+            "name": "ButtonConstructArmor"
+          },
+          "x": 86,
+          "y": 133
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_construct_sword",
+          "text": {
+            "fixedValue": "Construct Sword"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 118,
+          "y": 29
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_construct_hammer",
+          "text": {
+            "fixedValue": "Construct Hammer"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 214,
+          "y": 5
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_construct_gauntlet",
+          "text": {
+            "fixedValue": "Construct Gauntlet"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 286,
+          "y": 77
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_construct_shield",
+          "text": {
+            "fixedValue": "Construct Shield"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 270,
+          "y": 173
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_construct_trident",
+          "text": {
+            "fixedValue": "Construct Trident"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 174,
+          "y": 181
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_construct_armor",
+          "text": {
+            "fixedValue": "Construct Armor"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 86,
+          "y": 133
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

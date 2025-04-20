@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "invincible_craft:item/leggings-omni-man"
+    "layer0": "invincible_craft:item/armor_omni_man_leggings"
   }
 }

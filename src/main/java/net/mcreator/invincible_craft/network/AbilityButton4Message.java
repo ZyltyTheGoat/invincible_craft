@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.invincible_craft.procedures.AbilityButton4OnKeyReleasedProcedure;
 import net.mcreator.invincible_craft.procedures.AbilityButton4OnKeyPressedProcedure;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
@@ -53,6 +54,10 @@ public class AbilityButton4Message {
 		if (type == 0) {
 
 			AbilityButton4OnKeyPressedProcedure.execute(world, x, y, z, entity);
+		}
+		if (type == 1) {
+
+			AbilityButton4OnKeyReleasedProcedure.execute(world, entity);
 		}
 	}
 

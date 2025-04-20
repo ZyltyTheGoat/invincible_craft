@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "invincible_craft:item/leggings-viltrumite"
+    "layer0": "invincible_craft:item/armor_viltrumite_leggings"
   }
 }

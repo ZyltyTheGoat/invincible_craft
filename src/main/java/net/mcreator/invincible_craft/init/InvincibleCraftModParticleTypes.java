@@ -42,4 +42,5 @@ public class InvincibleCraftModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> BATTLE_BEAST_ROAR_5 = REGISTRY.register("battle_beast_roar_5", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> SLASH = REGISTRY.register("slash", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> BITE = REGISTRY.register("bite", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> ATOM_EVE_CLOUD = REGISTRY.register("atom_eve_cloud", () -> new SimpleParticleType(false));
 }

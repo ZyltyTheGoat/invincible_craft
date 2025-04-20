@@ -26,28 +26,35 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.OMNI_MAN_SUIT_CHESTPLATE.get());
 				tabData.accept(InvincibleCraftModItems.OMNI_MAN_SUIT_LEGGINGS.get());
 				tabData.accept(InvincibleCraftModItems.OMNI_MAN_SUIT_BOOTS.get());
-				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SUIT_CHESTPLATE.get());
-				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SUIT_LEGGINGS.get());
-				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SUIT_BOOTS.get());
 				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_HELMET.get());
 				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_CHESTPLATE.get());
 				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_LEGGINGS.get());
 				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BOOTS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_SHOW_HELMET.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_SHOW_CHESTPLATE.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_SHOW_LEGGINGS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_SHOW_BOOTS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_COMIC_HELMET.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_COMIC_CHESTPLATE.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_COMIC_LEGGINGS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_BLUE_COMIC_BOOTS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_HELMET.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_CHESTPLATE.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_LEGGINGS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_BOOTS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_CHESTPLATE.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_LEGGINGS.get());
-				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SEASON_3_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SEASON_3_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SEASON_3_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SEASON_3_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_MARK_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_MARK_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_MARK_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_OMNI_MARK_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_OMNI_MARK_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_OMNI_MARK_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_OMNI_MARK_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_NO_GOGGLES_MARK_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_NO_GOGGLES_MARK_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_NO_GOGGLES_MARK_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_NO_GOGGLES_MARK_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_UN_MASKED_MARK_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_UN_MASKED_MARK_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_UN_MASKED_MARK_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SUIT_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SUIT_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SUIT_BOOTS.get());
 				tabData.accept(InvincibleCraftModItems.DUPLI_KATE_SUIT_CHESTPLATE.get());
 				tabData.accept(InvincibleCraftModItems.DUPLI_KATE_SUIT_LEGGINGS.get());
 				tabData.accept(InvincibleCraftModItems.DUPLI_KATE_SUIT_BOOTS.get());
@@ -64,6 +71,7 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
 				tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
 				tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SWORD_CONSTRUCT.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
@@ -73,6 +81,7 @@ public class InvincibleCraftModTabs {
 			tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
 			tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
 			tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
+			tabData.accept(InvincibleCraftModItems.ATOM_EVE_SWORD_CONSTRUCT.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 

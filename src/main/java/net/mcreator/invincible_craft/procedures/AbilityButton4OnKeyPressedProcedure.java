@@ -108,6 +108,14 @@ public class AbilityButton4OnKeyPressedProcedure {
 				}
 			} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("BattleBeast")) {
 				AbilityRoarProcedure.execute(world, x, y, z, entity);
+			} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
+				{
+					boolean _setval = true;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.atom_eve_spike_ball_targetting = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		}
 	}

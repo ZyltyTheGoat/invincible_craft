@@ -13,7 +13,8 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.invincible_craft.world.inventory.ArtRosenbaumGUIMenu;
+import net.mcreator.invincible_craft.world.inventory.ArtRosenbaumGUIPage1Menu;
+import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 
 import io.netty.buffer.Unpooled;
 
@@ -26,14 +27,21 @@ public class ArtRosenbaumRightClickedOnEntityProcedure {
 			NetworkHooks.openScreen((ServerPlayer) _ent, new MenuProvider() {
 				@Override
 				public Component getDisplayName() {
-					return Component.literal("ArtRosenbaumGUI");
+					return Component.literal("ArtRosenbaumGUIPage1");
 				}
 
 				@Override
 				public AbstractContainerMenu createMenu(int id, Inventory inventory, Player player) {
-					return new ArtRosenbaumGUIMenu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
+					return new ArtRosenbaumGUIPage1Menu(id, inventory, new FriendlyByteBuf(Unpooled.buffer()).writeBlockPos(_bpos));
 				}
 			}, _bpos);
+		}
+		{
+			double _setval = 1;
+			sourceentity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.art_page = _setval;
+				capability.syncPlayerVariables(sourceentity);
+			});
 		}
 	}
 }

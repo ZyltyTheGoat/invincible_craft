@@ -159,22 +159,22 @@ public class ArtRosenbaumCraftInvincibleSuitSinisterProcedure {
 						}
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_HELMET.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_HELMET.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_CHESTPLATE.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_CHESTPLATE.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_LEGGINGS.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_LEGGINGS.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_BOOTS.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_SINISTER_MARK_BOOTS.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}

@@ -7,6 +7,9 @@
     "keyBindingCategoryKey": "invincible_craft",
     "onKeyPressed": {
       "name": "AbilityButton4OnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "AbilityButton4OnKeyReleased"
     }
   }
 }

@@ -16,7 +16,9 @@ import net.mcreator.invincible_craft.client.gui.StatPanelGUIScreen;
 import net.mcreator.invincible_craft.client.gui.QuickTravelGUIScreen;
 import net.mcreator.invincible_craft.client.gui.PowerPickerGUIScreen;
 import net.mcreator.invincible_craft.client.gui.MoveToSpaceScreen;
-import net.mcreator.invincible_craft.client.gui.ArtRosenbaumGUIScreen;
+import net.mcreator.invincible_craft.client.gui.ConstructGUIScreen;
+import net.mcreator.invincible_craft.client.gui.ArtRosenbaumGUIPage2Screen;
+import net.mcreator.invincible_craft.client.gui.ArtRosenbaumGUIPage1Screen;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class InvincibleCraftModScreens {
@@ -25,10 +27,12 @@ public class InvincibleCraftModScreens {
 		event.enqueueWork(() -> {
 			MenuScreens.register(InvincibleCraftModMenus.QUICK_TRAVEL_GUI.get(), QuickTravelGUIScreen::new);
 			MenuScreens.register(InvincibleCraftModMenus.POWER_PICKER_GUI.get(), PowerPickerGUIScreen::new);
-			MenuScreens.register(InvincibleCraftModMenus.ART_ROSENBAUM_GUI.get(), ArtRosenbaumGUIScreen::new);
 			MenuScreens.register(InvincibleCraftModMenus.STAT_PANEL_GUI.get(), StatPanelGUIScreen::new);
 			MenuScreens.register(InvincibleCraftModMenus.TEST.get(), TestScreen::new);
 			MenuScreens.register(InvincibleCraftModMenus.MOVE_TO_SPACE.get(), MoveToSpaceScreen::new);
+			MenuScreens.register(InvincibleCraftModMenus.ART_ROSENBAUM_GUI_PAGE_1.get(), ArtRosenbaumGUIPage1Screen::new);
+			MenuScreens.register(InvincibleCraftModMenus.ART_ROSENBAUM_GUI_PAGE_2.get(), ArtRosenbaumGUIPage2Screen::new);
+			MenuScreens.register(InvincibleCraftModMenus.CONSTRUCT_GUI.get(), ConstructGUIScreen::new);
 		});
 	}
 }

@@ -50,13 +50,8 @@ public class AtomEveBubbleBreak3Particle extends TextureSheetParticle {
 	}
 
 	@Override
-	public int getLightColor(float partialTick) {
-		return 15728880;
-	}
-
-	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_LIT;
+		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
 	}
 
 	@Override

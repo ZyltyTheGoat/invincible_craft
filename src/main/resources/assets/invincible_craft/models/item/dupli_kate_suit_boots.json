@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "invincible_craft:item/boots_dupli_kate"
+    "layer0": "invincible_craft:item/armor_dupli_kate_boots"
   }
 }

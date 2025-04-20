@@ -90,6 +90,11 @@ public class InvincibleCraftModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				InvincibleCraftMod.PACKET_HANDLER.sendToServer(new AbilityButton4Message(0, 0));
 				AbilityButton4Message.pressAction(Minecraft.getInstance().player, 0, 0);
+				ABILITY_BUTTON_4_LASTPRESS = System.currentTimeMillis();
+			} else if (isDownOld != isDown && !isDown) {
+				int dt = (int) (System.currentTimeMillis() - ABILITY_BUTTON_4_LASTPRESS);
+				InvincibleCraftMod.PACKET_HANDLER.sendToServer(new AbilityButton4Message(1, dt));
+				AbilityButton4Message.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
 		}
@@ -149,6 +154,7 @@ public class InvincibleCraftModKeyMappings {
 	private static long ABILITY_BUTTON_1_LASTPRESS = 0;
 	private static long ABILITY_BUTTON_2_LASTPRESS = 0;
 	private static long ABILITY_BUTTON_3_LASTPRESS = 0;
+	private static long ABILITY_BUTTON_4_LASTPRESS = 0;
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {

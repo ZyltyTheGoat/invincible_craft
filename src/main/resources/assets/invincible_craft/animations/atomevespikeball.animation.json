@@ -1,0 +1,44 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"loop": true,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"scale": {
+						"vector": [500, 500, 500]
+					}
+				}
+			}
+		},
+		"spawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 2.5,
+			"bones": {
+				"bone": {
+					"position": {
+						"vector": [0, 24, 0]
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.25": {
+							"pre": {
+								"vector": [500, 500, 500]
+							},
+							"post": {
+								"vector": [500, 500, 500]
+							},
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

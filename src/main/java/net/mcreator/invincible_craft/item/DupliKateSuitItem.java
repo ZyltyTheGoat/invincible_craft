@@ -96,7 +96,7 @@ public abstract class DupliKateSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/dupli-kate.png";
+			return "invincible_craft:textures/entities/armor_dupli_kate.png";
 		}
 	}
 
@@ -126,7 +126,7 @@ public abstract class DupliKateSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/dupli-kate.png";
+			return "invincible_craft:textures/entities/armor_dupli_kate.png";
 		}
 	}
 
@@ -156,7 +156,7 @@ public abstract class DupliKateSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/dupli-kate.png";
+			return "invincible_craft:textures/entities/armor_dupli_kate.png";
 		}
 	}
 }

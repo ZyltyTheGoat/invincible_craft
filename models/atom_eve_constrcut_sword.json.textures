@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "2": "atom_eve_construct_sword"
+      },
+      "name": "default"
+    }
+  }
+}

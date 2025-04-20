@@ -23,12 +23,12 @@ public class InvincibleCraftModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModelInvincibleArmor.LAYER_LOCATION, ModelInvincibleArmor::createBodyLayer);
-		event.registerLayerDefinition(ModelAstronautHelmet.LAYER_LOCATION, ModelAstronautHelmet::createBodyLayer);
 		event.registerLayerDefinition(Modelinv.LAYER_LOCATION, Modelinv::createBodyLayer);
-		event.registerLayerDefinition(Modelguideentity.LAYER_LOCATION, Modelguideentity::createBodyLayer);
 		event.registerLayerDefinition(ModelDimensionalTravelProjectile1.LAYER_LOCATION, ModelDimensionalTravelProjectile1::createBodyLayer);
+		event.registerLayerDefinition(ModelInvincibleArmorModel.LAYER_LOCATION, ModelInvincibleArmorModel::createBodyLayer);
+		event.registerLayerDefinition(ModelAstronautHelmet.LAYER_LOCATION, ModelAstronautHelmet::createBodyLayer);
+		event.registerLayerDefinition(Modelguideentity.LAYER_LOCATION, Modelguideentity::createBodyLayer);
 		event.registerLayerDefinition(ModelAtomBlast.LAYER_LOCATION, ModelAtomBlast::createBodyLayer);
 		event.registerLayerDefinition(ModelAtomEveFlare.LAYER_LOCATION, ModelAtomEveFlare::createBodyLayer);
-		event.registerLayerDefinition(ModelInvincibleArmorModel.LAYER_LOCATION, ModelInvincibleArmorModel::createBodyLayer);
 	}
 }

@@ -18,6 +18,6 @@
     "angularAcceleration": 0.0,
     "canCollide": false,
     "alwaysShow": false,
-    "renderType": "LIT"
+    "renderType": "OPAQUE"
   }
 }

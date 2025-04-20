@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "invincible_craft:item/armor_invincible_sinister_mark_mask"
+  }
+}

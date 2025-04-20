@@ -81,6 +81,7 @@ public class ViltrumiteEntity extends Monster {
 		setPersistenceRequired();
 		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(InvincibleCraftModItems.VILTRUMITE_SUIT_CHESTPLATE.get()));
 		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(InvincibleCraftModItems.VILTRUMITE_SUIT_LEGGINGS.get()));
+		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(InvincibleCraftModItems.VILTRUMITE_SUIT_BOOTS.get()));
 	}
 
 	@Override

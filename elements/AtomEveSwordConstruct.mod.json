@@ -1,0 +1,38 @@
+{
+  "_fv": 69,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "atom_eve_construct_sword",
+    "customModelName": "atom_eve_constrcut_sword:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Atom Eve Sword Construct",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:InvincibleCraftCreativeTab"
+      },
+      {
+        "value": "COMBAT"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.6,
+    "enchantability": 2,
+    "damageVsEntity": 6.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "WOOD",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

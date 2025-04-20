@@ -1,0 +1,251 @@
+{
+  "_fv": 69,
+  "_type": "gui",
+  "definition": {
+    "type": 1,
+    "width": 176,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_suit_shop",
+          "text": {
+            "fixedValue": "SUIT SHOP"
+          },
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "x": 186,
+          "y": 44
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_invincible_og",
+          "image": "art_icon_invincible_og.png",
+          "hoveredImage": "art_icon_invincible_og_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitOG"
+          },
+          "x": 141,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_invincible_season3",
+          "image": "art_icon_invincible_season3.png",
+          "hoveredImage": "art_icon_invincible_season3_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitSeason3"
+          },
+          "x": 177,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_invincible_sinister_mar",
+          "image": "art_icon_invincible_sinister_mark.png",
+          "hoveredImage": "art_icon_invincible_sinister_mark_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitSinister"
+          },
+          "x": 222,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_mohawk_mark",
+          "image": "art_icon_mohawk_mark.png",
+          "hoveredImage": "art_icon_invincible_season3_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitMohawk"
+          },
+          "x": 258,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_invincible_unmasked_mar",
+          "image": "art_icon_invincible_unmasked_mark.png",
+          "hoveredImage": "art_icon_invincible_unmasked_mark_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitUnmaskedMark"
+          },
+          "x": 159,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_invincible_omni_mark",
+          "image": "art_icon_invincible_omni_mark.png",
+          "hoveredImage": "art_icon_invincible_omni_mark_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitOmniMark"
+          },
+          "x": 200,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_no_goggles_mark",
+          "image": "art_icon_no_goggles_mark.png",
+          "hoveredImage": "art_icon_no_goggles_mark_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftInvincibleSuitNoGogglesMark"
+          },
+          "x": 240,
+          "y": 89
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat_2",
+          "image": "stat_2.png",
+          "hoveredImage": "stat_2_hover.png",
+          "onClick": {
+            "name": "NextPage"
+          },
+          "displayCondition": {
+            "name": "DisplayNextPage"
+          },
+          "x": 276,
+          "y": 94
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_stat",
+          "image": "stat_.png",
+          "hoveredImage": "stat_hover.png",
+          "onClick": {
+            "name": "PreviousPage"
+          },
+          "displayCondition": {
+            "name": "DisplayPreviousPage"
+          },
+          "x": 132,
+          "y": 94
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_original",
+          "text": {
+            "fixedValue": "Make Invincible Suit (Original) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 141,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_season_3",
+          "text": {
+            "fixedValue": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 177,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_sinister_m",
+          "text": {
+            "fixedValue": "Make Invincible Suit (Sinister Mark) - Suit Fabric x4, Black Dye x4, Yellow x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 222,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_mohawk_mar",
+          "text": {
+            "fixedValue": "Make Invincible Suit (Mohawk Mark) - Suit Fabric x4, Gray Dye x4, Cyan Blue Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 258,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_unmasked_m",
+          "text": {
+            "fixedValue": "Make Invincible Suit (Unmasked Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 159,
+          "y": 89
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_omnimark",
+          "text": {
+            "fixedValue": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 200,
+          "y": 89
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_invincible_suit_no_goggles",
+          "text": {
+            "fixedValue": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 240,
+          "y": 89
+        }
+      }
+    ],
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

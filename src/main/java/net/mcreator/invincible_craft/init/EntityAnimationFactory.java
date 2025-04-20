@@ -5,6 +5,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.invincible_craft.entity.TheGiantEntity;
+import net.mcreator.invincible_craft.entity.SpikeBallEntityEntity;
 import net.mcreator.invincible_craft.entity.RefugePortalEntity;
 import net.mcreator.invincible_craft.entity.QuickPortalEntity;
 import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
@@ -60,6 +61,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof TheGiantEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SpikeBallEntityEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

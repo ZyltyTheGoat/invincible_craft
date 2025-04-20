@@ -52,7 +52,7 @@ public class AbilityButton5Message {
 			return;
 		if (type == 0) {
 
-			AbilityButton5OnKeyPressedProcedure.execute(world, entity);
+			AbilityButton5OnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

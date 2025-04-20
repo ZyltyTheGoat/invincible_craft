@@ -159,17 +159,17 @@ public class ArtRosenbaumCraftInvincibleSuitMohawkProcedure {
 						}
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_CHESTPLATE.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_MARK_CHESTPLATE.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_LEGGINGS.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_MARK_LEGGINGS.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 					if (entity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_BOOTS.get()).copy();
+						ItemStack _setstack = new ItemStack(InvincibleCraftModItems.INVINCIBLE_SUIT_MOHAWK_MARK_BOOTS.get()).copy();
 						_setstack.setCount(1);
 						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}

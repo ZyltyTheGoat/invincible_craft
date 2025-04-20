@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.mcreator.invincible_craft.client.renderer.ViltrumiteRenderer;
 import net.mcreator.invincible_craft.client.renderer.TheGiantRenderer;
 import net.mcreator.invincible_craft.client.renderer.SpyDroneOrbRenderer;
+import net.mcreator.invincible_craft.client.renderer.SpikeBallEntityRenderer;
 import net.mcreator.invincible_craft.client.renderer.RefugePortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.QuickPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.PortalDashPortalRenderer;
@@ -21,7 +22,6 @@ import net.mcreator.invincible_craft.client.renderer.ExchangeCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.DuplicationCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanishmentPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanditRenderer;
-import net.mcreator.invincible_craft.client.renderer.AtomEveFlareFlightRenderer;
 import net.mcreator.invincible_craft.client.renderer.ArtRosenbaumRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -41,6 +41,6 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.EXCHANGE_CLONE.get(), ExchangeCloneRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.THE_GIANT.get(), TheGiantRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.LEAP_GUIDE.get(), LeapGuideRenderer::new);
-		event.registerEntityRenderer(InvincibleCraftModEntities.ATOM_EVE_FLARE_FLIGHT.get(), AtomEveFlareFlightRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get(), SpikeBallEntityRenderer::new);
 	}
 }

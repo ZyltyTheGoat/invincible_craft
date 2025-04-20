@@ -97,7 +97,7 @@ public abstract class InvincibleSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/invincible-og.png";
+			return "invincible_craft:textures/entities/armor_invincible_original.png";
 		}
 	}
 
@@ -126,7 +126,7 @@ public abstract class InvincibleSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/invincible-og.png";
+			return "invincible_craft:textures/entities/armor_invincible_original.png";
 		}
 	}
 
@@ -156,7 +156,7 @@ public abstract class InvincibleSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/invincible-og.png";
+			return "invincible_craft:textures/entities/armor_invincible_original.png";
 		}
 	}
 
@@ -186,7 +186,7 @@ public abstract class InvincibleSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/invincible-og.png";
+			return "invincible_craft:textures/entities/armor_invincible_original.png";
 		}
 	}
 }

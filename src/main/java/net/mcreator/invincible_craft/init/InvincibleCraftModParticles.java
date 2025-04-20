@@ -32,6 +32,7 @@ import net.mcreator.invincible_craft.client.particle.BattleBeastRoar4Particle;
 import net.mcreator.invincible_craft.client.particle.BattleBeastRoar3Particle;
 import net.mcreator.invincible_craft.client.particle.BattleBeastRoar2Particle;
 import net.mcreator.invincible_craft.client.particle.BattleBeastRoar1Particle;
+import net.mcreator.invincible_craft.client.particle.AtomEveCloudParticle;
 import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreakParticle;
 import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreak4Particle;
 import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreak3Particle;
@@ -68,5 +69,6 @@ public class InvincibleCraftModParticles {
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.BATTLE_BEAST_ROAR_5.get(), BattleBeastRoar5Particle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.SLASH.get(), SlashParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.BITE.get(), BiteParticle::provider);
+		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get(), AtomEveCloudParticle::provider);
 	}
 }

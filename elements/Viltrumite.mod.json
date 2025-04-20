@@ -243,7 +243,7 @@
       "value": "CUSTOM:ViltrumiteSuit.legs"
     },
     "equipmentBoots": {
-      "value": ""
+      "value": "CUSTOM:ViltrumiteSuit.boots"
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",

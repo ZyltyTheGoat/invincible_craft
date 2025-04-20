@@ -248,9 +248,9 @@ public class AtomicRayRenderProcedure {
 					end();
 				}
 				renderShape(shape(), (entity.getX() + 0.2 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + sneak + 0.2 * Math.sin((-1) * pitch)), (entity.getZ() + 0.2 * Math.sin(yaw) * Math.cos(pitch)), entity.getYRot(), entity.getXRot(), 0,
-						(float) (-2.6), (float) 2.6, 2, 64 << 24 | 255 << 16 | 166 << 8 | 168);
+						(float) (-2.6), (float) 2.6, 2, 64 << 24 | 255 << 16 | 141 << 8 | 192);
 				renderShape(shape(), (entity.getX() + 0.2 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + sneak + 0.2 * Math.sin((-1) * pitch)), (entity.getZ() + 0.2 * Math.sin(yaw) * Math.cos(pitch)), entity.getYRot(), entity.getXRot(), 0, 2,
-						2, 2, 255 << 24 | 255 << 16 | 166 << 8 | 168);
+						2, 2, 255 << 24 | 255 << 16 | 141 << 8 | 192);
 				release();
 			}
 		}
