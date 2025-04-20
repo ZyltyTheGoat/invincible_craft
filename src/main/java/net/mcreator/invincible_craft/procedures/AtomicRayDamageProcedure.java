@@ -1,32 +1,35 @@
 package net.mcreator.invincible_craft.procedures;
 
+import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.Connection;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
-import net.minecraft.commands.CommandSourceStack;
-import net.minecraft.commands.CommandSource;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
+import net.mcreator.invincible_craft.InvincibleCraftMod;
 
 import javax.annotation.Nullable;
 
+import java.util.List;
+import java.util.Iterator;
 import java.util.Comparator;
 
 @Mod.EventBusSubscriber
@@ -47,6 +50,25 @@ public class AtomicRayDamageProcedure {
 		Entity ent = null;
 		boolean entity_found = false;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_ray) {
+			if (world.dayTime() % 4 == 0) {
+				if (world.isClientSide()) {
+					SetupAnimationsProcedure.setAnimationClientside((Player) entity, "atom_eve_atomic_ray", false);
+				}
+				if (!world.isClientSide()) {
+					if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+						List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+						synchronized (connections) {
+							Iterator<Connection> iterator = connections.iterator();
+							while (iterator.hasNext()) {
+								Connection connection = iterator.next();
+								if (!connection.isConnecting() && connection.isConnected())
+									InvincibleCraftMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.InvincibleCraftModAnimationMessage(Component.literal("atom_eve_atomic_ray"), entity.getId(), false), connection,
+											NetworkDirection.PLAY_TO_CLIENT);
+							}
+						}
+					}
+				}
+			}
 			raytrace_distance = 0;
 			entity_found = false;
 			for (int index0 = 0; index0 < 50; index0++) {
@@ -55,13 +77,8 @@ public class AtomicRayDamageProcedure {
 						.getBlock() == Blocks.AIR)) {
 					if (Math.random() < (1) / ((float) 5)) {
 						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL,
-													new Vec3((entity.getX() + raytrace_distance * entity.getLookAngle().x), (entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y),
-															(entity.getZ() + raytrace_distance * entity.getLookAngle().z)),
-													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-											"particle dust{color:[1.0,0.65,0.66],scale:1} ~ ~ ~ 0.5 0.5 0.5 0.2 5");
+							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + raytrace_distance * entity.getLookAngle().x),
+									(entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y), (entity.getZ() + raytrace_distance * entity.getLookAngle().z), 4, 0.2, 0.2, 0.2, 0.05);
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.SMOKE.get()), (entity.getX() + raytrace_distance * entity.getLookAngle().x), (entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y),
 									(entity.getZ() + raytrace_distance * entity.getLookAngle().z), 2, 0.2, 0.2, 0.2, 0.05);
@@ -120,12 +137,8 @@ public class AtomicRayDamageProcedure {
 									(float) (0.5 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_intelligence));
 							if (Math.random() < (1) / ((float) 5)) {
 								if (world instanceof ServerLevel _level)
-									_level.getServer().getCommands().performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL,
-													new Vec3((entity.getX() + raytrace_distance * entity.getLookAngle().x), (entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y),
-															(entity.getZ() + raytrace_distance * entity.getLookAngle().z)),
-													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-											"particle dust{color:[1.0,0.65,0.66],scale:1} ~ ~ ~ 0.5 0.5 0.5 0.2 5");
+									_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + raytrace_distance * entity.getLookAngle().x),
+											(entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y), (entity.getZ() + raytrace_distance * entity.getLookAngle().z), 2, 0.1, 0.1, 0.1, 0.05);
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.SMOKE.get()), (entity.getX() + raytrace_distance * entity.getLookAngle().x),
 											(entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y), (entity.getZ() + raytrace_distance * entity.getLookAngle().z), 2, 0.2, 0.2, 0.2, 0.05);
@@ -138,13 +151,8 @@ public class AtomicRayDamageProcedure {
 					raytrace_distance = raytrace_distance + 0.3;
 					if (Math.random() < (1) / ((float) 7)) {
 						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performPrefixedCommand(
-											new CommandSourceStack(CommandSource.NULL,
-													new Vec3((entity.getX() + raytrace_distance * entity.getLookAngle().x), (entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y),
-															(entity.getZ() + raytrace_distance * entity.getLookAngle().z)),
-													Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-											"particle dust{color:[1.0,0.65,0.66],scale:1} ~ ~ ~ 0.1 0.1 0.1 0.1 2");
+							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + raytrace_distance * entity.getLookAngle().x),
+									(entity.getY() + 1.4 + raytrace_distance * entity.getLookAngle().y), (entity.getZ() + raytrace_distance * entity.getLookAngle().z), 2, 0.1, 0.1, 0.1, 0.05);
 					}
 				}
 			}

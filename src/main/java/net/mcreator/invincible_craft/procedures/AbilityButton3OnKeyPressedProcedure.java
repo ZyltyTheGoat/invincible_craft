@@ -71,7 +71,7 @@ public class AbilityButton3OnKeyPressedProcedure {
 				{
 					boolean _setval = true;
 					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.atom_eve_atomic_ray = _setval;
+						capability.atom_eve_atomic_blast_holding = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}

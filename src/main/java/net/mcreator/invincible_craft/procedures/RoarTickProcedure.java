@@ -57,19 +57,6 @@ public class RoarTickProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			{
-				Entity _ent = entity;
-				_ent.setYRot((float) entity.getPersistentData().getDouble("battle_beast_roar_yaw"));
-				_ent.setXRot((float) entity.getPersistentData().getDouble("battle_beast_roar_pitch"));
-				_ent.setYBodyRot(_ent.getYRot());
-				_ent.setYHeadRot(_ent.getYRot());
-				_ent.yRotO = _ent.getYRot();
-				_ent.xRotO = _ent.getXRot();
-				if (_ent instanceof LivingEntity _entity) {
-					_entity.yBodyRotO = _entity.getYRot();
-					_entity.yHeadRotO = _entity.getYRot();
-				}
-			}
 			if (world.dayTime() % 5 == 0) {
 				entity.getPersistentData().putDouble("BattleBeastRoarRepeat", 0);
 				entity.getPersistentData().putDouble("BattleBeastRoarX", (entity.getLookAngle().x));

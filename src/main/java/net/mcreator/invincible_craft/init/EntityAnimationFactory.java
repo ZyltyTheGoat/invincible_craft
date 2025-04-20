@@ -11,6 +11,7 @@ import net.mcreator.invincible_craft.entity.QuickPortalEntity;
 import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
 import net.mcreator.invincible_craft.entity.OrbsSpawnerPortalEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
+import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
 import net.mcreator.invincible_craft.entity.ArtRosenbaumEntity;
 
 @Mod.EventBusSubscriber
@@ -68,6 +69,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof SpikeBallEntityEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof AtomicbBlastEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

@@ -151,6 +151,9 @@ public class InvincibleCraftModVariables {
 				clone.art_page = original.art_page;
 				clone.atom_eve_spike_ball_targetting = original.atom_eve_spike_ball_targetting;
 				clone.atom_eve_spike_ball_target = original.atom_eve_spike_ball_target;
+				clone.atom_eve_atomic_blast_holding = original.atom_eve_atomic_blast_holding;
+				clone.atom_eve_atomic_blast_scale = original.atom_eve_atomic_blast_scale;
+				clone.atom_eve_awakened_timer = original.atom_eve_awakened_timer;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -265,6 +268,9 @@ public class InvincibleCraftModVariables {
 		public double art_page = 0;
 		public boolean atom_eve_spike_ball_targetting = false;
 		public String atom_eve_spike_ball_target = "\"\"";
+		public boolean atom_eve_atomic_blast_holding = false;
+		public double atom_eve_atomic_blast_scale = 0;
+		public double atom_eve_awakened_timer = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -347,6 +353,9 @@ public class InvincibleCraftModVariables {
 			nbt.putDouble("art_page", art_page);
 			nbt.putBoolean("atom_eve_spike_ball_targetting", atom_eve_spike_ball_targetting);
 			nbt.putString("atom_eve_spike_ball_target", atom_eve_spike_ball_target);
+			nbt.putBoolean("atom_eve_atomic_blast_holding", atom_eve_atomic_blast_holding);
+			nbt.putDouble("atom_eve_atomic_blast_scale", atom_eve_atomic_blast_scale);
+			nbt.putDouble("atom_eve_awakened_timer", atom_eve_awakened_timer);
 			return nbt;
 		}
 
@@ -432,6 +441,9 @@ public class InvincibleCraftModVariables {
 			art_page = nbt.getDouble("art_page");
 			atom_eve_spike_ball_targetting = nbt.getBoolean("atom_eve_spike_ball_targetting");
 			atom_eve_spike_ball_target = nbt.getString("atom_eve_spike_ball_target");
+			atom_eve_atomic_blast_holding = nbt.getBoolean("atom_eve_atomic_blast_holding");
+			atom_eve_atomic_blast_scale = nbt.getDouble("atom_eve_atomic_blast_scale");
+			atom_eve_awakened_timer = nbt.getDouble("atom_eve_awakened_timer");
 		}
 	}
 
@@ -539,6 +551,9 @@ public class InvincibleCraftModVariables {
 					variables.art_page = message.data.art_page;
 					variables.atom_eve_spike_ball_targetting = message.data.atom_eve_spike_ball_targetting;
 					variables.atom_eve_spike_ball_target = message.data.atom_eve_spike_ball_target;
+					variables.atom_eve_atomic_blast_holding = message.data.atom_eve_atomic_blast_holding;
+					variables.atom_eve_atomic_blast_scale = message.data.atom_eve_atomic_blast_scale;
+					variables.atom_eve_awakened_timer = message.data.atom_eve_awakened_timer;
 				}
 			});
 			context.setPacketHandled(true);

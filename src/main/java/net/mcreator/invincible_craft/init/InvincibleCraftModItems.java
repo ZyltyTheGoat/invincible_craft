@@ -29,7 +29,9 @@ import net.mcreator.invincible_craft.item.InvincibleSuitItem;
 import net.mcreator.invincible_craft.item.DupliKateSuitItem;
 import net.mcreator.invincible_craft.item.ChainItem;
 import net.mcreator.invincible_craft.item.BattleBeastMaceItem;
+import net.mcreator.invincible_craft.item.AtomEveTridentConstructItem;
 import net.mcreator.invincible_craft.item.AtomEveSwordConstructItem;
+import net.mcreator.invincible_craft.item.AtomEveConstructHammerItem;
 import net.mcreator.invincible_craft.item.AstronautHelmetItem;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
@@ -83,6 +85,8 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> INVINCIBLE_SUIT_UN_MASKED_MARK_LEGGINGS = REGISTRY.register("invincible_suit_un_masked_mark_leggings", () -> new InvincibleSuitUnMaskedMarkItem.Leggings());
 	public static final RegistryObject<Item> INVINCIBLE_SUIT_UN_MASKED_MARK_BOOTS = REGISTRY.register("invincible_suit_un_masked_mark_boots", () -> new InvincibleSuitUnMaskedMarkItem.Boots());
 	public static final RegistryObject<Item> ATOM_EVE_SWORD_CONSTRUCT = REGISTRY.register("atom_eve_sword_construct", () -> new AtomEveSwordConstructItem());
+	public static final RegistryObject<Item> ATOM_EVE_TRIDENT_CONSTRUCT = REGISTRY.register("atom_eve_trident_construct", () -> new AtomEveTridentConstructItem());
+	public static final RegistryObject<Item> ATOM_EVE_CONSTRUCT_HAMMER = REGISTRY.register("atom_eve_construct_hammer", () -> new AtomEveConstructHammerItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

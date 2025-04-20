@@ -38,19 +38,23 @@ public class AtomEveFlightFlareProcedure {
 			yaw = entity.getYRot() * 0.0174533 + Math.PI;
 			pitch = 0;
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.15 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY()), (entity.getZ() + 0.15 * Math.sin(yaw) * Math.cos(pitch)), 2,
+				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.15 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY()), (entity.getZ() + 0.15 * Math.sin(yaw) * Math.cos(pitch)), 5,
 						0.01, 0.01, 0.01, 0.01);
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.3 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + 0.75),
-						(entity.getZ() + 0.3 * Math.sin(yaw) * Math.cos(pitch)), 2, 0.01, 0.01, 0.01, 0.01);
+			if (!entity.isSprinting()) {
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.35 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + 0.65),
+							(entity.getZ() + 0.35 * Math.sin(yaw) * Math.cos(pitch)), 5, 0.01, 0.01, 0.01, 0.01);
+			}
 			yaw = entity.getYRot() * 0.0174533;
 			pitch = 0;
 			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.15 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY()), (entity.getZ() + 0.15 * Math.sin(yaw) * Math.cos(pitch)), 2,
+				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.15 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY()), (entity.getZ() + 0.15 * Math.sin(yaw) * Math.cos(pitch)), 5,
 						0.01, 0.01, 0.01, 0.01);
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.3 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + 0.75),
-						(entity.getZ() + 0.3 * Math.sin(yaw) * Math.cos(pitch)), 2, 0.01, 0.01, 0.01, 0.01);
+			if (!entity.isSprinting()) {
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + 0.35 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + 0.65),
+							(entity.getZ() + 0.35 * Math.sin(yaw) * Math.cos(pitch)), 5, 0.01, 0.01, 0.01, 0.01);
+			}
 		}
 	}
 }

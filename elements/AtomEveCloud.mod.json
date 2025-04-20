@@ -4,15 +4,15 @@
   "definition": {
     "texture": "atom_eve_cloud",
     "animate": true,
-    "frameDuration": 2,
+    "frameDuration": 1,
     "width": 0.2,
     "height": 0.2,
     "scale": {
       "fixedValue": 0.5
     },
     "speedFactor": 1.0,
-    "gravity": 0.05,
-    "maxAge": 12,
+    "gravity": 0.1,
+    "maxAge": 4,
     "maxAgeDiff": 2,
     "angularVelocity": 0.0,
     "angularAcceleration": 0.0,

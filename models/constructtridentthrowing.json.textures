@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "atom_eve_construct_trident"
+      },
+      "name": "default"
+    }
+  }
+}

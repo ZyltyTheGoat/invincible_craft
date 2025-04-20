@@ -1,0 +1,42 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.model.new": {
+			"loop": true,
+			"animation_length": 1.25,
+			"bones": {
+				"circle2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.625": {
+							"vector": [15, 0, -7.5],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"vector": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"circle1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.625": {
+							"vector": [-4.78135, 4.99523, 10.00954],
+							"lerp_mode": "catmullrom"
+						},
+						"1.25": {
+							"vector": [0, 0, 0],
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

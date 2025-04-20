@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "invincible_craft:item/atom_eve_construct_hammer"
+  }
+}

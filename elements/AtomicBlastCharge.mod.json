@@ -1,0 +1,23 @@
+{
+  "_fv": 69,
+  "_type": "particle",
+  "definition": {
+    "texture": "atomic_blast_charge",
+    "animate": true,
+    "frameDuration": 2,
+    "width": 0.2,
+    "height": 0.2,
+    "scale": {
+      "fixedValue": 2.0
+    },
+    "speedFactor": 0.0,
+    "gravity": 0.0,
+    "maxAge": 13,
+    "maxAgeDiff": 0,
+    "angularVelocity": 0.0,
+    "angularAcceleration": 0.0,
+    "canCollide": true,
+    "alwaysShow": false,
+    "renderType": "LIT"
+  }
+}

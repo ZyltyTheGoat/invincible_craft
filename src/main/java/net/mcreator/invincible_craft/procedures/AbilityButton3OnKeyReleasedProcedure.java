@@ -1,5 +1,8 @@
 package net.mcreator.invincible_craft.procedures;
 
+import virtuoel.pehkui.api.ScaleTypes;
+import virtuoel.pehkui.api.ScaleOperations;
+
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
@@ -9,9 +12,11 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
+import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 
 public class AbilityButton3OnKeyReleasedProcedure {
@@ -81,9 +86,42 @@ public class AbilityButton3OnKeyReleasedProcedure {
 			{
 				boolean _setval = false;
 				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.atom_eve_atomic_ray = _setval;
+					capability.atom_eve_atomic_blast_holding = _setval;
 					capability.syncPlayerVariables(entity);
 				});
+			}
+			if (world instanceof ServerLevel _serverLevel) {
+				Entity entityinstance = InvincibleCraftModEntities.ATOMICB_BLAST.get().create(_serverLevel, null, null,
+						BlockPos.containing(entity.getX() + 0.5 * entity.getLookAngle().x, entity.getY() + 1.8 + 0.5 * entity.getLookAngle().y, entity.getZ() + 0.5 * entity.getLookAngle().z), MobSpawnType.MOB_SUMMONED, false, false);
+				if (entityinstance != null) {
+					entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+					entityinstance.getPersistentData().putDouble("dx", (entity.getLookAngle().x));
+					entityinstance.getPersistentData().putDouble("dy", (entity.getLookAngle().y));
+					entityinstance.getPersistentData().putDouble("dz", (entity.getLookAngle().z));
+					ScaleTypes.WIDTH.getScaleData(entityinstance).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.WIDTH.getScaleData(entityinstance).getTargetScale(),
+							(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+					ScaleTypes.HITBOX_WIDTH.getScaleData(entityinstance).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HITBOX_WIDTH.getScaleData(entityinstance).getTargetScale(),
+							(0.5 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+					ScaleTypes.HEIGHT.getScaleData(entityinstance).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HEIGHT.getScaleData(entityinstance).getTargetScale(),
+							(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+					ScaleTypes.HITBOX_HEIGHT.getScaleData(entityinstance).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HITBOX_HEIGHT.getScaleData(entityinstance).getTargetScale(),
+							(0.5 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+					entityinstance.getPersistentData().putDouble("scale",
+							(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale));
+					{
+						double _setval = 0;
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.atom_eve_atomic_blast_scale = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+						_toTame.tame(_owner);
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOMIC_BLAST_SHOCKWAVE.get()), (entity.getX() + 0.5 * entity.getLookAngle().x), (entity.getY() + 1.6 + 0.5 * entity.getLookAngle().y),
+								(entity.getZ() + 0.5 * entity.getLookAngle().z), 1, 0, 0, 0, 0);
+					_serverLevel.addFreshEntity(entityinstance);
+				}
 			}
 		}
 	}

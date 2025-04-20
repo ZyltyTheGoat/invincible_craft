@@ -1,0 +1,59 @@
+{
+  "_fv": 69,
+  "_type": "item",
+  "definition": {
+    "renderType": 1,
+    "texture": "atom_eve_construct_trident",
+    "customModelName": "constructtrident:default",
+    "customProperties": {},
+    "states": [],
+    "name": "Atom Eve Trident Construct",
+    "rarity": "COMMON",
+    "creativeTabs": [],
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 72000,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": true,
+    "damageVsEntity": 9.0,
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "onItemInInventoryTick": {
+      "name": "AtomEveSwordConstructToolInInventoryTick"
+    },
+    "enableRanged": true,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "CUSTOM:AtomEveConstructTridentProjectile"
+    },
+    "projectileDisableAmmoCheck": true,
+    "onRangedItemUsed": {
+      "name": "AtomEveTridentConstructRangedItemShootsProjectile"
+    },
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "spear"
+  }
+}

@@ -246,6 +246,13 @@ public class SpikeBallEntityEntity extends TamableAnimal implements GeoEntity {
 		this.refreshDimensions();
 	}
 
+	public void tick() {
+      this.noPhysics = true;
+      super.tick();
+      this.noPhysics = false;
+      this.setNoGravity(true);
+   }
+
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);

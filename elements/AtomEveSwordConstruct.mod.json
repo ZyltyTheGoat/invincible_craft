@@ -33,6 +33,9 @@
     "blockDropsTier": "WOOD",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "AtomEveSwordConstructToolInInventoryTick"
+    }
   }
 }

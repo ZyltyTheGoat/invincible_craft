@@ -14,6 +14,9 @@ import net.mcreator.invincible_craft.client.model.Modelguideentity;
 import net.mcreator.invincible_craft.client.model.ModelInvincibleArmorModel;
 import net.mcreator.invincible_craft.client.model.ModelInvincibleArmor;
 import net.mcreator.invincible_craft.client.model.ModelDimensionalTravelProjectile1;
+import net.mcreator.invincible_craft.client.model.ModelAtomicBlastModel;
+import net.mcreator.invincible_craft.client.model.ModelAtomicBlast;
+import net.mcreator.invincible_craft.client.model.ModelAtomEveTridentConstruct;
 import net.mcreator.invincible_craft.client.model.ModelAtomEveFlare;
 import net.mcreator.invincible_craft.client.model.ModelAtomBlast;
 import net.mcreator.invincible_craft.client.model.ModelAstronautHelmet;
@@ -23,9 +26,12 @@ public class InvincibleCraftModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
 		event.registerLayerDefinition(ModelInvincibleArmor.LAYER_LOCATION, ModelInvincibleArmor::createBodyLayer);
+		event.registerLayerDefinition(ModelAtomEveTridentConstruct.LAYER_LOCATION, ModelAtomEveTridentConstruct::createBodyLayer);
 		event.registerLayerDefinition(Modelinv.LAYER_LOCATION, Modelinv::createBodyLayer);
 		event.registerLayerDefinition(ModelDimensionalTravelProjectile1.LAYER_LOCATION, ModelDimensionalTravelProjectile1::createBodyLayer);
 		event.registerLayerDefinition(ModelInvincibleArmorModel.LAYER_LOCATION, ModelInvincibleArmorModel::createBodyLayer);
+		event.registerLayerDefinition(ModelAtomicBlastModel.LAYER_LOCATION, ModelAtomicBlastModel::createBodyLayer);
+		event.registerLayerDefinition(ModelAtomicBlast.LAYER_LOCATION, ModelAtomicBlast::createBodyLayer);
 		event.registerLayerDefinition(ModelAstronautHelmet.LAYER_LOCATION, ModelAstronautHelmet::createBodyLayer);
 		event.registerLayerDefinition(Modelguideentity.LAYER_LOCATION, Modelguideentity::createBodyLayer);
 		event.registerLayerDefinition(ModelAtomBlast.LAYER_LOCATION, ModelAtomBlast::createBodyLayer);

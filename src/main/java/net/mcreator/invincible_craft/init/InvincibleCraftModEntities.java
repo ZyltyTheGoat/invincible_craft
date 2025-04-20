@@ -29,6 +29,8 @@ import net.mcreator.invincible_craft.entity.ExchangeCloneEntity;
 import net.mcreator.invincible_craft.entity.DuplicationCloneEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
 import net.mcreator.invincible_craft.entity.BanditEntity;
+import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
+import net.mcreator.invincible_craft.entity.AtomEveConstructTridentProjectileEntity;
 import net.mcreator.invincible_craft.entity.ArtRosenbaumEntity;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
@@ -75,6 +77,11 @@ public class InvincibleCraftModEntities {
 			.setUpdateInterval(3).setCustomClientFactory(LeapGuideEntity::new).fireImmune().sized(0.1f, 0.1f));
 	public static final RegistryObject<EntityType<SpikeBallEntityEntity>> SPIKE_BALL_ENTITY = register("spike_ball_entity", EntityType.Builder.<SpikeBallEntityEntity>of(SpikeBallEntityEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpikeBallEntityEntity::new).fireImmune().sized(2.5f, 2.5f));
+	public static final RegistryObject<EntityType<AtomEveConstructTridentProjectileEntity>> ATOM_EVE_CONSTRUCT_TRIDENT_PROJECTILE = register("atom_eve_construct_trident_projectile",
+			EntityType.Builder.<AtomEveConstructTridentProjectileEntity>of(AtomEveConstructTridentProjectileEntity::new, MobCategory.MISC).setCustomClientFactory(AtomEveConstructTridentProjectileEntity::new).setShouldReceiveVelocityUpdates(true)
+					.setTrackingRange(64).setUpdateInterval(1).sized(0.2f, 1f));
+	public static final RegistryObject<EntityType<AtomicbBlastEntity>> ATOMICB_BLAST = register("atomicb_blast", EntityType.Builder.<AtomicbBlastEntity>of(AtomicbBlastEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AtomicbBlastEntity::new).fireImmune().sized(0.2f, 0.2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -96,6 +103,7 @@ public class InvincibleCraftModEntities {
 			TheGiantEntity.init();
 			LeapGuideEntity.init();
 			SpikeBallEntityEntity.init();
+			AtomicbBlastEntity.init();
 		});
 	}
 
@@ -114,5 +122,6 @@ public class InvincibleCraftModEntities {
 		event.put(THE_GIANT.get(), TheGiantEntity.createAttributes().build());
 		event.put(LEAP_GUIDE.get(), LeapGuideEntity.createAttributes().build());
 		event.put(SPIKE_BALL_ENTITY.get(), SpikeBallEntityEntity.createAttributes().build());
+		event.put(ATOMICB_BLAST.get(), AtomicbBlastEntity.createAttributes().build());
 	}
 }

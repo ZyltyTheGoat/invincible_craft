@@ -1,0 +1,21 @@
+{
+  "_fv": 69,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "CUSTOM:AtomEveTridentConstruct"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "item.trident.throw"
+    },
+    "igniteFire": false,
+    "power": 1.0,
+    "damage": 5.0,
+    "knockback": 1,
+    "entityModel": "ModelAtomEveTridentConstruct",
+    "customModelTexture": "atom_eve_construct_trident.png",
+    "modelWidth": 0.19999999999999998,
+    "modelHeight": 1.0
+  }
+}

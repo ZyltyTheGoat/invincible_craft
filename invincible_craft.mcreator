@@ -7708,7 +7708,7 @@
       "name": "SpikeBallEntity",
       "type": "animatedentity",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "spike_ball_entity",
       "metadata": {
         "files": [
@@ -7865,7 +7865,7 @@
           "src/main/java/net/mcreator/invincible_craft/item/AtomEveSwordConstructItem.java"
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Constructs"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
     },
     {
       "name": "MidasTouch",
@@ -7918,7 +7918,7 @@
           }
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Construct"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Buttons"
     },
     {
       "name": "ButtonConstructHammer",
@@ -7937,7 +7937,7 @@
           }
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Construct"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Buttons"
     },
     {
       "name": "ButtonConstructGauntlet",
@@ -7956,7 +7956,7 @@
           }
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Construct"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Buttons"
     },
     {
       "name": "ButtonConstructShield",
@@ -7975,7 +7975,7 @@
           }
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Construct"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Buttons"
     },
     {
       "name": "ButtonConstructTrident",
@@ -7994,7 +7994,7 @@
           }
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Construct"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Buttons"
     },
     {
       "name": "ButtonConstructArmor",
@@ -8013,7 +8013,280 @@
           }
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Construct"
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Buttons"
+    },
+    {
+      "name": "AtomEveSwordConstructToolInInventoryTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_sword_construct_tool_in_inventory_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveSwordConstructToolInInventoryTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
+    },
+    {
+      "name": "AtomEveConstructTridentProjectile",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_construct_trident_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/AtomEveConstructTridentProjectileEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/AtomEveConstructTridentProjectileRenderer.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
+    },
+    {
+      "name": "AtomEveTridentConstruct",
+      "type": "item",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "atom_eve_trident_construct",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_trident_construct.json",
+          "src/main/java/net/mcreator/invincible_craft/item/AtomEveTridentConstructItem.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
+    },
+    {
+      "name": "AtomEveTridentConstructRangedItemShootsProjectile",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_trident_construct_ranged_item_shoots_projectile",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveTridentConstructRangedItemShootsProjectileProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
+    },
+    {
+      "name": "AtomEveConstructHammer",
+      "type": "tool",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_construct_hammer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_construct_hammer.json",
+          "src/main/java/net/mcreator/invincible_craft/item/AtomEveConstructHammerItem.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
+    },
+    {
+      "name": "AtomicBlastOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomic_blast_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomicBlastOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Atomic Blast"
+    },
+    {
+      "name": "AtomicBlastHoldingTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomic_blast_holding_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomicBlastHoldingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Atomic Blast"
+    },
+    {
+      "name": "AtomicBlastCharge",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomic_blast_charge",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomicBlastChargeParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/atomic_blast_charge.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "AtomicbBlast",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomicb_blast",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/AtomicbBlastEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/layer/AtomicbBlastLayer.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/AtomicbBlastRenderer.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/AtomicbBlastModel.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Atomic Blast"
+    },
+    {
+      "name": "AtomicBlastShockwave",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomic_blast_shockwave",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomicBlastShockwaveParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/atomic_blast_shockwave.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "BattleBeastAbilityOverlay",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battle_beast_ability_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/screens/BattleBeastAbilityOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "BattleBeastAbilityOverlayDisplayOverlayInGame",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battle_beast_ability_overlay_display_overlay_in_game",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/BattleBeastAbilityOverlayDisplayOverlayInGameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "TriggerAwakening",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "trigger_awakening",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/TriggerAwakeningProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening"
+    },
+    {
+      "name": "AwakeningDisplay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "awakening_display",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AwakeningDisplayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening"
     }
   ],
   "variable_elements": [
@@ -8460,6 +8733,24 @@
       "type": "string",
       "scope": "player_lifetime",
       "value": "\"\""
+    },
+    {
+      "name": "atom_eve_atomic_blast_holding",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "atom_eve_atomic_blast_scale",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "atom_eve_awakened_timer",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -8596,6 +8887,9 @@
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:MoonStone"
     ],
+    "ITEMS:minecraft:pickaxes": [
+      "~CUSTOM:AtomEveConstructHammer"
+    ],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:AtomEveSwordConstruct",
       "~CUSTOM:MetalBat",
@@ -8652,12 +8946,12 @@
       "advancements.advancement_kill_viltrumite.title": "Against All Odds",
       "gamerule.invincibleCraftXPMultiplier": "Invincible Craft - XP Multiplier",
       "item.invincible_craft.bandit_spawn_egg": "Bandit Spawn Egg",
-      "gui.invincible_craft.quick_travel_gui.travel_y": "Coordinate Y",
       "item.invincible_craft.invincible_suit_sinister_mark_chestplate": "Invincible Suit (Sinister Mark) Chestplate",
-      "gui.invincible_craft.quick_travel_gui.travel_x": "Coordinate X",
+      "gui.invincible_craft.quick_travel_gui.travel_y": "Coordinate Y",
       "advancements.advancement_viltrumite.descr": "The blood of conquerors flows through you.",
-      "death.attack.suffocation.item": "%1$s was killed by %2$s using %3$s",
+      "gui.invincible_craft.quick_travel_gui.travel_x": "Coordinate X",
       "effect.invincible_craft.punch_limit": "Punch Limit",
+      "death.attack.suffocation.item": "%1$s was killed by %2$s using %3$s",
       "death.attack.battle_beast_uppercut.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.barrage.item": "%1$s was killed by %2$s using %3$s",
       "death.attack.chop": "%1$s died",
@@ -8669,9 +8963,9 @@
       "subtitles.growl": "",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
-      "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
-      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
       "gamerule.invincibleCraftXPMultiplier.description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
       "death.attack.battle_beast_downslam": "%1$s died",
@@ -8692,8 +8986,8 @@
       "item.invincible_craft.invincible_suit_sinister_mark_helmet": "Invincible Suit (Sinister Mark) Helmet",
       "death.attack.sonic_clap_damage.item": "%1$s was killed by %2$s using %3$s",
       "key.invincible_craft.stat_panel": "Stat Panel",
-      "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
+      "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
       "subtitles.skull_crush": "skull_crush",
       "gamerule.invincibleCraftEnableMoonTravel": "Invincible Craft - Moon Travel",
       "item.invincible_craft.dupli_kate_suit_leggings": "Dupli-Kate Leggings",
@@ -8726,6 +9020,7 @@
       "gui.invincible_craft.power_picker_gui.button_duplication": "Duplication",
       "entity.invincible_craft.banishment_portal": "Banishment Portal",
       "item.invincible_craft.atom_eve_sword_construct": "Atom Eve Sword Construct",
+      "item.invincible_craft.atom_eve_trident_construct": "Atom Eve Trident Construct",
       "death.attack.viltrumite_punch": "%1$s crushed",
       "item.invincible_craft.orbs_spawner_portal_spawn_egg": "Orb Spawner Portal Spawn Egg",
       "death.attack.impact": "%1$s died",
@@ -8747,6 +9042,7 @@
       "item.invincible_craft.invincible_suit_omni_mark_boots": "Invincible Suit (Omni-Mark) Boots",
       "item.invincible_craft.invincible_suit_season_3_chestplate": "Invincible Suit (Season 3) Chestplate",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_sinister_m": "Make Invincible Suit (Sinister Mark) - Suit Fabric x4, Black Dye x4, Yellow x4",
+      "item.invincible_craft.atomicb_blast_spawn_egg": "Atomicb Blast Spawn Egg",
       "item.invincible_craft.dupli_kate_suit_boots": "Dupli-Kate Boots",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "subtitles.followup": "dash",
@@ -8765,6 +9061,7 @@
       "gui.invincible_craft.stat_panel_gui.label_adjust_flight_speed": "Adjust Flight Speed",
       "death.attack.battle_beast_uppercut.item": "%1$s was killed by %2$s using %3$s",
       "item.invincible_craft.invincible_suit_no_goggles_mark_helmet": "Invincible Suit (No Goggles Mark) Helmet",
+      "entity.invincible_craft.atomicb_blast": "Atomicb Blast",
       "advancements.advancement_suffocation_moon.title": "Moonwalking... Forever",
       "advancements.advancement_invincible_craft.descr": "Welcome to Invincible Craft!",
       "death.attack.viltrumite_punch.player": "%1$s died whilst trying to escape %2$s",
@@ -8847,6 +9144,7 @@
       "item.invincible_craft.invincible_suit_mohawk_mark_chestplate": "Invincible Suit (Mohawk Mark) Chestplate",
       "key.categories.invincible_craft": "Invincible Craft",
       "gui.invincible_craft.test.button_flying_speed": "Flying Speed",
+      "item.invincible_craft.atom_eve_construct_hammer": "Atom Eve Construct Hammer",
       "gui.invincible_craft.power_picker_gui.button_atom_eve": "Atom Eve",
       "death.attack.blood_hunt.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_season_32": "Make Invincible Suit (Season 3) - Suit Fabric x4, Gray Dye x4, Cyan Dye x4",
@@ -9055,15 +9353,28 @@
                 "children": []
               },
               {
-                "name": "Constructs",
-                "children": []
-              },
-              {
                 "name": "Passive",
                 "children": []
               },
               {
                 "name": "Construct",
+                "children": [
+                  {
+                    "name": "Weapons",
+                    "children": []
+                  },
+                  {
+                    "name": "Buttons",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Awakening",
+                "children": []
+              },
+              {
+                "name": "Atomic Blast",
                 "children": []
               }
             ]
