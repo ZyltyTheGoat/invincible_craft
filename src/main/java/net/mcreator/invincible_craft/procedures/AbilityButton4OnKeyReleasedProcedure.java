@@ -14,7 +14,6 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
-import net.mcreator.invincible_craft.entity.SpikeBallEntityEntity;
 
 import java.util.Comparator;
 
@@ -226,12 +225,9 @@ public class AbilityButton4OnKeyReleasedProcedure {
 						entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
 						if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 							_toTame.tame(_owner);
-						if (entityinstance instanceof SpikeBallEntityEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(SpikeBallEntityEntity.DATA_dir_x, (int) (ent.getX() - entityinstance.getX()));
-						if (entityinstance instanceof SpikeBallEntityEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(SpikeBallEntityEntity.DATA_dir_y, (int) (ent.getY() - entityinstance.getY()));
-						if (entityinstance instanceof SpikeBallEntityEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(SpikeBallEntityEntity.DATA_dir_z, (int) (ent.getZ() - entityinstance.getZ()));
+						entityinstance.getPersistentData().putDouble("dirX", (ent.getX() - entityinstance.getX()));
+						entityinstance.getPersistentData().putDouble("dirY", (ent.getY() - entityinstance.getY()));
+						entityinstance.getPersistentData().putDouble("dirZ", (ent.getZ() - entityinstance.getZ()));
 						_serverLevel.addFreshEntity(entityinstance);
 					}
 				}
@@ -244,12 +240,9 @@ public class AbilityButton4OnKeyReleasedProcedure {
 						entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
 						if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
 							_toTame.tame(_owner);
-						if (entityinstance instanceof SpikeBallEntityEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(SpikeBallEntityEntity.DATA_dir_x, (int) (ent.getX() - entityinstance.getX()));
-						if (entityinstance instanceof SpikeBallEntityEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(SpikeBallEntityEntity.DATA_dir_y, (int) (ent.getY() - entityinstance.getY()));
-						if (entityinstance instanceof SpikeBallEntityEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(SpikeBallEntityEntity.DATA_dir_z, (int) (ent.getZ() - entityinstance.getZ()));
+						entityinstance.getPersistentData().putDouble("dirX", (ent.getX() - entityinstance.getX()));
+						entityinstance.getPersistentData().putDouble("dirY", (ent.getY() - entityinstance.getY()));
+						entityinstance.getPersistentData().putDouble("dirZ", (ent.getZ() - entityinstance.getZ()));
 						_serverLevel.addFreshEntity(entityinstance);
 					}
 				}

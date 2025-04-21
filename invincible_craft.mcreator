@@ -6665,7 +6665,7 @@
           "src/main/java/net/mcreator/invincible_craft/potion/FlightSlownessMobEffect.java"
         ]
       },
-      "path": "~/Powers - Abilities/Atom Eve/Air Density"
+      "path": "~/Effects"
     },
     {
       "name": "Explosion",
@@ -8248,6 +8248,22 @@
           {
             "name": "entity",
             "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
           }
         ]
       },
@@ -8284,6 +8300,261 @@
             "name": "world",
             "type": "world"
           }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening"
+    },
+    {
+      "name": "AtomEveAwakening",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_awakening",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/model/AtomEveAwakeningModel.java",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/layer/AtomEveAwakeningLayer.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/AtomEveAwakeningEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/AtomEveAwakeningRenderer.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening"
+    },
+    {
+      "name": "AtomEveAwakeningOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_awakening_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveAwakeningOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening"
+    },
+    {
+      "name": "FlightSlownessOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "flight_slowness_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/FlightSlownessOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Effects"
+    },
+    {
+      "name": "AtomicBubble",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomic_bubble",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/screens/AtomicBubbleOverlay.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Atomic Bubble"
+    },
+    {
+      "name": "AtomicBubbleDisplayOverlayIngame",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atomic_bubble_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomicBubbleDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Atomic Bubble"
+    },
+    {
+      "name": "AtomEveGlitch1",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_glitch_1",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/screens/AtomEveGlitch1Overlay.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "AtomEveGlitch2",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_glitch_2",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/screens/AtomEveGlitch2Overlay.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "DisplayOverlayGlitch1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_overlay_glitch_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/DisplayOverlayGlitch1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "DisplayOverlayGlitch2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_overlay_glitch_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/DisplayOverlayGlitch2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "AtomEveGlitchEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_glitch_effect",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveGlitchEffectProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "AtomEveGlitch3",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_glitch_3",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/screens/AtomEveGlitch3Overlay.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "DisplayOverlayGlitch3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_overlay_glitch_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/DisplayOverlayGlitch3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Atom Eve/Awakening/Overlay"
+    },
+    {
+      "name": "AtomEveBigBlast",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_big_blast",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/particles/atom_eve_big_blast.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBigBlastParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "AtomEveAwakeningCloud",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_awakening_cloud",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/particles/atom_eve_awakening_cloud.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveAwakeningCloudParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "AtomEveAwakeningArmor",
+      "type": "armor",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_awakening_armor",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_helmet.json",
+          "src/main/java/net/mcreator/invincible_craft/item/AtomEveAwakeningArmorItem.java"
         ]
       },
       "path": "~/Powers - Abilities/Atom Eve/Awakening"
@@ -8751,6 +9022,48 @@
       "type": "number",
       "scope": "player_lifetime",
       "value": "0"
+    },
+    {
+      "name": "atom_eve_glitch_1",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "atom_eve_glitch_2",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "atom_eve_glitch_3",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "awakening_helmet_old",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "awakening_chest_old",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "awakening_leggings_old",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "awakening_boot_old",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
     }
   ],
   "sound_elements": [
@@ -8966,6 +9279,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
+      "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
       "gamerule.invincibleCraftXPMultiplier.description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
       "death.attack.battle_beast_downslam": "%1$s died",
@@ -9013,6 +9327,7 @@
       "death.attack.impact.item": "%1$s was killed by %2$s using %3$s",
       "biome.invincible_craft.moon_surface": "Moon Surface",
       "death.attack.impact.player": "%1$s died whilst trying to escape %2$s",
+      "item.invincible_craft.atom_eve_awakening_armor_boots": "Atom Eve Awakening Armor Boots",
       "death.attack.viltrumite_punch.item": "%1$s was crushed by %2$s using %3$s",
       "gui.invincible_craft.power_picker_gui.button_battle_beast": "Battle Beast",
       "advancements.advancement_dimensional_travel.descr": "Get Dimensional Travel power.",
@@ -9046,7 +9361,9 @@
       "item.invincible_craft.dupli_kate_suit_boots": "Dupli-Kate Boots",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "subtitles.followup": "dash",
+      "item.invincible_craft.atom_eve_awakening_armor_leggings": "Atom Eve Awakening Armor Leggings",
       "gui.invincible_craft.construct_gui.tooltip_construct_gauntlet": "Construct Gauntlet",
+      "entity.invincible_craft.atom_eve_awakening": "Atom Eve Awakening",
       "item.invincible_craft.invincible_suit_no_goggles_mark_boots": "Invincible Suit (No Goggles Mark) Boots",
       "advancements.advancement_atom_eve.descr": "Get Atome Eve\u0027s power.",
       "entity.invincible_craft.viltrumite": "Viltrumite",
@@ -9060,6 +9377,7 @@
       "item.invincible_craft.wooden_bat": "Wooden Bat",
       "gui.invincible_craft.stat_panel_gui.label_adjust_flight_speed": "Adjust Flight Speed",
       "death.attack.battle_beast_uppercut.item": "%1$s was killed by %2$s using %3$s",
+      "item.invincible_craft.atom_eve_awakening_spawn_egg": "Atom Eve Awakening Spawn Egg",
       "item.invincible_craft.invincible_suit_no_goggles_mark_helmet": "Invincible Suit (No Goggles Mark) Helmet",
       "entity.invincible_craft.atomicb_blast": "Atomicb Blast",
       "advancements.advancement_suffocation_moon.title": "Moonwalking... Forever",
@@ -9152,6 +9470,7 @@
       "item.invincible_craft.viltrumite_suit_chestplate": "Viltrumite Suit Chestplate",
       "effect.invincible_craft.screen_shake": "Screen Shake",
       "death.attack.repel.item": "%1$s was killed by %2$s using %3$s",
+      "item.invincible_craft.atom_eve_awakening_armor_chestplate": "Atom Eve Awakening Armor Chestplate",
       "gamerule.invincibleCraftEnableMoonTravel.description": "Setting this to false disables travelling to Moon.",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_unmasked_m": "Make Invincible Suit (Unmasked Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "advancements.advancement_viltrumite.title": "A Worthy Heritage",
@@ -9371,7 +9690,12 @@
               },
               {
                 "name": "Awakening",
-                "children": []
+                "children": [
+                  {
+                    "name": "Overlay",
+                    "children": []
+                  }
+                ]
               },
               {
                 "name": "Atomic Blast",

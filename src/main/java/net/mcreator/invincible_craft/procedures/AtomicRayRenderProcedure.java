@@ -212,9 +212,9 @@ public class AtomicRayRenderProcedure {
 		double speed = 0;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_ray) {
 			if (entity.isShiftKeyDown()) {
-				sneak = 0.8;
+				sneak = 0.9;
 			} else {
-				sneak = 1.1;
+				sneak = 1.2;
 			}
 			if (target(2)) {
 				yaw = entity.getYRot() * 0.0174533 + Math.toRadians(145);
@@ -248,7 +248,7 @@ public class AtomicRayRenderProcedure {
 					end();
 				}
 				renderShape(shape(), (entity.getX() + 0 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + sneak + 0.2 * Math.sin((-1) * pitch)), (entity.getZ() + 0 * Math.sin(yaw) * Math.cos(pitch)), entity.getYRot(), entity.getXRot(), 0,
-						(float) (-2.9), (float) 2.9, (float) 2.3, 64 << 24 | 255 << 16 | 141 << 8 | 192);
+						(float) (-2.9), (float) 2.9, (float) 2.9, 64 << 24 | 255 << 16 | 141 << 8 | 192);
 				renderShape(shape(), (entity.getX() + 0 * Math.cos(yaw) * Math.cos(pitch)), (entity.getY() + sneak + 0.2 * Math.sin((-1) * pitch)), (entity.getZ() + 0 * Math.sin(yaw) * Math.cos(pitch)), entity.getYRot(), entity.getXRot(), 0,
 						(float) 2.3, (float) 2.3, (float) 2.3, 255 << 24 | 255 << 16 | 141 << 8 | 192);
 				release();

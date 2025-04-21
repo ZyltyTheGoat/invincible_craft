@@ -1,0 +1,73 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"idle": {
+			"loop": true,
+			"animation_length": 4,
+			"bones": {
+				"circle2": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -45]
+						},
+						"4.0": {
+							"pre": {
+								"vector": [360, 0, -45]
+							},
+							"post": {
+								"vector": [360, 0, -45]
+							},
+							"lerp_mode": "catmullrom"
+						}
+					}
+				},
+				"circle1": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 45]
+						},
+						"4.0": {
+							"pre": {
+								"vector": [360, 0, 45]
+							},
+							"post": {
+								"vector": [360, 0, 45]
+							},
+							"lerp_mode": "catmullrom"
+						}
+					}
+				}
+			}
+		},
+		"explode": {
+			"animation_length": 0.5,
+			"bones": {
+				"atom_eve_awakening": {
+					"scale": {
+						"0.0": {
+							"vector": [1, 1, 1]
+						},
+						"0.1667": {
+							"vector": [15, 15, 15]
+						},
+						"0.2083": {
+							"vector": [0, 0, 0],
+							"easing": "easeInExpo"
+						}
+					}
+				},
+				"circle1": {
+					"rotation": {
+						"vector": [0, 0, 45]
+					}
+				},
+				"circle2": {
+					"rotation": {
+						"vector": [0, 0, -45]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

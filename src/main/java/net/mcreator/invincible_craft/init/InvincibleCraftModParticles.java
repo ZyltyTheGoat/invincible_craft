@@ -39,6 +39,8 @@ import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreakParticle;
 import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreak4Particle;
 import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreak3Particle;
 import net.mcreator.invincible_craft.client.particle.AtomEveBubbleBreak2Particle;
+import net.mcreator.invincible_craft.client.particle.AtomEveBigBlastParticle;
+import net.mcreator.invincible_craft.client.particle.AtomEveAwakeningCloudParticle;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class InvincibleCraftModParticles {
@@ -74,5 +76,7 @@ public class InvincibleCraftModParticles {
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get(), AtomEveCloudParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOMIC_BLAST_CHARGE.get(), AtomicBlastChargeParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOMIC_BLAST_SHOCKWAVE.get(), AtomicBlastShockwaveParticle::provider);
+		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_BIG_BLAST.get(), AtomEveBigBlastParticle::provider);
+		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_AWAKENING_CLOUD.get(), AtomEveAwakeningCloudParticle::provider);
 	}
 }

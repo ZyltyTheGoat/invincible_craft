@@ -31,6 +31,7 @@ import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
 import net.mcreator.invincible_craft.entity.BanditEntity;
 import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
 import net.mcreator.invincible_craft.entity.AtomEveConstructTridentProjectileEntity;
+import net.mcreator.invincible_craft.entity.AtomEveAwakeningEntity;
 import net.mcreator.invincible_craft.entity.ArtRosenbaumEntity;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
@@ -82,6 +83,8 @@ public class InvincibleCraftModEntities {
 					.setTrackingRange(64).setUpdateInterval(1).sized(0.2f, 1f));
 	public static final RegistryObject<EntityType<AtomicbBlastEntity>> ATOMICB_BLAST = register("atomicb_blast", EntityType.Builder.<AtomicbBlastEntity>of(AtomicbBlastEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AtomicbBlastEntity::new).fireImmune().sized(0.2f, 0.2f));
+	public static final RegistryObject<EntityType<AtomEveAwakeningEntity>> ATOM_EVE_AWAKENING = register("atom_eve_awakening", EntityType.Builder.<AtomEveAwakeningEntity>of(AtomEveAwakeningEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AtomEveAwakeningEntity::new).fireImmune().sized(0.1f, 0.1f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -104,6 +107,7 @@ public class InvincibleCraftModEntities {
 			LeapGuideEntity.init();
 			SpikeBallEntityEntity.init();
 			AtomicbBlastEntity.init();
+			AtomEveAwakeningEntity.init();
 		});
 	}
 
@@ -123,5 +127,6 @@ public class InvincibleCraftModEntities {
 		event.put(LEAP_GUIDE.get(), LeapGuideEntity.createAttributes().build());
 		event.put(SPIKE_BALL_ENTITY.get(), SpikeBallEntityEntity.createAttributes().build());
 		event.put(ATOMICB_BLAST.get(), AtomicbBlastEntity.createAttributes().build());
+		event.put(ATOM_EVE_AWAKENING.get(), AtomEveAwakeningEntity.createAttributes().build());
 	}
 }

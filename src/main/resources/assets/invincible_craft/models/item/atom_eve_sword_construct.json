@@ -2,16 +2,16 @@
   "loader": "forge:separate_transforms",
   "gui_light": "front",
   "base": {
-    "parent": "invincible_craft:custom/atom_eve_constrcut_sword",
+    "parent": "invincible_craft:custom/construct_sabre",
     "textures": {
-      "2": "invincible_craft:block/atom_eve_construct_sword"
+      "1": "invincible_craft:block/construct_sabre"
     }
   },
   "perspectives": {
     "gui": {
       "parent": "item/generated",
       "textures": {
-        "layer0": "invincible_craft:item/atom_eve_construct_sword"
+        "layer0": "invincible_craft:item/atom_eve_construct_sabre"
       },
       "gui_light": "front"
     }

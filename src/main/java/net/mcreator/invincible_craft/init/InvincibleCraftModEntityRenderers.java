@@ -24,6 +24,7 @@ import net.mcreator.invincible_craft.client.renderer.BanishmentPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanditRenderer;
 import net.mcreator.invincible_craft.client.renderer.AtomicbBlastRenderer;
 import net.mcreator.invincible_craft.client.renderer.AtomEveConstructTridentProjectileRenderer;
+import net.mcreator.invincible_craft.client.renderer.AtomEveAwakeningRenderer;
 import net.mcreator.invincible_craft.client.renderer.ArtRosenbaumRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -46,5 +47,6 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get(), SpikeBallEntityRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOM_EVE_CONSTRUCT_TRIDENT_PROJECTILE.get(), AtomEveConstructTridentProjectileRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOMICB_BLAST.get(), AtomicbBlastRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.ATOM_EVE_AWAKENING.get(), AtomEveAwakeningRenderer::new);
 	}
 }

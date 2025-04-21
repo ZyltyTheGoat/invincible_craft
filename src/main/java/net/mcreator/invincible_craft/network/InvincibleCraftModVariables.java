@@ -15,6 +15,7 @@ import net.minecraftforge.common.capabilities.CapabilityToken;
 import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.capabilities.Capability;
 
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
@@ -102,6 +103,10 @@ public class InvincibleCraftModVariables {
 			clone.adj_strength = original.adj_strength;
 			clone.clone_limit = original.clone_limit;
 			clone.duplication_max = original.duplication_max;
+			clone.awakening_helmet_old = original.awakening_helmet_old;
+			clone.awakening_chest_old = original.awakening_chest_old;
+			clone.awakening_leggings_old = original.awakening_leggings_old;
+			clone.awakening_boot_old = original.awakening_boot_old;
 			if (!event.isWasDeath()) {
 				clone.flying = original.flying;
 				clone.current_speed = original.current_speed;
@@ -154,6 +159,9 @@ public class InvincibleCraftModVariables {
 				clone.atom_eve_atomic_blast_holding = original.atom_eve_atomic_blast_holding;
 				clone.atom_eve_atomic_blast_scale = original.atom_eve_atomic_blast_scale;
 				clone.atom_eve_awakened_timer = original.atom_eve_awakened_timer;
+				clone.atom_eve_glitch_1 = original.atom_eve_glitch_1;
+				clone.atom_eve_glitch_2 = original.atom_eve_glitch_2;
+				clone.atom_eve_glitch_3 = original.atom_eve_glitch_3;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -271,6 +279,13 @@ public class InvincibleCraftModVariables {
 		public boolean atom_eve_atomic_blast_holding = false;
 		public double atom_eve_atomic_blast_scale = 0;
 		public double atom_eve_awakened_timer = 0;
+		public boolean atom_eve_glitch_1 = false;
+		public boolean atom_eve_glitch_2 = false;
+		public boolean atom_eve_glitch_3 = false;
+		public ItemStack awakening_helmet_old = ItemStack.EMPTY;
+		public ItemStack awakening_chest_old = ItemStack.EMPTY;
+		public ItemStack awakening_leggings_old = ItemStack.EMPTY;
+		public ItemStack awakening_boot_old = ItemStack.EMPTY;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -356,6 +371,13 @@ public class InvincibleCraftModVariables {
 			nbt.putBoolean("atom_eve_atomic_blast_holding", atom_eve_atomic_blast_holding);
 			nbt.putDouble("atom_eve_atomic_blast_scale", atom_eve_atomic_blast_scale);
 			nbt.putDouble("atom_eve_awakened_timer", atom_eve_awakened_timer);
+			nbt.putBoolean("atom_eve_glitch_1", atom_eve_glitch_1);
+			nbt.putBoolean("atom_eve_glitch_2", atom_eve_glitch_2);
+			nbt.putBoolean("atom_eve_glitch_3", atom_eve_glitch_3);
+			nbt.put("awakening_helmet_old", awakening_helmet_old.save(new CompoundTag()));
+			nbt.put("awakening_chest_old", awakening_chest_old.save(new CompoundTag()));
+			nbt.put("awakening_leggings_old", awakening_leggings_old.save(new CompoundTag()));
+			nbt.put("awakening_boot_old", awakening_boot_old.save(new CompoundTag()));
 			return nbt;
 		}
 
@@ -444,6 +466,13 @@ public class InvincibleCraftModVariables {
 			atom_eve_atomic_blast_holding = nbt.getBoolean("atom_eve_atomic_blast_holding");
 			atom_eve_atomic_blast_scale = nbt.getDouble("atom_eve_atomic_blast_scale");
 			atom_eve_awakened_timer = nbt.getDouble("atom_eve_awakened_timer");
+			atom_eve_glitch_1 = nbt.getBoolean("atom_eve_glitch_1");
+			atom_eve_glitch_2 = nbt.getBoolean("atom_eve_glitch_2");
+			atom_eve_glitch_3 = nbt.getBoolean("atom_eve_glitch_3");
+			awakening_helmet_old = ItemStack.of(nbt.getCompound("awakening_helmet_old"));
+			awakening_chest_old = ItemStack.of(nbt.getCompound("awakening_chest_old"));
+			awakening_leggings_old = ItemStack.of(nbt.getCompound("awakening_leggings_old"));
+			awakening_boot_old = ItemStack.of(nbt.getCompound("awakening_boot_old"));
 		}
 	}
 
@@ -554,6 +583,13 @@ public class InvincibleCraftModVariables {
 					variables.atom_eve_atomic_blast_holding = message.data.atom_eve_atomic_blast_holding;
 					variables.atom_eve_atomic_blast_scale = message.data.atom_eve_atomic_blast_scale;
 					variables.atom_eve_awakened_timer = message.data.atom_eve_awakened_timer;
+					variables.atom_eve_glitch_1 = message.data.atom_eve_glitch_1;
+					variables.atom_eve_glitch_2 = message.data.atom_eve_glitch_2;
+					variables.atom_eve_glitch_3 = message.data.atom_eve_glitch_3;
+					variables.awakening_helmet_old = message.data.awakening_helmet_old;
+					variables.awakening_chest_old = message.data.awakening_chest_old;
+					variables.awakening_leggings_old = message.data.awakening_leggings_old;
+					variables.awakening_boot_old = message.data.awakening_boot_old;
 				}
 			});
 			context.setPacketHandled(true);

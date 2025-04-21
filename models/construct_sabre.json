@@ -1,0 +1,128 @@
+{
+	"credit": "Made with Blockbench",
+	"textures": {
+		"1": ".. Invincible/construct_sabre"
+	},
+	"elements": [
+		{
+			"name": "construct_sabre_1",
+			"from": [7.625, 5.25, 7.825],
+			"to": [9.375, 12.75, 7.825],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.875, 0, 7.875]},
+			"faces": {
+				"north": {"uv": [1.75, 0, 0, 7.5], "texture": "#1"},
+				"east": {"uv": [1.5, 0, 1.75, 7.5], "texture": "#1"},
+				"south": {"uv": [0, 0, 1.75, 7.5], "texture": "#1"},
+				"west": {"uv": [0, 0, 0.25, 7.5], "texture": "#1"},
+				"up": {"uv": [0, 0, 1.75, 0.25], "texture": "#1"},
+				"down": {"uv": [0, 7.25, 1.75, 7.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "construct_sabre_2",
+			"from": [7.125, 4.75, 7.575],
+			"to": [9.125, 5.25, 8.075],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.875, 0, 7.875]},
+			"faces": {
+				"north": {"uv": [2, 7.5, 0, 8], "texture": "#1"},
+				"east": {"uv": [0.75, 7.5, 1, 8], "texture": "#1"},
+				"south": {"uv": [0, 7.5, 2, 8], "texture": "#1"},
+				"west": {"uv": [0, 7.5, 0.25, 8], "texture": "#1"},
+				"up": {"uv": [0, 7.5, 2, 7.75], "texture": "#1"},
+				"down": {"uv": [0, 7.75, 2, 8], "texture": "#1"}
+			}
+		},
+		{
+			"name": "construct_sabre_3",
+			"from": [7.125, 3.25, 7.575],
+			"to": [7.375, 4.75, 8.075],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.875, 0, 7.875]},
+			"faces": {
+				"north": {"uv": [0.25, 8, 0, 9.5], "texture": "#1"},
+				"east": {"uv": [0, 8, 0.25, 9.5], "texture": "#1"},
+				"south": {"uv": [0, 8, 0.25, 9.5], "texture": "#1"},
+				"west": {"uv": [0, 8, 0.25, 9.5], "texture": "#1"},
+				"up": {"uv": [0, 8, 0.25, 8.25], "texture": "#1"},
+				"down": {"uv": [0, 9.25, 0.25, 9.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "construct_sabre_4",
+			"from": [7.375, 3, 7.575],
+			"to": [7.625, 3.5, 8.075],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.875, 0, 7.875]},
+			"faces": {
+				"north": {"uv": [0.5, 8, 0.25, 8.5], "texture": "#1"},
+				"east": {"uv": [0.25, 8, 0.5, 8.5], "texture": "#1"},
+				"south": {"uv": [0.25, 8, 0.5, 8.5], "texture": "#1"},
+				"west": {"uv": [0.25, 8, 0.5, 8.5], "texture": "#1"},
+				"up": {"uv": [0.25, 8, 0.5, 8.25], "texture": "#1"},
+				"down": {"uv": [0.25, 8.25, 0.5, 8.5], "texture": "#1"}
+			}
+		},
+		{
+			"name": "construct_sabre_5",
+			"from": [7.875, 2.5, 7.575],
+			"to": [8.375, 4.75, 8.075],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0.875, 0, 7.875]},
+			"faces": {
+				"north": {"uv": [1, 8, 0.5, 10], "texture": "#1"},
+				"east": {"uv": [0.5, 8, 1, 10], "texture": "#1"},
+				"south": {"uv": [0.5, 8, 1, 10], "texture": "#1"},
+				"west": {"uv": [0.5, 8, 1, 10], "texture": "#1"},
+				"up": {"uv": [0.5, 9.5, 1, 10], "texture": "#1"},
+				"down": {"uv": [0.5, 9.5, 1, 10], "texture": "#1"}
+			}
+		}
+	],
+	"gui_light": "front",
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [0, -90, 0],
+			"translation": [0, 9.25, 1],
+			"scale": [2.8, 2.8, 2.8]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, 0],
+			"translation": [0.25, 9.5, 1],
+			"scale": [2.8, 2.8, 2.8]
+		},
+		"firstperson_righthand": {
+			"rotation": [-4, -90, -8],
+			"translation": [2.5, 8.5, -0.25],
+			"scale": [2, 2, 2]
+		},
+		"firstperson_lefthand": {
+			"rotation": [9, 90, -8],
+			"translation": [1.75, 8.5, -0.5],
+			"scale": [2, 2, 2]
+		},
+		"ground": {
+			"translation": [0, 7.75, 0],
+			"scale": [2, 2, 2]
+		},
+		"gui": {
+			"rotation": [0, 0, -42],
+			"translation": [1.25, 2, 0],
+			"scale": [2.5, 2.5, 2.5]
+		},
+		"head": {
+			"rotation": [0, 0, -132],
+			"translation": [-2.25, -13, 4],
+			"scale": [3.5, 3.5, 3.5]
+		},
+		"fixed": {
+			"rotation": [-180, 0, 138],
+			"translation": [-1.25, 1.75, -0.5],
+			"scale": [4, 4, 3]
+		}
+	},
+	"groups": [
+		{
+			"name": "ConstructSabre",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4]
+		}
+	]
+}

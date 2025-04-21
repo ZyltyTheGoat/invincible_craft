@@ -1,21 +1,22 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.model.new": {
+		"idle": {
 			"loop": true,
-			"animation_length": 1.25,
+			"animation_length": 4,
 			"bones": {
 				"circle2": {
 					"rotation": {
 						"0.0": {
-							"vector": [0, 0, 0]
+							"vector": [0, 0, -45]
 						},
-						"0.625": {
-							"vector": [15, 0, -7.5],
-							"lerp_mode": "catmullrom"
-						},
-						"1.25": {
-							"vector": [0, 0, 0],
+						"4.0": {
+							"pre": {
+								"vector": [360, 0, -45]
+							},
+							"post": {
+								"vector": [360, 0, -45]
+							},
 							"lerp_mode": "catmullrom"
 						}
 					}
@@ -23,14 +24,15 @@
 				"circle1": {
 					"rotation": {
 						"0.0": {
-							"vector": [0, 0, 0]
+							"vector": [0, 0, 45]
 						},
-						"0.625": {
-							"vector": [-4.78135, 4.99523, 10.00954],
-							"lerp_mode": "catmullrom"
-						},
-						"1.25": {
-							"vector": [0, 0, 0],
+						"4.0": {
+							"pre": {
+								"vector": [360, 0, 45]
+							},
+							"post": {
+								"vector": [360, 0, 45]
+							},
 							"lerp_mode": "catmullrom"
 						}
 					}

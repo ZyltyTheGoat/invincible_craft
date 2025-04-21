@@ -32,6 +32,7 @@ import net.mcreator.invincible_craft.item.BattleBeastMaceItem;
 import net.mcreator.invincible_craft.item.AtomEveTridentConstructItem;
 import net.mcreator.invincible_craft.item.AtomEveSwordConstructItem;
 import net.mcreator.invincible_craft.item.AtomEveConstructHammerItem;
+import net.mcreator.invincible_craft.item.AtomEveAwakeningArmorItem;
 import net.mcreator.invincible_craft.item.AstronautHelmetItem;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
@@ -87,6 +88,11 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> ATOM_EVE_SWORD_CONSTRUCT = REGISTRY.register("atom_eve_sword_construct", () -> new AtomEveSwordConstructItem());
 	public static final RegistryObject<Item> ATOM_EVE_TRIDENT_CONSTRUCT = REGISTRY.register("atom_eve_trident_construct", () -> new AtomEveTridentConstructItem());
 	public static final RegistryObject<Item> ATOM_EVE_CONSTRUCT_HAMMER = REGISTRY.register("atom_eve_construct_hammer", () -> new AtomEveConstructHammerItem());
+	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_SPAWN_EGG = REGISTRY.register("atom_eve_awakening_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.ATOM_EVE_AWAKENING, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_HELMET = REGISTRY.register("atom_eve_awakening_armor_helmet", () -> new AtomEveAwakeningArmorItem.Helmet());
+	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_CHESTPLATE = REGISTRY.register("atom_eve_awakening_armor_chestplate", () -> new AtomEveAwakeningArmorItem.Chestplate());
+	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_LEGGINGS = REGISTRY.register("atom_eve_awakening_armor_leggings", () -> new AtomEveAwakeningArmorItem.Leggings());
+	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_BOOTS = REGISTRY.register("atom_eve_awakening_armor_boots", () -> new AtomEveAwakeningArmorItem.Boots());
 
 	// Start of user code block custom items
 	// End of user code block custom items

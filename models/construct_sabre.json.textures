@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "2": "atom_eve_construct_sword"
+        "1": "construct_sabre"
       },
       "name": "default"
     }
