@@ -11,25 +11,16 @@
     "doesPauseGame": false,
     "components": [
       {
-        "type": "image",
-        "data": {
-          "image": "atom_eve_construct_gui.png",
-          "use1Xscale": false,
-          "x": 78,
-          "y": -19
-        }
-      },
-      {
         "type": "imagebutton",
         "data": {
           "name": "imagebutton_atom_eve_construct_sword",
-          "image": "atom_eve_construct_sword.png",
-          "hoveredImage": "atom_eve_construct_sword_hover.png",
+          "image": "atom_eve_construct_sabre.png",
+          "hoveredImage": "atom_eve_construct_sabre_hover.png",
           "onClick": {
             "name": "ButtonConstructSword"
           },
-          "x": 118,
-          "y": 29
+          "x": 138,
+          "y": 39
         }
       },
       {
@@ -41,8 +32,8 @@
           "onClick": {
             "name": "ButtonConstructHammer"
           },
-          "x": 214,
-          "y": 5
+          "x": 232,
+          "y": 16
         }
       },
       {
@@ -54,8 +45,8 @@
           "onClick": {
             "name": "ButtonConstructGauntlet"
           },
-          "x": 286,
-          "y": 77
+          "x": 301,
+          "y": 59
         }
       },
       {
@@ -67,8 +58,8 @@
           "onClick": {
             "name": "ButtonConstructShield"
           },
-          "x": 270,
-          "y": 173
+          "x": 297,
+          "y": 151
         }
       },
       {
@@ -80,8 +71,8 @@
           "onClick": {
             "name": "ButtonConstructTrident"
           },
-          "x": 174,
-          "y": 181
+          "x": 202,
+          "y": 212
         }
       },
       {
@@ -93,8 +84,8 @@
           "onClick": {
             "name": "ButtonConstructArmor"
           },
-          "x": 86,
-          "y": 133
+          "x": 108,
+          "y": 163
         }
       },
       {
@@ -102,12 +93,12 @@
         "data": {
           "name": "tooltip_construct_sword",
           "text": {
-            "fixedValue": "Construct Sword"
+            "fixedValue": "Construct Sabre"
           },
           "width": 24,
           "height": 24,
-          "x": 118,
-          "y": 29
+          "x": 138,
+          "y": 39
         }
       },
       {
@@ -119,8 +110,8 @@
           },
           "width": 24,
           "height": 24,
-          "x": 214,
-          "y": 5
+          "x": 231,
+          "y": 16
         }
       },
       {
@@ -132,8 +123,8 @@
           },
           "width": 24,
           "height": 24,
-          "x": 286,
-          "y": 77
+          "x": 301,
+          "y": 59
         }
       },
       {
@@ -145,8 +136,8 @@
           },
           "width": 24,
           "height": 24,
-          "x": 270,
-          "y": 173
+          "x": 298,
+          "y": 151
         }
       },
       {
@@ -158,8 +149,8 @@
           },
           "width": 24,
           "height": 24,
-          "x": 174,
-          "y": 181
+          "x": 202,
+          "y": 213
         }
       },
       {
@@ -171,8 +162,17 @@
           },
           "width": 24,
           "height": 24,
-          "x": 86,
-          "y": 133
+          "x": 108,
+          "y": 163
+        }
+      },
+      {
+        "type": "image",
+        "data": {
+          "image": "construct_gui.png",
+          "use1Xscale": false,
+          "x": 87,
+          "y": -10
         }
       }
     ],

@@ -67,7 +67,7 @@ public class SpikeBallTickProcedure {
 															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
 																	entity))
 															.getBlockPos().getZ())),
-											1, 1, 1),
+											3, 3, 3),
 									e -> true)
 							.isEmpty()
 							&& !(((Entity) world
@@ -84,7 +84,7 @@ public class SpikeBallTickProcedure {
 													(entity.level().clip(
 															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 															.getBlockPos().getZ())),
-													1, 1, 1),
+													3, 3, 3),
 											e -> true)
 									.stream().sorted(new Object() {
 										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -113,7 +113,7 @@ public class SpikeBallTickProcedure {
 														(entity.level().clip(
 																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 																.getBlockPos().getZ())),
-												1, 1, 1),
+												3, 3, 3),
 										e -> true)
 								.stream().sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -141,7 +141,7 @@ public class SpikeBallTickProcedure {
 																	.getBlockPos().getY()),
 															(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER,
 																	ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
-													1, 1, 1),
+													3, 3, 3),
 											e -> true)
 									.stream().sorted(new Object() {
 										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -170,7 +170,7 @@ public class SpikeBallTickProcedure {
 														(entity.level().clip(
 																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 																.getBlockPos().getZ())),
-														1, 1, 1),
+														3, 3, 3),
 												e -> true)
 										.stream().sorted(new Object() {
 											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -211,7 +211,7 @@ public class SpikeBallTickProcedure {
 														(entity.level().clip(
 																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 																.getBlockPos().getZ())),
-												1, 1, 1),
+												3, 3, 3),
 										e -> true)
 								.stream().sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {

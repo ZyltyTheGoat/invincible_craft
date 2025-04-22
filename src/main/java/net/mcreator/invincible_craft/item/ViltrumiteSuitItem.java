@@ -96,7 +96,7 @@ public abstract class ViltrumiteSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/viltrumite-suit.png";
+			return "invincible_craft:textures/entities/armor_viltrumite_suit.png";
 		}
 	}
 
@@ -126,7 +126,7 @@ public abstract class ViltrumiteSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/viltrumite-suit.png";
+			return "invincible_craft:textures/entities/armor_viltrumite_suit.png";
 		}
 	}
 
@@ -156,7 +156,7 @@ public abstract class ViltrumiteSuitItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "invincible_craft:textures/entities/viltrumite-suit.png";
+			return "invincible_craft:textures/entities/armor_viltrumite_suit.png";
 		}
 	}
 }

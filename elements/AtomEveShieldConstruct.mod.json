@@ -1,0 +1,38 @@
+{
+  "_fv": 69,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Shield",
+    "renderType": 1,
+    "blockingRenderType": 1,
+    "texture": "atom_eve_construct_shield",
+    "customModelName": "construct_shield:default",
+    "blockingModelName": "construct_shield_guard:default",
+    "name": "Shield Construct",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "TOOLS"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 2,
+    "damageVsEntity": 4.0,
+    "usageCount": 5,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "WOOD",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "AtomEveSwordConstructToolInInventoryTick"
+    }
+  }
+}

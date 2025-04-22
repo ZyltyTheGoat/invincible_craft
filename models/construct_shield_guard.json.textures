@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "1": "construct_shield"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "invincible_craft:atom_eve_construct_hammer"
+    "invincible_craft:atom_eve_gauntlet_construct",
+    "invincible_craft:atom_eve_hammer_construct"
   ]
 }

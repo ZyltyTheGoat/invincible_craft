@@ -58,6 +58,13 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.DUPLI_KATE_SUIT_CHESTPLATE.get());
 				tabData.accept(InvincibleCraftModItems.DUPLI_KATE_SUIT_LEGGINGS.get());
 				tabData.accept(InvincibleCraftModItems.DUPLI_KATE_SUIT_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_ARMOR_CONSTRUCT_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_ARMOR_CONSTRUCT_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_ARMOR_CONSTRUCT_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_ARMOR_CONSTRUCT_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SUIT_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SUIT_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SUIT_BOOTS.get());
 			}).withSearchBar().build());
 	public static final RegistryObject<CreativeModeTab> INVINCIBLE_CRAFT_CREATIVE_TAB = REGISTRY.register("invincible_craft_creative_tab",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.invincible_craft.invincible_craft_creative_tab")).icon(() -> new ItemStack(InvincibleCraftModItems.POWER_PICKER.get())).displayItems((parameters, tabData) -> {
@@ -93,6 +100,11 @@ public class InvincibleCraftModTabs {
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 
 			tabData.accept(InvincibleCraftModBlocks.MOON_STONE.get().asItem());
+
+		} else if (tabData.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+
+			tabData.accept(InvincibleCraftModItems.ATOM_EVE_GAUNTLET_CONSTRUCT.get());
+			tabData.accept(InvincibleCraftModItems.ATOM_EVE_SHIELD_CONSTRUCT.get());
 
 		}
 	}

@@ -34,6 +34,8 @@ public class SpikeBallEntityOnEntityTickUpdateProcedure {
 				((SpikeBallEntityEntity) entity).setAnimation("spawn");
 			}
 		}
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_AWAKENING_CLOUD.get()), x, (y + 3), z, 15, 1.5, 1.5, 1.5, 0.1);
 		if (entity.getPersistentData().getDouble("Timer") == 8) {
 			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("dirX") * 0.3), (entity.getPersistentData().getDouble("dirY") * 0.3), (entity.getPersistentData().getDouble("dirZ") * 0.3)));
 		}

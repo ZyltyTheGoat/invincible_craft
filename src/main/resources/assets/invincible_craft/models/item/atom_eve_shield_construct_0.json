@@ -1,0 +1,7 @@
+{
+  "parent": "invincible_craft:custom/construct_shield_guard",
+  "textures": {
+    "1": "invincible_craft:block/construct_shield",
+    "particle": "invincible_craft:item/atom_eve_construct_shield"
+  }
+}

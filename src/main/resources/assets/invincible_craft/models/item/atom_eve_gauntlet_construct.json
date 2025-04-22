@@ -1,0 +1,19 @@
+{
+  "loader": "forge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "invincible_craft:custom/construct_gauntlet",
+    "textures": {
+      "0": "invincible_craft:block/gauntlet_construct"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "invincible_craft:item/atom_eve_construct_gauntleti"
+      },
+      "gui_light": "front"
+    }
+  }
+}

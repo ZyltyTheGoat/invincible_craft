@@ -11,8 +11,8 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.invincible_craft.procedures.AtomEveSwordConstructToolInInventoryTickProcedure;
 
-public class AtomEveConstructHammerItem extends PickaxeItem {
-	public AtomEveConstructHammerItem() {
+public class AtomEveHammerConstructItem extends PickaxeItem {
+	public AtomEveHammerConstructItem() {
 		super(new Tier() {
 			public int getUses() {
 				return 0;
@@ -23,7 +23,7 @@ public class AtomEveConstructHammerItem extends PickaxeItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 8f;
+				return 10f;
 			}
 
 			public int getLevel() {

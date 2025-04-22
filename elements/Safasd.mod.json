@@ -1,0 +1,10 @@
+{
+  "_fv": 69,
+  "_type": "command",
+  "definition": {
+    "commandName": "safasd",
+    "type": "STANDARD",
+    "permissionLevel": "No requirement",
+    "argsxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"args_start\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"literal\"><field name=\"name\">SetSelf</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">Decepticons</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">Megatron</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\"></field></block></statement></block></statement><next><block type=\"literal\"><field name=\"name\">Autobots</field><statement name=\"args\"><block type=\"literal\"><field name=\"name\">Bumblee</field><statement name=\"args\"><block type=\"call_procedure\"><field name=\"procedure\"></field></block></statement></block></statement></block></next></block></statement></block></next></block></xml>"
+  }
+}

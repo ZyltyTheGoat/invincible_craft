@@ -1,0 +1,15 @@
+{
+  "parent": "invincible_craft:custom/construct_shield",
+  "textures": {
+    "0": "invincible_craft:block/construct_shield",
+    "particle": "invincible_craft:item/atom_eve_construct_shield"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "invincible_craft:item/atom_eve_shield_construct_0"
+    }
+  ]
+}

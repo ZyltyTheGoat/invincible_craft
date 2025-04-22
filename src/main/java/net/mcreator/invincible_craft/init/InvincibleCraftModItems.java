@@ -7,11 +7,18 @@ package net.mcreator.invincible_craft.init;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.common.ForgeSpawnEggItem;
+import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.mcreator.invincible_craft.item.WoodenBatItem;
 import net.mcreator.invincible_craft.item.ViltrumiteSuitItem;
@@ -31,11 +38,16 @@ import net.mcreator.invincible_craft.item.ChainItem;
 import net.mcreator.invincible_craft.item.BattleBeastMaceItem;
 import net.mcreator.invincible_craft.item.AtomEveTridentConstructItem;
 import net.mcreator.invincible_craft.item.AtomEveSwordConstructItem;
-import net.mcreator.invincible_craft.item.AtomEveConstructHammerItem;
+import net.mcreator.invincible_craft.item.AtomEveSuitItem;
+import net.mcreator.invincible_craft.item.AtomEveShieldConstructItem;
+import net.mcreator.invincible_craft.item.AtomEveHammerConstructItem;
+import net.mcreator.invincible_craft.item.AtomEveGauntletConstructItem;
 import net.mcreator.invincible_craft.item.AtomEveAwakeningArmorItem;
+import net.mcreator.invincible_craft.item.AtomEveArmorConstructItem;
 import net.mcreator.invincible_craft.item.AstronautHelmetItem;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class InvincibleCraftModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, InvincibleCraftMod.MODID);
 	public static final RegistryObject<Item> OMNI_MAN_SUIT_CHESTPLATE = REGISTRY.register("omni_man_suit_chestplate", () -> new OmniManSuitItem.Chestplate());
@@ -87,16 +99,32 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> INVINCIBLE_SUIT_UN_MASKED_MARK_BOOTS = REGISTRY.register("invincible_suit_un_masked_mark_boots", () -> new InvincibleSuitUnMaskedMarkItem.Boots());
 	public static final RegistryObject<Item> ATOM_EVE_SWORD_CONSTRUCT = REGISTRY.register("atom_eve_sword_construct", () -> new AtomEveSwordConstructItem());
 	public static final RegistryObject<Item> ATOM_EVE_TRIDENT_CONSTRUCT = REGISTRY.register("atom_eve_trident_construct", () -> new AtomEveTridentConstructItem());
-	public static final RegistryObject<Item> ATOM_EVE_CONSTRUCT_HAMMER = REGISTRY.register("atom_eve_construct_hammer", () -> new AtomEveConstructHammerItem());
 	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_SPAWN_EGG = REGISTRY.register("atom_eve_awakening_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.ATOM_EVE_AWAKENING, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_HELMET = REGISTRY.register("atom_eve_awakening_armor_helmet", () -> new AtomEveAwakeningArmorItem.Helmet());
 	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_CHESTPLATE = REGISTRY.register("atom_eve_awakening_armor_chestplate", () -> new AtomEveAwakeningArmorItem.Chestplate());
 	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_LEGGINGS = REGISTRY.register("atom_eve_awakening_armor_leggings", () -> new AtomEveAwakeningArmorItem.Leggings());
 	public static final RegistryObject<Item> ATOM_EVE_AWAKENING_ARMOR_BOOTS = REGISTRY.register("atom_eve_awakening_armor_boots", () -> new AtomEveAwakeningArmorItem.Boots());
+	public static final RegistryObject<Item> ATOM_EVE_HAMMER_CONSTRUCT = REGISTRY.register("atom_eve_hammer_construct", () -> new AtomEveHammerConstructItem());
+	public static final RegistryObject<Item> ATOM_EVE_GAUNTLET_CONSTRUCT = REGISTRY.register("atom_eve_gauntlet_construct", () -> new AtomEveGauntletConstructItem());
+	public static final RegistryObject<Item> ATOM_EVE_ARMOR_CONSTRUCT_HELMET = REGISTRY.register("atom_eve_armor_construct_helmet", () -> new AtomEveArmorConstructItem.Helmet());
+	public static final RegistryObject<Item> ATOM_EVE_ARMOR_CONSTRUCT_CHESTPLATE = REGISTRY.register("atom_eve_armor_construct_chestplate", () -> new AtomEveArmorConstructItem.Chestplate());
+	public static final RegistryObject<Item> ATOM_EVE_ARMOR_CONSTRUCT_LEGGINGS = REGISTRY.register("atom_eve_armor_construct_leggings", () -> new AtomEveArmorConstructItem.Leggings());
+	public static final RegistryObject<Item> ATOM_EVE_ARMOR_CONSTRUCT_BOOTS = REGISTRY.register("atom_eve_armor_construct_boots", () -> new AtomEveArmorConstructItem.Boots());
+	public static final RegistryObject<Item> ATOM_EVE_SHIELD_CONSTRUCT = REGISTRY.register("atom_eve_shield_construct", () -> new AtomEveShieldConstructItem());
+	public static final RegistryObject<Item> ATOM_EVE_SUIT_CHESTPLATE = REGISTRY.register("atom_eve_suit_chestplate", () -> new AtomEveSuitItem.Chestplate());
+	public static final RegistryObject<Item> ATOM_EVE_SUIT_LEGGINGS = REGISTRY.register("atom_eve_suit_leggings", () -> new AtomEveSuitItem.Leggings());
+	public static final RegistryObject<Item> ATOM_EVE_SUIT_BOOTS = REGISTRY.register("atom_eve_suit_boots", () -> new AtomEveSuitItem.Boots());
 
 	// Start of user code block custom items
 	// End of user code block custom items
 	private static RegistryObject<Item> block(RegistryObject<Block> block) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties()));
+	}
+
+	@SubscribeEvent
+	public static void clientLoad(FMLClientSetupEvent event) {
+		event.enqueueWork(() -> {
+			ItemProperties.register(ATOM_EVE_SHIELD_CONSTRUCT.get(), new ResourceLocation("blocking"), ItemProperties.getProperty(Items.SHIELD, new ResourceLocation("blocking")));
+		});
 	}
 }

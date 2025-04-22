@@ -55,7 +55,7 @@ public class AbilityButton4OnKeyReleasedProcedure {
 														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
 																entity))
 														.getBlockPos().getZ())),
-										2, 2, 2),
+										3, 3, 3),
 								e -> true)
 						.isEmpty()
 						&& !(((Entity) world
@@ -73,7 +73,7 @@ public class AbilityButton4OnKeyReleasedProcedure {
 														(entity.level().clip(
 																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 																.getBlockPos().getZ())),
-												2, 2, 2),
+												4, 4, 4),
 										e -> true)
 								.stream().sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -104,7 +104,7 @@ public class AbilityButton4OnKeyReleasedProcedure {
 														(entity.level().clip(
 																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 																.getBlockPos().getZ())),
-														2, 2, 2),
+														4, 4, 4),
 												e -> true)
 										.stream().sorted(new Object() {
 											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -136,7 +136,7 @@ public class AbilityButton4OnKeyReleasedProcedure {
 													(entity.level().clip(
 															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 															.getBlockPos().getZ())),
-											2, 2, 2),
+											4, 4, 4),
 									e -> true)
 							.stream().sorted(new Object() {
 								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -165,7 +165,7 @@ public class AbilityButton4OnKeyReleasedProcedure {
 														(entity.level().clip(
 																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 																.getBlockPos().getZ())),
-												2, 2, 2),
+												4, 4, 4),
 										e -> true)
 								.stream().sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -193,7 +193,7 @@ public class AbilityButton4OnKeyReleasedProcedure {
 																	.getBlockPos().getY()),
 															(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER,
 																	ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
-													2, 2, 2),
+													4, 4, 4),
 											e -> true)
 									.stream().sorted(new Object() {
 										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {

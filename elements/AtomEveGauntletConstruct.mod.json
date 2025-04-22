@@ -1,0 +1,38 @@
+{
+  "_fv": 69,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "atom_eve_construct_gauntleti",
+    "customModelName": "construct_gauntlet:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Gauntlet Construct",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "TOOLS"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 2.5,
+    "enchantability": 14,
+    "damageVsEntity": 6.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": false,
+    "blockDropsTier": "WOOD",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onItemInInventoryTick": {
+      "name": "AtomEveSwordConstructToolInInventoryTick"
+    }
+  }
+}

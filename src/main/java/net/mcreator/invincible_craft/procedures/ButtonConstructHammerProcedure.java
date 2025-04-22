@@ -15,7 +15,7 @@ public class ButtonConstructHammerProcedure {
 		if (entity instanceof Player _player)
 			_player.closeContainer();
 		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(InvincibleCraftModItems.ATOM_EVE_CONSTRUCT_HAMMER.get()).copy();
+			ItemStack _setstack = new ItemStack(InvincibleCraftModItems.ATOM_EVE_HAMMER_CONSTRUCT.get()).copy();
 			_setstack.setCount(1);
 			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 		}
