@@ -38,7 +38,7 @@ public class ViltrumiteOnInitialEntitySpawnProcedure {
 		if (entity instanceof LivingEntity _livingEntity16 && _livingEntity16.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
 			_livingEntity16.getAttribute(Attributes.MAX_HEALTH).setBaseValue((50 + (random / 2000) * 50));
 		if (entity instanceof LivingEntity _livingEntity17 && _livingEntity17.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-			_livingEntity17.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue((8 + (random / 2000) * 20));
+			_livingEntity17.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue((8 + (random / 2000) * 10));
 		if (entity instanceof LivingEntity _entity)
 			_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 	}

@@ -67,6 +67,13 @@ public class AbilityButton2OnKeyPressedProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
+				{
+					double _setval = 7.5;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.ability_cooldown_2 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
 				{
 					boolean _setval = true;

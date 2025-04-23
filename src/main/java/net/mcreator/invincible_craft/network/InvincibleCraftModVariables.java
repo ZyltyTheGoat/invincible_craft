@@ -162,6 +162,7 @@ public class InvincibleCraftModVariables {
 				clone.atom_eve_glitch_1 = original.atom_eve_glitch_1;
 				clone.atom_eve_glitch_2 = original.atom_eve_glitch_2;
 				clone.atom_eve_glitch_3 = original.atom_eve_glitch_3;
+				clone.battle_beast_leaping = original.battle_beast_leaping;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -286,6 +287,7 @@ public class InvincibleCraftModVariables {
 		public ItemStack awakening_chest_old = ItemStack.EMPTY;
 		public ItemStack awakening_leggings_old = ItemStack.EMPTY;
 		public ItemStack awakening_boot_old = ItemStack.EMPTY;
+		public boolean battle_beast_leaping = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -378,6 +380,7 @@ public class InvincibleCraftModVariables {
 			nbt.put("awakening_chest_old", awakening_chest_old.save(new CompoundTag()));
 			nbt.put("awakening_leggings_old", awakening_leggings_old.save(new CompoundTag()));
 			nbt.put("awakening_boot_old", awakening_boot_old.save(new CompoundTag()));
+			nbt.putBoolean("battle_beast_leaping", battle_beast_leaping);
 			return nbt;
 		}
 
@@ -473,6 +476,7 @@ public class InvincibleCraftModVariables {
 			awakening_chest_old = ItemStack.of(nbt.getCompound("awakening_chest_old"));
 			awakening_leggings_old = ItemStack.of(nbt.getCompound("awakening_leggings_old"));
 			awakening_boot_old = ItemStack.of(nbt.getCompound("awakening_boot_old"));
+			battle_beast_leaping = nbt.getBoolean("battle_beast_leaping");
 		}
 	}
 
@@ -590,6 +594,7 @@ public class InvincibleCraftModVariables {
 					variables.awakening_chest_old = message.data.awakening_chest_old;
 					variables.awakening_leggings_old = message.data.awakening_leggings_old;
 					variables.awakening_boot_old = message.data.awakening_boot_old;
+					variables.battle_beast_leaping = message.data.battle_beast_leaping;
 				}
 			});
 			context.setPacketHandled(true);

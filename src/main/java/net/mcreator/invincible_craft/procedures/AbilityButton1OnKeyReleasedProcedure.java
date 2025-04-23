@@ -51,8 +51,6 @@ public class AbilityButton1OnKeyReleasedProcedure {
 					});
 				}
 			}
-		} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("BattleBeast")) {
-			LeapTargetSelectedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 }

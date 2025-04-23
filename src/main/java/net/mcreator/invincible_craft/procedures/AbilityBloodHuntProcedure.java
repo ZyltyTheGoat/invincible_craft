@@ -74,15 +74,6 @@ public class AbilityBloodHuntProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).battle_beast_blood_hunt <= 0) {
-				{
-					double _setval = 10;
-					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.ability_cooldown_2 = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			}
 			if (entity instanceof LivingEntity _livingEntity0 && _livingEntity0.getAttributes().hasAttribute(ForgeMod.STEP_HEIGHT_ADDITION.get()))
 				_livingEntity0.getAttribute(ForgeMod.STEP_HEIGHT_ADDITION.get()).setBaseValue(1);
 			if (world.dayTime() % 3 == 0) {

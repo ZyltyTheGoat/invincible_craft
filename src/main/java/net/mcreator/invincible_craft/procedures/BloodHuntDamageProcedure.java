@@ -10,6 +10,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -40,9 +41,13 @@ public class BloodHuntDamageProcedure {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), sourceentity),
-						(float) (3 + (sourceentity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity1.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0) * 1.25));
-				entity.setDeltaMovement(new Vec3((sourceentity.getLookAngle().x * 1.5), (entity.getDeltaMovement().y()), (sourceentity.getLookAngle().z * 1.5)));
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), sourceentity),
+						(float) (5 + (sourceentity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity1.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0) * 1.15));
+				if (sourceentity.onGround()) {
+					entity.setDeltaMovement(new Vec3((sourceentity.getLookAngle().x * 2.5), (entity.getDeltaMovement().y()), (sourceentity.getLookAngle().z * 2.5)));
+				} else {
+					entity.setDeltaMovement(new Vec3((sourceentity.getLookAngle().x * 2.5), (sourceentity.getLookAngle().y * 2.5), (sourceentity.getLookAngle().z * 2.5)));
+				}
 			}
 		}
 	}

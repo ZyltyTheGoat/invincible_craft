@@ -72,6 +72,15 @@ public class AbilityButton1OnKeyPressedProcedure {
 				}
 			} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
 				AbilityAtomicBubbleProcedure.execute(world, x, y, z, entity);
+			} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("BattleBeast")) {
+				AbilityLeapFlyingProcedure.execute(world, x, y, z, entity);
+				{
+					double _setval = 1;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.ability_cooldown_1 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		}
 	}

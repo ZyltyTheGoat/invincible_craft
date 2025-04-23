@@ -94,6 +94,13 @@ public class AbilityButton5OnKeyPressedProcedure {
 				}
 			} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("BattleBeast")) {
 				{
+					double _setval = 7.5;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.ability_cooldown_5 = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
 					double _setval = 100;
 					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.battle_beast_bite_timer = _setval;

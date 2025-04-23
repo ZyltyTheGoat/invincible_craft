@@ -57,7 +57,7 @@ public class RoarTickProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-			if (world.dayTime() % 5 == 0) {
+			if (world.dayTime() % 2 == 0) {
 				entity.getPersistentData().putDouble("BattleBeastRoarRepeat", 0);
 				entity.getPersistentData().putDouble("BattleBeastRoarX", (entity.getLookAngle().x));
 				entity.getPersistentData().putDouble("BattleBeastRoarY", (entity.getLookAngle().y));

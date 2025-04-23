@@ -1,96 +1,58 @@
 package net.mcreator.invincible_craft.procedures;
 
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.particles.ParticleTypes;
 
-import java.util.Comparator;
+import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
+import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
+import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 
 public class AbilityLeapFlyingProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		boolean entity_found = false;
-		double raytrace_distance = 0;
-		double dx = 0;
-		double dz = 0;
-		raytrace_distance = 0;
-		entity_found = false;
-		for (int index0 = 0; index0 < 50; index0++) {
-			if (!world
-					.getEntitiesOfClass(LivingEntity.class,
-							AABB.ofSize(new Vec3(
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-											.getBlockPos().getX()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-											entity)).getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(
-											1f).add(
-													entity.getViewVector(1f).scale(raytrace_distance)),
-											ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())),
-									1, 1, 1),
-							e -> true)
-					.isEmpty()
-					&& !(((Entity) world
-							.getEntitiesOfClass(LivingEntity.class,
-									AABB.ofSize(
-											new Vec3(
-													(entity.level()
-															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																	entity))
-															.getBlockPos().getX()),
-													(entity.level()
-															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																	entity))
-															.getBlockPos().getY()),
-													(entity.level().clip(
-															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-															.getBlockPos().getZ())),
-											1, 1, 1),
-									e -> true)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-											.getBlockPos().getX()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-											.getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-											.getBlockPos().getZ())))
-							.findFirst().orElse(null)) == entity)) {
-				entity_found = true;
-				if (!(((Entity) world.getEntitiesOfClass(LivingEntity.class,
-						AABB.ofSize(new Vec3(
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-										.getBlockPos().getX()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-										.getBlockPos().getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-										.getBlockPos().getZ())),
-								1, 1, 1),
-						e -> true).stream().sorted(new Object() {
-							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-							}
-						}.compareDistOf(
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-										.getBlockPos().getX()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-										.getBlockPos().getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-										.getBlockPos().getZ())))
-						.findFirst().orElse(null)) == (null))) {
-					entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 2.2), (entity.getLookAngle().y * 2.2), (entity.getLookAngle().z * 2.2)));
-					break;
-				}
-			} else {
-				entity_found = false;
-				raytrace_distance = raytrace_distance + 1;
+		double pitch_new = 0;
+		double pitch = 0;
+		double yaw = 0;
+		if (entity.getXRot() >= 5) {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.PUNCH_IMPACT_3.get()), x, y, z, 1, 0, 0, 0, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.SMALL_GUST.get()), x, y, z, 5, 1, 1, 1, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.CLOUD, x, (y + 1), z, 50, 1, 0.5, 1, 0.1);
+			entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 3), (entity.getLookAngle().y * 3), (entity.getLookAngle().z * 3)));
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(InvincibleCraftModMobEffects.LEAP_CONTINUE.get());
+			{
+				boolean _setval = true;
+				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.battle_beast_leaping = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		} else {
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.PUNCH_IMPACT_3.get()), x, y, z, 1, 0, 0, 0, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.SMALL_GUST.get()), x, y, z, 5, 1, 1, 1, 0);
+			if (world instanceof ServerLevel _level)
+				_level.sendParticles(ParticleTypes.CLOUD, x, y, z, 50, 1, 0.5, 1, 0.1);
+			entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 3), (entity.getLookAngle().y * 3), (entity.getLookAngle().z * 3)));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.LEAP_CONTINUE.get(), 30, 0, false, false));
+			{
+				boolean _setval = false;
+				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.battle_beast_leaping = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

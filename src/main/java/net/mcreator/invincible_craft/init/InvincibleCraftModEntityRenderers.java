@@ -17,7 +17,6 @@ import net.mcreator.invincible_craft.client.renderer.RefugePortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.QuickPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.PortalDashPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.OrbsSpawnerPortalRenderer;
-import net.mcreator.invincible_craft.client.renderer.LeapGuideRenderer;
 import net.mcreator.invincible_craft.client.renderer.ExchangeCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.DuplicationCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanishmentPortalRenderer;
@@ -43,7 +42,6 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.DUPLICATION_CLONE.get(), DuplicationCloneRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.EXCHANGE_CLONE.get(), ExchangeCloneRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.THE_GIANT.get(), TheGiantRenderer::new);
-		event.registerEntityRenderer(InvincibleCraftModEntities.LEAP_GUIDE.get(), LeapGuideRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get(), SpikeBallEntityRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOM_EVE_CONSTRUCT_TRIDENT_PROJECTILE.get(), AtomEveConstructTridentProjectileRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOMICB_BLAST.get(), AtomicbBlastRenderer::new);

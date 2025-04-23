@@ -20,6 +20,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
 
+import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
@@ -67,6 +68,15 @@ public class AbilityUppercutProcedure {
 				}
 			}
 			entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 1.5), (-1.5), (entity.getLookAngle().z * 1.5)));
+			if (entity instanceof LivingEntity _entity)
+				_entity.removeEffect(InvincibleCraftModMobEffects.CAN_DOWNSLAM.get());
+			{
+				double _setval = 6;
+				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.ability_cooldown_3 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if (world.isClientSide()) {
 				SetupAnimationsProcedure.setAnimationClientside((Player) entity, "uppercut", true);
@@ -103,7 +113,7 @@ public class AbilityUppercutProcedure {
 			}
 			entity.setDeltaMovement(new Vec3((entity.getLookAngle().x * 1.5), 1.5, (entity.getLookAngle().z * 1.5)));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.CAN_DOWNSLAM.get(), 40, 0, false, false));
+				_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.CAN_DOWNSLAM.get(), 25, 0, false, false));
 		}
 	}
 }

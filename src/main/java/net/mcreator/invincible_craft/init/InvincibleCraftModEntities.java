@@ -24,7 +24,6 @@ import net.mcreator.invincible_craft.entity.RefugePortalEntity;
 import net.mcreator.invincible_craft.entity.QuickPortalEntity;
 import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
 import net.mcreator.invincible_craft.entity.OrbsSpawnerPortalEntity;
-import net.mcreator.invincible_craft.entity.LeapGuideEntity;
 import net.mcreator.invincible_craft.entity.ExchangeCloneEntity;
 import net.mcreator.invincible_craft.entity.DuplicationCloneEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
@@ -74,8 +73,6 @@ public class InvincibleCraftModEntities {
 			EntityType.Builder.<TheGiantEntity>of(TheGiantEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TheGiantEntity::new)
 
 					.sized(3f, 7.5f));
-	public static final RegistryObject<EntityType<LeapGuideEntity>> LEAP_GUIDE = register("leap_guide", EntityType.Builder.<LeapGuideEntity>of(LeapGuideEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-			.setUpdateInterval(3).setCustomClientFactory(LeapGuideEntity::new).fireImmune().sized(0.1f, 0.1f));
 	public static final RegistryObject<EntityType<SpikeBallEntityEntity>> SPIKE_BALL_ENTITY = register("spike_ball_entity", EntityType.Builder.<SpikeBallEntityEntity>of(SpikeBallEntityEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SpikeBallEntityEntity::new).fireImmune().sized(2.5f, 2.5f));
 	public static final RegistryObject<EntityType<AtomEveConstructTridentProjectileEntity>> ATOM_EVE_CONSTRUCT_TRIDENT_PROJECTILE = register("atom_eve_construct_trident_projectile",
@@ -104,7 +101,6 @@ public class InvincibleCraftModEntities {
 			DuplicationCloneEntity.init();
 			ExchangeCloneEntity.init();
 			TheGiantEntity.init();
-			LeapGuideEntity.init();
 			SpikeBallEntityEntity.init();
 			AtomicbBlastEntity.init();
 			AtomEveAwakeningEntity.init();
@@ -124,7 +120,6 @@ public class InvincibleCraftModEntities {
 		event.put(DUPLICATION_CLONE.get(), DuplicationCloneEntity.createAttributes().build());
 		event.put(EXCHANGE_CLONE.get(), ExchangeCloneEntity.createAttributes().build());
 		event.put(THE_GIANT.get(), TheGiantEntity.createAttributes().build());
-		event.put(LEAP_GUIDE.get(), LeapGuideEntity.createAttributes().build());
 		event.put(SPIKE_BALL_ENTITY.get(), SpikeBallEntityEntity.createAttributes().build());
 		event.put(ATOMICB_BLAST.get(), AtomicbBlastEntity.createAttributes().build());
 		event.put(ATOM_EVE_AWAKENING.get(), AtomEveAwakeningEntity.createAttributes().build());
