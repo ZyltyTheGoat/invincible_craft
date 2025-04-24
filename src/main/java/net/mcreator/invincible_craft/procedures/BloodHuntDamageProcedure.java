@@ -7,8 +7,6 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -42,7 +40,7 @@ public class BloodHuntDamageProcedure {
 					event.setCanceled(true);
 				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), sourceentity),
-						(float) (5 + (sourceentity instanceof LivingEntity _livingEntity1 && _livingEntity1.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity1.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0) * 1.15));
+						(float) (5 + (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength * 0.5));
 				if (sourceentity.onGround()) {
 					entity.setDeltaMovement(new Vec3((sourceentity.getLookAngle().x * 2.5), (entity.getDeltaMovement().y()), (sourceentity.getLookAngle().z * 2.5)));
 				} else {

@@ -7,7 +7,14 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.LeavesBlock;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.AbstractGlassBlock;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ExperienceOrb;
@@ -15,11 +22,17 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
@@ -27,6 +40,7 @@ import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 
 import javax.annotation.Nullable;
 
+import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
@@ -109,6 +123,61 @@ public class RoarTickProcedure {
 									_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 20, 0, false, false));
 								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 									_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 35, 0));
+							}
+						}
+					} // Calculate center position
+					BlockPos centerPos = BlockPos.containing(entity.getX() + entity.getPersistentData().getDouble("SonicClapRepeat") * entity.getPersistentData().getDouble("SonicClapX"),
+							entity.getY() + 1.6 + entity.getPersistentData().getDouble("SonicClapRepeat") * entity.getPersistentData().getDouble("SonicClapY"),
+							entity.getZ() + entity.getPersistentData().getDouble("SonicClapRepeat") * entity.getPersistentData().getDouble("SonicClapZ"));
+					// Check all blocks in 6-block radius sphere
+					int radius = 6;
+					RandomSource random = RandomSource.create(); // Create a random instance
+					for (int x = -radius; x <= radius; x++) {
+						for (int y = -radius; y <= radius; y++) {
+							for (int z = -radius; z <= radius; z++) {
+								// Only process blocks within spherical radius
+								if (x * x + y * y + z * z <= radius * radius) {
+									BlockPos checkPos = centerPos.offset(x, y, z);
+									BlockState blockState = world.getBlockState(checkPos);
+									Block block = blockState.getBlock();
+									// Destroy leaves and glass (replace with air)
+									if (block instanceof LeavesBlock || block instanceof AbstractGlassBlock) {
+										// Play breaking sound
+										if (world instanceof Level _level) {
+											if (!_level.isClientSide()) {
+												_level.playSound(null, checkPos, blockState.getSoundType().getBreakSound(), SoundSource.BLOCKS, 1.0F, 0.8F + random.nextFloat() * 0.4F); // Use local random
+											}
+										}
+										// Show breaking particles
+										if (world instanceof ServerLevel _level) {
+											_level.sendParticles(new BlockParticleOption(ParticleTypes.BLOCK, blockState), checkPos.getX() + 0.5, checkPos.getY() + 0.5, checkPos.getZ() + 0.5, 10, 0.5, 0.5, 0.5, 0.05);
+										}
+										world.setBlock(checkPos, Blocks.AIR.defaultBlockState(), 3);
+									}
+									// Replace grass blocks with dirt
+									else if (block == Blocks.GRASS_BLOCK || block == Blocks.DIRT_PATH || block == Blocks.MYCELIUM || block == Blocks.PODZOL) {
+										// Play digging sound
+										if (world instanceof Level _level) {
+											if (!_level.isClientSide()) {
+												_level.playSound(null, checkPos, SoundEvents.GRASS_BREAK, SoundSource.BLOCKS, 0.7F, 0.8F + random.nextFloat() * 0.4F); // Use local random
+											}
+										}
+										BlockState _bs = Blocks.DIRT.defaultBlockState();
+										// Preserve block properties
+										BlockState _bso = world.getBlockState(checkPos);
+										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+											Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+											if (_property != null && _bs.getValue(_property) != null) {
+												try {
+													_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+												} catch (Exception e) {
+													// Silent catch
+												}
+											}
+										}
+										world.setBlock(checkPos, _bs, 3);
+									}
+								}
 							}
 						}
 					}

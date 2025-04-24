@@ -17,6 +17,7 @@ import net.mcreator.invincible_craft.potion.PunchLimitMobEffect;
 import net.mcreator.invincible_craft.potion.LeapContinueMobEffect;
 import net.mcreator.invincible_craft.potion.FlightSlownessMobEffect;
 import net.mcreator.invincible_craft.potion.CanDownslamMobEffect;
+import net.mcreator.invincible_craft.potion.BleedMobEffect;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
 public class InvincibleCraftModMobEffects {
@@ -28,4 +29,5 @@ public class InvincibleCraftModMobEffects {
 	public static final RegistryObject<MobEffect> FLIGHT_SLOWNESS = REGISTRY.register("flight_slowness", () -> new FlightSlownessMobEffect());
 	public static final RegistryObject<MobEffect> CAN_DOWNSLAM = REGISTRY.register("can_downslam", () -> new CanDownslamMobEffect());
 	public static final RegistryObject<MobEffect> LEAP_CONTINUE = REGISTRY.register("leap_continue", () -> new LeapContinueMobEffect());
+	public static final RegistryObject<MobEffect> BLEED = REGISTRY.register("bleed", () -> new BleedMobEffect());
 }

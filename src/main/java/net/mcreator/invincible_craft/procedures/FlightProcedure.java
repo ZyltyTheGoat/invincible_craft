@@ -2,32 +2,21 @@ package net.mcreator.invincible_craft.procedures;
 
 import org.lwjgl.glfw.GLFW;
 
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.item.ItemEntity;
-import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.gui.screens.Screen;
@@ -36,12 +25,10 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
-import net.mcreator.invincible_craft.WaveEffect;
 
 import javax.annotation.Nullable;
 
-import java.util.List;
-import java.util.Comparator;
+import java.util.Random;
 
 @Mod.EventBusSubscriber
 public class FlightProcedure {
@@ -66,31 +53,6 @@ public class FlightProcedure {
 			if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get()))) {
 				if (!Minecraft.getInstance().isPaused()) {
 					if (entity.onGround()) {
-						if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).boost_timer > 0) {
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, (float) 1.6);
-								} else {
-									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, (float) 1.6, false);
-								}
-							}
-							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.SCREEN_SHAKE.get(), 7, 0, false, false));
-							BlockPos center = new BlockPos((int) x, (int) y - 1, (int) z);
-							WaveEffect.createShockwave((Level) world, center, 8, 0);
-							{
-								final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
-								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-								for (Entity entityiterator : _entfound) {
-									if (!(entity == entityiterator) && !(entityiterator instanceof ExperienceOrb) && !(entityiterator instanceof ItemEntity)) {
-										entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), entity),
-												(float) ((entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE)
-														? _livingEntity11.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue()
-														: 0) * 3));
-									}
-								}
-							}
-						}
 						entity.setDeltaMovement(new Vec3(0, 0, 0));
 						if (entity instanceof Player _plr && _plr.isFallFlying()) {
 							_plr.stopFallFlying();
@@ -117,7 +79,7 @@ public class FlightProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity _livEnt18 && _livEnt18.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+						if (entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							{
 								double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying_speed_changed * 0.1;
 								entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -136,7 +98,7 @@ public class FlightProcedure {
 						}
 						entity.noPhysics = false;
 					} else {
-						if (!(entity instanceof LivingEntity _livEnt19 && _livEnt19.hasEffect(InvincibleCraftModMobEffects.STUN.get()))) {
+						if (!(entity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(InvincibleCraftModMobEffects.STUN.get()))) {
 							if (entity.isSprinting() && GLFW.glfwGetKey(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_W) == GLFW.GLFW_PRESS) {
 								if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).boost_timer <= 0
 										&& (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).boost_cooldown <= 0 && new Object() {
@@ -175,7 +137,7 @@ public class FlightProcedure {
 									if (world instanceof ServerLevel _level)
 										_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.SMALL_GUST.get()), x, y, z, 5, 1, 1, 1, 0);
 								}
-								if (!(entity instanceof LivingEntity _livEnt26 && _livEnt26.isFallFlying())) {
+								if (!(entity instanceof LivingEntity _livEnt14 && _livEnt14.isFallFlying())) {
 									if (entity instanceof Player _plr && !(_plr.isFallFlying())) {
 										_plr.startFallFlying();
 									}
@@ -215,28 +177,29 @@ public class FlightProcedure {
 												return; // Ensure this only runs on the server
 											}
 											Vec3 lookDirection = entity.getLookAngle();
-											// Check if the player is looking down at 30 degrees or more
-											if (lookDirection.y <= -0.5) {
-												return; // If the player is looking down steeply, don't break blocks
-											}
-											BlockPos centerPos = BlockPos.containing(entity.getX() + lookDirection.x * 1, entity.getY() + lookDirection.y * 1, entity.getZ() + lookDirection.z * 1);
-											int radius = 4;
+											// Block 2 unit in front of where the entity is looking
+											BlockPos centerPos = BlockPos.containing(entity.getX() + lookDirection.x * 2, entity.getY() + lookDirection.y * 2, entity.getZ() + lookDirection.z * 2);
+											int radius = 6;
 											double radiusSquared = radius * radius;
+											Random random = new Random();
 											for (int i = -radius; i <= radius; i++) {
 												for (int j = -radius; j <= radius; j++) {
 													for (int k = -radius; k <= radius; k++) {
 														BlockPos targetPos = centerPos.offset(i, j, k);
 														double distanceSquared = i * i + j * j + k * k;
-														if (distanceSquared > radiusSquared) {
+														if (distanceSquared > radiusSquared)
 															continue;
+														// Outer layer variation: randomly skip ~25% of blocks
+														if (distanceSquared > (radius - 2) * (radius - 1)) {
+															if (random.nextFloat() < 0.25f)
+																continue;
 														}
 														BlockState blockState = entity.level().getBlockState(targetPos);
 														if (blockState.isAir() || blockState.getDestroySpeed(entity.level(), targetPos) < 0) {
 															continue;
 														}
-														// Play break sound & particles
+														// Break the block with visual/sound effects
 														entity.level().levelEvent(500, targetPos, Block.getId(blockState));
-														// Ensure the block is set to air and updated properly
 														entity.level().setBlock(targetPos, Blocks.AIR.defaultBlockState(), 3);
 													}
 												}

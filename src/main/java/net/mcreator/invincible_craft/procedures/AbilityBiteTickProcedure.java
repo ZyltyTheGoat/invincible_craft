@@ -123,7 +123,10 @@ public class AbilityBiteTickProcedure {
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.SCREEN_SHAKE.get(), 10, 0, false, false));
 							entityiterator.hurt(
-									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 1);
+									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
+									(float) (6 + 0.5 + (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.BLEED.get(), 200, 0, false, false));
 							entity.setDeltaMovement(new Vec3(0, 0, 0));
 							entityiterator.invulnerableTime = 0;
 							if (world instanceof ServerLevel _level)

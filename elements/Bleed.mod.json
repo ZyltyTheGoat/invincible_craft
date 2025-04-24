@@ -1,0 +1,22 @@
+{
+  "_fv": 69,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Bleeding",
+    "icon": "bleed_effect",
+    "color": {
+      "value": -6814681,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "isCuredByMilk": true,
+    "isProtectedByTotem": true,
+    "isCuredbyHoney": false,
+    "onActiveTick": {
+      "name": "BleedOnEffectActiveTick"
+    }
+  }
+}

@@ -8609,6 +8609,67 @@
         ]
       },
       "path": "~/Powers - Abilities/BattleBeast/Leap"
+    },
+    {
+      "name": "BleedOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bleed_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/BleedOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast"
+    },
+    {
+      "name": "Bleed",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bleed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/potion/BleedMobEffect.java"
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast"
+    },
+    {
+      "name": "BleedDamage",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bleed_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/invincible_craft/damage_type/bleed_damage.json"
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast"
     }
   ],
   "variable_elements": [
@@ -9318,8 +9379,8 @@
       "entity.invincible_craft.portal_dash_portal": "Dash Portal",
       "advancements.advancement_kill_viltrumite.title": "Against All Odds",
       "gamerule.invincibleCraftXPMultiplier": "Invincible Craft - XP Multiplier",
-      "effect.invincible_craft.leap_continue": "Leap Continue",
       "item.invincible_craft.bandit_spawn_egg": "Bandit Spawn Egg",
+      "effect.invincible_craft.leap_continue": "Leap Continue",
       "item.invincible_craft.invincible_suit_sinister_mark_chestplate": "Invincible Suit (Sinister Mark) Chestplate",
       "gui.invincible_craft.quick_travel_gui.travel_y": "Coordinate Y",
       "advancements.advancement_viltrumite.descr": "The blood of conquerors flows through you.",
@@ -9333,6 +9394,7 @@
       "death.attack.chop": "%1$s died",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_original": "Make Invincible Suit (Original) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "death.attack.battle_beast_uppercut": "%1$s died",
+      "death.attack.bleed_damage.player": "%1$s died whilst trying to escape %2$s",
       "item.invincible_craft.art_rosenbaum_spawn_egg": "Art Rosenbaum Spawn Egg",
       "entity.invincible_craft.the_giant": "The Giant",
       "key.invincible_craft.leave_planet": "Leave Planet",
@@ -9426,6 +9488,7 @@
       "item.invincible_craft.atomicb_blast_spawn_egg": "Atomicb Blast Spawn Egg",
       "item.invincible_craft.dupli_kate_suit_boots": "Dupli-Kate Boots",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "effect.invincible_craft.bleed": "Bleeding",
       "subtitles.followup": "dash",
       "item.invincible_craft.atom_eve_awakening_armor_leggings": "Atom Eve Awakening Armor Leggings",
       "gui.invincible_craft.construct_gui.tooltip_construct_gauntlet": "Construct Gauntlet",
@@ -9457,6 +9520,7 @@
       "item.invincible_craft.viltrumite_suit_boots": "Viltrumite Suit Boots",
       "item.invincible_craft.invincible_suit_sinister_mark_leggings": "Invincible Suit (Sinister Mark) Leggings",
       "item.invincible_craft.metal_bat": "Metal Bat",
+      "death.attack.bleed_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.stat_panel_gui.label_strength": "§lStrength",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.label_suit_shop": "SUIT SHOP",
       "item.invincible_craft.portal_dash_portal_spawn_egg": "Dash Portal Spawn Egg",
@@ -9488,6 +9552,7 @@
       "item.invincible_craft.astronaut_helmet_helmet": "Astronaut Helmet",
       "item.invincible_craft.viltrumite_suit_leggings": "Viltrumite Suit Leggings",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "death.attack.bleed_damage": "%1$s died",
       "entity.invincible_craft.quick_portal": "Quick Portal",
       "advancements.advancement_buy_first_suit.title": "Suited for Battle",
       "gamerule.invincibleCraftCloneLimit.description": "Limits maximum number of clones a player can have. (Deafult - 10)",

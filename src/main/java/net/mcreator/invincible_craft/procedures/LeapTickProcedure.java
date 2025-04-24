@@ -6,16 +6,21 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageTypes;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.NbtUtils;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
+import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 
 import javax.annotation.Nullable;
 
@@ -42,14 +47,50 @@ public class LeapTickProcedure {
 			if (entity.onGround()) {
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.CLOUD, x, y, z, 250, 3, 0.5, 3, 0.1);
-				if (world instanceof Level _level && !_level.isClientSide())
-					_level.explode(entity, new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_EXPLOSION)), null, x, y, z, 2, false, Level.ExplosionInteraction.BLOCK);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.EXPLOSION_EMITTER, x, y, z, 2, 2, 0.5, 2, 0.1);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.PUNCH_IMPACT_3.get()), x, y, z, 2, 0, 0, 0, 0.1);
 				{
 					boolean _setval = false;
 					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.battle_beast_leaping = _setval;
 						capability.syncPlayerVariables(entity);
 					});
+				}
+				int horizontalRadiusHemiBot = (int) (2 + 0.1 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength) - 1;
+				int verticalRadiusHemiBot = (int) (2 + 0.1 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength);
+				int yIterationsHemiBot = verticalRadiusHemiBot;
+				for (int i = -yIterationsHemiBot; i <= 0; i++) {
+					if (i == -verticalRadiusHemiBot) {
+						continue;
+					}
+					for (int xi = -horizontalRadiusHemiBot; xi <= horizontalRadiusHemiBot; xi++) {
+						for (int zi = -horizontalRadiusHemiBot; zi <= horizontalRadiusHemiBot; zi++) {
+							double distanceSq = (xi * xi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot) + (i * i) / (double) (verticalRadiusHemiBot * verticalRadiusHemiBot)
+									+ (zi * zi) / (double) (horizontalRadiusHemiBot * horizontalRadiusHemiBot);
+							if (distanceSq <= 1.0) {
+								if (Math.random() < (3) / ((float) 5)) {
+									if (world instanceof ServerLevel _serverLevel) {
+										Entity entityinstance = EntityType.FALLING_BLOCK.create(_serverLevel);
+										if (entityinstance != null) {
+											CompoundTag _compoundTag = entityinstance.saveWithoutId(new CompoundTag());
+											_compoundTag.put("BlockState", NbtUtils.writeBlockState((world.getBlockState(BlockPos.containing(x + xi, y + i, z + zi)))));
+											entityinstance.load(_compoundTag);
+											entityinstance.setPos(x + xi, (y + i + 0.5), z + zi);
+											entityinstance.setDeltaMovement(new Vec3(
+													((entityinstance.getX() - entity.getX())
+															* (2 / Math.sqrt(Math.pow(entityinstance.getX() - entity.getX(), 2) + Math.pow(entityinstance.getY() - entity.getY(), 2) + Math.pow(entityinstance.getZ() - entity.getZ(), 2)))),
+													(Mth.nextDouble(RandomSource.create(), 0.5, 1)), ((entityinstance.getZ() - entity.getZ())
+															* (2 / Math.sqrt(Math.pow(entityinstance.getX() - entity.getX(), 2) + Math.pow(entityinstance.getY() - entity.getY(), 2) + Math.pow(entityinstance.getZ() - entity.getZ(), 2))))));
+											_serverLevel.addFreshEntity(entityinstance);
+										}
+									}
+								}
+								world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+							}
+						}
+					}
 				}
 			}
 		}
