@@ -1,8 +1,5 @@
 package net.mcreator.invincible_craft.procedures;
 
-import virtuoel.pehkui.api.ScaleTypes;
-import virtuoel.pehkui.api.ScaleOperations;
-
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -77,19 +74,17 @@ public class ViltrumiteOnInitialEntitySpawnProcedure {
 		random_suffix = Mth.nextInt(RandomSource.create(), 0, (int) (viltrumite_suffixes.size() - 1));
 		random_title = Mth.nextInt(RandomSource.create(), 0, (int) (viltrumite_titles.size() - 1));
 		if (rank <= 5) {
-			entity.setCustomName(Component.literal(((viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + "" + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
-			entity.getPersistentData().putString("rank", "Soldier");
-		} else if (rank <= 8) {
-			entity.getPersistentData().putString("rank", "Officer");
-			if (Math.random() < (1) / ((float) 5)) {
-				entity.setCustomName(Component.literal(((viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + "" + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : "")
-						+ (viltrumite_titles.get((int) random_title) instanceof String _s ? _s : ""))));
-			} else {
-				entity.setCustomName(Component.literal(((viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + "" + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
-			}
+			if (entity instanceof ViltrumiteEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 1);
+			entity.setCustomName(Component.literal(("Soldier - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
+		} else if (rank <= 9) {
+			if (entity instanceof ViltrumiteEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 2);
+			entity.setCustomName(Component.literal(("Officer - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
 		} else {
-			entity.getPersistentData().putString("rank", "General");
-			entity.setCustomName(Component.literal(((viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + "" + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : "")
+			if (entity instanceof ViltrumiteEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 3);
+			entity.setCustomName(Component.literal(("General - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : "")
 					+ (viltrumite_titles.get((int) random_title) instanceof String _s ? _s : ""))));
 		}
 		if (entity instanceof ViltrumiteEntity _datEntSetI)
@@ -100,27 +95,21 @@ public class ViltrumiteOnInitialEntitySpawnProcedure {
 			_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_mouth, Mth.nextInt(RandomSource.create(), 1, 2));
 		if (entity instanceof ViltrumiteEntity _datEntSetI)
 			_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_mustache, Mth.nextInt(RandomSource.create(), 1, 6));
-		random = Mth.nextInt(RandomSource.create(), 1, 2000);
-		size = 1 + (random / 2000) / 2;
-		ScaleTypes.HEIGHT.getScaleData(entity).setTargetScale((float) ScaleOperations.MULTIPLY.applyAsDouble(ScaleTypes.HEIGHT.getScaleData(entity).getTargetScale(), size));
-		ScaleTypes.WIDTH.getScaleData(entity).setTargetScale((float) ScaleOperations.MULTIPLY.applyAsDouble(ScaleTypes.WIDTH.getScaleData(entity).getTargetScale(), size));
-		ScaleTypes.HITBOX_HEIGHT.getScaleData(entity).setTargetScale((float) ScaleOperations.MULTIPLY.applyAsDouble(ScaleTypes.HITBOX_HEIGHT.getScaleData(entity).getTargetScale(), size));
-		ScaleTypes.HITBOX_WIDTH.getScaleData(entity).setTargetScale((float) ScaleOperations.MULTIPLY.applyAsDouble(ScaleTypes.HITBOX_WIDTH.getScaleData(entity).getTargetScale(), size));
 		if (rank <= 5) {
-			if (entity instanceof LivingEntity _livingEntity87 && _livingEntity87.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity87.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8);
-			if (entity instanceof LivingEntity _livingEntity88 && _livingEntity88.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-				_livingEntity88.getAttribute(Attributes.MAX_HEALTH).setBaseValue(75);
+			if (entity instanceof LivingEntity _livingEntity77 && _livingEntity77.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity77.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(8);
+			if (entity instanceof LivingEntity _livingEntity78 && _livingEntity78.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+				_livingEntity78.getAttribute(Attributes.MAX_HEALTH).setBaseValue(75);
 		} else if (rank <= 8) {
-			if (entity instanceof LivingEntity _livingEntity89 && _livingEntity89.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity89.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(12);
-			if (entity instanceof LivingEntity _livingEntity90 && _livingEntity90.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-				_livingEntity90.getAttribute(Attributes.MAX_HEALTH).setBaseValue(100);
+			if (entity instanceof LivingEntity _livingEntity79 && _livingEntity79.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity79.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(12);
+			if (entity instanceof LivingEntity _livingEntity80 && _livingEntity80.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+				_livingEntity80.getAttribute(Attributes.MAX_HEALTH).setBaseValue(100);
 		} else {
-			if (entity instanceof LivingEntity _livingEntity91 && _livingEntity91.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
-				_livingEntity91.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(15);
-			if (entity instanceof LivingEntity _livingEntity92 && _livingEntity92.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
-				_livingEntity92.getAttribute(Attributes.MAX_HEALTH).setBaseValue(125);
+			if (entity instanceof LivingEntity _livingEntity81 && _livingEntity81.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE))
+				_livingEntity81.getAttribute(Attributes.ATTACK_DAMAGE).setBaseValue(15);
+			if (entity instanceof LivingEntity _livingEntity82 && _livingEntity82.getAttributes().hasAttribute(Attributes.MAX_HEALTH))
+				_livingEntity82.getAttribute(Attributes.MAX_HEALTH).setBaseValue(125);
 		}
 		if (entity instanceof LivingEntity _entity)
 			_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);

@@ -50,7 +50,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 
 @Mod.EventBusSubscriber(value = Dist.CLIENT)
-public class ViltrumiteNameRenderProcedure {
+public class ViltrumiteRankRenderProcedure {
 	private static RenderLevelStageEvent provider = null;
 	private static Map<EntityType, Entity> data = new HashMap<>();
 
@@ -250,7 +250,15 @@ public class ViltrumiteNameRenderProcedure {
 		if (world instanceof ClientLevel) {
 			for (Entity entityiterator : ((ClientLevel) world).entitiesForRendering()) {
 				if (entityiterator instanceof ViltrumiteEntity) {
-					renderBackground("Officer", (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() + 0.2), (entityiterator.getZ()), 0, 0, 0, (float) 0.025, 100 << 24 | 0 << 16 | 0 << 8 | 0);
+					if ((entityiterator instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_rank) : 0) == 1) {
+						rank = "Soldier";
+					} else if ((entityiterator instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_rank) : 0) == 1) {
+						rank = "Officer";
+					} else {
+						rank = "General";
+					}
+					renderBackground(rank, (entityiterator.getX()), (entityiterator.getY() + 2.2), (entityiterator.getZ()), Minecraft.getInstance().gameRenderer.getMainCamera().getYRot(),
+							Minecraft.getInstance().gameRenderer.getMainCamera().getXRot(), 0, (float) 0.025, 50 << 24 | 0 << 16 | 0 << 8 | 0);
 				}
 			}
 		}
