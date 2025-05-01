@@ -176,6 +176,8 @@ public class AbilityButton3OnKeyReleasedProcedure {
 										(0.5 + 0.01 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
 								entityiterator.getPersistentData().putDouble("scale",
 										(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale));
+								entityiterator.getPersistentData().putDouble("time_scale",
+										((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale));
 								{
 									double _setval = 0;
 									entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

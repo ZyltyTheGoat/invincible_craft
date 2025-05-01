@@ -1670,41 +1670,6 @@
       "path": "~/Other"
     },
     {
-      "name": "Heavypunch",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "heavypunch",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/HeavypunchProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Powers - Abilities/Viltrumite/Punch/Heavy Punch"
-    },
-    {
       "name": "PunchImpact1",
       "type": "particle",
       "compiles": true,
@@ -6011,6 +5976,10 @@
             "type": "entity"
           },
           {
+            "name": "amount",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -6220,29 +6189,6 @@
         ]
       },
       "path": "~/Items/Power Picker"
-    },
-    {
-      "name": "PierceTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "pierce_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/PierceTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Powers - Abilities/Viltrumite/Chop"
     },
     {
       "name": "Spark",
@@ -6786,6 +6732,10 @@
             "type": "entity"
           },
           {
+            "name": "amount",
+            "type": "number"
+          },
+          {
             "name": "world",
             "type": "world"
           }
@@ -6991,6 +6941,10 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
           },
           {
             "name": "world",
@@ -7205,6 +7159,10 @@
           {
             "name": "sourceentity",
             "type": "entity"
+          },
+          {
+            "name": "amount",
+            "type": "number"
           },
           {
             "name": "world",
@@ -8807,6 +8765,39 @@
         ]
       },
       "path": "~/Lock On System"
+    },
+    {
+      "name": "DamageReduction",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "damage_reduction",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/DamageReductionProcedure.java"
+        ],
+        "dependencies": []
+      },
+      "path": "~/Powers - Abilities"
+    },
+    {
+      "name": "ViltrumiteNameRender",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "viltrumite_name_render",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteNameRenderProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal"
     }
   ],
   "variable_elements": [
@@ -9331,6 +9322,12 @@
       "type": "string",
       "scope": "player_lifetime",
       "value": ""
+    },
+    {
+      "name": "damage_reduction",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
     }
   ],
   "sound_elements": [
@@ -9537,8 +9534,8 @@
       "gui.invincible_craft.quick_travel_gui.travel_x": "Coordinate X",
       "item.invincible_craft.atom_eve_suit_chestplate": "Atom Eve Chestplate",
       "item.invincible_craft.atom_eve_suit_leggings": "Atom Eve Leggings",
-      "death.attack.suffocation.item": "%1$s was killed by %2$s using %3$s",
       "effect.invincible_craft.punch_limit": "Punch Limit",
+      "death.attack.suffocation.item": "%1$s was killed by %2$s using %3$s",
       "death.attack.battle_beast_uppercut.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.barrage.item": "%1$s was killed by %2$s using %3$s",
       "death.attack.chop": "%1$s died",
@@ -9551,9 +9548,9 @@
       "subtitles.growl": "",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
-      "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
-      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
       "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "item.invincible_craft.atom_eve_hammer_construct": "Hammer Construct",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
@@ -9577,8 +9574,8 @@
       "item.invincible_craft.invincible_suit_sinister_mark_helmet": "Invincible Suit (Sinister Mark) Helmet",
       "death.attack.sonic_clap_damage.item": "%1$s was killed by %2$s using %3$s",
       "key.invincible_craft.stat_panel": "Stat Panel",
-      "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
+      "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
       "subtitles.skull_crush": "skull_crush",
       "gamerule.invincibleCraftEnableMoonTravel": "Invincible Craft - Moon Travel",
       "item.invincible_craft.dupli_kate_suit_leggings": "Dupli-Kate Leggings",
@@ -9841,10 +9838,6 @@
               {
                 "name": "Punch",
                 "children": [
-                  {
-                    "name": "Heavy Punch",
-                    "children": []
-                  },
                   {
                     "name": "ClassicPunch",
                     "children": []

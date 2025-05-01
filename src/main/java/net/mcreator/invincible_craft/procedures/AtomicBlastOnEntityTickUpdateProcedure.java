@@ -13,6 +13,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 
+import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
 
@@ -40,21 +41,26 @@ public class AtomicBlastOnEntityTickUpdateProcedure {
 					entity.discard();
 			}
 		} else {
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate((1 + 0.2 * entity.getPersistentData().getDouble("scale")) / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
-					if (!(entity == entityiterator) && entityiterator instanceof LivingEntity
-							&& !(entityiterator instanceof TamableAnimal _tamIsTamedBy && (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
-							&& !(entityiterator == (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null))) {
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), 5);
-						if (entity.getPersistentData().getDouble("scale") >= 9) {
-							if (world instanceof Level _level && !_level.isClientSide())
-								_level.explode(null, x, y, z, 3, Level.ExplosionInteraction.NONE);
+			if (!((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) == null)) {
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate((1 + 0.2 * entity.getPersistentData().getDouble("scale")) / 2d), e -> true).stream()
+							.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					for (Entity entityiterator : _entfound) {
+						if (!(entity == entityiterator) && entityiterator instanceof LivingEntity
+								&& !(entityiterator instanceof TamableAnimal _tamIsTamedBy && (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null) instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
+								&& !(entityiterator == (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null))) {
+							entityiterator.hurt(
+									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null), entity),
+									(float) ((5 + ((entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null).getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null)
+											.orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_intelligence * 0.1) * (1 + entity.getPersistentData().getDouble("time_scale") * 0.02)));
+							if (entity.getPersistentData().getDouble("scale") >= 9) {
+								if (world instanceof Level _level && !_level.isClientSide())
+									_level.explode(null, x, y, z, 3, Level.ExplosionInteraction.NONE);
+							}
+							if (!entity.level().isClientSide())
+								entity.discard();
 						}
-						if (!entity.level().isClientSide())
-							entity.discard();
 					}
 				}
 			}

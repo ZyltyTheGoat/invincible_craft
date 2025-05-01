@@ -130,8 +130,8 @@ public class AbilityBloodHuntProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) && !(entityiterator == entity) && entityiterator instanceof LivingEntity) {
 							entityiterator.hurt(
-									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:blood_hunt"))), entity), (float) (3
-											+ (entity instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity34.getAttribute(Attributes.ATTACK_DAMAGE).getValue() : 0) * 1.5));
+									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:blood_hunt"))), entity), (float) (2
+											+ (entity instanceof LivingEntity _livingEntity34 && _livingEntity34.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity34.getAttribute(Attributes.ATTACK_DAMAGE).getValue() : 0) * 0.04));
 							if (world instanceof ServerLevel _level)
 								_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() / 2), (entityiterator.getZ()), 60, 0.25,
 										0.25, 0.25, 0.25);

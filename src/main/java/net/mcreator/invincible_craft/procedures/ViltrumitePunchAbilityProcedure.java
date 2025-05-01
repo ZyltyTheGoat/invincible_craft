@@ -164,12 +164,12 @@ public class ViltrumitePunchAbilityProcedure {
 						}
 					}
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
-							(float) (entity instanceof LivingEntity _livingEntity30 && _livingEntity30.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity30.getAttribute(Attributes.ATTACK_DAMAGE).getValue() : 0));
+							(float) (5 + (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength * 0.25));
 					entityiterator.setDeltaMovement(new Vec3((2 * entity.getLookAngle().x), (2 * entity.getLookAngle().y + 0.3), (2 * entity.getLookAngle().z)));
 					entity.getPersistentData().putString("track", (entityiterator.getStringUUID()));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(),
-								(int) (entity instanceof LivingEntity _livingEntity39 && _livingEntity39.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity39.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0), 0, false,
+								(int) (entity instanceof LivingEntity _livingEntity38 && _livingEntity38.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity38.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0), 0, false,
 								false));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TARGET.get(), 30, 0, false, false));

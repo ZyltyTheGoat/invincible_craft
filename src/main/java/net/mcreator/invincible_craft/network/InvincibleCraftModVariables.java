@@ -107,6 +107,7 @@ public class InvincibleCraftModVariables {
 			clone.awakening_chest_old = original.awakening_chest_old;
 			clone.awakening_leggings_old = original.awakening_leggings_old;
 			clone.awakening_boot_old = original.awakening_boot_old;
+			clone.damage_reduction = original.damage_reduction;
 			if (!event.isWasDeath()) {
 				clone.flying = original.flying;
 				clone.current_speed = original.current_speed;
@@ -292,6 +293,7 @@ public class InvincibleCraftModVariables {
 		public boolean battle_beast_leaping = false;
 		public double awakening_timer_reset = 0;
 		public String lock_on_target = "";
+		public double damage_reduction = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -387,6 +389,7 @@ public class InvincibleCraftModVariables {
 			nbt.putBoolean("battle_beast_leaping", battle_beast_leaping);
 			nbt.putDouble("awakening_timer_reset", awakening_timer_reset);
 			nbt.putString("lock_on_target", lock_on_target);
+			nbt.putDouble("damage_reduction", damage_reduction);
 			return nbt;
 		}
 
@@ -485,6 +488,7 @@ public class InvincibleCraftModVariables {
 			battle_beast_leaping = nbt.getBoolean("battle_beast_leaping");
 			awakening_timer_reset = nbt.getDouble("awakening_timer_reset");
 			lock_on_target = nbt.getString("lock_on_target");
+			damage_reduction = nbt.getDouble("damage_reduction");
 		}
 	}
 
@@ -605,6 +609,7 @@ public class InvincibleCraftModVariables {
 					variables.battle_beast_leaping = message.data.battle_beast_leaping;
 					variables.awakening_timer_reset = message.data.awakening_timer_reset;
 					variables.lock_on_target = message.data.lock_on_target;
+					variables.damage_reduction = message.data.damage_reduction;
 				}
 			});
 			context.setPacketHandled(true);

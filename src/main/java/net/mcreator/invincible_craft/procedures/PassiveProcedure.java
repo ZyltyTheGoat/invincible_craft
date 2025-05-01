@@ -32,7 +32,7 @@ public class PassiveProcedure {
 			return;
 		if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("BattleBeast")) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 5, 0));
+				_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 10, 1, false, false));
 		}
 	}
 }
