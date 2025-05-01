@@ -15,7 +15,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.EntityBlock;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.entity.EntityType;
@@ -37,8 +36,6 @@ import net.minecraft.client.renderer.LevelRenderer;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.Minecraft;
-
-import net.mcreator.invincible_craft.entity.ViltrumiteEntity;
 
 import javax.annotation.Nullable;
 
@@ -232,7 +229,7 @@ public class ViltrumiteRankRenderProcedure {
 			ClientLevel level = Minecraft.getInstance().level;
 			Entity entity = provider.getCamera().getEntity();
 			Vec3 pos = entity.getPosition(provider.getPartialTick());
-			execute(provider, level);
+			execute(provider);
 			RenderSystem.defaultBlendFunc();
 			RenderSystem.disableBlend();
 			RenderSystem.enableCull();
@@ -241,26 +238,11 @@ public class ViltrumiteRankRenderProcedure {
 		}
 	}
 
-	public static void execute(LevelAccessor world) {
-		execute(null, world);
+	public static void execute() {
+		execute(null);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world) {
+	private static void execute(@Nullable Event event) {
 		String rank = "";
-		if (world instanceof ClientLevel) {
-			for (Entity entityiterator : ((ClientLevel) world).entitiesForRendering()) {
-				if (entityiterator instanceof ViltrumiteEntity) {
-					if ((entityiterator instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_rank) : 0) == 1) {
-						rank = "Soldier";
-					} else if ((entityiterator instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_rank) : 0) == 1) {
-						rank = "Officer";
-					} else {
-						rank = "General";
-					}
-					renderBackground(rank, (entityiterator.getX()), (entityiterator.getY() + 2.2), (entityiterator.getZ()), Minecraft.getInstance().gameRenderer.getMainCamera().getYRot(),
-							Minecraft.getInstance().gameRenderer.getMainCamera().getXRot(), 0, (float) 0.025, 50 << 24 | 0 << 16 | 0 << 8 | 0);
-				}
-			}
-		}
 	}
 }
