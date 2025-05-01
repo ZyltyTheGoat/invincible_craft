@@ -29,99 +29,19 @@ public class AbilityButton4OnKeyReleasedProcedure {
 		double old_y = 0;
 		double pitch = 0;
 		double yaw = 0;
-		if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
-			raytrace_distance = 0;
-			entity_found = false;
-			{
-				boolean _setval = false;
-				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.atom_eve_spike_ball_targetting = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			for (int index0 = 0; index0 < 30; index0++) {
-				if (!world
-						.getEntitiesOfClass(LivingEntity.class,
-								AABB.ofSize(
-										new Vec3(
-												(entity.level()
-														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-														.getBlockPos().getX()),
-												(entity.level()
-														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																entity))
-														.getBlockPos().getY()),
-												(entity.level()
-														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																entity))
-														.getBlockPos().getZ())),
-										3, 3, 3),
-								e -> true)
-						.isEmpty()
-						&& !(((Entity) world
-								.getEntitiesOfClass(LivingEntity.class,
-										AABB.ofSize(
-												new Vec3(
-														(entity.level()
-																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																		entity))
-																.getBlockPos().getX()),
-														(entity.level()
-																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																		entity))
-																.getBlockPos().getY()),
-														(entity.level().clip(
-																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-																.getBlockPos().getZ())),
-												4, 4, 4),
-										e -> true)
-								.stream().sorted(new Object() {
-									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-										return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-									}
-								}.compareDistOf(
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-												.getBlockPos().getX()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-												.getBlockPos().getY()),
-										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-												.getBlockPos().getZ())))
-								.findFirst().orElse(null)) == entity)
-						&& ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY,
-								null).orElse(
-										new InvincibleCraftModVariables.PlayerVariables())).atom_eve_spike_ball_target)
-								.equals(((Entity) world
-										.getEntitiesOfClass(
-												LivingEntity.class, AABB.ofSize(new Vec3(
-														(entity.level()
-																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
-																		entity))
-																.getBlockPos().getX()),
-														(entity.level()
-																.clip(new ClipContext(
-																		entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-																.getBlockPos().getY()),
-														(entity.level().clip(
-																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-																.getBlockPos().getZ())),
-														4, 4, 4),
-												e -> true)
-										.stream().sorted(new Object() {
-											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-												return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-											}
-										}.compareDistOf(
-												(entity.level()
-														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-														.getBlockPos().getX()),
-												(entity.level()
-														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-														.getBlockPos().getY()),
-												(entity.level()
-														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-														.getBlockPos().getZ())))
-										.findFirst().orElse(null)).getStringUUID())) {
-					if (((Entity) world
+		if (!DoesHaveCDAbility4Procedure.execute(entity)) {
+			if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
+				raytrace_distance = 0;
+				entity_found = false;
+				{
+					boolean _setval = false;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.atom_eve_spike_ball_targetting = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				for (int index0 = 0; index0 < 30; index0++) {
+					if (!world
 							.getEntitiesOfClass(LivingEntity.class,
 									AABB.ofSize(
 											new Vec3(
@@ -129,28 +49,82 @@ public class AbilityButton4OnKeyReleasedProcedure {
 															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
 																	entity))
 															.getBlockPos().getX()),
+													(entity.level().clip(
+															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+															.getBlockPos().getY()),
 													(entity.level()
-															.clip(new ClipContext(
-																	entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
+															.getBlockPos().getZ())),
+											3, 3, 3),
+									e -> true)
+							.isEmpty()
+							&& !(((Entity) world
+									.getEntitiesOfClass(LivingEntity.class,
+											AABB.ofSize(new Vec3(
+													(entity.level()
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
+															.getBlockPos().getX()),
+													(entity.level()
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
 															.getBlockPos().getY()),
 													(entity.level().clip(
 															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 															.getBlockPos().getZ())),
-											4, 4, 4),
-									e -> true)
-							.stream().sorted(new Object() {
-								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-								}
-							}.compareDistOf(
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+													4, 4, 4),
+											e -> true)
+									.stream().sorted(new Object() {
+										Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+											return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+										}
+									}.compareDistOf((entity.level()
+											.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(
+													1f).add(
+															entity.getViewVector(1f).scale(raytrace_distance)),
+													ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 											.getBlockPos().getX()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-											.getBlockPos().getY()),
-									(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
-											.getBlockPos().getZ())))
-							.findFirst().orElse(null)).isAlive()) {
-						if (!(((Entity) world
+											(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+													.getBlockPos().getY()),
+											(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+													.getBlockPos().getZ())))
+									.findFirst().orElse(null)) == entity)
+							&& ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY,
+									null).orElse(
+											new InvincibleCraftModVariables.PlayerVariables())).atom_eve_spike_ball_target)
+									.equals(((Entity) world.getEntitiesOfClass(LivingEntity.class,
+											AABB.ofSize(new Vec3(
+													(entity.level()
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
+															.getBlockPos().getX()),
+													(entity.level()
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
+															.getBlockPos().getY()),
+													(entity.level().clip(
+															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+															.getBlockPos().getZ())),
+													4, 4, 4),
+											e -> true).stream().sorted(new Object() {
+												Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+													return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+												}
+											}.compareDistOf(
+													(entity.level()
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
+															.getBlockPos().getX()),
+													(entity.level()
+															.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																	entity))
+															.getBlockPos().getY()),
+													(entity.level().clip(
+															new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+															.getBlockPos().getZ())))
+											.findFirst().orElse(null)).getStringUUID())) {
+						if (((Entity) world
 								.getEntitiesOfClass(LivingEntity.class,
 										AABB.ofSize(
 												new Vec3(
@@ -178,8 +152,8 @@ public class AbilityButton4OnKeyReleasedProcedure {
 												.getBlockPos().getY()),
 										(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 												.getBlockPos().getZ())))
-								.findFirst().orElse(null)) instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
-							ent = (Entity) world
+								.findFirst().orElse(null)).isAlive()) {
+							if (!(((Entity) world
 									.getEntitiesOfClass(LivingEntity.class,
 											AABB.ofSize(
 													new Vec3(
@@ -206,44 +180,83 @@ public class AbilityButton4OnKeyReleasedProcedure {
 													.getBlockPos().getY()),
 											(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
 													.getBlockPos().getZ())))
-									.findFirst().orElse(null);
-							entity_found = true;
+									.findFirst().orElse(null)) instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
+								ent = (Entity) world
+										.getEntitiesOfClass(LivingEntity.class,
+												AABB.ofSize(new Vec3(
+														(entity.level()
+																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																		entity))
+																.getBlockPos().getX()),
+														(entity.level()
+																.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE,
+																		entity))
+																.getBlockPos().getY()),
+														(entity.level().clip(
+																new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+																.getBlockPos().getZ())),
+														4, 4, 4),
+												e -> true)
+										.stream().sorted(new Object() {
+											Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+												return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+											}
+										}.compareDistOf(
+												(entity.level()
+														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+														.getBlockPos().getX()),
+												(entity.level()
+														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+														.getBlockPos().getY()),
+												(entity.level()
+														.clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(raytrace_distance)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity))
+														.getBlockPos().getZ())))
+										.findFirst().orElse(null);
+								entity_found = true;
+							}
+						}
+					} else {
+						entity_found = false;
+						raytrace_distance = raytrace_distance + 1;
+					}
+				}
+				if (entity_found) {
+					yaw = entity.getYRot() * 0.0174533 + Math.PI;
+					pitch = 0;
+					if (world instanceof ServerLevel _serverLevel) {
+						Entity entityinstance = InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get().create(_serverLevel, null, null,
+								BlockPos.containing(ent.getX() + 15 * Math.cos(yaw) * Math.cos(pitch), ent.getY() + entity.getBbHeight() / 2, ent.getZ() + 15 * Math.sin(yaw) * Math.cos(pitch)), MobSpawnType.MOB_SUMMONED, false, false);
+						if (entityinstance != null) {
+							entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+							if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+								_toTame.tame(_owner);
+							entityinstance.getPersistentData().putDouble("dirX", (ent.getX() - entityinstance.getX()));
+							entityinstance.getPersistentData().putDouble("dirY", (ent.getY() - entityinstance.getY()));
+							entityinstance.getPersistentData().putDouble("dirZ", (ent.getZ() - entityinstance.getZ()));
+							_serverLevel.addFreshEntity(entityinstance);
 						}
 					}
-				} else {
-					entity_found = false;
-					raytrace_distance = raytrace_distance + 1;
-				}
-			}
-			if (entity_found) {
-				yaw = entity.getYRot() * 0.0174533 + Math.PI;
-				pitch = 0;
-				if (world instanceof ServerLevel _serverLevel) {
-					Entity entityinstance = InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get().create(_serverLevel, null, null,
-							BlockPos.containing(ent.getX() + 15 * Math.cos(yaw) * Math.cos(pitch), ent.getY() + entity.getBbHeight() / 2, ent.getZ() + 15 * Math.sin(yaw) * Math.cos(pitch)), MobSpawnType.MOB_SUMMONED, false, false);
-					if (entityinstance != null) {
-						entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
-						if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-							_toTame.tame(_owner);
-						entityinstance.getPersistentData().putDouble("dirX", (ent.getX() - entityinstance.getX()));
-						entityinstance.getPersistentData().putDouble("dirY", (ent.getY() - entityinstance.getY()));
-						entityinstance.getPersistentData().putDouble("dirZ", (ent.getZ() - entityinstance.getZ()));
-						_serverLevel.addFreshEntity(entityinstance);
+					yaw = entity.getYRot() * 0.0174533;
+					pitch = 0;
+					if (world instanceof ServerLevel _serverLevel) {
+						Entity entityinstance = InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get().create(_serverLevel, null, null,
+								BlockPos.containing(ent.getX() + 15 * Math.cos(yaw) * Math.cos(pitch), ent.getY() + entity.getBbHeight() / 2, ent.getZ() + 15 * Math.sin(yaw) * Math.cos(pitch)), MobSpawnType.MOB_SUMMONED, false, false);
+						if (entityinstance != null) {
+							entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+							if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+								_toTame.tame(_owner);
+							entityinstance.getPersistentData().putDouble("dirX", (ent.getX() - entityinstance.getX()));
+							entityinstance.getPersistentData().putDouble("dirY", (ent.getY() - entityinstance.getY()));
+							entityinstance.getPersistentData().putDouble("dirZ", (ent.getZ() - entityinstance.getZ()));
+							_serverLevel.addFreshEntity(entityinstance);
+						}
 					}
-				}
-				yaw = entity.getYRot() * 0.0174533;
-				pitch = 0;
-				if (world instanceof ServerLevel _serverLevel) {
-					Entity entityinstance = InvincibleCraftModEntities.SPIKE_BALL_ENTITY.get().create(_serverLevel, null, null,
-							BlockPos.containing(ent.getX() + 15 * Math.cos(yaw) * Math.cos(pitch), ent.getY() + entity.getBbHeight() / 2, ent.getZ() + 15 * Math.sin(yaw) * Math.cos(pitch)), MobSpawnType.MOB_SUMMONED, false, false);
-					if (entityinstance != null) {
-						entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
-						if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-							_toTame.tame(_owner);
-						entityinstance.getPersistentData().putDouble("dirX", (ent.getX() - entityinstance.getX()));
-						entityinstance.getPersistentData().putDouble("dirY", (ent.getY() - entityinstance.getY()));
-						entityinstance.getPersistentData().putDouble("dirZ", (ent.getZ() - entityinstance.getZ()));
-						_serverLevel.addFreshEntity(entityinstance);
+					{
+						double _setval = 3.5;
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ability_cooldown_4 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
 				}
 			}

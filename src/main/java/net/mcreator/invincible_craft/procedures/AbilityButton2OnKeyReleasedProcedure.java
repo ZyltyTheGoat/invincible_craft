@@ -235,6 +235,13 @@ public class AbilityButton2OnKeyReleasedProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			{
+				double _setval = 5;
+				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.ability_cooldown_2 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		}
 	}
 }

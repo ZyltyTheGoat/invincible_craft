@@ -97,99 +97,116 @@ public class AbilityButton3OnKeyReleasedProcedure {
 				}
 			}
 		} else if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
-			if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_awakened_timer > 0) {
-				{
-					boolean _setval = false;
-					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.atom_eve_atomic_ray = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				if (world.isClientSide()) {
-					SetupAnimationsProcedure.setAnimationClientside((Player) entity, "base_animation", true);
-				}
-				if (!world.isClientSide()) {
-					if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-						List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-						synchronized (connections) {
-							Iterator<Connection> iterator = connections.iterator();
-							while (iterator.hasNext()) {
-								Connection connection = iterator.next();
-								if (!connection.isConnecting() && connection.isConnected())
-									InvincibleCraftMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.InvincibleCraftModAnimationMessage(Component.literal("base_animation"), entity.getId(), true), connection, NetworkDirection.PLAY_TO_CLIENT);
+			if (!DoesHaveCDAbility3Procedure.execute(entity)) {
+				if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_awakened_timer > 0) {
+					{
+						boolean _setval = false;
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.atom_eve_atomic_ray = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (world.isClientSide()) {
+						SetupAnimationsProcedure.setAnimationClientside((Player) entity, "base_animation", true);
+					}
+					if (!world.isClientSide()) {
+						if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+							List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+							synchronized (connections) {
+								Iterator<Connection> iterator = connections.iterator();
+								while (iterator.hasNext()) {
+									Connection connection = iterator.next();
+									if (!connection.isConnecting() && connection.isConnected())
+										InvincibleCraftMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.InvincibleCraftModAnimationMessage(Component.literal("base_animation"), entity.getId(), true), connection, NetworkDirection.PLAY_TO_CLIENT);
+								}
 							}
 						}
 					}
-				}
-			} else {
-				{
-					boolean _setval = false;
-					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.atom_eve_atomic_blast_holding = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				if (entity.isShiftKeyDown()) {
-					sy = entity.getY() + 1.2;
+					{
+						double _setval = 15;
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ability_cooldown_3 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
 				} else {
-					sy = entity.getY() + 1.6;
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(
-								new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
-										_ent.level().getServer(), _ent),
-								("summon invincible_craft:atomicb_blast " + (entity.getX() + 0.5 * entity.getLookAngle().x) + " " + sy + " " + (entity.getZ() + 0.5 * entity.getLookAngle().z) + " {Rotation:[" + entity.getYRot() + "f,0f]}"));
+					{
+						double _setval = 5;
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.ability_cooldown_3 = _setval;
+							capability.syncPlayerVariables(entity);
+						});
 					}
-				}
-				{
-					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof AtomicbBlastEntity && !(entityiterator instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
-							entityiterator.getPersistentData().putDouble("dx", (entity.getLookAngle().x));
-							entityiterator.getPersistentData().putDouble("dy", (entity.getLookAngle().y));
-							entityiterator.getPersistentData().putDouble("dz", (entity.getLookAngle().z));
-							ScaleTypes.WIDTH.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.WIDTH.getScaleData(entityiterator).getTargetScale(),
-									(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
-							ScaleTypes.HITBOX_WIDTH.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HITBOX_WIDTH.getScaleData(entityiterator).getTargetScale(),
-									(0.5 + 0.01 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
-							ScaleTypes.HEIGHT.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HEIGHT.getScaleData(entityiterator).getTargetScale(),
-									(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
-							ScaleTypes.HITBOX_HEIGHT.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HITBOX_HEIGHT.getScaleData(entityiterator).getTargetScale(),
-									(0.5 + 0.01 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
-							entityiterator.getPersistentData().putDouble("scale",
-									(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale));
-							{
-								double _setval = 0;
-								entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-									capability.atom_eve_atomic_blast_scale = _setval;
-									capability.syncPlayerVariables(entity);
-								});
-							}
-							if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-								_toTame.tame(_owner);
-							if (world instanceof ServerLevel _level)
-								_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOMIC_BLAST_SHOCKWAVE.get()), (entity.getX() + 0.5 * entity.getLookAngle().x), (sy + 0.5 * entity.getLookAngle().y),
-										(entity.getZ() + 0.5 * entity.getLookAngle().z), 1, 0, 0, 0, 0);
-							if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-								_toTame.tame(_owner);
+					{
+						boolean _setval = false;
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.atom_eve_atomic_blast_holding = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+					if (entity.isShiftKeyDown()) {
+						sy = entity.getY() + 1.2;
+					} else {
+						sy = entity.getY() + 1.6;
+					}
+					{
+						Entity _ent = entity;
+						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+							_ent.getServer().getCommands().performPrefixedCommand(
+									new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4, _ent.getName().getString(), _ent.getDisplayName(),
+											_ent.level().getServer(), _ent),
+									("summon invincible_craft:atomicb_blast " + (entity.getX() + 0.5 * entity.getLookAngle().x) + " " + sy + " " + (entity.getZ() + 0.5 * entity.getLookAngle().z) + " {Rotation:[" + entity.getYRot() + "f,0f]}"));
 						}
 					}
-				}
-				if (world.isClientSide()) {
-					SetupAnimationsProcedure.setAnimationClientside((Player) entity, "atomic_blast_shoot", true);
-				}
-				if (!world.isClientSide()) {
-					if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
-						List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
-						synchronized (connections) {
-							Iterator<Connection> iterator = connections.iterator();
-							while (iterator.hasNext()) {
-								Connection connection = iterator.next();
-								if (!connection.isConnecting() && connection.isConnected())
-									InvincibleCraftMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.InvincibleCraftModAnimationMessage(Component.literal("atomic_blast_shoot"), entity.getId(), true), connection, NetworkDirection.PLAY_TO_CLIENT);
+					{
+						final Vec3 _center = new Vec3(x, y, z);
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(15 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+						for (Entity entityiterator : _entfound) {
+							if (entityiterator instanceof AtomicbBlastEntity && !(entityiterator instanceof TamableAnimal _tamEnt ? _tamEnt.isTame() : false)) {
+								entityiterator.getPersistentData().putDouble("dx", (entity.getLookAngle().x));
+								entityiterator.getPersistentData().putDouble("dy", (entity.getLookAngle().y));
+								entityiterator.getPersistentData().putDouble("dz", (entity.getLookAngle().z));
+								ScaleTypes.WIDTH.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.WIDTH.getScaleData(entityiterator).getTargetScale(),
+										(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+								ScaleTypes.HITBOX_WIDTH.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HITBOX_WIDTH.getScaleData(entityiterator).getTargetScale(),
+										(0.5 + 0.01 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+								ScaleTypes.HEIGHT.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HEIGHT.getScaleData(entityiterator).getTargetScale(),
+										(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+								ScaleTypes.HITBOX_HEIGHT.getScaleData(entityiterator).setTargetScale((float) ScaleOperations.SET.applyAsDouble(ScaleTypes.HITBOX_HEIGHT.getScaleData(entityiterator).getTargetScale(),
+										(0.5 + 0.01 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale)));
+								entityiterator.getPersistentData().putDouble("scale",
+										(1 + 0.09 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).atom_eve_atomic_blast_scale));
+								{
+									double _setval = 0;
+									entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+										capability.atom_eve_atomic_blast_scale = _setval;
+										capability.syncPlayerVariables(entity);
+									});
+								}
+								if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+									_toTame.tame(_owner);
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOMIC_BLAST_SHOCKWAVE.get()), (entity.getX() + 0.5 * entity.getLookAngle().x), (sy + 0.5 * entity.getLookAngle().y),
+											(entity.getZ() + 0.5 * entity.getLookAngle().z), 1, 0, 0, 0, 0);
+								if (entityiterator instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+									_toTame.tame(_owner);
+							}
+						}
+					}
+					if (world.isClientSide()) {
+						SetupAnimationsProcedure.setAnimationClientside((Player) entity, "atomic_blast_shoot", true);
+					}
+					if (!world.isClientSide()) {
+						if (entity instanceof Player && world instanceof ServerLevel srvLvl_) {
+							List<Connection> connections = srvLvl_.getServer().getConnection().getConnections();
+							synchronized (connections) {
+								Iterator<Connection> iterator = connections.iterator();
+								while (iterator.hasNext()) {
+									Connection connection = iterator.next();
+									if (!connection.isConnecting() && connection.isConnected())
+										InvincibleCraftMod.PACKET_HANDLER.sendTo(new SetupAnimationsProcedure.InvincibleCraftModAnimationMessage(Component.literal("atomic_blast_shoot"), entity.getId(), true), connection,
+												NetworkDirection.PLAY_TO_CLIENT);
+								}
 							}
 						}
 					}

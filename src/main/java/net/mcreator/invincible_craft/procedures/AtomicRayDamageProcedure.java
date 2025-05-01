@@ -133,8 +133,8 @@ public class AtomicRayDamageProcedure {
 							if (ent instanceof LivingEntity livingEntity) {
 								livingEntity.invulnerableTime = 2; // Reset hurt timer
 							}
-							ent.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)),
-									(float) (0.5 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_intelligence));
+							ent.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK)),
+									(float) (0.1 + 0.01 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_intelligence));
 							if (Math.random() < (1) / ((float) 5)) {
 								if (world instanceof ServerLevel _level)
 									_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.ATOM_EVE_CLOUD.get()), (entity.getX() + raytrace_distance * entity.getLookAngle().x),

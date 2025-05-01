@@ -46,6 +46,10 @@ public class TheGiantOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(TheGiantEntity.DATA_IA, (int) ((entity instanceof TheGiantEntity _datEntI ? _datEntI.getEntityData().get(TheGiantEntity.DATA_IA) : 0) + 1));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 1, false, false));
+			} else {
+				if (entity instanceof Mob _entity)
+					_entity.getNavigation().moveTo(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+							((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), 1);
 			}
 			if ((entity instanceof TheGiantEntity _datEntI ? _datEntI.getEntityData().get(TheGiantEntity.DATA_IA) : 0) == 2) {
 				rand = Mth.nextInt(RandomSource.create(), 1, 2);
@@ -66,7 +70,7 @@ public class TheGiantOnEntityTickUpdateProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (!(entityiterator == entity) && entityiterator instanceof LivingEntity) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:impact"))), entity),
-									(float) (entity instanceof LivingEntity _livingEntity23 && _livingEntity23.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity23.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
+									(float) (entity instanceof LivingEntity _livingEntity30 && _livingEntity30.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity30.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
 						}
 					}
 				}

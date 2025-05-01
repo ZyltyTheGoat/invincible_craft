@@ -12,7 +12,6 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
@@ -57,33 +56,6 @@ public class AtomicBlastOnEntityTickUpdateProcedure {
 						if (!entity.level().isClientSide())
 							entity.discard();
 					}
-				}
-			}
-			double scale = entity.getPersistentData().getDouble("scale");
-			int radius = 1;
-			boolean hasBlockNearby = false;
-			BlockPos centerPos = BlockPos.containing(x, y, z);
-			for (int dx = -radius; dx <= radius; dx++) {
-				for (int dy = -radius; dy <= radius; dy++) {
-					for (int dz = -radius; dz <= radius; dz++) {
-						BlockPos checkPos = centerPos.offset(dx, dy, dz);
-						if (!world.getBlockState(checkPos).isAir()) {
-							hasBlockNearby = true;
-							break;
-						}
-					}
-					if (hasBlockNearby)
-						break;
-				}
-				if (hasBlockNearby)
-					break;
-			}
-			if (hasBlockNearby) {
-				if (scale >= 9 && world instanceof Level _level && !_level.isClientSide()) {
-					_level.explode(null, x, y, z, 3, Level.ExplosionInteraction.NONE);
-				}
-				if (!entity.level().isClientSide()) {
-					entity.discard();
 				}
 			}
 		}

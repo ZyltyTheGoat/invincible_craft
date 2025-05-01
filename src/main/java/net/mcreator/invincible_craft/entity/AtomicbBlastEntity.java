@@ -111,7 +111,6 @@ public class AtomicbBlastEntity extends TamableAnimal implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-
 	}
 
 	@Override
@@ -236,6 +235,13 @@ public class AtomicbBlastEntity extends TamableAnimal implements GeoEntity {
 		super.baseTick();
 		AtomicBlastOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
+	}
+
+	public void tick() {
+		this.noPhysics = true;
+		super.tick();
+		this.noPhysics = false;
+		this.setNoGravity(true);
 	}
 
 	@Override

@@ -66,7 +66,7 @@ public class GainPowerProcedure {
 				});
 			}
 			if (world.getLevelData().getGameRules().getBoolean(InvincibleCraftModGameRules.RANDOM_POWER_ON_SPAWN)) {
-				random_power = Mth.nextInt(RandomSource.create(), 1, 6);
+				random_power = Mth.nextInt(RandomSource.create(), 1, 7);
 				if (random_power == 1) {
 					{
 						String _setval = "DimensionalTravel";
@@ -109,9 +109,9 @@ public class GainPowerProcedure {
 							capability.syncPlayerVariables(entity);
 						});
 					}
-				} else if (random_power == 2) {
+				} else if (random_power == 3) {
 					if (!(entity instanceof ServerPlayer _plr11 && _plr11.level() instanceof ServerLevel
-							&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("invincible_craft:advancement_viltrumite"))).isDone())) {
+							&& _plr11.getAdvancements().getOrStartProgress(_plr11.server.getAdvancements().getAdvancement(new ResourceLocation("invincible_craft:advancement_duplication"))).isDone())) {
 						if (entity instanceof ServerPlayer _player) {
 							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("invincible_craft:advancement_duplication"));
 							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -123,6 +123,25 @@ public class GainPowerProcedure {
 					}
 					{
 						String _setval = "Duplication";
+						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.power = _setval;
+							capability.syncPlayerVariables(entity);
+						});
+					}
+				} else if (random_power == 3) {
+					if (!(entity instanceof ServerPlayer _plr13 && _plr13.level() instanceof ServerLevel
+							&& _plr13.getAdvancements().getOrStartProgress(_plr13.server.getAdvancements().getAdvancement(new ResourceLocation("invincible_craft:advancement_atom_eve"))).isDone())) {
+						if (entity instanceof ServerPlayer _player) {
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("invincible_craft:advancement_duplication"));
+							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+							if (!_ap.isDone()) {
+								for (String criteria : _ap.getRemainingCriteria())
+									_player.getAdvancements().award(_adv, criteria);
+							}
+						}
+					}
+					{
+						String _setval = "AtomEve";
 						entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.power = _setval;
 							capability.syncPlayerVariables(entity);

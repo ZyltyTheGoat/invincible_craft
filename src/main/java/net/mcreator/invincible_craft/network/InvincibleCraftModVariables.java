@@ -163,6 +163,8 @@ public class InvincibleCraftModVariables {
 				clone.atom_eve_glitch_2 = original.atom_eve_glitch_2;
 				clone.atom_eve_glitch_3 = original.atom_eve_glitch_3;
 				clone.battle_beast_leaping = original.battle_beast_leaping;
+				clone.awakening_timer_reset = original.awakening_timer_reset;
+				clone.lock_on_target = original.lock_on_target;
 			}
 			if (!event.getEntity().level().isClientSide()) {
 				for (Entity entityiterator : new ArrayList<>(event.getEntity().level().players())) {
@@ -288,6 +290,8 @@ public class InvincibleCraftModVariables {
 		public ItemStack awakening_leggings_old = ItemStack.EMPTY;
 		public ItemStack awakening_boot_old = ItemStack.EMPTY;
 		public boolean battle_beast_leaping = false;
+		public double awakening_timer_reset = 0;
+		public String lock_on_target = "";
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -381,6 +385,8 @@ public class InvincibleCraftModVariables {
 			nbt.put("awakening_leggings_old", awakening_leggings_old.save(new CompoundTag()));
 			nbt.put("awakening_boot_old", awakening_boot_old.save(new CompoundTag()));
 			nbt.putBoolean("battle_beast_leaping", battle_beast_leaping);
+			nbt.putDouble("awakening_timer_reset", awakening_timer_reset);
+			nbt.putString("lock_on_target", lock_on_target);
 			return nbt;
 		}
 
@@ -477,6 +483,8 @@ public class InvincibleCraftModVariables {
 			awakening_leggings_old = ItemStack.of(nbt.getCompound("awakening_leggings_old"));
 			awakening_boot_old = ItemStack.of(nbt.getCompound("awakening_boot_old"));
 			battle_beast_leaping = nbt.getBoolean("battle_beast_leaping");
+			awakening_timer_reset = nbt.getDouble("awakening_timer_reset");
+			lock_on_target = nbt.getString("lock_on_target");
 		}
 	}
 
@@ -595,6 +603,8 @@ public class InvincibleCraftModVariables {
 					variables.awakening_leggings_old = message.data.awakening_leggings_old;
 					variables.awakening_boot_old = message.data.awakening_boot_old;
 					variables.battle_beast_leaping = message.data.battle_beast_leaping;
+					variables.awakening_timer_reset = message.data.awakening_timer_reset;
+					variables.lock_on_target = message.data.lock_on_target;
 				}
 			});
 			context.setPacketHandled(true);

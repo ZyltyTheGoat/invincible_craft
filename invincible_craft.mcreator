@@ -3997,39 +3997,6 @@
       "path": "~/Mobs/Viltrumite Normal"
     },
     {
-      "name": "EventHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "event_handler",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/EventHandlerProcedure.java"
-        ],
-        "dependencies": []
-      },
-      "path": "~/Events"
-    },
-    {
-      "name": "BanditEventHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "bandit_event_handler",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/BanditEventHandlerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Events"
-    },
-    {
       "name": "EarthIconSelected",
       "type": "procedure",
       "compiles": true,
@@ -4237,25 +4204,6 @@
         ]
       },
       "path": "~/Oxygen System"
-    },
-    {
-      "name": "ViltrumiteEventHandler",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_event_handler",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteEventHandlerProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Events"
     },
     {
       "name": "TravelToMoon",
@@ -6216,9 +6164,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/client/renderer/TheGiantRenderer.java",
-          "src/main/resources/assets/invincible_craft/models/item/the_giant_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/TheGiantModel.java",
           "src/main/java/net/mcreator/invincible_craft/entity/TheGiantEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/model/TheGiantModel.java"
+          "src/main/resources/assets/invincible_craft/models/item/the_giant_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/The Giant"
@@ -7642,7 +7590,6 @@
         "files": [
           "src/main/java/net/mcreator/invincible_craft/entity/SpikeBallEntityEntity.java",
           "src/main/java/net/mcreator/invincible_craft/entity/model/SpikeBallEntityModel.java",
-          "src/main/resources/data/invincible_craft/forge/biome_modifier/spike_ball_entity_biome_modifier.json",
           "src/main/java/net/mcreator/invincible_craft/client/renderer/SpikeBallEntityRenderer.java"
         ]
       },
@@ -8089,7 +8036,7 @@
       "name": "AtomicbBlast",
       "type": "animatedentity",
       "compiles": true,
-      "locked_code": false,
+      "locked_code": true,
       "registry_name": "atomicb_blast",
       "metadata": {
         "files": [
@@ -8670,6 +8617,196 @@
         ]
       },
       "path": "~/Powers - Abilities/BattleBeast"
+    },
+    {
+      "name": "GlobalEventHandler",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "global_event_handler",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/GlobalEventHandlerProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Events"
+    },
+    {
+      "name": "AtomEveAbilityOverlay",
+      "type": "overlay",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_ability_overlay",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/screens/AtomEveAbilityOverlayOverlay.java"
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "AtomEveAbilityOverlayDisplayOverlayIngame",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "atom_eve_ability_overlay_display_overlay_ingame",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AtomEveAbilityOverlayDisplayOverlayIngameProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "DisplayAtomicRay",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "display_atomic_ray",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/DisplayAtomicRayProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Overlay"
+    },
+    {
+      "name": "SetPowerAtomEve",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_power_atom_eve",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/SetPowerAtomEveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Commands/Power"
+    },
+    {
+      "name": "SetPowerBattleBeast",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "set_power_battle_beast",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/SetPowerBattleBeastProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "arguments",
+            "type": "cmdcontext"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Commands/Power"
+    },
+    {
+      "name": "Passive",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "passive",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/PassiveProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/BattleBeast"
+    },
+    {
+      "name": "LockOnOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lock_on_on_key_pressed",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/LockOnOnKeyPressedProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Keys/LockOnKey"
+    },
+    {
+      "name": "LockOn",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lock_on",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/network/LockOnMessage.java"
+        ]
+      },
+      "path": "~/Keys/LockOnKey"
+    },
+    {
+      "name": "LockOnSystem",
+      "type": "code",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "lock_on_system",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/LockOnSystem.java"
+        ]
+      },
+      "path": "~/Lock On System"
     }
   ],
   "variable_elements": [
@@ -9182,6 +9319,18 @@
       "type": "logic",
       "scope": "player_lifetime",
       "value": "false"
+    },
+    {
+      "name": "awakening_timer_reset",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "lock_on_target",
+      "type": "string",
+      "scope": "player_lifetime",
+      "value": ""
     }
   ],
   "sound_elements": [
@@ -9369,6 +9518,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_mohawk_mar": "Make Invincible Suit (Mohawk Mark) - Suit Fabric x4, Gray Dye x4, Cyan Dye x4",
       "effect.invincible_craft.can_downslam": "Can Downslam",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_omniman_suit": "Make Omni-Man Suit - Suit Fabric x4, Red Dye x4, White Dye x4",
+      "key.invincible_craft.lock_on": "Lock On",
       "gui.invincible_craft.construct_gui.tooltip_construct_sword": "Construct Sabre",
       "gui.invincible_craft.stat_panel_gui.label_sslplayer_info": "§lPLAYER INFO",
       "block.invincible_craft.moon_stone": "Moon Stone",
@@ -9418,7 +9568,7 @@
       "key.invincible_craft.ability_button_3": "Ability Button 3",
       "key.invincible_craft.ability_button_5": "Ability Button 5",
       "death.attack.sonic_clap_damage.player": "%1$s died whilst trying to escape %2$s",
-      "item.invincible_craft.atom_eve_armor_construct_chestplate": "Invincible Suit (Unmasked Mark) Chestplate",
+      "item.invincible_craft.atom_eve_armor_construct_chestplate": "Construct Chestplate",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_mohawk_mar": "Make Invincible Suit (Mohawk Mark) - Suit Fabric x4, Gray Dye x4, Cyan Blue Dye x4",
       "gui.invincible_craft.stat_panel_gui.label_name": "Name:",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_comic": "Make Invincible Suit (Comic) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
@@ -9498,7 +9648,7 @@
       "entity.invincible_craft.viltrumite": "Viltrumite",
       "entity.invincible_craft.art_rosenbaum": "Art Rosenbaum",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_duplikate_suit_suit_fabr": "Make Dupli-Kate Suit - Suit Fabric x4, Light Gray Dye x4, Purple Dye x4",
-      "item.invincible_craft.atom_eve_armor_construct_boots": "Invincible Suit (Unmasked Mark) Boots",
+      "item.invincible_craft.atom_eve_armor_construct_boots": "Construct Boots",
       "advancements.advancement_duplication.title": "Seeing Double?",
       "gui.invincible_craft.stat_panel_gui.label_sslintelligence": "§lIntelligence",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
@@ -9507,7 +9657,7 @@
       "item.invincible_craft.wooden_bat": "Wooden Bat",
       "gui.invincible_craft.stat_panel_gui.label_adjust_flight_speed": "Adjust Flight Speed",
       "death.attack.battle_beast_uppercut.item": "%1$s was killed by %2$s using %3$s",
-      "item.invincible_craft.atom_eve_armor_construct_leggings": "Invincible Suit (Unmasked Mark) Leggings",
+      "item.invincible_craft.atom_eve_armor_construct_leggings": "Construct Leggings",
       "item.invincible_craft.atom_eve_awakening_spawn_egg": "Atom Eve Awakening Spawn Egg",
       "item.invincible_craft.atom_eve_armor_construct_helmet": "Constrcut Helmet",
       "item.invincible_craft.invincible_suit_no_goggles_mark_helmet": "Invincible Suit (No Goggles Mark) Helmet",
@@ -9903,6 +10053,10 @@
           {
             "name": "Stat GUI",
             "children": []
+          },
+          {
+            "name": "LockOnKey",
+            "children": []
           }
         ]
       },
@@ -10092,14 +10246,19 @@
       {
         "name": "DamageTypes",
         "children": []
+      },
+      {
+        "name": "Lock On System",
+        "children": []
       }
     ]
   },
   "workspaceSettings": {
     "modid": "invincible_craft",
     "modName": "InvincibleCraft",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "author": "Zylty, Efkrdnz",
+    "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "serverSideOnly": false,
     "modPicture": "logo_high_quality",

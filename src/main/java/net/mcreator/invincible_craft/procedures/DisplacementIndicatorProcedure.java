@@ -205,7 +205,7 @@ public class DisplacementIndicatorProcedure {
 						if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).displacement_target).equals(entityiterator.getStringUUID())) {
 							RenderSystem.disableDepthTest();
 							RenderSystem.setShaderTexture(0, new ResourceLocation(("invincible_craft" + ":textures/" + "indicator" + ".png")));
-							renderShape(ReturnIndicatorShapeProcedure.execute(), (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() + 1), (entityiterator.getZ()),
+							renderShape(ReturnIndicatorShapeProcedure.execute(), (entityiterator.getX()), (entityiterator.getY() + entityiterator.getBbHeight() / 2), (entityiterator.getZ()),
 									Minecraft.getInstance().gameRenderer.getMainCamera().getYRot(), Minecraft.getInstance().gameRenderer.getMainCamera().getXRot(), 0, 1, 1, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255);
 						}
 					}

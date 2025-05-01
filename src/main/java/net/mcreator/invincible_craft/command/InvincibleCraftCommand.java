@@ -19,6 +19,8 @@ import net.mcreator.invincible_craft.procedures.SetPowerViltrumiteProcedure;
 import net.mcreator.invincible_craft.procedures.SetPowerNoPowersProcedure;
 import net.mcreator.invincible_craft.procedures.SetPowerDuplicationProcedure;
 import net.mcreator.invincible_craft.procedures.SetPowerDimentionalTravelProcedure;
+import net.mcreator.invincible_craft.procedures.SetPowerBattleBeastProcedure;
+import net.mcreator.invincible_craft.procedures.SetPowerAtomEveProcedure;
 import net.mcreator.invincible_craft.procedures.SetAgeProcedure;
 import net.mcreator.invincible_craft.procedures.ResetStateProcedure;
 import net.mcreator.invincible_craft.procedures.RemoveAgeProcedure;
@@ -118,6 +120,34 @@ public class InvincibleCraftCommand {
 						direction = entity.getDirection();
 
 					SetPowerDuplicationProcedure.execute(world, arguments, entity);
+					return 0;
+				})).then(Commands.literal("AtomEve").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetPowerAtomEveProcedure.execute(world, arguments, entity);
+					return 0;
+				})).then(Commands.literal("BattleBeast").executes(arguments -> {
+					Level world = arguments.getSource().getUnsidedLevel();
+					double x = arguments.getSource().getPosition().x();
+					double y = arguments.getSource().getPosition().y();
+					double z = arguments.getSource().getPosition().z();
+					Entity entity = arguments.getSource().getEntity();
+					if (entity == null && world instanceof ServerLevel _servLevel)
+						entity = FakePlayerFactory.getMinecraft(_servLevel);
+					Direction direction = Direction.DOWN;
+					if (entity != null)
+						direction = entity.getDirection();
+
+					SetPowerBattleBeastProcedure.execute(world, arguments, entity);
 					return 0;
 				}))).then(Commands.literal("Age").then(Commands.literal("Add").then(Commands.argument("value", DoubleArgumentType.doubleArg(0)).executes(arguments -> {
 					Level world = arguments.getSource().getUnsidedLevel();

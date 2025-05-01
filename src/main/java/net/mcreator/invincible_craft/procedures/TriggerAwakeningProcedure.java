@@ -38,27 +38,36 @@ public class TriggerAwakeningProcedure {
 		if (entity == null)
 			return;
 		if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
-			{
-				double _setval = 900;
-				entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.atom_eve_awakened_timer = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			if (event != null && event.isCancelable()) {
-				event.setCanceled(true);
-			}
-			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth(2);
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 80, 0, false, false));
-			if (world instanceof ServerLevel _serverLevel) {
-				Entity entityinstance = InvincibleCraftModEntities.ATOM_EVE_AWAKENING.get().create(_serverLevel, null, null, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED, false, false);
-				if (entityinstance != null) {
-					entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
-					if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
-						_toTame.tame(_owner);
-					_serverLevel.addFreshEntity(entityinstance);
+			if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).awakening_timer_reset <= 0) {
+				{
+					double _setval = 900;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.atom_eve_awakened_timer = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				{
+					double _setval = 2400;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.awakening_timer_reset = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				}
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth(2);
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 80, 0, false, false));
+				if (world instanceof ServerLevel _serverLevel) {
+					Entity entityinstance = InvincibleCraftModEntities.ATOM_EVE_AWAKENING.get().create(_serverLevel, null, null, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED, false, false);
+					if (entityinstance != null) {
+						entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+						if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+							_toTame.tame(_owner);
+						_serverLevel.addFreshEntity(entityinstance);
+					}
 				}
 			}
 		}

@@ -1,12 +1,8 @@
 package net.mcreator.invincible_craft.procedures;
 
-import net.minecraftforge.items.ItemHandlerHelper;
-
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
-
-import net.mcreator.invincible_craft.init.InvincibleCraftModItems;
+import net.minecraft.network.chat.Component;
 
 public class ButtonConstructTridentProcedure {
 	public static void execute(Entity entity) {
@@ -14,10 +10,7 @@ public class ButtonConstructTridentProcedure {
 			return;
 		if (entity instanceof Player _player)
 			_player.closeContainer();
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(InvincibleCraftModItems.ATOM_EVE_TRIDENT_CONSTRUCT.get()).copy();
-			_setstack.setCount(1);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-		}
+		if (entity instanceof Player _player && !_player.level().isClientSide())
+			_player.displayClientMessage(Component.literal("WIP"), false);
 	}
 }

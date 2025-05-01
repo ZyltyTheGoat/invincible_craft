@@ -179,7 +179,7 @@ public class FlightProcedure {
 											Vec3 lookDirection = entity.getLookAngle();
 											// Block 2 unit in front of where the entity is looking
 											BlockPos centerPos = BlockPos.containing(entity.getX() + lookDirection.x * 2, entity.getY() + lookDirection.y * 2, entity.getZ() + lookDirection.z * 2);
-											int radius = 6;
+											int radius = 5;
 											double radiusSquared = radius * radius;
 											Random random = new Random();
 											for (int i = -radius; i <= radius; i++) {

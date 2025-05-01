@@ -261,6 +261,14 @@ public class AwakeningDisplayProcedure {
 						}
 					}
 				}
+			} else {
+				{
+					double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).awakening_timer_reset - 1;
+					entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.awakening_timer_reset = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
 			}
 		}
 	}

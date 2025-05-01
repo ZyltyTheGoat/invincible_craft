@@ -29,9 +29,9 @@
     ],
     "armorTextureFile": "base",
     "helmetName": "Constrcut Helmet",
-    "bodyName": "Invincible Suit (Unmasked Mark) Chestplate",
-    "leggingsName": "Invincible Suit (Unmasked Mark) Leggings",
-    "bootsName": "Invincible Suit (Unmasked Mark) Boots",
+    "bodyName": "Construct Chestplate",
+    "leggingsName": "Construct Leggings",
+    "bootsName": "Construct Boots",
     "helmetSpecialInformation": {
       "fixedValue": []
     },

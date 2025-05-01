@@ -38,6 +38,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.invincible_craft.procedures.TheGiantOnEntityTickUpdateProcedure;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 import net.mcreator.invincible_craft.SlowRotMoveControl;
 
@@ -60,9 +61,9 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 
 	public TheGiantEntity(EntityType<TheGiantEntity> type, Level world) {
 		super(type, world);
-		xpReward = 0;
+		xpReward = 100;
 		setNoAi(false);
-		setMaxUpStep(0.6f);
+		setMaxUpStep(5f);
 		setPersistenceRequired();
 		this.moveControl = new SlowRotMoveControl(this);
 	}
@@ -95,8 +96,8 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Monster.class, true, false));
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Mob.class, true, true));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Monster.class, false, false));
+		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Mob.class, false, false));
 		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -147,6 +148,7 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		TheGiantOnEntityTickUpdateProcedure.execute(this.level(), this);
 		this.refreshDimensions();
 	}
 
@@ -161,10 +163,10 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 300);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 10);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 64);
 		return builder;
 	}
 
