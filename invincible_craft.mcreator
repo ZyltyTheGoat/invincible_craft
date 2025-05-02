@@ -1660,10 +1660,6 @@
           {
             "name": "entity",
             "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
           }
         ]
       },
@@ -2128,7 +2124,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteOnEntityTickUpdate",
@@ -2182,7 +2178,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteOnEntityAttacked",
@@ -2233,387 +2229,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionEyes1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_eyes_1",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionEyes1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionEyes2",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_eyes_2",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionEyes2Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionEyes3",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_eyes_3",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionEyes3Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionEyes4",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_eyes_4",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionEyes4Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionEyes5",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_eyes_5",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionEyes5Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionHair1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_hair_1",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionHair1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionHair2",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_hair_2",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionHair2Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionHair3",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_hair_3",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionHair3Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionHair5",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_hair_5",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionHair5Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionHair6",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_hair_6",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionHair6Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMouth1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mouth_1",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMouth1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMouth2",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mouth_2",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMouth2Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMustache1",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mustache_1",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMustache1Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMustache2",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mustache_2",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMustache2Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMustache3",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mustache_3",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMustache3Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMustache4",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mustache_4",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMustache4Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMustache5",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mustache_5",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMustache5Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionMustache6",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_mustache_6",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionMustache6Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
-      "name": "ViltrumiteDisplayConditionHair4",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_hair_4",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionHair4Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteOnInitialEntitySpawn",
@@ -2895,26 +2511,6 @@
       "path": "~/Commands/Reset/Cooldowns"
     },
     {
-      "name": "ViltrumiteDisplayConditionEyes6",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_display_condition_eyes_6",
-      "metadata": {
-        "return_type": "logic",
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteDisplayConditionEyes6Procedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
-    },
-    {
       "name": "RandomPowerOnSpawn",
       "type": "gamerule",
       "compiles": true,
@@ -3029,7 +2625,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumite Normal/AI"
     },
     {
       "name": "ArtRosenbaum",
@@ -3924,7 +3520,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteComboPunch",
@@ -3959,7 +3555,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumite Normal/AI"
     },
     {
       "name": "EarthIconSelected",
@@ -8722,51 +8318,6 @@
       "path": "~/Powers - Abilities/BattleBeast"
     },
     {
-      "name": "LockOnOnKeyPressed",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "lock_on_on_key_pressed",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/LockOnOnKeyPressedProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Keys/LockOnKey"
-    },
-    {
-      "name": "LockOn",
-      "type": "keybind",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "lock_on",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/network/LockOnMessage.java"
-        ]
-      },
-      "path": "~/Keys/LockOnKey"
-    },
-    {
-      "name": "LockOnSystem",
-      "type": "code",
-      "compiles": true,
-      "locked_code": true,
-      "registry_name": "lock_on_system",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/LockOnSystem.java"
-        ]
-      },
-      "path": "~/Lock On System"
-    },
-    {
       "name": "DamageReduction",
       "type": "procedure",
       "compiles": true,
@@ -8781,33 +8332,780 @@
       "path": "~/Powers - Abilities"
     },
     {
-      "name": "ViltrumiteRankRender",
-      "type": "procedure",
-      "compiles": false,
-      "locked_code": false,
-      "registry_name": "viltrumite_rank_render",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumiteRankRenderProcedure.java"
-        ],
-        "dependencies": []
-      },
-      "path": "~/Mobs/Viltrumite Normal"
-    },
-    {
-      "name": "ReturnShape",
+      "name": "ReturnViltrumiteBase1",
       "type": "procedure",
       "compiles": true,
       "locked_code": false,
-      "registry_name": "return_shape",
+      "registry_name": "return_viltrumite_base_1",
       "metadata": {
-        "return_type": "shape",
+        "return_type": "logic",
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnShapeProcedure.java"
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase1Procedure.java"
         ],
-        "dependencies": []
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair1",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_1",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair1Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair2",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_2",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair2Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair3",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_3",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair3Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair4",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_4",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair4Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair5",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_5",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair5Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair6",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_6",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair6Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair7",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair8",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair9",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair10",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair11",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_11",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair11Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnGender",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_gender",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnGenderProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair12",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_12",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair12Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair13",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_13",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair13Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair14",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_14",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair14Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair15",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_15",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair15Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteHair16",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_hair_16",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteHair16Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnGenderMale",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_gender_male",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnGenderMaleProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase7",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_7",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase7Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase8",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_8",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase8Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase9",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_9",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase9Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase10",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_10",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase10Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase11",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_11",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase11Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReturnViltrumiteBase12",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "return_viltrumite_base_12",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ReturnViltrumiteBase12Procedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumite Normal/Customization"
+    },
+    {
+      "name": "ReducedDamage",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "reduced_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/invincible_craft/damage_type/reduced_damage.json"
+        ]
+      },
+      "path": "~/Powers - Abilities"
+    },
+    {
+      "name": "ArtRosenbaumCraftAtomEveSuit",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "art_rosenbaum_craft_atom_eve_suit",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ArtRosenbaumCraftAtomEveSuitProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+    },
+    {
+      "name": "Gauntlet",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "gauntlet",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/item/GauntletItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/gauntlet.json"
+        ]
+      },
+      "path": "~/Items/Weapons/Gauntlets"
+    },
+    {
+      "name": "KillCannon",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_cannon",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/KillCannonEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/KillCannonRenderer.java",
+          "src/main/resources/data/invincible_craft/forge/biome_modifier/kill_cannon_biome_modifier.json",
+          "src/main/resources/assets/invincible_craft/models/item/kill_cannon_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs/Kill Cannon"
+    },
+    {
+      "name": "KillCannonBlast",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "kill_cannon_blast",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/layer/KillCannonBlastLayer.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/KillCannonBlastEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/KillCannonBlastModel.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/KillCannonBlastRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Kill Cannon"
+    },
+    {
+      "name": "KillCannonBlastOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_cannon_blast_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/KillCannonBlastOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kill Cannon"
+    },
+    {
+      "name": "KillCannonCloud",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_cannon_cloud",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/particle/KillCannonCloudParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/kill_cannon_cloud.json"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "KillCannonOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_cannon_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/KillCannonOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kill Cannon"
+    },
+    {
+      "name": "KillCannonShockwave",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_cannon_shockwave",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/particle/KillCannonShockwaveParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/kill_cannon_shockwave.json"
+        ]
+      },
+      "path": "~/Particles"
     }
   ],
   "variable_elements": [
@@ -9515,7 +9813,7 @@
       "BattleBeastMace",
       "WoodenBat",
       "MetalBat",
-      "AtomEveSwordConstruct"
+      "KillCannon"
     ]
   },
   "language_map": {
@@ -9525,8 +9823,8 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_mohawk_mar": "Make Invincible Suit (Mohawk Mark) - Suit Fabric x4, Gray Dye x4, Cyan Dye x4",
       "effect.invincible_craft.can_downslam": "Can Downslam",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_omniman_suit": "Make Omni-Man Suit - Suit Fabric x4, Red Dye x4, White Dye x4",
-      "key.invincible_craft.lock_on": "Lock On",
       "gui.invincible_craft.construct_gui.tooltip_construct_sword": "Construct Sabre",
+      "item.invincible_craft.kill_cannon_blast_spawn_egg": "Kill Cannon Blast Spawn Egg",
       "gui.invincible_craft.stat_panel_gui.label_sslplayer_info": "§lPLAYER INFO",
       "block.invincible_craft.moon_stone": "Moon Stone",
       "effect.invincible_craft.stun": "Stun",
@@ -9558,14 +9856,16 @@
       "subtitles.growl": "",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
-      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
-      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "entity.invincible_craft.kill_cannon_blast": "Kill Cannon Blast",
       "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
+      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "item.invincible_craft.atom_eve_hammer_construct": "Hammer Construct",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
       "gamerule.invincibleCraftXPMultiplier.description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
       "death.attack.battle_beast_downslam": "%1$s died",
+      "item.invincible_craft.gauntlet": "Gauntlet",
       "death.attack.suffocation.player": "%1$s suffocated whilst trying to escape %2$s",
       "advancements.advancement_duplication.descr": "Get Duplication power.",
       "item.invincible_craft.invincible_suit_season_3_boots": "Invincible Suit (Season 3) Boots",
@@ -9584,8 +9884,8 @@
       "item.invincible_craft.invincible_suit_sinister_mark_helmet": "Invincible Suit (Sinister Mark) Helmet",
       "death.attack.sonic_clap_damage.item": "%1$s was killed by %2$s using %3$s",
       "key.invincible_craft.stat_panel": "Stat Panel",
-      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
       "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
+      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
       "subtitles.skull_crush": "skull_crush",
       "gamerule.invincibleCraftEnableMoonTravel": "Invincible Craft - Moon Travel",
       "item.invincible_craft.dupli_kate_suit_leggings": "Dupli-Kate Leggings",
@@ -9596,6 +9896,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_sinister_m": "Make Invincible Suit (Sinister Mark) - Suit Fabric x4, Black Dye x4, Yellow x4",
       "item.invincible_craft.invincible_suit_un_masked_mark_boots": "Invincible Suit (Unmasked Mark) Boots",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_unmasked_m": "Make Invincible Suit (Unmasked Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_omni_man_suit_fabric_x4": "Make Omni Man - Suit Fabric x4, White Dye x4, Red Dye x4",
       "gui.invincible_craft.quick_travel_gui.tooltip_teleports_you_to_the_selected_lo1": "Teleports you to the selected location on the Moon.",
       "gamerule.invincibleCraftEnableImpactFrames": "Invincible Craft - Impact Frames",
       "item.invincible_craft.invincible_suit_un_masked_mark_chestplate": "Invincible Suit (Unmasked Mark) Chestplate",
@@ -9610,9 +9911,12 @@
       "item.invincible_craft.atom_eve_gauntlet_construct": "Gauntlet Construct",
       "effect.invincible_craft.flight_slowness": "Flight Slowness",
       "death.attack.impact.item": "%1$s was killed by %2$s using %3$s",
+      "death.attack.reduced_damage": "%1$s died",
       "biome.invincible_craft.moon_surface": "Moon Surface",
+      "entity.invincible_craft.kill_cannon": "Kill Cannon",
       "death.attack.impact.player": "%1$s died whilst trying to escape %2$s",
       "item.invincible_craft.atom_eve_awakening_armor_boots": "Atom Eve Awakening Armor Boots",
+      "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_duplikate_suit_suit_fabr": "Make Dupli-Kate Suit - Suit Fabric x4, Light Gray Dye x4, Purple Dye x4",
       "death.attack.viltrumite_punch.item": "%1$s was crushed by %2$s using %3$s",
       "gui.invincible_craft.power_picker_gui.button_battle_beast": "Battle Beast",
       "advancements.advancement_dimensional_travel.descr": "Get Dimensional Travel power.",
@@ -9668,6 +9972,7 @@
       "item.invincible_craft.atom_eve_awakening_spawn_egg": "Atom Eve Awakening Spawn Egg",
       "item.invincible_craft.atom_eve_armor_construct_helmet": "Constrcut Helmet",
       "item.invincible_craft.invincible_suit_no_goggles_mark_helmet": "Invincible Suit (No Goggles Mark) Helmet",
+      "death.attack.reduced_damage.item": "%1$s was killed by %2$s using %3$s",
       "entity.invincible_craft.atomicb_blast": "Atomicb Blast",
       "advancements.advancement_suffocation_moon.title": "Moonwalking... Forever",
       "item.invincible_craft.atom_eve_suit_boots": "Atom Eve Boots",
@@ -9680,6 +9985,7 @@
       "death.attack.bleed_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.stat_panel_gui.label_strength": "§lStrength",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.label_suit_shop": "SUIT SHOP",
+      "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_atom_eve_suit_suit_fabric": "Make Atom Eve Suit - Suit Fabric x4, Magenta Dye x4, Pink Dye x4",
       "item.invincible_craft.portal_dash_portal_spawn_egg": "Dash Portal Spawn Egg",
       "advancements.advancement_kill_viltrumite_as_viltrumite.descr": "Kill a fellow Viltrumite.",
       "gui.invincible_craft.construct_gui.tooltip_construct_trident": "Construct Trident",
@@ -9693,6 +9999,7 @@
       "death.attack.blood_hunt": "%1$s died",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_unmasked_m": "Make Invincible Suit (Unmasked Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "entity.invincible_craft.orbs_spawner_portal": "Orb Spawner Portal",
+      "death.attack.reduced_damage.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.stat_panel_gui.label_adjust_movement_speed": "Adjust Move. Speed",
       "item.invincible_craft.suit_fabric": "Suit Fabric",
       "gui.invincible_craft.stat_panel_gui.label_sslspeed": "§lSpeed",
@@ -9706,6 +10013,7 @@
       "item.invincible_craft.invincible_suit_omni_mark_leggings": "Invincible Suit (Omni-Mark) Leggings",
       "subtitles.crush": "crush",
       "gui.invincible_craft.quick_travel_gui.label_quick_travel": "Quick Travel",
+      "item.invincible_craft.kill_cannon_spawn_egg": "Kill Cannon Spawn Egg",
       "item.invincible_craft.astronaut_helmet_helmet": "Astronaut Helmet",
       "item.invincible_craft.viltrumite_suit_leggings": "Viltrumite Suit Leggings",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
@@ -10056,10 +10364,6 @@
           {
             "name": "Stat GUI",
             "children": []
-          },
-          {
-            "name": "LockOnKey",
-            "children": []
           }
         ]
       },
@@ -10091,6 +10395,10 @@
               },
               {
                 "name": "Chain",
+                "children": []
+              },
+              {
+                "name": "Gauntlets",
                 "children": []
               }
             ]
@@ -10141,6 +10449,10 @@
               {
                 "name": "Customization",
                 "children": []
+              },
+              {
+                "name": "AI",
+                "children": []
               }
             ]
           },
@@ -10173,6 +10485,10 @@
           },
           {
             "name": "The Giant",
+            "children": []
+          },
+          {
+            "name": "Kill Cannon",
             "children": []
           }
         ]
@@ -10249,18 +10565,14 @@
       {
         "name": "DamageTypes",
         "children": []
-      },
-      {
-        "name": "Lock On System",
-        "children": []
       }
     ]
   },
   "workspaceSettings": {
     "modid": "invincible_craft",
     "modName": "InvincibleCraft",
-    "version": "1.2.2",
-    "author": "Zylty, Efkrdnz",
+    "version": "1.2.3",
+    "author": "Zylty",
     "websiteURL": "https://mcreator.net",
     "license": "Not specified",
     "serverSideOnly": false,

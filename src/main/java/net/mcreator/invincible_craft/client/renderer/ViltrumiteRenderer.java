@@ -4,46 +4,57 @@ package net.mcreator.invincible_craft.client.renderer;
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
+import net.minecraft.client.renderer.entity.MobRenderer;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.HumanoidModel;
+import net.minecraft.client.model.EntityModel;
+import net.minecraft.client.Minecraft;
 
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMustache6Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMustache5Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMustache4Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMustache3Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMustache2Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMustache1Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMouth2Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionMouth1Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionHair6Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionHair5Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionHair4Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionHair3Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionHair2Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionHair1Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionEyes6Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionEyes5Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionEyes4Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionEyes3Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionEyes2Procedure;
-import net.mcreator.invincible_craft.procedures.ViltrumiteDisplayConditionEyes1Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair9Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair8Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair7Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair6Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair5Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair4Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair3Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair2Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair1Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair16Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair15Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair14Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair13Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair12Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair11Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteHair10Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase9Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase8Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase7Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase6Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase5Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase4Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase3Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase2Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase1Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase12Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase11Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnViltrumiteBase10Procedure;
+import net.mcreator.invincible_craft.procedures.ReturnGenderProcedure;
+import net.mcreator.invincible_craft.procedures.ReturnGenderMaleProcedure;
 import net.mcreator.invincible_craft.entity.ViltrumiteEntity;
+import net.mcreator.invincible_craft.client.model.Modelinv;
+import net.mcreator.invincible_craft.client.model.ModelViltrumiteMale;
+import net.mcreator.invincible_craft.client.model.ModelViltrumiteFemale;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>> {
+public class ViltrumiteRenderer extends MobRenderer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>> {
 	public ViltrumiteRenderer(EntityRendererProvider.Context context) {
-		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0.5f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getModelManager()));
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_eyes_1.png");
+		super(context, new Modelinv(context.bakeLayer(Modelinv.LAYER_LOCATION)), 0.5f);
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base1.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -51,14 +62,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionEyes1Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase1Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_eyes_2.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base2.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -66,14 +81,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionEyes2Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase2Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_eyes_3.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base3.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -81,14 +100,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionEyes3Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase3Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_eyes_4.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base4.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -96,14 +119,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionEyes4Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase4Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_eyes_5.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base5.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -111,14 +138,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionEyes5Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase5Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_hair_1.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base6.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -126,14 +157,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionHair1Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase6Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_hair_2.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair1.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -141,14 +176,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionHair2Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair1Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_hair_3.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair2.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -156,14 +195,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionHair3Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair2Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_hair_4.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair3.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -171,14 +214,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionHair4Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair3Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_hair_5.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair4.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -186,14 +233,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionHair5Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair4Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_hair_6.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair7.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -201,14 +252,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionHair6Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair5Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mouth_1.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair5.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -216,14 +271,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMouth1Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair6Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mouth_2.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair6.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -231,14 +290,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMouth2Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair7Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mustache_1.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair8.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -246,14 +309,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMustache1Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair8Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mustache_2.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair9.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -261,14 +328,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMustache2Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair9Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mustache_3.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair10.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -276,14 +347,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMustache3Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair10Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mustache_4.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_hair11.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -291,14 +366,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMustache4Procedure.execute(entity)) {
+				if (ReturnViltrumiteHair11Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mustache_5.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base1.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -306,14 +385,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMustache5Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase7Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_mustache_6.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base2.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -321,14 +404,18 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionMustache6Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase8Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
-		this.addLayer(new RenderLayer<ViltrumiteEntity, HumanoidModel<ViltrumiteEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_eyes_6.png");
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base3.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -336,9 +423,203 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 				double x = entity.getX();
 				double y = entity.getY();
 				double z = entity.getZ();
-				if (ViltrumiteDisplayConditionEyes6Procedure.execute(entity)) {
+				if (ReturnViltrumiteBase9Procedure.execute(entity)) {
 					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
-					this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base4.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteBase10Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base5.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteBase11Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/biped_base6.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteBase12Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/female_hair_1.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteHair12Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/female_hair_2.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteHair13Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/female_hair_3.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteHair14Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/female_hair_4.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteHair15Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/female_hair_5.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnViltrumiteHair16Procedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_female_suit.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnGenderProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteFemale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteFemale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
+				}
+			}
+		});
+		this.addLayer(new RenderLayer<ViltrumiteEntity, Modelinv<ViltrumiteEntity>>(this) {
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("invincible_craft:textures/entities/viltrumite_male_suit.png");
+
+			@Override
+			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, ViltrumiteEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
+				Level world = entity.level();
+				double x = entity.getX();
+				double y = entity.getY();
+				double z = entity.getZ();
+				if (ReturnGenderMaleProcedure.execute(entity)) {
+					VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.entityCutoutNoCull(LAYER_TEXTURE));
+					EntityModel model = new ModelViltrumiteMale(Minecraft.getInstance().getEntityModels().bakeLayer(ModelViltrumiteMale.LAYER_LOCATION));
+					this.getParentModel().copyPropertiesTo(model);
+					model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
+					model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
+					model.renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
 				}
 			}
 		});
@@ -346,6 +627,6 @@ public class ViltrumiteRenderer extends HumanoidMobRenderer<ViltrumiteEntity, Hu
 
 	@Override
 	public ResourceLocation getTextureLocation(ViltrumiteEntity entity) {
-		return new ResourceLocation("invincible_craft:textures/entities/base_1.png");
+		return new ResourceLocation("invincible_craft:textures/entities/inv.png");
 	}
 }

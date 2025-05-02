@@ -21,5 +21,6 @@ public class DamageReductionProcedure {
 	}
 
 	private static void execute(@Nullable Event event) {
+		double newAmount = 0;
 	}
 }

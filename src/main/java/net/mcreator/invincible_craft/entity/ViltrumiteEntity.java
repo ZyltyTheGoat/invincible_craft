@@ -8,7 +8,6 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -24,7 +23,6 @@ import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
@@ -46,7 +44,6 @@ import net.mcreator.invincible_craft.procedures.ViltrumiteEntityIsHurtProcedure;
 import net.mcreator.invincible_craft.procedures.ViltrumiteEntityDiesProcedure;
 import net.mcreator.invincible_craft.procedures.IsViltrumiteRecoveredProcedure;
 import net.mcreator.invincible_craft.procedures.CanViltrumiteFlyingAttackProcedure;
-import net.mcreator.invincible_craft.init.InvincibleCraftModItems;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 
 import javax.annotation.Nullable;
@@ -54,11 +51,6 @@ import javax.annotation.Nullable;
 public class ViltrumiteEntity extends Monster {
 	public static final EntityDataAccessor<Boolean> DATA_flying = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_recovery = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
-	public static final EntityDataAccessor<Integer> DATA_eyes = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
-	public static final EntityDataAccessor<Integer> DATA_hair = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
-	public static final EntityDataAccessor<Integer> DATA_mustache = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
-	public static final EntityDataAccessor<Integer> DATA_mouth = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
-	public static final EntityDataAccessor<Integer> DATA_age = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_ClapTimer = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_ComboTimer = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_ComboAmount = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
@@ -68,7 +60,10 @@ public class ViltrumiteEntity extends Monster {
 	public static final EntityDataAccessor<Integer> DATA_SlamIA = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_SlamLogic = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_ChopTimer = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_base = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_hair = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_rank = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_gender = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 
 	public ViltrumiteEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(InvincibleCraftModEntities.VILTRUMITE.get(), world);
@@ -80,9 +75,6 @@ public class ViltrumiteEntity extends Monster {
 		xpReward = 50;
 		setNoAi(false);
 		setPersistenceRequired();
-		this.setItemSlot(EquipmentSlot.CHEST, new ItemStack(InvincibleCraftModItems.VILTRUMITE_SUIT_CHESTPLATE.get()));
-		this.setItemSlot(EquipmentSlot.LEGS, new ItemStack(InvincibleCraftModItems.VILTRUMITE_SUIT_LEGGINGS.get()));
-		this.setItemSlot(EquipmentSlot.FEET, new ItemStack(InvincibleCraftModItems.VILTRUMITE_SUIT_BOOTS.get()));
 	}
 
 	@Override
@@ -95,11 +87,6 @@ public class ViltrumiteEntity extends Monster {
 		super.defineSynchedData();
 		this.entityData.define(DATA_flying, false);
 		this.entityData.define(DATA_recovery, 0);
-		this.entityData.define(DATA_eyes, 0);
-		this.entityData.define(DATA_hair, 0);
-		this.entityData.define(DATA_mustache, 0);
-		this.entityData.define(DATA_mouth, 0);
-		this.entityData.define(DATA_age, 0);
 		this.entityData.define(DATA_ClapTimer, 0);
 		this.entityData.define(DATA_ComboTimer, 0);
 		this.entityData.define(DATA_ComboAmount, 0);
@@ -109,7 +96,10 @@ public class ViltrumiteEntity extends Monster {
 		this.entityData.define(DATA_SlamIA, 0);
 		this.entityData.define(DATA_SlamLogic, false);
 		this.entityData.define(DATA_ChopTimer, 0);
+		this.entityData.define(DATA_base, 0);
+		this.entityData.define(DATA_hair, 0);
 		this.entityData.define(DATA_rank, 0);
+		this.entityData.define(DATA_gender, 0);
 	}
 
 	@Override
@@ -191,11 +181,6 @@ public class ViltrumiteEntity extends Monster {
 	}
 
 	@Override
-	public double getMyRidingOffset() {
-		return -0.35D;
-	}
-
-	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
@@ -239,11 +224,6 @@ public class ViltrumiteEntity extends Monster {
 		super.addAdditionalSaveData(compound);
 		compound.putBoolean("Dataflying", this.entityData.get(DATA_flying));
 		compound.putInt("Datarecovery", this.entityData.get(DATA_recovery));
-		compound.putInt("Dataeyes", this.entityData.get(DATA_eyes));
-		compound.putInt("Datahair", this.entityData.get(DATA_hair));
-		compound.putInt("Datamustache", this.entityData.get(DATA_mustache));
-		compound.putInt("Datamouth", this.entityData.get(DATA_mouth));
-		compound.putInt("Dataage", this.entityData.get(DATA_age));
 		compound.putInt("DataClapTimer", this.entityData.get(DATA_ClapTimer));
 		compound.putInt("DataComboTimer", this.entityData.get(DATA_ComboTimer));
 		compound.putInt("DataComboAmount", this.entityData.get(DATA_ComboAmount));
@@ -253,7 +233,10 @@ public class ViltrumiteEntity extends Monster {
 		compound.putInt("DataSlamIA", this.entityData.get(DATA_SlamIA));
 		compound.putBoolean("DataSlamLogic", this.entityData.get(DATA_SlamLogic));
 		compound.putInt("DataChopTimer", this.entityData.get(DATA_ChopTimer));
+		compound.putInt("Database", this.entityData.get(DATA_base));
+		compound.putInt("Datahair", this.entityData.get(DATA_hair));
 		compound.putInt("Datarank", this.entityData.get(DATA_rank));
+		compound.putInt("Datagender", this.entityData.get(DATA_gender));
 	}
 
 	@Override
@@ -263,16 +246,6 @@ public class ViltrumiteEntity extends Monster {
 			this.entityData.set(DATA_flying, compound.getBoolean("Dataflying"));
 		if (compound.contains("Datarecovery"))
 			this.entityData.set(DATA_recovery, compound.getInt("Datarecovery"));
-		if (compound.contains("Dataeyes"))
-			this.entityData.set(DATA_eyes, compound.getInt("Dataeyes"));
-		if (compound.contains("Datahair"))
-			this.entityData.set(DATA_hair, compound.getInt("Datahair"));
-		if (compound.contains("Datamustache"))
-			this.entityData.set(DATA_mustache, compound.getInt("Datamustache"));
-		if (compound.contains("Datamouth"))
-			this.entityData.set(DATA_mouth, compound.getInt("Datamouth"));
-		if (compound.contains("Dataage"))
-			this.entityData.set(DATA_age, compound.getInt("Dataage"));
 		if (compound.contains("DataClapTimer"))
 			this.entityData.set(DATA_ClapTimer, compound.getInt("DataClapTimer"));
 		if (compound.contains("DataComboTimer"))
@@ -291,8 +264,14 @@ public class ViltrumiteEntity extends Monster {
 			this.entityData.set(DATA_SlamLogic, compound.getBoolean("DataSlamLogic"));
 		if (compound.contains("DataChopTimer"))
 			this.entityData.set(DATA_ChopTimer, compound.getInt("DataChopTimer"));
+		if (compound.contains("Database"))
+			this.entityData.set(DATA_base, compound.getInt("Database"));
+		if (compound.contains("Datahair"))
+			this.entityData.set(DATA_hair, compound.getInt("Datahair"));
 		if (compound.contains("Datarank"))
 			this.entityData.set(DATA_rank, compound.getInt("Datarank"));
+		if (compound.contains("Datagender"))
+			this.entityData.set(DATA_gender, compound.getInt("Datagender"));
 	}
 
 	@Override

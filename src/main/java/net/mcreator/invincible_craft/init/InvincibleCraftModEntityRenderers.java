@@ -17,6 +17,8 @@ import net.mcreator.invincible_craft.client.renderer.RefugePortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.QuickPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.PortalDashPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.OrbsSpawnerPortalRenderer;
+import net.mcreator.invincible_craft.client.renderer.KillCannonRenderer;
+import net.mcreator.invincible_craft.client.renderer.KillCannonBlastRenderer;
 import net.mcreator.invincible_craft.client.renderer.ExchangeCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.DuplicationCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanishmentPortalRenderer;
@@ -46,5 +48,7 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOM_EVE_CONSTRUCT_TRIDENT_PROJECTILE.get(), AtomEveConstructTridentProjectileRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOMICB_BLAST.get(), AtomicbBlastRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ATOM_EVE_AWAKENING.get(), AtomEveAwakeningRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.KILL_CANNON.get(), KillCannonRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.KILL_CANNON_BLAST.get(), KillCannonBlastRenderer::new);
 	}
 }

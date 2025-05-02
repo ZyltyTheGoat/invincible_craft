@@ -8,9 +8,6 @@ public class CanViltrumiteFlyingAttackProcedure {
 	public static boolean execute(Entity entity) {
 		if (entity == null)
 			return false;
-		if (entity instanceof ViltrumiteEntity _datEntL0 && _datEntL0.getEntityData().get(ViltrumiteEntity.DATA_flying)) {
-			return true;
-		}
-		return false;
+		return entity instanceof ViltrumiteEntity _datEntL0 && _datEntL0.getEntityData().get(ViltrumiteEntity.DATA_flying);
 	}
 }

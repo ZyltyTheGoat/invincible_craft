@@ -17,6 +17,7 @@ import net.mcreator.invincible_craft.procedures.PreviousPageProcedure;
 import net.mcreator.invincible_craft.procedures.NextPageProcedure;
 import net.mcreator.invincible_craft.procedures.ArtRosenbaumCraftOmniManSuitProcedure;
 import net.mcreator.invincible_craft.procedures.ArtRosenbaumCraftDupliKateSuitProcedure;
+import net.mcreator.invincible_craft.procedures.ArtRosenbaumCraftAtomEveSuitProcedure;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
 import java.util.function.Supplier;
@@ -93,6 +94,10 @@ public class ArtRosenbaumGUIPage2ButtonMessage {
 		if (buttonID == 3) {
 
 			ArtRosenbaumCraftDupliKateSuitProcedure.execute(entity);
+		}
+		if (buttonID == 4) {
+
+			ArtRosenbaumCraftAtomEveSuitProcedure.execute(entity);
 		}
 	}
 

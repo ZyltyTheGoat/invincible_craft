@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Viltrumite",
     "mobLabel": "",
-    "mobModelName": "Biped",
-    "mobModelTexture": "base_1.png",
+    "mobModelName": "Modelinv",
+    "mobModelTexture": "inv.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
@@ -23,183 +23,273 @@
     },
     "modelLayers": [
       {
-        "model": "Default",
-        "texture": "viltrumite_eyes_1.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_base1.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionEyes1"
+          "name": "ReturnViltrumiteBase1"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_eyes_2.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_base2.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionEyes2"
+          "name": "ReturnViltrumiteBase2"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_eyes_3.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_base3.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionEyes3"
+          "name": "ReturnViltrumiteBase3"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_eyes_4.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_base4.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionEyes4"
+          "name": "ReturnViltrumiteBase4"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_eyes_5.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_base5.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionEyes5"
+          "name": "ReturnViltrumiteBase5"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_hair_1.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_base6.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionHair1"
+          "name": "ReturnViltrumiteBase6"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_hair_2.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair1.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionHair2"
+          "name": "ReturnViltrumiteHair1"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_hair_3.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair2.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionHair3"
+          "name": "ReturnViltrumiteHair2"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_hair_4.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair3.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionHair4"
+          "name": "ReturnViltrumiteHair3"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_hair_5.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair4.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionHair5"
+          "name": "ReturnViltrumiteHair4"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_hair_6.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair7.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionHair6"
+          "name": "ReturnViltrumiteHair5"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mouth_1.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair5.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMouth1"
+          "name": "ReturnViltrumiteHair6"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mouth_2.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair6.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMouth2"
+          "name": "ReturnViltrumiteHair7"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mustache_1.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair8.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMustache1"
+          "name": "ReturnViltrumiteHair8"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mustache_2.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair9.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMustache2"
+          "name": "ReturnViltrumiteHair9"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mustache_3.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair10.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMustache3"
+          "name": "ReturnViltrumiteHair10"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mustache_4.png",
+        "model": "ModelViltrumiteMale",
+        "texture": "biped_hair11.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMustache4"
+          "name": "ReturnViltrumiteHair11"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mustache_5.png",
+        "model": "ModelViltrumiteFemale",
+        "texture": "biped_base1.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMustache5"
+          "name": "ReturnViltrumiteBase7"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_mustache_6.png",
+        "model": "ModelViltrumiteFemale",
+        "texture": "biped_base2.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionMustache6"
+          "name": "ReturnViltrumiteBase8"
         }
       },
       {
-        "model": "Default",
-        "texture": "viltrumite_eyes_6.png",
+        "model": "ModelViltrumiteFemale",
+        "texture": "biped_base3.png",
         "disableHurtOverlay": false,
         "glow": false,
         "condition": {
-          "name": "ViltrumiteDisplayConditionEyes6"
+          "name": "ReturnViltrumiteBase9"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "biped_base4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteBase10"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "biped_base5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteBase11"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "biped_base6.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteBase12"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "female_hair_1.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteHair12"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "female_hair_2.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteHair13"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "female_hair_3.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteHair14"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "female_hair_4.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteHair15"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "female_hair_5.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnViltrumiteHair16"
+        }
+      },
+      {
+        "model": "ModelViltrumiteFemale",
+        "texture": "viltrumite_female_suit.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnGender"
+        }
+      },
+      {
+        "model": "ModelViltrumiteMale",
+        "texture": "viltrumite_male_suit.png",
+        "disableHurtOverlay": false,
+        "glow": false,
+        "condition": {
+          "name": "ReturnGenderMale"
         }
       }
     ],
@@ -237,13 +327,13 @@
       "value": ""
     },
     "equipmentBody": {
-      "value": "CUSTOM:ViltrumiteSuit.body"
+      "value": ""
     },
     "equipmentLeggings": {
-      "value": "CUSTOM:ViltrumiteSuit.legs"
+      "value": ""
     },
     "equipmentBoots": {
-      "value": "CUSTOM:ViltrumiteSuit.boots"
+      "value": ""
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
@@ -319,41 +409,6 @@
       {
         "min": -2147483648,
         "max": 2147483647,
-        "name": "eyes",
-        "type": "integer",
-        "value": 0
-      },
-      {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "hair",
-        "type": "integer",
-        "value": 0
-      },
-      {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "mustache",
-        "type": "integer",
-        "value": 0
-      },
-      {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "mouth",
-        "type": "integer",
-        "value": 0
-      },
-      {
-        "min": -2147483648,
-        "max": 2147483647,
-        "name": "age",
-        "type": "integer",
-        "value": 0
-      },
-      {
-        "min": -2147483648,
-        "max": 2147483647,
         "name": "ClapTimer",
         "type": "integer",
         "value": 0
@@ -413,7 +468,28 @@
       {
         "min": -2147483648,
         "max": 2147483647,
+        "name": "base",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "hair",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
         "name": "rank",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "gender",
         "type": "integer",
         "value": 0
       }

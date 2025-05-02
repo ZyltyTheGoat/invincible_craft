@@ -33,6 +33,7 @@ import net.mcreator.invincible_craft.item.InvincibleSuitOmniMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitNoGogglesMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitMohawkMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitItem;
+import net.mcreator.invincible_craft.item.GauntletItem;
 import net.mcreator.invincible_craft.item.DupliKateSuitItem;
 import net.mcreator.invincible_craft.item.ChainItem;
 import net.mcreator.invincible_craft.item.BattleBeastMaceItem;
@@ -114,6 +115,8 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> ATOM_EVE_SUIT_CHESTPLATE = REGISTRY.register("atom_eve_suit_chestplate", () -> new AtomEveSuitItem.Chestplate());
 	public static final RegistryObject<Item> ATOM_EVE_SUIT_LEGGINGS = REGISTRY.register("atom_eve_suit_leggings", () -> new AtomEveSuitItem.Leggings());
 	public static final RegistryObject<Item> ATOM_EVE_SUIT_BOOTS = REGISTRY.register("atom_eve_suit_boots", () -> new AtomEveSuitItem.Boots());
+	public static final RegistryObject<Item> GAUNTLET = REGISTRY.register("gauntlet", () -> new GauntletItem());
+	public static final RegistryObject<Item> KILL_CANNON_SPAWN_EGG = REGISTRY.register("kill_cannon_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.KILL_CANNON, -13881038, -5438461, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items

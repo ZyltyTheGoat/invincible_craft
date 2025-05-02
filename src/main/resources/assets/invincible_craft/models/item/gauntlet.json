@@ -1,0 +1,7 @@
+{
+  "parent": "invincible_craft:custom/steel_arm",
+  "textures": {
+    "0": "invincible_craft:block/steel_arm",
+    "particle": "invincible_craft:item/atom_eve_awakening_armor"
+  }
+}

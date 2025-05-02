@@ -39,7 +39,7 @@ public class XPGainProcedureProcedure {
 		double xpReceiver = 0;
 		if (!(entity instanceof TamableAnimal _tamIsTamedBy && sourceentity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 			if (entity instanceof ViltrumiteEntity) {
-				xpReceiver = Math.round(1000 + (entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_age) : 0) / 10)
+				xpReceiver = Math.round((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_rank) : 0) * 1000)
 						* ((world.getLevelData().getGameRules().getInt(InvincibleCraftModGameRules.INVINCIBLE_CRAFT_XP_MULTIPLIER)) / 10);
 			} else if (entity instanceof BanditEntity) {
 				xpReceiver = 5 * (world.getLevelData().getGameRules().getInt(InvincibleCraftModGameRules.INVINCIBLE_CRAFT_XP_MULTIPLIER));

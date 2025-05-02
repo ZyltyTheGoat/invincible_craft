@@ -78,7 +78,7 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
 				tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
 				tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
-				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SWORD_CONSTRUCT.get());
+				tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
@@ -88,7 +88,6 @@ public class InvincibleCraftModTabs {
 			tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
 			tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
 			tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
-			tabData.accept(InvincibleCraftModItems.ATOM_EVE_SWORD_CONSTRUCT.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
 
@@ -96,6 +95,7 @@ public class InvincibleCraftModTabs {
 			tabData.accept(InvincibleCraftModItems.ART_ROSENBAUM_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.BANDIT_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.THE_GIANT_SPAWN_EGG.get());
+			tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 

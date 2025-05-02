@@ -24,6 +24,8 @@ import net.mcreator.invincible_craft.entity.RefugePortalEntity;
 import net.mcreator.invincible_craft.entity.QuickPortalEntity;
 import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
 import net.mcreator.invincible_craft.entity.OrbsSpawnerPortalEntity;
+import net.mcreator.invincible_craft.entity.KillCannonEntity;
+import net.mcreator.invincible_craft.entity.KillCannonBlastEntity;
 import net.mcreator.invincible_craft.entity.ExchangeCloneEntity;
 import net.mcreator.invincible_craft.entity.DuplicationCloneEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
@@ -82,6 +84,12 @@ public class InvincibleCraftModEntities {
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AtomicbBlastEntity::new).fireImmune().sized(0.2f, 0.2f));
 	public static final RegistryObject<EntityType<AtomEveAwakeningEntity>> ATOM_EVE_AWAKENING = register("atom_eve_awakening", EntityType.Builder.<AtomEveAwakeningEntity>of(AtomEveAwakeningEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AtomEveAwakeningEntity::new).fireImmune().sized(0.1f, 0.1f));
+	public static final RegistryObject<EntityType<KillCannonEntity>> KILL_CANNON = register("kill_cannon",
+			EntityType.Builder.<KillCannonEntity>of(KillCannonEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KillCannonEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<KillCannonBlastEntity>> KILL_CANNON_BLAST = register("kill_cannon_blast", EntityType.Builder.<KillCannonBlastEntity>of(KillCannonBlastEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(KillCannonBlastEntity::new).fireImmune().sized(0.2f, 0.2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -104,6 +112,8 @@ public class InvincibleCraftModEntities {
 			SpikeBallEntityEntity.init();
 			AtomicbBlastEntity.init();
 			AtomEveAwakeningEntity.init();
+			KillCannonEntity.init();
+			KillCannonBlastEntity.init();
 		});
 	}
 
@@ -123,5 +133,7 @@ public class InvincibleCraftModEntities {
 		event.put(SPIKE_BALL_ENTITY.get(), SpikeBallEntityEntity.createAttributes().build());
 		event.put(ATOMICB_BLAST.get(), AtomicbBlastEntity.createAttributes().build());
 		event.put(ATOM_EVE_AWAKENING.get(), AtomEveAwakeningEntity.createAttributes().build());
+		event.put(KILL_CANNON.get(), KillCannonEntity.createAttributes().build());
+		event.put(KILL_CANNON_BLAST.get(), KillCannonBlastEntity.createAttributes().build());
 	}
 }

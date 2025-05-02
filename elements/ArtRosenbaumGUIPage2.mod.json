@@ -66,7 +66,7 @@
           "onClick": {
             "name": "ArtRosenbaumCraftOmniManSuit"
           },
-          "x": 177,
+          "x": 159,
           "y": 62
         }
       },
@@ -79,7 +79,59 @@
           "onClick": {
             "name": "ArtRosenbaumCraftDupliKateSuit"
           },
-          "x": 213,
+          "x": 231,
+          "y": 62
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_art_icon_atom_eve",
+          "image": "art_icon_atom_eve.png",
+          "hoveredImage": "art_icon_atom_eve_hover.png",
+          "onClick": {
+            "name": "ArtRosenbaumCraftAtomEveSuit"
+          },
+          "x": 195,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_omni_man_suit_fabric_x4",
+          "text": {
+            "fixedValue": "Make Omni Man - Suit Fabric x4, White Dye x4, Red Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 159,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_atom_eve_suit_suit_fabric",
+          "text": {
+            "fixedValue": "Make Atom Eve Suit - Suit Fabric x4, Magenta Dye x4, Pink Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 195,
+          "y": 62
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_make_duplikate_suit_suit_fabr",
+          "text": {
+            "fixedValue": "Make Dupli-Kate Suit - Suit Fabric x4, Light Gray Dye x4, Purple Dye x4"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 231,
           "y": 62
         }
       }

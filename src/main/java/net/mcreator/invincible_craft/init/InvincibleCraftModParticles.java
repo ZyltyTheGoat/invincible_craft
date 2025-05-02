@@ -17,6 +17,8 @@ import net.mcreator.invincible_craft.client.particle.SlashParticle;
 import net.mcreator.invincible_craft.client.particle.PunchImpact3Particle;
 import net.mcreator.invincible_craft.client.particle.PunchImpact2Particle;
 import net.mcreator.invincible_craft.client.particle.PunchImpact1Particle;
+import net.mcreator.invincible_craft.client.particle.KillCannonShockwaveParticle;
+import net.mcreator.invincible_craft.client.particle.KillCannonCloudParticle;
 import net.mcreator.invincible_craft.client.particle.GlintParticle;
 import net.mcreator.invincible_craft.client.particle.ExplosionParticle;
 import net.mcreator.invincible_craft.client.particle.ClawStrikeParticle;
@@ -78,5 +80,7 @@ public class InvincibleCraftModParticles {
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOMIC_BLAST_SHOCKWAVE.get(), AtomicBlastShockwaveParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_BIG_BLAST.get(), AtomEveBigBlastParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_AWAKENING_CLOUD.get(), AtomEveAwakeningCloudParticle::provider);
+		event.registerSpriteSet(InvincibleCraftModParticleTypes.KILL_CANNON_CLOUD.get(), KillCannonCloudParticle::provider);
+		event.registerSpriteSet(InvincibleCraftModParticleTypes.KILL_CANNON_SHOCKWAVE.get(), KillCannonShockwaveParticle::provider);
 	}
 }

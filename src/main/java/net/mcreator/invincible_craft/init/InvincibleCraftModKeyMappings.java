@@ -16,7 +16,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
 import net.mcreator.invincible_craft.network.StatPanelMessage;
-import net.mcreator.invincible_craft.network.LockOnMessage;
 import net.mcreator.invincible_craft.network.LeavePlanetMessage;
 import net.mcreator.invincible_craft.network.FlyMessage;
 import net.mcreator.invincible_craft.network.AbilityButton5Message;
@@ -152,19 +151,6 @@ public class InvincibleCraftModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
-	public static final KeyMapping LOCK_ON = new KeyMapping("key.invincible_craft.lock_on", GLFW.GLFW_KEY_G, "key.categories.invincible_craft") {
-		private boolean isDownOld = false;
-
-		@Override
-		public void setDown(boolean isDown) {
-			super.setDown(isDown);
-			if (isDownOld != isDown && isDown) {
-				InvincibleCraftMod.PACKET_HANDLER.sendToServer(new LockOnMessage(0, 0));
-				LockOnMessage.pressAction(Minecraft.getInstance().player, 0, 0);
-			}
-			isDownOld = isDown;
-		}
-	};
 	private static long ABILITY_BUTTON_1_LASTPRESS = 0;
 	private static long ABILITY_BUTTON_2_LASTPRESS = 0;
 	private static long ABILITY_BUTTON_3_LASTPRESS = 0;
@@ -180,7 +166,6 @@ public class InvincibleCraftModKeyMappings {
 		event.register(ABILITY_BUTTON_5);
 		event.register(STAT_PANEL);
 		event.register(LEAVE_PLANET);
-		event.register(LOCK_ON);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -196,7 +181,6 @@ public class InvincibleCraftModKeyMappings {
 				ABILITY_BUTTON_5.consumeClick();
 				STAT_PANEL.consumeClick();
 				LEAVE_PLANET.consumeClick();
-				LOCK_ON.consumeClick();
 			}
 		}
 	}

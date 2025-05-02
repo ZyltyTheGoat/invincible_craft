@@ -29,6 +29,7 @@ public class ArtRosenbaumGUIPage2Screen extends AbstractContainerScreen<ArtRosen
 	ImageButton imagebutton_stat;
 	ImageButton imagebutton_art_icon_omni_man;
 	ImageButton imagebutton_art_icon_dupli_kate;
+	ImageButton imagebutton_art_icon_atom_eve;
 
 	public ArtRosenbaumGUIPage2Screen(ArtRosenbaumGUIPage2Menu container, Inventory inventory, Component text) {
 		super(container, inventory, text);
@@ -48,6 +49,12 @@ public class ArtRosenbaumGUIPage2Screen extends AbstractContainerScreen<ArtRosen
 		this.renderBackground(guiGraphics);
 		super.render(guiGraphics, mouseX, mouseY, partialTicks);
 		this.renderTooltip(guiGraphics, mouseX, mouseY);
+		if (mouseX > leftPos + 33 && mouseX < leftPos + 57 && mouseY > topPos + 25 && mouseY < topPos + 49)
+			guiGraphics.renderTooltip(font, Component.translatable("gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_omni_man_suit_fabric_x4"), mouseX, mouseY);
+		if (mouseX > leftPos + 69 && mouseX < leftPos + 93 && mouseY > topPos + 25 && mouseY < topPos + 49)
+			guiGraphics.renderTooltip(font, Component.translatable("gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_atom_eve_suit_suit_fabric"), mouseX, mouseY);
+		if (mouseX > leftPos + 105 && mouseX < leftPos + 129 && mouseY > topPos + 25 && mouseY < topPos + 49)
+			guiGraphics.renderTooltip(font, Component.translatable("gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_duplikate_suit_suit_fabr"), mouseX, mouseY);
 	}
 
 	@Override
@@ -104,7 +111,7 @@ public class ArtRosenbaumGUIPage2Screen extends AbstractContainerScreen<ArtRosen
 		};
 		guistate.put("button:imagebutton_stat", imagebutton_stat);
 		this.addRenderableWidget(imagebutton_stat);
-		imagebutton_art_icon_omni_man = new ImageButton(this.leftPos + 51, this.topPos + 25, 24, 24, 0, 0, 24, new ResourceLocation("invincible_craft:textures/screens/atlas/imagebutton_art_icon_omni_man.png"), 24, 48, e -> {
+		imagebutton_art_icon_omni_man = new ImageButton(this.leftPos + 33, this.topPos + 25, 24, 24, 0, 0, 24, new ResourceLocation("invincible_craft:textures/screens/atlas/imagebutton_art_icon_omni_man.png"), 24, 48, e -> {
 			if (true) {
 				InvincibleCraftMod.PACKET_HANDLER.sendToServer(new ArtRosenbaumGUIPage2ButtonMessage(2, x, y, z, textstate));
 				ArtRosenbaumGUIPage2ButtonMessage.handleButtonAction(entity, 2, x, y, z, textstate);
@@ -112,7 +119,7 @@ public class ArtRosenbaumGUIPage2Screen extends AbstractContainerScreen<ArtRosen
 		});
 		guistate.put("button:imagebutton_art_icon_omni_man", imagebutton_art_icon_omni_man);
 		this.addRenderableWidget(imagebutton_art_icon_omni_man);
-		imagebutton_art_icon_dupli_kate = new ImageButton(this.leftPos + 87, this.topPos + 25, 24, 24, 0, 0, 24, new ResourceLocation("invincible_craft:textures/screens/atlas/imagebutton_art_icon_dupli_kate.png"), 24, 48, e -> {
+		imagebutton_art_icon_dupli_kate = new ImageButton(this.leftPos + 105, this.topPos + 25, 24, 24, 0, 0, 24, new ResourceLocation("invincible_craft:textures/screens/atlas/imagebutton_art_icon_dupli_kate.png"), 24, 48, e -> {
 			if (true) {
 				InvincibleCraftMod.PACKET_HANDLER.sendToServer(new ArtRosenbaumGUIPage2ButtonMessage(3, x, y, z, textstate));
 				ArtRosenbaumGUIPage2ButtonMessage.handleButtonAction(entity, 3, x, y, z, textstate);
@@ -120,5 +127,13 @@ public class ArtRosenbaumGUIPage2Screen extends AbstractContainerScreen<ArtRosen
 		});
 		guistate.put("button:imagebutton_art_icon_dupli_kate", imagebutton_art_icon_dupli_kate);
 		this.addRenderableWidget(imagebutton_art_icon_dupli_kate);
+		imagebutton_art_icon_atom_eve = new ImageButton(this.leftPos + 69, this.topPos + 25, 24, 24, 0, 0, 24, new ResourceLocation("invincible_craft:textures/screens/atlas/imagebutton_art_icon_atom_eve.png"), 24, 48, e -> {
+			if (true) {
+				InvincibleCraftMod.PACKET_HANDLER.sendToServer(new ArtRosenbaumGUIPage2ButtonMessage(4, x, y, z, textstate));
+				ArtRosenbaumGUIPage2ButtonMessage.handleButtonAction(entity, 4, x, y, z, textstate);
+			}
+		});
+		guistate.put("button:imagebutton_art_icon_atom_eve", imagebutton_art_icon_atom_eve);
+		this.addRenderableWidget(imagebutton_art_icon_atom_eve);
 	}
 }

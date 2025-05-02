@@ -12,14 +12,7 @@
     "specialInformation": {
       "fixedValue": []
     },
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:InvincibleCraftCreativeTab"
-      },
-      {
-        "value": "COMBAT"
-      }
-    ],
+    "creativeTabs": [],
     "efficiency": 4.0,
     "attackSpeed": 1.6,
     "enchantability": 2,
