@@ -1,28 +1,6 @@
 package net.mcreator.invincible_craft.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingEvent;
-
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.BlockPos;
-
-import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
-import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
-
-import javax.annotation.Nullable;
-
-import java.util.Random;
 
 @Mod.EventBusSubscriber
 public class TimedDestructionOnEffectActiveTickProcedure {
@@ -43,8 +21,8 @@ public class TimedDestructionOnEffectActiveTickProcedure {
 		double sy = 0;
 		double sz = 0;
 		double amplifier = 0;
-		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get())) {
-			amplifier = entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()) ? _livEnt.getEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()).getAmplifier() : 0;
+		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.DELETED_MOD_ELEMENT.get())) {
+			amplifier = entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(InvincibleCraftModMobEffects.DELETED_MOD_ELEMENT.get()) ? _livEnt.getEffect(InvincibleCraftModMobEffects.DELETED_MOD_ELEMENT.get()).getAmplifier() : 0;
 			if (entity.level().isClientSide) {
 				return; // Server-side only
 			}
