@@ -36,8 +36,8 @@ public class PunchImpact3Particle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.4f, 0.4f);
-		this.quadSize *= 24f;
-		this.lifetime = 8;
+		this.quadSize *= 26f;
+		this.lifetime = 11;
 		this.gravity = 0f;
 		this.hasPhysics = true;
 		this.xd = vx * 0;
@@ -55,7 +55,7 @@ public class PunchImpact3Particle extends TextureSheetParticle {
 	public void tick() {
 		super.tick();
 		if (!this.removed) {
-			this.setSprite(this.spriteSet.get((this.age / 2) % 4 + 1, 4));
+			this.setSprite(this.spriteSet.get((this.age / 2) % 6 + 1, 6));
 		}
 	}
 }

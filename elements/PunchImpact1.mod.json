@@ -2,17 +2,17 @@
   "_fv": 69,
   "_type": "particle",
   "definition": {
-    "texture": "punch_impact",
+    "texture": "impact",
     "animate": true,
     "frameDuration": 2,
     "width": 0.4,
     "height": 0.4,
     "scale": {
-      "fixedValue": 8.0
+      "fixedValue": 12.0
     },
     "speedFactor": 0.0,
     "gravity": 0.0,
-    "maxAge": 8,
+    "maxAge": 11,
     "maxAgeDiff": 0,
     "angularVelocity": 0.0,
     "angularAcceleration": 0.0,
