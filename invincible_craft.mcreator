@@ -9129,6 +9129,141 @@
         ]
       },
       "path": "~/Mobs/Kill Cannon"
+    },
+    {
+      "name": "Octoboss",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "octoboss",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/invincible_craft/forge/biome_modifier/octoboss_biome_modifier.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/OctobossModel.java",
+          "src/main/resources/assets/invincible_craft/models/item/octoboss_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/OctobossEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/OctobossRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Octoboss"
+    },
+    {
+      "name": "OctobossOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "octoboss_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/OctobossOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Octoboss"
+    },
+    {
+      "name": "MobAttack",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mob_attack",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/invincible_craft/damage_type/mob_attack.json"
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "CancelRandomDamage",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cancel_random_damage",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/CancelRandomDamageProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs"
+    },
+    {
+      "name": "FireballGlobalWhileProjectileFlyingTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fireball_global_while_projectile_flying_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/FireballGlobalWhileProjectileFlyingTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "immediatesourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Projectile Global"
+    },
+    {
+      "name": "FireballGlobal",
+      "type": "projectile",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "fireball_global",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/FireballGlobalEntity.java"
+        ]
+      },
+      "path": "~/Projectile Global"
+    },
+    {
+      "name": "OctoBossKnockback",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "octo_boss_knockback",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/OctoBossKnockbackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Octoboss"
     }
   ],
   "variable_elements": [
@@ -9836,7 +9971,8 @@
       "BattleBeastMace",
       "WoodenBat",
       "MetalBat",
-      "KillCannon"
+      "KillCannon",
+      "Octoboss"
     ]
   },
   "language_map": {
@@ -9846,6 +9982,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_mohawk_mar": "Make Invincible Suit (Mohawk Mark) - Suit Fabric x4, Gray Dye x4, Cyan Dye x4",
       "effect.invincible_craft.can_downslam": "Can Downslam",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_omniman_suit": "Make Omni-Man Suit - Suit Fabric x4, Red Dye x4, White Dye x4",
+      "entity.invincible_craft.octoboss": "Octoboss",
       "gui.invincible_craft.construct_gui.tooltip_construct_sword": "Construct Sabre",
       "item.invincible_craft.kill_cannon_blast_spawn_egg": "Kill Cannon Blast Spawn Egg",
       "gui.invincible_craft.stat_panel_gui.label_sslplayer_info": "§lPLAYER INFO",
@@ -9880,9 +10017,9 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
       "entity.invincible_craft.kill_cannon_blast": "Kill Cannon Blast",
-      "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
-      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
       "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "item.invincible_craft.atom_eve_hammer_construct": "Hammer Construct",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
@@ -9904,11 +10041,12 @@
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_comic": "Make Invincible Suit (Comic) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "subtitles.punch": "punch",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, Red Dye x4, White Dye x4",
+      "death.attack.mob_attack.player": "%1$s died whilst trying to escape %2$s",
       "item.invincible_craft.invincible_suit_sinister_mark_helmet": "Invincible Suit (Sinister Mark) Helmet",
       "death.attack.sonic_clap_damage.item": "%1$s was killed by %2$s using %3$s",
       "key.invincible_craft.stat_panel": "Stat Panel",
-      "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
+      "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
       "subtitles.skull_crush": "skull_crush",
       "gamerule.invincibleCraftEnableMoonTravel": "Invincible Craft - Moon Travel",
       "item.invincible_craft.dupli_kate_suit_leggings": "Dupli-Kate Leggings",
@@ -10001,6 +10139,7 @@
       "item.invincible_craft.atom_eve_suit_boots": "Atom Eve Boots",
       "advancements.advancement_invincible_craft.descr": "Welcome to Invincible Craft!",
       "death.attack.viltrumite_punch.player": "%1$s died whilst trying to escape %2$s",
+      "item.invincible_craft.octoboss_spawn_egg": "Octoboss Spawn Egg",
       "entity.invincible_craft.duplication_clone": "Duplication Clone",
       "item.invincible_craft.viltrumite_suit_boots": "Viltrumite Suit Boots",
       "item.invincible_craft.invincible_suit_sinister_mark_leggings": "Invincible Suit (Sinister Mark) Leggings",
@@ -10028,6 +10167,7 @@
       "gui.invincible_craft.stat_panel_gui.label_sslspeed": "§lSpeed",
       "death.attack.barrage": "%1$s died",
       "item.invincible_craft.invincible_suit_un_masked_mark_leggings": "Invincible Suit (Unmasked Mark) Leggings",
+      "death.attack.mob_attack.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_og": "Make Invincible Suit (OG) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "gui.invincible_craft.quick_travel_gui.tooltip_teleports_you_to_the_selected_lo": "Teleports you to the selected location in the Overworld",
       "item.invincible_craft.atom_eve_shield_construct": "Shield Construct",
@@ -10048,6 +10188,7 @@
       "item.invincible_craft.invincible_suit_season_3_helmet": "Invincible Suit (Season 3) Helmet",
       "item.invincible_craft.invincible_suit_chestplate": "Invincible Suit (Original) Chestplate",
       "gui.invincible_craft.stat_panel_gui.label_stats": "Stats:",
+      "death.attack.mob_attack": "%1$s died",
       "item.invincible_craft.power_picker": "Power Picker",
       "subtitles.viltrumite_pierce": "",
       "key.invincible_craft.fly": "Flight - Start",
@@ -10513,6 +10654,10 @@
           {
             "name": "Kill Cannon",
             "children": []
+          },
+          {
+            "name": "Octoboss",
+            "children": []
           }
         ]
       },
@@ -10587,6 +10732,10 @@
       },
       {
         "name": "DamageTypes",
+        "children": []
+      },
+      {
+        "name": "Projectile Global",
         "children": []
       }
     ]

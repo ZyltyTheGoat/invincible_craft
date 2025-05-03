@@ -10,6 +10,7 @@ import net.mcreator.invincible_craft.entity.RefugePortalEntity;
 import net.mcreator.invincible_craft.entity.QuickPortalEntity;
 import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
 import net.mcreator.invincible_craft.entity.OrbsSpawnerPortalEntity;
+import net.mcreator.invincible_craft.entity.OctobossEntity;
 import net.mcreator.invincible_craft.entity.KillCannonBlastEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
 import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
@@ -92,6 +93,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof KillCannonBlastEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof OctobossEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
