@@ -60,7 +60,11 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 						_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ComboTimer, (int) ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ComboTimer) : 0) + 1));
 				}
 			}
-			if (entity instanceof ViltrumiteEntity _datEntL21 && _datEntL21.getEntityData().get(ViltrumiteEntity.DATA_Slamming)) {
+			if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ChopTimer) : 0) <= 200) {
+				if (entity instanceof ViltrumiteEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ChopTimer, (int) ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ChopTimer) : 0) + 1));
+			}
+			if (entity instanceof ViltrumiteEntity _datEntL24 && _datEntL24.getEntityData().get(ViltrumiteEntity.DATA_Slamming)) {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_SlamIA, (int) ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_SlamIA) : 0) + 1));
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
@@ -73,7 +77,7 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 				if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_SlamIA) : 0) == 20) {
 					entity.push(0, (-30), 0);
 				}
-				if (entity instanceof ViltrumiteEntity _datEntL30 && _datEntL30.getEntityData().get(ViltrumiteEntity.DATA_SlamLogic)) {
+				if (entity instanceof ViltrumiteEntity _datEntL33 && _datEntL33.getEntityData().get(ViltrumiteEntity.DATA_SlamLogic)) {
 					if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_SlamIA) : 0) > 20) {
 						if (entity.onGround()) {
 							if (entity instanceof ViltrumiteEntity _datEntSetL)
@@ -105,14 +109,10 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 					_livingEntity.yHeadRot = targetYaw;
 				}
 			}
-			if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ChopTimer) : 0) < 100) {
-				if (entity instanceof ViltrumiteEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ChopTimer, (int) ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ChopTimer) : 0) + 1));
-			}
 			if (!(ent.getPersistentData().getString("Holding_Entity")).equals(entity.getStringUUID())) {
 				if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_recovery) : 0) <= 0) {
 					if (CanViltrumiteFlyingAttackProcedure.execute(entity)) {
-						if (entity instanceof LivingEntity _livEnt56 && _livEnt56.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+						if (entity instanceof LivingEntity _livEnt55 && _livEnt55.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							entity.setDeltaMovement(new Vec3(((ent.getX() - entity.getX()) * (1 / distance) * 0.1), ((ent.getY() - entity.getY()) * (1 / distance) * 0.1), ((ent.getZ() - entity.getZ()) * (1 / distance) * 0.1)));
 						} else {
 							entity.setDeltaMovement(new Vec3(((ent.getX() - entity.getX()) * (1 / distance)), ((ent.getY() - entity.getY()) * (1 / distance)), ((ent.getZ() - entity.getZ()) * (1 / distance))));
@@ -124,13 +124,6 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 						if (entity instanceof ViltrumiteEntity _datEntSetI)
 							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ClapTimer, 0);
 						SonicClapAttackProcedure.execute(world, entity);
-					}
-					if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ClapTimer) : 0) >= 200) {
-						if (entity instanceof ViltrumiteEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_recovery, 40);
-						if (entity instanceof ViltrumiteEntity _datEntSetI)
-							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_ChopTimer, 0);
-						ViltrumiteChopAbilityProcedure.execute(world, entity);
 					}
 					if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ComboTimer) : 0) >= 150) {
 						if ((entity instanceof ViltrumiteEntity _datEntI ? _datEntI.getEntityData().get(ViltrumiteEntity.DATA_ComboAmount) : 0) <= 3) {

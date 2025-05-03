@@ -45,6 +45,7 @@ import net.mcreator.invincible_craft.procedures.ViltrumiteEntityDiesProcedure;
 import net.mcreator.invincible_craft.procedures.IsViltrumiteRecoveredProcedure;
 import net.mcreator.invincible_craft.procedures.CanViltrumiteFlyingAttackProcedure;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
+import net.mcreator.invincible_craft.SlowRotMoveControl;
 
 import javax.annotation.Nullable;
 
@@ -76,6 +77,7 @@ public class ViltrumiteEntity extends Monster {
 		xpReward = 50;
 		setNoAi(false);
 		setPersistenceRequired();
+		this.moveControl = new SlowRotMoveControl(this);
 	}
 
 	@Override
@@ -133,7 +135,6 @@ public class ViltrumiteEntity extends Monster {
 				Level world = ViltrumiteEntity.this.level();
 				return super.canContinueToUse() && IsViltrumiteRecoveredProcedure.execute(entity);
 			}
-
 		});
 		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, Player.class, false, false));
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 15, 20) {
@@ -165,7 +166,6 @@ public class ViltrumiteEntity extends Monster {
 				Level world = ViltrumiteEntity.this.level();
 				return super.canContinueToUse() && CanViltrumiteFlyingAttackProcedure.execute(entity);
 			}
-
 		});
 		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
@@ -201,7 +201,6 @@ public class ViltrumiteEntity extends Monster {
 		Entity entity = this;
 		Entity sourceentity = damagesource.getEntity();
 		Entity immediatesourceentity = damagesource.getDirectEntity();
-
 		ViltrumiteEntityIsHurtProcedure.execute(entity);
 		if (damagesource.is(DamageTypes.FALL))
 			return false;

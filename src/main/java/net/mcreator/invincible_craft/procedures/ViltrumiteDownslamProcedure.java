@@ -84,11 +84,13 @@ public class ViltrumiteDownslamProcedure {
 							entityiterator instanceof LivingEntity _livingEntity26 && _livingEntity26.getAttributes().hasAttribute(Attributes.KNOCKBACK_RESISTANCE) ? _livingEntity26.getAttribute(Attributes.KNOCKBACK_RESISTANCE).getValue() : 0, 0));
 					entityiterator.setDeltaMovement(new Vec3((entityiterator.getDeltaMovement().x()), ((-3) * (1 - knockbackres / 1)), (entityiterator.getDeltaMovement().z())));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 60, Mth.nextInt(RandomSource.create(), 0, 1), false, false));
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 20, Mth.nextInt(RandomSource.create(), 0, 1), false, false));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.SCREEN_SHAKE.get(), 5, 0, false, false));
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.SCREEN_SHAKE.get(), 20, 0, false, false));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 10, 3, false, false));
+					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.DOWNSLAM.get(), 20, 0, false, false));
 				}
 			}
 		}

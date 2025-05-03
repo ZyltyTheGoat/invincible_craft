@@ -74,11 +74,12 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.BANDIT_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.VILTRUMITE_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.THE_GIANT_SPAWN_EGG.get());
+				tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
+				tabData.accept(InvincibleCraftModItems.OCTOBOSS_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.ASTRONAUT_HELMET_HELMET.get());
 				tabData.accept(InvincibleCraftModItems.BATTLE_BEAST_MACE.get());
 				tabData.accept(InvincibleCraftModItems.WOODEN_BAT.get());
 				tabData.accept(InvincibleCraftModItems.METAL_BAT.get());
-				tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
