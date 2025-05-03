@@ -1,6 +1,6 @@
 package net.mcreator.invincible_craft.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.entity.Entity;
 
 public class FireballGlobalWhileProjectileFlyingTickProcedure {
 	public static void execute(Entity immediatesourceentity) {

@@ -1,6 +1,24 @@
 package net.mcreator.invincible_craft.procedures;
 
-import net.minecraftforge.eventbus.api.Event;
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
+
+import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
+import net.mcreator.invincible_craft.entity.OctobossEntity;
+import net.mcreator.invincible_craft.entity.FireballGlobalEntity;
 
 public class OctobossOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
@@ -85,7 +103,7 @@ public class OctobossOnEntityTickUpdateProcedure {
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
 							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-								AbstractArrow entityToSpawn = new FireballGlobalEntity(InvincibleCraftModEntities.DELETED_MOD_ELEMENT.get(), level);
+								AbstractArrow entityToSpawn = new FireballGlobalEntity(InvincibleCraftModEntities.FIREBALL_GLOBAL.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);
