@@ -9106,6 +9106,29 @@
         ]
       },
       "path": "~/Particles"
+    },
+    {
+      "name": "KillCannonBeam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kill_cannon_beam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/KillCannonBeamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kill Cannon"
     }
   ],
   "variable_elements": [

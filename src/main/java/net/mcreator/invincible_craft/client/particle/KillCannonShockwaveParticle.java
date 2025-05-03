@@ -36,7 +36,7 @@ public class KillCannonShockwaveParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 2.5f;
+		this.quadSize *= 10f;
 		this.lifetime = 9;
 		this.gravity = 0f;
 		this.hasPhysics = true;

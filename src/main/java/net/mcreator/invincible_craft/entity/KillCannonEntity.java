@@ -40,6 +40,7 @@ import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 
 public class KillCannonEntity extends Monster {
 	public static final EntityDataAccessor<Integer> DATA_BlastTimer = SynchedEntityData.defineId(KillCannonEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_BeamTimer = SynchedEntityData.defineId(KillCannonEntity.class, EntityDataSerializers.INT);
 
 	public KillCannonEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(InvincibleCraftModEntities.KILL_CANNON.get(), world);
@@ -61,6 +62,7 @@ public class KillCannonEntity extends Monster {
 	protected void defineSynchedData() {
 		super.defineSynchedData();
 		this.entityData.define(DATA_BlastTimer, 0);
+		this.entityData.define(DATA_BeamTimer, 0);
 	}
 
 	@Override
@@ -101,6 +103,7 @@ public class KillCannonEntity extends Monster {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putInt("DataBlastTimer", this.entityData.get(DATA_BlastTimer));
+		compound.putInt("DataBeamTimer", this.entityData.get(DATA_BeamTimer));
 	}
 
 	@Override
@@ -108,6 +111,8 @@ public class KillCannonEntity extends Monster {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("DataBlastTimer"))
 			this.entityData.set(DATA_BlastTimer, compound.getInt("DataBlastTimer"));
+		if (compound.contains("DataBeamTimer"))
+			this.entityData.set(DATA_BeamTimer, compound.getInt("DataBeamTimer"));
 	}
 
 	@Override
@@ -127,7 +132,7 @@ public class KillCannonEntity extends Monster {
 		builder = builder.add(Attributes.MAX_HEALTH, 50);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 7);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 48);
 		return builder;
 	}
 }

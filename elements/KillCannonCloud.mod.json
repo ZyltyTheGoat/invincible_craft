@@ -4,16 +4,16 @@
   "definition": {
     "texture": "kill_cannon_cloud",
     "animate": true,
-    "frameDuration": 1,
+    "frameDuration": 2,
     "width": 0.2,
     "height": 0.2,
     "scale": {
-      "fixedValue": 0.5
+      "fixedValue": 0.7
     },
-    "speedFactor": 1.0,
-    "gravity": 0.1,
-    "maxAge": 4,
-    "maxAgeDiff": 2,
+    "speedFactor": 0.0,
+    "gravity": 0.0,
+    "maxAge": 10,
+    "maxAgeDiff": 5,
     "angularVelocity": 0.0,
     "angularAcceleration": 0.0,
     "canCollide": true,

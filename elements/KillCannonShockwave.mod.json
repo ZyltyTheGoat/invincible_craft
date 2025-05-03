@@ -8,7 +8,7 @@
     "width": 0.2,
     "height": 0.2,
     "scale": {
-      "fixedValue": 2.5
+      "fixedValue": 10.0
     },
     "speedFactor": 0.0,
     "gravity": 0.0,

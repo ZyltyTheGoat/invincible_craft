@@ -73,7 +73,7 @@
     "stepHeight": 0.6,
     "armorBaseValue": 0.0,
     "trackingRange": 64,
-    "followRange": 32,
+    "followRange": 48,
     "health": 50,
     "xpAmount": 15,
     "waterMob": false,
@@ -127,6 +127,13 @@
         "min": -2147483648,
         "max": 2147483647,
         "name": "BlastTimer",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "BeamTimer",
         "type": "integer",
         "value": 0
       }

@@ -36,13 +36,13 @@ public class KillCannonCloudParticle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
-		this.quadSize *= 0.5f;
-		this.lifetime = (int) Math.max(1, 4 + (this.random.nextInt(4) - 2));
-		this.gravity = 0.1f;
+		this.quadSize *= 0.7f;
+		this.lifetime = (int) Math.max(1, 10 + (this.random.nextInt(10) - 5));
+		this.gravity = 0f;
 		this.hasPhysics = true;
-		this.xd = vx * 1;
-		this.yd = vy * 1;
-		this.zd = vz * 1;
+		this.xd = vx * 0;
+		this.yd = vy * 0;
+		this.zd = vz * 0;
 		this.setSpriteFromAge(spriteSet);
 	}
 
@@ -60,7 +60,7 @@ public class KillCannonCloudParticle extends TextureSheetParticle {
 	public void tick() {
 		super.tick();
 		if (!this.removed) {
-			this.setSprite(this.spriteSet.get((this.age / 1) % 8 + 1, 8));
+			this.setSprite(this.spriteSet.get((this.age / 2) % 8 + 1, 8));
 		}
 	}
 }

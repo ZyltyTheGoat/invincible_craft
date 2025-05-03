@@ -25,7 +25,9 @@ public class KillCannonBlastOnEntityTickUpdateProcedure {
 			return;
 		if (entity instanceof KillCannonBlastEntity _datEntSetI)
 			_datEntSetI.getEntityData().set(KillCannonBlastEntity.DATA_life, (int) ((entity instanceof KillCannonBlastEntity _datEntI ? _datEntI.getEntityData().get(KillCannonBlastEntity.DATA_life) : 0) + 1));
-		entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("dx") * 0.6), (entity.getPersistentData().getDouble("dy") * 0.6), (entity.getPersistentData().getDouble("dz") * 0.6)));
+		if (world instanceof ServerLevel _level)
+			_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.KILL_CANNON_CLOUD.get()), x, y, z, 10, 0.4, 0.4, 0.4, 0);
+		entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("dx") * 0.275), (entity.getPersistentData().getDouble("dy") * 0.275), (entity.getPersistentData().getDouble("dz") * 0.275)));
 		if ((entity instanceof KillCannonBlastEntity _datEntI ? _datEntI.getEntityData().get(KillCannonBlastEntity.DATA_life) : 0) >= 30) {
 			if (!entity.level().isClientSide())
 				entity.discard();
@@ -40,7 +42,7 @@ public class KillCannonBlastOnEntityTickUpdateProcedure {
 		} else {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (!(entity == entityiterator) && entityiterator instanceof LivingEntity
 							&& !((entity instanceof KillCannonBlastEntity _datEntS ? _datEntS.getEntityData().get(KillCannonBlastEntity.DATA_owner) : "").equals(entityiterator.getStringUUID()))) {
@@ -56,7 +58,5 @@ public class KillCannonBlastOnEntityTickUpdateProcedure {
 				}
 			}
 		}
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.KILL_CANNON_CLOUD.get()), x, y, z, 10, 0.2, 0.2, 0.2, 0.01);
 	}
 }
