@@ -6,12 +6,15 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
+import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 import net.mcreator.invincible_craft.entity.OctobossEntity;
 
 import javax.annotation.Nullable;
@@ -37,6 +40,8 @@ public class OctoBossKnockbackProcedure {
 				entity.setDeltaMovement(
 						new Vec3(((entity.getX() - sourceentity.getX()) * (9 / Math.sqrt(Math.pow(entity.getX() - sourceentity.getX(), 2) + Math.pow(entity.getY() - sourceentity.getY(), 2) + Math.pow(entity.getZ() - sourceentity.getZ(), 2)))), 0.5,
 								((entity.getZ() - sourceentity.getZ()) * (9 / Math.sqrt(Math.pow(entity.getX() - sourceentity.getX(), 2) + Math.pow(entity.getY() - sourceentity.getY(), 2) + Math.pow(entity.getZ() - sourceentity.getZ(), 2))))));
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 12, 2, false, false));
 			} else {
 				entity.setDeltaMovement(new Vec3(0, 0, 0));
 			}

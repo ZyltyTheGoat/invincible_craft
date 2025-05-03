@@ -1,21 +1,6 @@
 
 package net.mcreator.invincible_craft.potion;
 
-import net.minecraftforge.client.extensions.common.IClientMobEffectExtensions;
-
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffectCategory;
-import net.minecraft.world.effect.MobEffect;
-import net.minecraft.client.gui.screens.inventory.EffectRenderingInventoryScreen;
-import net.minecraft.client.gui.GuiGraphics;
-
-import net.mcreator.invincible_craft.procedures.DownslamOnEffectActiveTickProcedure;
-
-import java.util.List;
-import java.util.ArrayList;
-
 public class DownslamMobEffect extends MobEffect {
 	public DownslamMobEffect() {
 		super(MobEffectCategory.NEUTRAL, -1);

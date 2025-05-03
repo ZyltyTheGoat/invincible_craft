@@ -671,57 +671,6 @@
       "path": "~/Powers - Abilities/Viltrumite/Grab"
     },
     {
-      "name": "ViltrumitePunchLockin",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_punch_lockin",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumitePunchLockinProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "damagesource",
-            "type": "damagesource"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "immediatesourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "amount",
-            "type": "number"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Powers - Abilities/Viltrumite/Passive"
-    },
-    {
       "name": "FlyOnKeyPressed",
       "type": "procedure",
       "compiles": true,
@@ -2095,7 +2044,7 @@
       "name": "Viltrumite",
       "type": "livingentity",
       "compiles": true,
-      "locked_code": true,
+      "locked_code": false,
       "registry_name": "viltrumite",
       "metadata": {
         "files": [
@@ -9372,26 +9321,13 @@
       "metadata": {
         "files": [
           "src/main/resources/data/invincible_craft/forge/biome_modifier/octoboss_biome_modifier.json",
-          "src/main/resources/assets/invincible_craft/models/item/octoboss_spawn_egg.json",
           "src/main/java/net/mcreator/invincible_craft/entity/model/OctobossModel.java",
+          "src/main/resources/assets/invincible_craft/models/item/octoboss_spawn_egg.json",
           "src/main/java/net/mcreator/invincible_craft/entity/OctobossEntity.java",
           "src/main/java/net/mcreator/invincible_craft/client/renderer/OctobossRenderer.java"
         ]
       },
       "path": "~/Mobs/Octoboss"
-    },
-    {
-      "name": "Downslam",
-      "type": "potioneffect",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "downslam",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/potion/DownslamMobEffect.java"
-        ]
-      },
-      "path": "~/Effects/Downslam"
     },
     {
       "name": "DownslamOnEffectActiveTick",
@@ -9411,6 +9347,46 @@
         ]
       },
       "path": "~/Effects/Downslam"
+    },
+    {
+      "name": "Downslam",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "downslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/potion/DownslamMobEffect.java"
+        ]
+      },
+      "path": "~/Effects/Downslam"
+    },
+    {
+      "name": "BattleBeastMaceCritical",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battle_beast_mace_critical",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/BattleBeastMaceCriticalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "isvanillacritical",
+            "type": "logic"
+          }
+        ]
+      },
+      "path": "~/Items/Weapons/Battle Beast Mace"
     }
   ],
   "variable_elements": [
@@ -10114,12 +10090,11 @@
       "Bandit",
       "Viltrumite",
       "TheGiant",
-      "KillCannon",
-      "Octoboss",
       "AstronautHelmet",
       "BattleBeastMace",
       "WoodenBat",
-      "MetalBat"
+      "MetalBat",
+      "KillCannon"
     ]
   },
   "language_map": {
@@ -10880,6 +10855,10 @@
         "name": "Effects",
         "children": [
           {
+            "name": "Downslam",
+            "children": []
+          },
+          {
             "name": "Stun Effect",
             "children": []
           },
@@ -10889,10 +10868,6 @@
           },
           {
             "name": "Deny",
-            "children": []
-          },
-          {
-            "name": "Downslam",
             "children": []
           }
         ]

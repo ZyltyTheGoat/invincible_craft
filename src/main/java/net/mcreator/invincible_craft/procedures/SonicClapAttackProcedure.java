@@ -147,6 +147,9 @@ public class SonicClapAttackProcedure {
 									(float) (6 + (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength * 0.2));
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 20, 1, false, false));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 2, 3, false, false));
+							entityiterator.setDeltaMovement(new Vec3(0, (-0.5), 0));
 						}
 					}
 				}

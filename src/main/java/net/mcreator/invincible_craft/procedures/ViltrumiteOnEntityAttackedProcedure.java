@@ -15,6 +15,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
@@ -86,7 +88,7 @@ public class ViltrumiteOnEntityAttackedProcedure {
 								(float) dmg);
 						entity.setDeltaMovement(new Vec3((2 * sourceentity.getLookAngle().x * (1 - knockbackres / 1)), (2 * sourceentity.getLookAngle().y * (1 - knockbackres / 1)), (2 * sourceentity.getLookAngle().z * (1 - knockbackres / 1))));
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 3, 6, false, false));
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 3, Mth.nextInt(RandomSource.create(), 2, 4), false, false));
 						sx = -3;
 						found = false;
 						for (int index0 = 0; index0 < 6; index0++) {

@@ -8,6 +8,8 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -15,6 +17,7 @@ import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
@@ -31,9 +34,11 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
+import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 
 import javax.annotation.Nullable;
 
+import java.util.Map;
 import java.util.List;
 import java.util.Comparator;
 
@@ -88,6 +93,14 @@ public class LeapTickProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(radius / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (!(entity == entityiterator) && entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
+							if ((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 5
+									+ 0.25 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength) {
+								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+									_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5,
+											(int) Math.min(4, Math.max(0.1 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength, 2)), false,
+											false));
+								entity.setDeltaMovement(new Vec3(0, (-1), 0));
+							}
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity),
 									(float) (5 + 0.25 * (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength));
 						}
@@ -123,7 +136,20 @@ public class LeapTickProcedure {
 											}
 										}
 									}
-									world.setBlock(BlockPos.containing(x + xi, y + i, z + zi), Blocks.AIR.defaultBlockState(), 3);
+									{
+										BlockPos _bp = BlockPos.containing(x + xi, y + i, z + zi);
+										BlockState _bs = Blocks.AIR.defaultBlockState();
+										BlockState _bso = world.getBlockState(_bp);
+										for (Map.Entry<Property<?>, Comparable<?>> entry : _bso.getValues().entrySet()) {
+											Property _property = _bs.getBlock().getStateDefinition().getProperty(entry.getKey().getName());
+											if (_property != null && _bs.getValue(_property) != null)
+												try {
+													_bs = _bs.setValue(_property, (Comparable) entry.getValue());
+												} catch (Exception e) {
+												}
+										}
+										world.setBlock(_bp, _bs, 3);
+									}
 								}
 							}
 						}

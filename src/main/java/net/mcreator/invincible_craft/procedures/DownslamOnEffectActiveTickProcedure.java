@@ -1,9 +1,6 @@
 package net.mcreator.invincible_craft.procedures;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
+import net.minecraftforge.eventbus.api.Event;
 
 public class DownslamOnEffectActiveTickProcedure {
 	public static void execute(Entity entity) {
