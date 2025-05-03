@@ -671,57 +671,6 @@
       "path": "~/Powers - Abilities/Viltrumite/Grab"
     },
     {
-      "name": "ViltrumitePunchLockin",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "viltrumite_punch_lockin",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/ViltrumitePunchLockinProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "damagesource",
-            "type": "damagesource"
-          },
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "immediatesourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          },
-          {
-            "name": "amount",
-            "type": "number"
-          },
-          {
-            "name": "x",
-            "type": "number"
-          },
-          {
-            "name": "y",
-            "type": "number"
-          },
-          {
-            "name": "z",
-            "type": "number"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      },
-      "path": "~/Powers - Abilities/Viltrumite/Passive"
-    },
-    {
       "name": "FlyOnKeyPressed",
       "type": "procedure",
       "compiles": true,
@@ -1880,9 +1829,9 @@
       "registry_name": "power_picker_gui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/invincible_craft/world/inventory/PowerPickerGUIMenu.java",
           "src/main/java/net/mcreator/invincible_craft/client/gui/PowerPickerGUIScreen.java",
-          "src/main/java/net/mcreator/invincible_craft/network/PowerPickerGUIButtonMessage.java",
-          "src/main/java/net/mcreator/invincible_craft/world/inventory/PowerPickerGUIMenu.java"
+          "src/main/java/net/mcreator/invincible_craft/network/PowerPickerGUIButtonMessage.java"
         ]
       },
       "path": "~/Items/Power Picker"
@@ -4217,9 +4166,9 @@
       "registry_name": "stat_panel_gui",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/invincible_craft/network/StatPanelGUIButtonMessage.java",
           "src/main/java/net/mcreator/invincible_craft/world/inventory/StatPanelGUIMenu.java",
-          "src/main/java/net/mcreator/invincible_craft/client/gui/StatPanelGUIScreen.java",
-          "src/main/java/net/mcreator/invincible_craft/network/StatPanelGUIButtonMessage.java"
+          "src/main/java/net/mcreator/invincible_craft/client/gui/StatPanelGUIScreen.java"
         ]
       },
       "path": "~/Leveling System/GUI"
@@ -9379,6 +9328,33 @@
         ]
       },
       "path": "~/Mobs/Octoboss"
+    },
+    {
+      "name": "BattleBeastMaceCritical",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "battle_beast_mace_critical",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/BattleBeastMaceCriticalProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "isvanillacritical",
+            "type": "logic"
+          }
+        ]
+      },
+      "path": "~/Items/Weapons/Battle Beast Mace"
     }
   ],
   "variable_elements": [
@@ -10120,7 +10096,7 @@
       "death.attack.suffocation.item": "%1$s was killed by %2$s using %3$s",
       "death.attack.battle_beast_uppercut.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.barrage.item": "%1$s was killed by %2$s using %3$s",
-      "death.attack.chop": "%1$s died",
+      "death.attack.chop": "%1$s chopped",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_original": "Make Invincible Suit (Original) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "death.attack.battle_beast_uppercut": "%1$s died",
       "death.attack.bleed_damage.player": "%1$s died whilst trying to escape %2$s",
@@ -10210,7 +10186,7 @@
       "entity.invincible_craft.spike_ball_entity": "Spike Ball Entity",
       "entity.invincible_craft.refuge_portal": "Quick Portal",
       "death.attack.barrage.player": "%1$s died whilst trying to escape %2$s",
-      "death.attack.chop.item": "%1$s was killed by %2$s using %3$s",
+      "death.attack.chop.item": "%1$s was chopped by %2$s using %3$s",
       "gui.invincible_craft.stat_panel_gui.label_reputation": "Reputation: /",
       "gui.invincible_craft.stat_panel_gui.label_sslvitality": "§lVitality",
       "item.invincible_craft.omni_man_suit_chestplate": "Omni Man Suit Chestplate",

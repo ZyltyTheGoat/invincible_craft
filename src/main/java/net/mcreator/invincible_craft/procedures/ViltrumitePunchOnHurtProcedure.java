@@ -17,6 +17,7 @@ import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
@@ -30,6 +31,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
+import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 
 import javax.annotation.Nullable;
 
@@ -115,6 +117,10 @@ public class ViltrumitePunchOnHurtProcedure {
 						_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (entity.getX()), (entity.getY() + entity.getBbHeight() / 2), (entity.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
 					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), sourceentity),
 							(float) dmg);
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5,
+								(int) Math.min(3, Math.max(Math.floor((sourceentity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength / 15), 1)),
+								false, false));
 					entity.setDeltaMovement(new Vec3((2 * sourceentity.getLookAngle().x), (2 * sourceentity.getLookAngle().y), (2 * sourceentity.getLookAngle().z)));
 					sx = -3;
 					found = false;
