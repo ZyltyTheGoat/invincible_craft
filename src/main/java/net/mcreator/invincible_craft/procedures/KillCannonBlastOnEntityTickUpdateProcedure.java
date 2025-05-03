@@ -47,7 +47,7 @@ public class KillCannonBlastOnEntityTickUpdateProcedure {
 					if (!(entity == entityiterator) && entityiterator instanceof LivingEntity
 							&& !((entity instanceof KillCannonBlastEntity _datEntS ? _datEntS.getEntityData().get(KillCannonBlastEntity.DATA_owner) : "").equals(entityiterator.getStringUUID()))) {
 						entityiterator.hurt(
-								new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null), entity), 10);
+								new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), (entity instanceof TamableAnimal _tamEnt ? (Entity) _tamEnt.getOwner() : null), entity), 8);
 						if (!entity.level().isClientSide())
 							entity.discard();
 						if (world instanceof ServerLevel _level)

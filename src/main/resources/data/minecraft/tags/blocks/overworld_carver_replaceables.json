@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "minecraft:sandstone",
-    "minecraft:sand",
     "invincible_craft:moon_stone"
   ]
 }

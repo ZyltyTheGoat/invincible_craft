@@ -49,6 +49,7 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_IA = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_Fatigue = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_Roar = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_denied = SynchedEntityData.defineId(TheGiantEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -77,6 +78,7 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 		this.entityData.define(DATA_IA, 0);
 		this.entityData.define(DATA_Fatigue, 0);
 		this.entityData.define(DATA_Roar, 0);
+		this.entityData.define(DATA_denied, false);
 	}
 
 	public void setTexture(String texture) {
@@ -130,6 +132,7 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 		compound.putInt("DataIA", this.entityData.get(DATA_IA));
 		compound.putInt("DataFatigue", this.entityData.get(DATA_Fatigue));
 		compound.putInt("DataRoar", this.entityData.get(DATA_Roar));
+		compound.putBoolean("Datadenied", this.entityData.get(DATA_denied));
 	}
 
 	@Override
@@ -143,6 +146,8 @@ public class TheGiantEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_Fatigue, compound.getInt("DataFatigue"));
 		if (compound.contains("DataRoar"))
 			this.entityData.set(DATA_Roar, compound.getInt("DataRoar"));
+		if (compound.contains("Datadenied"))
+			this.entityData.set(DATA_denied, compound.getBoolean("Datadenied"));
 	}
 
 	@Override

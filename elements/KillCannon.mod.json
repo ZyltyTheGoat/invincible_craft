@@ -66,7 +66,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 7,
+    "attackStrength": 4,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.35,
@@ -74,7 +74,7 @@
     "armorBaseValue": 0.0,
     "trackingRange": 64,
     "followRange": 48,
-    "health": 50,
+    "health": 40,
     "xpAmount": 15,
     "waterMob": false,
     "breatheUnderwater": {
@@ -136,6 +136,11 @@
         "name": "BeamTimer",
         "type": "integer",
         "value": 0
+      },
+      {
+        "name": "denied",
+        "type": "logic",
+        "value": false
       }
     ],
     "onMobTickUpdate": {

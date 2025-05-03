@@ -41,6 +41,7 @@ import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 public class KillCannonEntity extends Monster {
 	public static final EntityDataAccessor<Integer> DATA_BlastTimer = SynchedEntityData.defineId(KillCannonEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_BeamTimer = SynchedEntityData.defineId(KillCannonEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_denied = SynchedEntityData.defineId(KillCannonEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public KillCannonEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(InvincibleCraftModEntities.KILL_CANNON.get(), world);
@@ -63,6 +64,7 @@ public class KillCannonEntity extends Monster {
 		super.defineSynchedData();
 		this.entityData.define(DATA_BlastTimer, 0);
 		this.entityData.define(DATA_BeamTimer, 0);
+		this.entityData.define(DATA_denied, false);
 	}
 
 	@Override
@@ -104,6 +106,7 @@ public class KillCannonEntity extends Monster {
 		super.addAdditionalSaveData(compound);
 		compound.putInt("DataBlastTimer", this.entityData.get(DATA_BlastTimer));
 		compound.putInt("DataBeamTimer", this.entityData.get(DATA_BeamTimer));
+		compound.putBoolean("Datadenied", this.entityData.get(DATA_denied));
 	}
 
 	@Override
@@ -113,6 +116,8 @@ public class KillCannonEntity extends Monster {
 			this.entityData.set(DATA_BlastTimer, compound.getInt("DataBlastTimer"));
 		if (compound.contains("DataBeamTimer"))
 			this.entityData.set(DATA_BeamTimer, compound.getInt("DataBeamTimer"));
+		if (compound.contains("Datadenied"))
+			this.entityData.set(DATA_denied, compound.getBoolean("Datadenied"));
 	}
 
 	@Override
@@ -129,9 +134,9 @@ public class KillCannonEntity extends Monster {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.35);
-		builder = builder.add(Attributes.MAX_HEALTH, 50);
+		builder = builder.add(Attributes.MAX_HEALTH, 40);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 7);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 4);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 48);
 		return builder;
 	}

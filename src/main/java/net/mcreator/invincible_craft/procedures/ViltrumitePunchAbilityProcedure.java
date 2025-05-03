@@ -175,6 +175,10 @@ public class ViltrumitePunchAbilityProcedure {
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TARGET.get(), 30, 0, false, false));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.SCREEN_SHAKE.get(), 4, 0, false, false));
+					if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength >= 15) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 13, 3, false, false));
+					}
 				}
 			}
 		}

@@ -64,6 +64,7 @@ public class ViltrumiteEntity extends Monster {
 	public static final EntityDataAccessor<Integer> DATA_hair = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_rank = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_gender = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_denied = SynchedEntityData.defineId(ViltrumiteEntity.class, EntityDataSerializers.BOOLEAN);
 
 	public ViltrumiteEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(InvincibleCraftModEntities.VILTRUMITE.get(), world);
@@ -100,6 +101,7 @@ public class ViltrumiteEntity extends Monster {
 		this.entityData.define(DATA_hair, 0);
 		this.entityData.define(DATA_rank, 0);
 		this.entityData.define(DATA_gender, 0);
+		this.entityData.define(DATA_denied, false);
 	}
 
 	@Override
@@ -237,6 +239,7 @@ public class ViltrumiteEntity extends Monster {
 		compound.putInt("Datahair", this.entityData.get(DATA_hair));
 		compound.putInt("Datarank", this.entityData.get(DATA_rank));
 		compound.putInt("Datagender", this.entityData.get(DATA_gender));
+		compound.putBoolean("Datadenied", this.entityData.get(DATA_denied));
 	}
 
 	@Override
@@ -272,6 +275,8 @@ public class ViltrumiteEntity extends Monster {
 			this.entityData.set(DATA_rank, compound.getInt("Datarank"));
 		if (compound.contains("Datagender"))
 			this.entityData.set(DATA_gender, compound.getInt("Datagender"));
+		if (compound.contains("Datadenied"))
+			this.entityData.set(DATA_denied, compound.getBoolean("Datadenied"));
 	}
 
 	@Override

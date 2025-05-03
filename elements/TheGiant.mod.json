@@ -33,6 +33,11 @@
         "name": "Roar",
         "type": "integer",
         "value": 0
+      },
+      {
+        "name": "denied",
+        "type": "logic",
+        "value": false
       }
     ],
     "modelWidth": 3.0,

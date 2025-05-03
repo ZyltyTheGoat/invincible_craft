@@ -17,6 +17,7 @@ import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
+import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 
 import javax.annotation.Nullable;
 
@@ -83,6 +84,8 @@ public class GrabOnTickProcedure {
 							}
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 5, false, false));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.DENY.get(), 10, 5, false, false));
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, 5, false, false));
 							if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
