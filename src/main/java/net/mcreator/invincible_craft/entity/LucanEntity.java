@@ -1,13 +1,22 @@
 
 package net.mcreator.invincible_craft.entity;
 
+import software.bernie.geckolib.util.GeckoLibUtil;
+import software.bernie.geckolib.core.object.PlayState;
+import software.bernie.geckolib.core.animation.RawAnimation;
+import software.bernie.geckolib.core.animation.AnimationState;
+import software.bernie.geckolib.core.animation.AnimationController;
+import software.bernie.geckolib.core.animation.AnimatableManager;
+import software.bernie.geckolib.core.animatable.instance.AnimatableInstanceCache;
+import software.bernie.geckolib.animatable.GeoEntity;
+
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -17,15 +26,15 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.Difficulty;
 import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,14 +52,22 @@ import net.mcreator.invincible_craft.procedures.LucanOnEntityTickUpdateProcedure
 import net.mcreator.invincible_craft.procedures.CanLucanFlyingAttackProcedure;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 
-public class LucanEntity extends Monster {
+public class LucanEntity extends Monster implements GeoEntity {
+	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Boolean> DATA_Flying = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> DATA_State = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Integer> DATA_SonicClapCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_DownslamCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_BarrageCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
-	public static final EntityDataAccessor<Integer> DATA_GlobalAttackCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_AttackDuration = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_GlobalAttackCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
+	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
+	private boolean swinging;
+	private boolean lastloop;
+	private long lastSwing;
+	public String animationprocedure = "empty";
 	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.WHITE, ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public LucanEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -59,11 +76,35 @@ public class LucanEntity extends Monster {
 
 	public LucanEntity(EntityType<LucanEntity> type, Level world) {
 		super(type, world);
-		setMaxUpStep(1.2f);
-		xpReward = 100;
+		xpReward = 1000;
 		setNoAi(false);
+		setMaxUpStep(1.2f);
 		setCustomName(Component.literal("Lucan"));
 		setCustomNameVisible(true);
+		setPersistenceRequired();
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(SHOOT, false);
+		this.entityData.define(ANIMATION, "undefined");
+		this.entityData.define(TEXTURE, "lucan");
+		this.entityData.define(DATA_Flying, false);
+		this.entityData.define(DATA_State, "");
+		this.entityData.define(DATA_SonicClapCooldown, 0);
+		this.entityData.define(DATA_DownslamCooldown, 0);
+		this.entityData.define(DATA_BarrageCooldown, 0);
+		this.entityData.define(DATA_AttackDuration, 0);
+		this.entityData.define(DATA_GlobalAttackCooldown, 0);
+	}
+
+	public void setTexture(String texture) {
+		this.entityData.set(TEXTURE, texture);
+	}
+
+	public String getTexture() {
+		return this.entityData.get(TEXTURE);
 	}
 
 	@Override
@@ -72,29 +113,18 @@ public class LucanEntity extends Monster {
 	}
 
 	@Override
-	protected void defineSynchedData() {
-		super.defineSynchedData();
-		this.entityData.define(DATA_Flying, false);
-		this.entityData.define(DATA_State, "");
-		this.entityData.define(DATA_SonicClapCooldown, 0);
-		this.entityData.define(DATA_DownslamCooldown, 0);
-		this.entityData.define(DATA_BarrageCooldown, 0);
-		this.entityData.define(DATA_GlobalAttackCooldown, 0);
-		this.entityData.define(DATA_AttackDuration, 0);
-	}
-
-	@Override
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, false) {
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 9;
+				return 0;
 			}
 		});
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, LivingEntity.class, false, false));
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 15, 20) {
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 15, 20) {
 			@Override
 			protected Vec3 getPosition() {
 				RandomSource random = LucanEntity.this.getRandom();
@@ -125,7 +155,6 @@ public class LucanEntity extends Monster {
 			}
 
 		});
-		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(7, new FloatGoal(this));
 	}
@@ -133,6 +162,11 @@ public class LucanEntity extends Monster {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override
@@ -146,27 +180,30 @@ public class LucanEntity extends Monster {
 	}
 
 	@Override
-	public boolean hurt(DamageSource damagesource, float amount) {
-		if (damagesource.is(DamageTypes.FALL))
+	public boolean hurt(DamageSource source, float amount) {
+		if (source.is(DamageTypes.FALL))
 			return false;
-		return super.hurt(damagesource, amount);
+		return super.hurt(source, amount);
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
+		compound.putString("Texture", this.getTexture());
 		compound.putBoolean("DataFlying", this.entityData.get(DATA_Flying));
 		compound.putString("DataState", this.entityData.get(DATA_State));
 		compound.putInt("DataSonicClapCooldown", this.entityData.get(DATA_SonicClapCooldown));
 		compound.putInt("DataDownslamCooldown", this.entityData.get(DATA_DownslamCooldown));
 		compound.putInt("DataBarrageCooldown", this.entityData.get(DATA_BarrageCooldown));
-		compound.putInt("DataGlobalAttackCooldown", this.entityData.get(DATA_GlobalAttackCooldown));
 		compound.putInt("DataAttackDuration", this.entityData.get(DATA_AttackDuration));
+		compound.putInt("DataGlobalAttackCooldown", this.entityData.get(DATA_GlobalAttackCooldown));
 	}
 
 	@Override
 	public void readAdditionalSaveData(CompoundTag compound) {
 		super.readAdditionalSaveData(compound);
+		if (compound.contains("Texture"))
+			this.setTexture(compound.getString("Texture"));
 		if (compound.contains("DataFlying"))
 			this.entityData.set(DATA_Flying, compound.getBoolean("DataFlying"));
 		if (compound.contains("DataState"))
@@ -177,16 +214,22 @@ public class LucanEntity extends Monster {
 			this.entityData.set(DATA_DownslamCooldown, compound.getInt("DataDownslamCooldown"));
 		if (compound.contains("DataBarrageCooldown"))
 			this.entityData.set(DATA_BarrageCooldown, compound.getInt("DataBarrageCooldown"));
-		if (compound.contains("DataGlobalAttackCooldown"))
-			this.entityData.set(DATA_GlobalAttackCooldown, compound.getInt("DataGlobalAttackCooldown"));
 		if (compound.contains("DataAttackDuration"))
 			this.entityData.set(DATA_AttackDuration, compound.getInt("DataAttackDuration"));
+		if (compound.contains("DataGlobalAttackCooldown"))
+			this.entityData.set(DATA_GlobalAttackCooldown, compound.getInt("DataGlobalAttackCooldown"));
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
 		LucanOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		this.refreshDimensions();
+	}
+
+	@Override
+	public EntityDimensions getDimensions(Pose p_33597_) {
+		return super.getDimensions(p_33597_).scale((float) 1);
 	}
 
 	@Override
@@ -213,8 +256,6 @@ public class LucanEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(InvincibleCraftModEntities.LUCAN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {
@@ -225,5 +266,59 @@ public class LucanEntity extends Monster {
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 15);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 98);
 		return builder;
+	}
+
+	private PlayState movementPredicate(AnimationState event) {
+		if (this.animationprocedure.equals("empty")) {
+			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
+		}
+		return PlayState.STOP;
+	}
+
+	String prevAnim = "empty";
+
+	private PlayState procedurePredicate(AnimationState event) {
+		if (!animationprocedure.equals("empty") && event.getController().getAnimationState() == AnimationController.State.STOPPED || (!this.animationprocedure.equals(prevAnim) && !this.animationprocedure.equals("empty"))) {
+			if (!this.animationprocedure.equals(prevAnim))
+				event.getController().forceAnimationReset();
+			event.getController().setAnimation(RawAnimation.begin().thenPlay(this.animationprocedure));
+			if (event.getController().getAnimationState() == AnimationController.State.STOPPED) {
+				this.animationprocedure = "empty";
+				event.getController().forceAnimationReset();
+			}
+		} else if (animationprocedure.equals("empty")) {
+			prevAnim = "empty";
+			return PlayState.STOP;
+		}
+		prevAnim = this.animationprocedure;
+		return PlayState.CONTINUE;
+	}
+
+	@Override
+	protected void tickDeath() {
+		++this.deathTime;
+		if (this.deathTime == 20) {
+			this.remove(LucanEntity.RemovalReason.KILLED);
+			this.dropExperience();
+		}
+	}
+
+	public String getSyncedAnimation() {
+		return this.entityData.get(ANIMATION);
+	}
+
+	public void setAnimation(String animation) {
+		this.entityData.set(ANIMATION, animation);
+	}
+
+	@Override
+	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
+		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
+	}
+
+	@Override
+	public AnimatableInstanceCache getAnimatableInstanceCache() {
+		return this.cache;
 	}
 }

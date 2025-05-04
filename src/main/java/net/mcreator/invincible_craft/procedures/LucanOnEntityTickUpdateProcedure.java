@@ -117,14 +117,20 @@ public class LucanOnEntityTickUpdateProcedure {
 				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("SONIC_CLAP")) {
 					if (entity instanceof LucanEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) + 1));
+					if (entity instanceof LucanEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(LucanEntity.DATA_GlobalAttackCooldown, 60);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 255, false, false));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 5, 0, false, false));
 					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 1) {
+						if (entity instanceof LucanEntity) {
+							((LucanEntity) entity).setAnimation("sonic_clap");
+						}
 						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY()), (target.getZ())));
+					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 9) {
 						SonicClapAttackProcedure.execute(world, entity);
-					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 5) {
+					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 15) {
 						if (entity instanceof LucanEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(LucanEntity.DATA_State, "IDLE");
 						if (entity instanceof LucanEntity _datEntSetI)
@@ -134,6 +140,8 @@ public class LucanOnEntityTickUpdateProcedure {
 				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("DOWNSLAM")) {
 					if (entity instanceof LucanEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) + 1));
+					if (entity instanceof LucanEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(LucanEntity.DATA_GlobalAttackCooldown, 60);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 255, false, false));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -157,6 +165,8 @@ public class LucanOnEntityTickUpdateProcedure {
 				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("BARRAGE")) {
 					if (entity instanceof LucanEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) + 1));
+					if (entity instanceof LucanEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(LucanEntity.DATA_GlobalAttackCooldown, 60);
 					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 1) {
 						{
 							Entity _ent = entity;
@@ -165,6 +175,9 @@ public class LucanOnEntityTickUpdateProcedure {
 								_serverPlayer.connection.teleport((target.getX() + 1.5 * target.getLookAngle().x), (target.getY() + 1.5 * target.getLookAngle().y), (target.getZ() + 1.5 * target.getLookAngle().z), _ent.getYRot(), _ent.getXRot());
 						}
 						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY() + 1.4), (target.getZ())));
+						if (entity instanceof LucanEntity) {
+							((LucanEntity) entity).setAnimation("barrage");
+						}
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) <= 60
 							&& (entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) % 4 == 0) {
 						{

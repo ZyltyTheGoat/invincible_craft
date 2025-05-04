@@ -9412,22 +9412,6 @@
       "path": "~/Effects/Destruction"
     },
     {
-      "name": "Lucan",
-      "type": "livingentity",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "lucan",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/entity/LucanEntity.java",
-          "src/main/resources/data/invincible_craft/forge/biome_modifier/lucan_biome_modifier.json",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/LucanRenderer.java",
-          "src/main/resources/assets/invincible_craft/models/item/lucan_spawn_egg.json"
-        ]
-      },
-      "path": "~/Mobs/Lucan"
-    },
-    {
       "name": "CanLucanFlyingAttack",
       "type": "procedure",
       "compiles": true,
@@ -9478,6 +9462,22 @@
             "name": "world",
             "type": "world"
           }
+        ]
+      },
+      "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "Lucan",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lucan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/model/LucanModel.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/LucanEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/LucanRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/lucan_spawn_egg.json"
         ]
       },
       "path": "~/Mobs/Lucan"
@@ -10227,13 +10227,13 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
       "entity.invincible_craft.kill_cannon_blast": "Kill Cannon Blast",
-      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
-      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
+      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "item.invincible_craft.atom_eve_hammer_construct": "Hammer Construct",
-      "item.invincible_craft.lucan_spawn_egg": "Lucan Spawn Egg",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
+      "item.invincible_craft.lucan_spawn_egg": "Lucan Spawn Egg",
       "gamerule.invincibleCraftXPMultiplier.description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
       "death.attack.battle_beast_downslam": "%1$s died",
       "item.invincible_craft.gauntlet": "Gauntlet",
