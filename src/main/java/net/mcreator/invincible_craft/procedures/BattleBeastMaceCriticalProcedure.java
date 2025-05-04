@@ -1,22 +1,6 @@
 package net.mcreator.invincible_craft.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.CriticalHitEvent;
-
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
-
-import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
-import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
-import net.mcreator.invincible_craft.init.InvincibleCraftModItems;
-
-import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
 public class BattleBeastMaceCriticalProcedure {
