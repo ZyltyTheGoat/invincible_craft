@@ -11,8 +11,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.SimpleParticleType;
@@ -47,16 +45,14 @@ public class TimedDestructionOnEffectActiveTickProcedure {
 		double amplifier = 0;
 		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get())) {
 			amplifier = entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()) ? _livEnt.getEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()).getAmplifier() : 0;
-			entity.setDeltaMovement(new Vec3(((entity.getPersistentData().getDouble("destructionX") + Mth.nextDouble(RandomSource.create(), -0.2, 0.2)) * 2),
-					((entity.getPersistentData().getDouble("destructionY") + Mth.nextDouble(RandomSource.create(), -0.2, 0.2)) * 2), ((entity.getPersistentData().getDouble("destructionZ") + Mth.nextDouble(RandomSource.create(), -0.2, 0.2)) * 2)));
 			if (entity.level().isClientSide) {
 				return; // Server-side only
 			}
 			Vec3 lookDirection = entity.getLookAngle();
 			BlockPos centerPos = BlockPos.containing(entity.getX() + lookDirection.x * 2, entity.getY() + lookDirection.y * 2 + 1, entity.getZ() + lookDirection.z * 2);
 			int radius = (int) amplifier;
-			if (radius > 3) {
-				radius = 3;
+			if (radius > 2) {
+				radius = 2;
 			}
 			Random random = new Random();
 			boolean blocksBroken = false; // Track if any blocks were broken

@@ -28,21 +28,21 @@
         "max": 2147483647,
         "name": "SonicClapCooldown",
         "type": "integer",
-        "value": 0
+        "value": 120
       },
       {
         "min": -2147483648,
         "max": 2147483647,
         "name": "DownslamCooldown",
         "type": "integer",
-        "value": 0
+        "value": 160
       },
       {
         "min": -2147483648,
         "max": 2147483647,
         "name": "BarrageCooldown",
         "type": "integer",
-        "value": 0
+        "value": 120
       },
       {
         "min": -2147483648,
@@ -57,6 +57,20 @@
         "name": "GlobalAttackCooldown",
         "type": "integer",
         "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "MeleeCooldown",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "UpslamCooldown",
+        "type": "integer",
+        "value": 120
       }
     ],
     "modelWidth": 1.0,
@@ -153,10 +167,10 @@
     },
     "hasAI": true,
     "aiBase": "(none)",
-    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">0</field><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"fly\"><field name=\"speed\">15</field><field name=\"condition\">CanLucanFlyingAttack,CanLucanFlyingAttack</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
+    "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">FALSE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityLiving</field><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">2</field><field name=\"speed\">1.2</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"fly\"><field name=\"speed\">15</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
     "model": "lucan.geo.json",
-    "groupName": "",
-    "animation1": "idle",
+    "groupName": "body",
+    "animation1": "targeting",
     "animation2": "",
     "animation3": "",
     "animation4": "",
@@ -178,7 +192,7 @@
     "breedable": false,
     "tameable": false,
     "disableDeathRotation": false,
-    "headMovement": false,
+    "headMovement": true,
     "eyeHeight": false,
     "breedTriggerItems": [],
     "ranged": false,

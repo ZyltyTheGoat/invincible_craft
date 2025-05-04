@@ -82,7 +82,7 @@ public class ViltrumiteUpslamProcedure {
 							(float) ((entity instanceof LivingEntity _livingEntity23 && _livingEntity23.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity23.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0) * 0.875));
 					knockbackres = Math.min(1, Math.max(
 							entityiterator instanceof LivingEntity _livingEntity26 && _livingEntity26.getAttributes().hasAttribute(Attributes.KNOCKBACK_RESISTANCE) ? _livingEntity26.getAttribute(Attributes.KNOCKBACK_RESISTANCE).getValue() : 0, 0));
-					entityiterator.setDeltaMovement(new Vec3((entityiterator.getDeltaMovement().x()), (5 * (1 - knockbackres / 1)), (entityiterator.getDeltaMovement().z())));
+					entityiterator.setDeltaMovement(new Vec3((entityiterator.getDeltaMovement().x()), (3 * (1 - knockbackres / 1)), (entityiterator.getDeltaMovement().z())));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 60, Mth.nextInt(RandomSource.create(), 0, 1), false, false));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())

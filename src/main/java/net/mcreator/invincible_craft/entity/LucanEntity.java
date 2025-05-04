@@ -16,7 +16,6 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
@@ -32,7 +31,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
@@ -49,7 +47,6 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.invincible_craft.procedures.LucanOnEntityTickUpdateProcedure;
-import net.mcreator.invincible_craft.procedures.CanLucanFlyingAttackProcedure;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
 
 public class LucanEntity extends Monster implements GeoEntity {
@@ -63,6 +60,8 @@ public class LucanEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_BarrageCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_AttackDuration = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_GlobalAttackCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_MeleeCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_UpslamCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -92,11 +91,13 @@ public class LucanEntity extends Monster implements GeoEntity {
 		this.entityData.define(TEXTURE, "lucan");
 		this.entityData.define(DATA_Flying, false);
 		this.entityData.define(DATA_State, "");
-		this.entityData.define(DATA_SonicClapCooldown, 0);
-		this.entityData.define(DATA_DownslamCooldown, 0);
-		this.entityData.define(DATA_BarrageCooldown, 0);
+		this.entityData.define(DATA_SonicClapCooldown, 120);
+		this.entityData.define(DATA_DownslamCooldown, 160);
+		this.entityData.define(DATA_BarrageCooldown, 120);
 		this.entityData.define(DATA_AttackDuration, 0);
 		this.entityData.define(DATA_GlobalAttackCooldown, 0);
+		this.entityData.define(DATA_MeleeCooldown, 0);
+		this.entityData.define(DATA_UpslamCooldown, 120);
 	}
 
 	public void setTexture(String texture) {
@@ -116,11 +117,11 @@ public class LucanEntity extends Monster implements GeoEntity {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.targetSelector.addGoal(1, new HurtByTargetGoal(this));
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, LivingEntity.class, false, false));
 		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.2, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 0;
+				return 4;
 			}
 		});
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
@@ -133,27 +134,6 @@ public class LucanEntity extends Monster implements GeoEntity {
 				double dir_z = LucanEntity.this.getZ() + ((random.nextFloat() * 2 - 1) * 16);
 				return new Vec3(dir_x, dir_y, dir_z);
 			}
-
-			@Override
-			public boolean canUse() {
-				double x = LucanEntity.this.getX();
-				double y = LucanEntity.this.getY();
-				double z = LucanEntity.this.getZ();
-				Entity entity = LucanEntity.this;
-				Level world = LucanEntity.this.level();
-				return super.canUse() && CanLucanFlyingAttackProcedure.execute(entity);
-			}
-
-			@Override
-			public boolean canContinueToUse() {
-				double x = LucanEntity.this.getX();
-				double y = LucanEntity.this.getY();
-				double z = LucanEntity.this.getZ();
-				Entity entity = LucanEntity.this;
-				Level world = LucanEntity.this.level();
-				return super.canContinueToUse() && CanLucanFlyingAttackProcedure.execute(entity);
-			}
-
 		});
 		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(7, new FloatGoal(this));
@@ -197,6 +177,8 @@ public class LucanEntity extends Monster implements GeoEntity {
 		compound.putInt("DataBarrageCooldown", this.entityData.get(DATA_BarrageCooldown));
 		compound.putInt("DataAttackDuration", this.entityData.get(DATA_AttackDuration));
 		compound.putInt("DataGlobalAttackCooldown", this.entityData.get(DATA_GlobalAttackCooldown));
+		compound.putInt("DataMeleeCooldown", this.entityData.get(DATA_MeleeCooldown));
+		compound.putInt("DataUpslamCooldown", this.entityData.get(DATA_UpslamCooldown));
 	}
 
 	@Override
@@ -218,6 +200,10 @@ public class LucanEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_AttackDuration, compound.getInt("DataAttackDuration"));
 		if (compound.contains("DataGlobalAttackCooldown"))
 			this.entityData.set(DATA_GlobalAttackCooldown, compound.getInt("DataGlobalAttackCooldown"));
+		if (compound.contains("DataMeleeCooldown"))
+			this.entityData.set(DATA_MeleeCooldown, compound.getInt("DataMeleeCooldown"));
+		if (compound.contains("DataUpslamCooldown"))
+			this.entityData.set(DATA_UpslamCooldown, compound.getInt("DataUpslamCooldown"));
 	}
 
 	@Override
@@ -270,7 +256,7 @@ public class LucanEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("targeting"));
 		}
 		return PlayState.STOP;
 	}
