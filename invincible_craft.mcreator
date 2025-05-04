@@ -10846,7 +10846,11 @@
     "license": "Not specified",
     "serverSideOnly": false,
     "modPicture": "logo_high_quality",
-    "requiredMods": [],
+    "requiredMods": [
+      "pehkui",
+      "geckolib",
+      "playeranimator"
+    ],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [

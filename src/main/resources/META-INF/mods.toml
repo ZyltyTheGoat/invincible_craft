@@ -21,6 +21,24 @@ authors="Zylty"
     ordering="AFTER"
     side="BOTH"
 
+[[dependencies.invincible_craft]]
+    modId="pehkui"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.invincible_craft]]
+    modId="geckolib"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.invincible_craft]]
+    modId="playeranimator"
+    mandatory=true
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
 
 [[dependencies.invincible_craft]]
     modId="pehkui"
