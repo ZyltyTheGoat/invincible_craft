@@ -97,6 +97,7 @@ public class InvincibleCraftModTabs {
 			tabData.accept(InvincibleCraftModItems.THE_GIANT_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.OCTOBOSS_SPAWN_EGG.get());
+			tabData.accept(InvincibleCraftModItems.LUCAN_SPAWN_EGG.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 

@@ -20,6 +20,7 @@ import net.mcreator.invincible_craft.client.renderer.QuickPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.PortalDashPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.OrbsSpawnerPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.OctobossRenderer;
+import net.mcreator.invincible_craft.client.renderer.LucanRenderer;
 import net.mcreator.invincible_craft.client.renderer.KillCannonRenderer;
 import net.mcreator.invincible_craft.client.renderer.KillCannonBlastRenderer;
 import net.mcreator.invincible_craft.client.renderer.ExchangeCloneRenderer;
@@ -55,5 +56,6 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.KILL_CANNON_BLAST.get(), KillCannonBlastRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.FIREBALL_GLOBAL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.OCTOBOSS.get(), OctobossRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.LUCAN.get(), LucanRenderer::new);
 	}
 }

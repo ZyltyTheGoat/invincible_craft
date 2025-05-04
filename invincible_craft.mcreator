@@ -93,8 +93,8 @@
         "files": [
           "src/main/resources/assets/invincible_craft/models/item/omni_man_suit_leggings.json",
           "src/main/java/net/mcreator/invincible_craft/item/OmniManSuitItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/omni_man_suit_chestplate.json",
-          "src/main/resources/assets/invincible_craft/models/item/omni_man_suit_boots.json"
+          "src/main/resources/assets/invincible_craft/models/item/omni_man_suit_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/omni_man_suit_chestplate.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -130,11 +130,11 @@
       "registry_name": "invincible_suit",
       "metadata": {
         "files": [
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_chestplate.json",
           "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitItem.java",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_boots.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_helmet.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_chestplate.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_leggings.json"
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_helmet.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -147,10 +147,10 @@
       "registry_name": "viltrumite_suit",
       "metadata": {
         "files": [
+          "src/main/resources/assets/invincible_craft/models/item/viltrumite_suit_chestplate.json",
           "src/main/java/net/mcreator/invincible_craft/item/ViltrumiteSuitItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/viltrumite_suit_boots.json",
           "src/main/resources/assets/invincible_craft/models/item/viltrumite_suit_leggings.json",
-          "src/main/resources/assets/invincible_craft/models/item/viltrumite_suit_chestplate.json"
+          "src/main/resources/assets/invincible_craft/models/item/viltrumite_suit_boots.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -710,11 +710,11 @@
       "registry_name": "moon_stone",
       "metadata": {
         "files": [
-          "src/main/resources/data/invincible_craft/loot_tables/blocks/moon_stone.json",
-          "src/main/resources/assets/invincible_craft/blockstates/moon_stone.json",
+          "src/main/resources/assets/invincible_craft/models/item/moon_stone.json",
           "src/main/resources/assets/invincible_craft/models/block/moon_stone.json",
+          "src/main/resources/data/invincible_craft/loot_tables/blocks/moon_stone.json",
           "src/main/java/net/mcreator/invincible_craft/block/MoonStoneBlock.java",
-          "src/main/resources/assets/invincible_craft/models/item/moon_stone.json"
+          "src/main/resources/assets/invincible_craft/blockstates/moon_stone.json"
         ]
       },
       "path": "~/Dimensions/Moon/Block"
@@ -1052,8 +1052,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/world/inventory/QuickTravelGUIMenu.java",
-          "src/main/java/net/mcreator/invincible_craft/network/QuickTravelGUIButtonMessage.java",
-          "src/main/java/net/mcreator/invincible_craft/client/gui/QuickTravelGUIScreen.java"
+          "src/main/java/net/mcreator/invincible_craft/client/gui/QuickTravelGUIScreen.java",
+          "src/main/java/net/mcreator/invincible_craft/network/QuickTravelGUIButtonMessage.java"
         ]
       },
       "path": "~/Powers - Abilities/Dimensional Travel/Quick Travel"
@@ -1128,9 +1128,9 @@
       "registry_name": "quick_portal",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/QuickPortalEntity.java",
           "src/main/java/net/mcreator/invincible_craft/entity/model/QuickPortalModel.java",
           "src/main/java/net/mcreator/invincible_craft/client/renderer/QuickPortalRenderer.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/QuickPortalEntity.java",
           "src/main/java/net/mcreator/invincible_craft/entity/layer/QuickPortalLayer.java"
         ]
       },
@@ -1187,8 +1187,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/entity/BanishmentPortalEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/BanishmentPortalRenderer.java",
           "src/main/java/net/mcreator/invincible_craft/entity/layer/BanishmentPortalLayer.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/BanishmentPortalRenderer.java",
           "src/main/java/net/mcreator/invincible_craft/entity/model/BanishmentPortalModel.java"
         ]
       },
@@ -1348,10 +1348,10 @@
       "registry_name": "portal_dash_portal",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/PortalDashPortalEntity.java",
           "src/main/java/net/mcreator/invincible_craft/entity/layer/PortalDashPortalLayer.java",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/PortalDashPortalRenderer.java",
           "src/main/java/net/mcreator/invincible_craft/entity/model/PortalDashPortalModel.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/PortalDashPortalEntity.java"
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/PortalDashPortalRenderer.java"
         ]
       },
       "path": "~/Powers - Abilities/Dimensional Travel/PortalDash"
@@ -1501,10 +1501,10 @@
       "registry_name": "refuge_portal",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/entity/RefugePortalEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/layer/RefugePortalLayer.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/RefugePortalModel.java",
           "src/main/java/net/mcreator/invincible_craft/client/renderer/RefugePortalRenderer.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/model/RefugePortalModel.java"
+          "src/main/java/net/mcreator/invincible_craft/entity/RefugePortalEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/layer/RefugePortalLayer.java"
         ]
       },
       "path": "~/Powers - Abilities/Dimensional Travel/Refuge"
@@ -1517,9 +1517,9 @@
       "registry_name": "technicians_dimension",
       "metadata": {
         "files": [
-          "src/main/resources/data/invincible_craft/dimension/technicians_dimension.json",
           "src/main/resources/data/invincible_craft/dimension_type/technicians_dimension.json",
-          "src/main/java/net/mcreator/invincible_craft/world/dimension/TechniciansDimensionDimension.java"
+          "src/main/java/net/mcreator/invincible_craft/world/dimension/TechniciansDimensionDimension.java",
+          "src/main/resources/data/invincible_craft/dimension/technicians_dimension.json"
         ]
       },
       "path": "~/Dimensions/Technicians Dimension"
@@ -1636,8 +1636,8 @@
       "registry_name": "punch_impact_2",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/punch_impact_2.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/PunchImpact2Particle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/PunchImpact2Particle.java",
+          "src/main/resources/assets/invincible_craft/particles/punch_impact_2.json"
         ]
       },
       "path": "~/Particles"
@@ -1664,8 +1664,8 @@
       "registry_name": "small_gust",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/SmallGustParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/small_gust.json"
+          "src/main/resources/assets/invincible_craft/particles/small_gust.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/SmallGustParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -1728,8 +1728,8 @@
       "registry_name": "blood_fall",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodFallParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/blood_fall.json"
+          "src/main/resources/assets/invincible_craft/particles/blood_fall.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodFallParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -1742,8 +1742,8 @@
       "registry_name": "blood_land",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/blood_land.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodLandParticle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodLandParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/blood_land.json"
         ]
       },
       "path": "~/Particles"
@@ -1815,8 +1815,8 @@
       "registry_name": "power_picker",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/item/PowerPickerItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/power_picker.json"
+          "src/main/resources/assets/invincible_craft/models/item/power_picker.json",
+          "src/main/java/net/mcreator/invincible_craft/item/PowerPickerItem.java"
         ]
       },
       "path": "~/Items/Power Picker"
@@ -1829,9 +1829,9 @@
       "registry_name": "power_picker_gui",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/gui/PowerPickerGUIScreen.java",
+          "src/main/java/net/mcreator/invincible_craft/world/inventory/PowerPickerGUIMenu.java",
           "src/main/java/net/mcreator/invincible_craft/network/PowerPickerGUIButtonMessage.java",
-          "src/main/java/net/mcreator/invincible_craft/world/inventory/PowerPickerGUIMenu.java"
+          "src/main/java/net/mcreator/invincible_craft/client/gui/PowerPickerGUIScreen.java"
         ]
       },
       "path": "~/Items/Power Picker"
@@ -2207,10 +2207,10 @@
       "registry_name": "orbs_spawner_portal",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/entity/OrbsSpawnerPortalEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/OrbsSpawnerPortalRenderer.java",
           "src/main/java/net/mcreator/invincible_craft/entity/layer/OrbsSpawnerPortalLayer.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/model/OrbsSpawnerPortalModel.java"
+          "src/main/java/net/mcreator/invincible_craft/entity/OrbsSpawnerPortalEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/OrbsSpawnerPortalModel.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/OrbsSpawnerPortalRenderer.java"
         ]
       },
       "path": "~/Powers - Abilities/Dimensional Travel/Drone Orbs"
@@ -2586,9 +2586,9 @@
         "files": [
           "src/main/resources/assets/invincible_craft/models/item/art_rosenbaum_spawn_egg.json",
           "src/main/java/net/mcreator/invincible_craft/entity/ArtRosenbaumEntity.java",
-          "src/main/resources/data/invincible_craft/forge/biome_modifier/art_rosenbaum_biome_modifier.json",
           "src/main/java/net/mcreator/invincible_craft/entity/model/ArtRosenbaumModel.java",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/ArtRosenbaumRenderer.java"
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/ArtRosenbaumRenderer.java",
+          "src/main/resources/data/invincible_craft/forge/biome_modifier/art_rosenbaum_biome_modifier.json"
         ]
       },
       "path": "~/Mobs/Art Rosenbaum"
@@ -2725,10 +2725,10 @@
       "registry_name": "bandit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/bandit_spawn_egg.json",
-          "src/main/java/net/mcreator/invincible_craft/entity/BanditEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/BanditRenderer.java",
           "src/main/resources/data/invincible_craft/forge/biome_modifier/bandit_biome_modifier.json",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/BanditRenderer.java"
+          "src/main/resources/assets/invincible_craft/models/item/bandit_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/BanditEntity.java"
         ]
       },
       "path": "~/Mobs/Bandit"
@@ -4167,8 +4167,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/world/inventory/StatPanelGUIMenu.java",
-          "src/main/java/net/mcreator/invincible_craft/client/gui/StatPanelGUIScreen.java",
-          "src/main/java/net/mcreator/invincible_craft/network/StatPanelGUIButtonMessage.java"
+          "src/main/java/net/mcreator/invincible_craft/network/StatPanelGUIButtonMessage.java",
+          "src/main/java/net/mcreator/invincible_craft/client/gui/StatPanelGUIScreen.java"
         ]
       },
       "path": "~/Leveling System/GUI"
@@ -4495,8 +4495,8 @@
       "registry_name": "test",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/gui/TestScreen.java",
-          "src/main/java/net/mcreator/invincible_craft/world/inventory/TestMenu.java"
+          "src/main/java/net/mcreator/invincible_craft/world/inventory/TestMenu.java",
+          "src/main/java/net/mcreator/invincible_craft/client/gui/TestScreen.java"
         ]
       },
       "path": "~/Leveling System/GUI"
@@ -5614,8 +5614,8 @@
       "registry_name": "blood_splash_3",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodSplash3Particle.java",
-          "src/main/resources/assets/invincible_craft/particles/blood_splash_3.json"
+          "src/main/resources/assets/invincible_craft/particles/blood_splash_3.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodSplash3Particle.java"
         ]
       },
       "path": "~/Particles"
@@ -5628,8 +5628,8 @@
       "registry_name": "blood_splash_4",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/blood_splash_4.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodSplash4Particle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BloodSplash4Particle.java",
+          "src/main/resources/assets/invincible_craft/particles/blood_splash_4.json"
         ]
       },
       "path": "~/Particles"
@@ -5661,9 +5661,9 @@
       "registry_name": "dupli_kate_suit",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/item/DupliKateSuitItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/dupli_kate_suit_leggings.json",
           "src/main/resources/assets/invincible_craft/models/item/dupli_kate_suit_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/dupli_kate_suit_leggings.json",
+          "src/main/java/net/mcreator/invincible_craft/item/DupliKateSuitItem.java",
           "src/main/resources/assets/invincible_craft/models/item/dupli_kate_suit_chestplate.json"
         ]
       },
@@ -5693,8 +5693,8 @@
       "registry_name": "battle_beast_mace",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/item/BattleBeastMaceItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/battle_beast_mace.json"
+          "src/main/resources/assets/invincible_craft/models/item/battle_beast_mace.json",
+          "src/main/java/net/mcreator/invincible_craft/item/BattleBeastMaceItem.java"
         ]
       },
       "path": "~/Items/Weapons/Battle Beast Mace"
@@ -6030,8 +6030,8 @@
       "registry_name": "explosion",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/explosion.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/ExplosionParticle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/ExplosionParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/explosion.json"
         ]
       },
       "path": "~/Particles"
@@ -6094,8 +6094,8 @@
       "registry_name": "smoke",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/SmokeParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/smoke.json"
+          "src/main/resources/assets/invincible_craft/particles/smoke.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/SmokeParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -6143,8 +6143,8 @@
       "registry_name": "claw_strike",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/claw_strike.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/ClawStrikeParticle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/ClawStrikeParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/claw_strike.json"
         ]
       },
       "path": "~/Particles"
@@ -6185,8 +6185,8 @@
       "registry_name": "atom_eve_bubble_break_3",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBubbleBreak3Particle.java",
-          "src/main/resources/assets/invincible_craft/particles/atom_eve_bubble_break_3.json"
+          "src/main/resources/assets/invincible_craft/particles/atom_eve_bubble_break_3.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBubbleBreak3Particle.java"
         ]
       },
       "path": "~/Particles/BubbleBreak"
@@ -6199,8 +6199,8 @@
       "registry_name": "atom_eve_bubble_break_4",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/atom_eve_bubble_break_4.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBubbleBreak4Particle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBubbleBreak4Particle.java",
+          "src/main/resources/assets/invincible_craft/particles/atom_eve_bubble_break_4.json"
         ]
       },
       "path": "~/Particles/BubbleBreak"
@@ -6380,8 +6380,8 @@
       "registry_name": "battle_beast_roar_2",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/battle_beast_roar_2.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BattleBeastRoar2Particle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BattleBeastRoar2Particle.java",
+          "src/main/resources/assets/invincible_craft/particles/battle_beast_roar_2.json"
         ]
       },
       "path": "~/Particles/Roar"
@@ -6408,8 +6408,8 @@
       "registry_name": "battle_beast_roar_4",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/battle_beast_roar_4.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BattleBeastRoar4Particle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BattleBeastRoar4Particle.java",
+          "src/main/resources/assets/invincible_craft/particles/battle_beast_roar_4.json"
         ]
       },
       "path": "~/Particles/Roar"
@@ -6521,8 +6521,8 @@
       "registry_name": "bite",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/bite.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/BiteParticle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/BiteParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/bite.json"
         ]
       },
       "path": "~/Particles"
@@ -6649,8 +6649,8 @@
       "registry_name": "wooden_bat",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/wooden_bat.json",
-          "src/main/java/net/mcreator/invincible_craft/item/WoodenBatItem.java"
+          "src/main/java/net/mcreator/invincible_craft/item/WoodenBatItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/wooden_bat.json"
         ]
       },
       "path": "~/Items/Weapons/Bats"
@@ -6663,8 +6663,8 @@
       "registry_name": "metal_bat",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/item/MetalBatItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/metal_bat.json"
+          "src/main/resources/assets/invincible_craft/models/item/metal_bat.json",
+          "src/main/java/net/mcreator/invincible_craft/item/MetalBatItem.java"
         ]
       },
       "path": "~/Items/Weapons/Bats"
@@ -6738,8 +6738,8 @@
       "registry_name": "chain",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/chain.json",
-          "src/main/java/net/mcreator/invincible_craft/item/ChainItem.java"
+          "src/main/java/net/mcreator/invincible_craft/item/ChainItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/chain.json"
         ]
       },
       "path": "~/Items/Weapons/Chain"
@@ -6775,11 +6775,11 @@
       "registry_name": "invincible_suit_omni_mark",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitOmniMarkItem.java",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_omni_mark_boots.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_omni_mark_chestplate.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_omni_mark_leggings.json",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_omni_mark_helmet.json",
-          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitOmniMarkItem.java"
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_omni_mark_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_omni_mark_chestplate.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -6792,11 +6792,11 @@
       "registry_name": "invincible_suit_season_3",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_boots.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_chestplate.json",
-          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitSeason3Item.java",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_helmet.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_leggings.json"
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitSeason3Item.java",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_season_3_chestplate.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -6809,10 +6809,10 @@
       "registry_name": "invincible_suit_mohawk_mark",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_mohawk_mark_leggings.json",
-          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitMohawkMarkItem.java",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_mohawk_mark_boots.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_mohawk_mark_chestplate.json"
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_mohawk_mark_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_mohawk_mark_leggings.json",
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitMohawkMarkItem.java"
         ]
       },
       "path": "~/Items/Armor"
@@ -6827,9 +6827,9 @@
         "files": [
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_sinister_mark_chestplate.json",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_sinister_mark_helmet.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_sinister_mark_leggings.json",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_sinister_mark_boots.json",
-          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitSinisterMarkItem.java"
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitSinisterMarkItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_sinister_mark_leggings.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -6842,11 +6842,11 @@
       "registry_name": "invincible_suit_no_goggles_mark",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_chestplate.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_helmet.json",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_leggings.json",
           "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitNoGogglesMarkItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_boots.json"
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_helmet.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_no_goggles_mark_chestplate.json"
         ]
       },
       "path": "~/Items/Armor"
@@ -6860,8 +6860,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitUnMaskedMarkItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_un_masked_mark_leggings.json",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_un_masked_mark_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_un_masked_mark_leggings.json",
           "src/main/resources/assets/invincible_craft/models/item/invincible_suit_un_masked_mark_boots.json"
         ]
       },
@@ -7061,9 +7061,9 @@
       "registry_name": "art_rosenbaum_gui_page_1",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/world/inventory/ArtRosenbaumGUIPage1Menu.java",
+          "src/main/java/net/mcreator/invincible_craft/network/ArtRosenbaumGUIPage1ButtonMessage.java",
           "src/main/java/net/mcreator/invincible_craft/client/gui/ArtRosenbaumGUIPage1Screen.java",
-          "src/main/java/net/mcreator/invincible_craft/network/ArtRosenbaumGUIPage1ButtonMessage.java"
+          "src/main/java/net/mcreator/invincible_craft/world/inventory/ArtRosenbaumGUIPage1Menu.java"
         ]
       },
       "path": "~/Mobs/Art Rosenbaum/GUI"
@@ -7076,9 +7076,9 @@
       "registry_name": "art_rosenbaum_gui_page_2",
       "metadata": {
         "files": [
+          "src/main/java/net/mcreator/invincible_craft/world/inventory/ArtRosenbaumGUIPage2Menu.java",
           "src/main/java/net/mcreator/invincible_craft/client/gui/ArtRosenbaumGUIPage2Screen.java",
-          "src/main/java/net/mcreator/invincible_craft/network/ArtRosenbaumGUIPage2ButtonMessage.java",
-          "src/main/java/net/mcreator/invincible_craft/world/inventory/ArtRosenbaumGUIPage2Menu.java"
+          "src/main/java/net/mcreator/invincible_craft/network/ArtRosenbaumGUIPage2ButtonMessage.java"
         ]
       },
       "path": "~/Mobs/Art Rosenbaum/GUI"
@@ -7273,8 +7273,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/client/gui/ConstructGUIScreen.java",
-          "src/main/java/net/mcreator/invincible_craft/world/inventory/ConstructGUIMenu.java",
-          "src/main/java/net/mcreator/invincible_craft/network/ConstructGUIButtonMessage.java"
+          "src/main/java/net/mcreator/invincible_craft/network/ConstructGUIButtonMessage.java",
+          "src/main/java/net/mcreator/invincible_craft/world/inventory/ConstructGUIMenu.java"
         ]
       },
       "path": "~/Powers - Abilities/Atom Eve/Construct"
@@ -7529,8 +7529,8 @@
       "registry_name": "atomic_blast_charge",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomicBlastChargeParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/atomic_blast_charge.json"
+          "src/main/resources/assets/invincible_craft/particles/atomic_blast_charge.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomicBlastChargeParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -7559,8 +7559,8 @@
       "registry_name": "atomic_blast_shockwave",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomicBlastShockwaveParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/atomic_blast_shockwave.json"
+          "src/main/resources/assets/invincible_craft/particles/atomic_blast_shockwave.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomicBlastShockwaveParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -7677,10 +7677,10 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/entity/model/AtomEveAwakeningModel.java",
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_spawn_egg.json",
-          "src/main/java/net/mcreator/invincible_craft/entity/layer/AtomEveAwakeningLayer.java",
           "src/main/java/net/mcreator/invincible_craft/entity/AtomEveAwakeningEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/AtomEveAwakeningRenderer.java"
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/AtomEveAwakeningRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/layer/AtomEveAwakeningLayer.java"
         ]
       },
       "path": "~/Powers - Abilities/Atom Eve/Awakening"
@@ -7886,8 +7886,8 @@
       "registry_name": "atom_eve_big_blast",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/particles/atom_eve_big_blast.json",
-          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBigBlastParticle.java"
+          "src/main/java/net/mcreator/invincible_craft/client/particle/AtomEveBigBlastParticle.java",
+          "src/main/resources/assets/invincible_craft/particles/atom_eve_big_blast.json"
         ]
       },
       "path": "~/Particles"
@@ -7914,11 +7914,11 @@
       "registry_name": "atom_eve_awakening_armor",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_leggings.json",
           "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_boots.json",
           "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_chestplate.json",
           "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_helmet.json",
-          "src/main/java/net/mcreator/invincible_craft/item/AtomEveAwakeningArmorItem.java"
+          "src/main/java/net/mcreator/invincible_craft/item/AtomEveAwakeningArmorItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_awakening_armor_leggings.json"
         ]
       },
       "path": "~/Powers - Abilities/Atom Eve/Awakening"
@@ -7960,9 +7960,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/item/AtomEveArmorConstructItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_armor_construct_helmet.json",
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_armor_construct_boots.json",
           "src/main/resources/assets/invincible_craft/models/item/atom_eve_armor_construct_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_armor_construct_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_armor_construct_helmet.json",
           "src/main/resources/assets/invincible_craft/models/item/atom_eve_armor_construct_leggings.json"
         ]
       },
@@ -7977,8 +7977,8 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/item/AtomEveShieldConstructItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_shield_construct_0.json",
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_shield_construct.json"
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_shield_construct.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_shield_construct_0.json"
         ]
       },
       "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
@@ -8004,10 +8004,10 @@
       "registry_name": "atom_eve_suit",
       "metadata": {
         "files": [
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_suit_leggings.json",
-          "src/main/java/net/mcreator/invincible_craft/item/AtomEveSuitItem.java",
           "src/main/resources/assets/invincible_craft/models/item/atom_eve_suit_chestplate.json",
-          "src/main/resources/assets/invincible_craft/models/item/atom_eve_suit_boots.json"
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_suit_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/atom_eve_suit_boots.json",
+          "src/main/java/net/mcreator/invincible_craft/item/AtomEveSuitItem.java"
         ]
       },
       "path": "~/Items/Armor"
@@ -8920,8 +8920,8 @@
       "registry_name": "gauntlet",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/item/GauntletItem.java",
-          "src/main/resources/assets/invincible_craft/models/item/gauntlet.json"
+          "src/main/resources/assets/invincible_craft/models/item/gauntlet.json",
+          "src/main/java/net/mcreator/invincible_craft/item/GauntletItem.java"
         ]
       },
       "path": "~/Items/Weapons/Gauntlets"
@@ -8935,9 +8935,9 @@
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/entity/KillCannonEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/client/renderer/KillCannonRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/kill_cannon_spawn_egg.json",
           "src/main/resources/data/invincible_craft/forge/biome_modifier/kill_cannon_biome_modifier.json",
-          "src/main/resources/assets/invincible_craft/models/item/kill_cannon_spawn_egg.json"
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/KillCannonRenderer.java"
         ]
       },
       "path": "~/Mobs/Kill Cannon"
@@ -9001,8 +9001,8 @@
       "registry_name": "kill_cannon_cloud",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/KillCannonCloudParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/kill_cannon_cloud.json"
+          "src/main/resources/assets/invincible_craft/particles/kill_cannon_cloud.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/KillCannonCloudParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -9050,8 +9050,8 @@
       "registry_name": "kill_cannon_shockwave",
       "metadata": {
         "files": [
-          "src/main/java/net/mcreator/invincible_craft/client/particle/KillCannonShockwaveParticle.java",
-          "src/main/resources/assets/invincible_craft/particles/kill_cannon_shockwave.json"
+          "src/main/resources/assets/invincible_craft/particles/kill_cannon_shockwave.json",
+          "src/main/java/net/mcreator/invincible_craft/client/particle/KillCannonShockwaveParticle.java"
         ]
       },
       "path": "~/Particles"
@@ -9387,6 +9387,100 @@
         ]
       },
       "path": "~/Items/Weapons/Battle Beast Mace"
+    },
+    {
+      "name": "TimedDestructionSetMotion",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "timed_destruction_set_motion",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/TimedDestructionSetMotionProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Effects/Destruction"
+    },
+    {
+      "name": "Lucan",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lucan",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/LucanEntity.java",
+          "src/main/resources/data/invincible_craft/forge/biome_modifier/lucan_biome_modifier.json",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/LucanRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/lucan_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "CanLucanFlyingAttack",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_lucan_flying_attack",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/CanLucanFlyingAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "LucanOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lucan_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/LucanOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Lucan"
     }
   ],
   "variable_elements": [
@@ -10053,18 +10147,11 @@
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:MoonStone"
     ],
-    "ITEMS:minecraft:pickaxes": [
-      "~CUSTOM:AtomEveGauntletConstruct",
-      "~CUSTOM:AtomEveHammerConstruct"
-    ],
     "ITEMS:minecraft:swords": [
-      "~CUSTOM:AtomEveSwordConstruct",
       "~CUSTOM:MetalBat",
       "~CUSTOM:WoodenBat"
     ],
     "BLOCKS:minecraft:overworld_carver_replaceables": [
-      "~Blocks.SANDSTONE#0",
-      "~Blocks.SAND#0",
       "~CUSTOM:MoonStone"
     ]
   },
@@ -10129,7 +10216,7 @@
       "death.attack.suffocation.item": "%1$s was killed by %2$s using %3$s",
       "death.attack.battle_beast_uppercut.player": "%1$s died whilst trying to escape %2$s",
       "death.attack.barrage.item": "%1$s was killed by %2$s using %3$s",
-      "death.attack.chop": "%1$s died",
+      "death.attack.chop": "%1$s chopped",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_original": "Make Invincible Suit (Original) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "death.attack.battle_beast_uppercut": "%1$s died",
       "death.attack.bleed_damage.player": "%1$s died whilst trying to escape %2$s",
@@ -10140,12 +10227,13 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
       "entity.invincible_craft.kill_cannon_blast": "Kill Cannon Blast",
-      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
-      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
+      "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
+      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "item.invincible_craft.atom_eve_hammer_construct": "Hammer Construct",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
+      "item.invincible_craft.lucan_spawn_egg": "Lucan Spawn Egg",
       "gamerule.invincibleCraftXPMultiplier.description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
       "death.attack.battle_beast_downslam": "%1$s died",
       "item.invincible_craft.gauntlet": "Gauntlet",
@@ -10164,11 +10252,12 @@
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_comic": "Make Invincible Suit (Comic) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "subtitles.punch": "punch",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, Red Dye x4, White Dye x4",
+      "death.attack.mob_attack.player": "%1$s died whilst trying to escape %2$s",
       "item.invincible_craft.invincible_suit_sinister_mark_helmet": "Invincible Suit (Sinister Mark) Helmet",
       "death.attack.sonic_clap_damage.item": "%1$s was killed by %2$s using %3$s",
       "key.invincible_craft.stat_panel": "Stat Panel",
-      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
       "item_group.invincible_craft.invincible_craft_armor": "Invincible Suits",
+      "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
       "subtitles.skull_crush": "skull_crush",
       "gamerule.invincibleCraftEnableMoonTravel": "Invincible Craft - Moon Travel",
       "item.invincible_craft.dupli_kate_suit_leggings": "Dupli-Kate Leggings",
@@ -10219,7 +10308,7 @@
       "entity.invincible_craft.spike_ball_entity": "Spike Ball Entity",
       "entity.invincible_craft.refuge_portal": "Quick Portal",
       "death.attack.barrage.player": "%1$s died whilst trying to escape %2$s",
-      "death.attack.chop.item": "%1$s was killed by %2$s using %3$s",
+      "death.attack.chop.item": "%1$s was chopped by %2$s using %3$s",
       "gui.invincible_craft.stat_panel_gui.label_reputation": "Reputation: /",
       "gui.invincible_craft.stat_panel_gui.label_sslvitality": "§lVitality",
       "item.invincible_craft.omni_man_suit_chestplate": "Omni Man Suit Chestplate",
@@ -10270,6 +10359,7 @@
       "death.attack.bleed_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.stat_panel_gui.label_strength": "§lStrength",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.label_suit_shop": "SUIT SHOP",
+      "entity.invincible_craft.lucan": "Lucan",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_atom_eve_suit_suit_fabric": "Make Atom Eve Suit - Suit Fabric x4, Magenta Dye x4, Pink Dye x4",
       "item.invincible_craft.portal_dash_portal_spawn_egg": "Dash Portal Spawn Egg",
       "advancements.advancement_kill_viltrumite_as_viltrumite.descr": "Kill a fellow Viltrumite.",
@@ -10290,6 +10380,7 @@
       "gui.invincible_craft.stat_panel_gui.label_sslspeed": "§lSpeed",
       "death.attack.barrage": "%1$s died",
       "item.invincible_craft.invincible_suit_un_masked_mark_leggings": "Invincible Suit (Unmasked Mark) Leggings",
+      "death.attack.mob_attack.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_og": "Make Invincible Suit (OG) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "gui.invincible_craft.quick_travel_gui.tooltip_teleports_you_to_the_selected_lo": "Teleports you to the selected location in the Overworld",
       "item.invincible_craft.atom_eve_shield_construct": "Shield Construct",
@@ -10310,6 +10401,7 @@
       "item.invincible_craft.invincible_suit_season_3_helmet": "Invincible Suit (Season 3) Helmet",
       "item.invincible_craft.invincible_suit_chestplate": "Invincible Suit (Original) Chestplate",
       "gui.invincible_craft.stat_panel_gui.label_stats": "Stats:",
+      "death.attack.mob_attack": "%1$s died",
       "item.invincible_craft.power_picker": "Power Picker",
       "subtitles.viltrumite_pierce": "",
       "key.invincible_craft.fly": "Flight - Start",
@@ -10810,6 +10902,10 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "Lucan",
+            "children": []
           }
         ]
       },

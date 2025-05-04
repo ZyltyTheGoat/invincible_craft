@@ -25,6 +25,7 @@ import net.mcreator.invincible_craft.entity.QuickPortalEntity;
 import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
 import net.mcreator.invincible_craft.entity.OrbsSpawnerPortalEntity;
 import net.mcreator.invincible_craft.entity.OctobossEntity;
+import net.mcreator.invincible_craft.entity.LucanEntity;
 import net.mcreator.invincible_craft.entity.KillCannonEntity;
 import net.mcreator.invincible_craft.entity.KillCannonBlastEntity;
 import net.mcreator.invincible_craft.entity.FireballGlobalEntity;
@@ -98,6 +99,10 @@ public class InvincibleCraftModEntities {
 			EntityType.Builder.<OctobossEntity>of(OctobossEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(OctobossEntity::new)
 
 					.sized(1.5f, 3f));
+	public static final RegistryObject<EntityType<LucanEntity>> LUCAN = register("lucan",
+			EntityType.Builder.<LucanEntity>of(LucanEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(LucanEntity::new)
+
+					.sized(1f, 2.2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -123,6 +128,7 @@ public class InvincibleCraftModEntities {
 			KillCannonEntity.init();
 			KillCannonBlastEntity.init();
 			OctobossEntity.init();
+			LucanEntity.init();
 		});
 	}
 
@@ -145,5 +151,6 @@ public class InvincibleCraftModEntities {
 		event.put(KILL_CANNON.get(), KillCannonEntity.createAttributes().build());
 		event.put(KILL_CANNON_BLAST.get(), KillCannonBlastEntity.createAttributes().build());
 		event.put(OCTOBOSS.get(), OctobossEntity.createAttributes().build());
+		event.put(LUCAN.get(), LucanEntity.createAttributes().build());
 	}
 }
