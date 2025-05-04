@@ -80,7 +80,7 @@ public class ViltrumiteOnInitialEntitySpawnProcedure {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 1);
 				entity.setCustomName(Component.literal(("Soldier - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
-			} else if (rank <= 9) {
+			} else if (rank <= 8) {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 2);
 				entity.setCustomName(Component.literal(("Officer - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
@@ -142,7 +142,7 @@ public class ViltrumiteOnInitialEntitySpawnProcedure {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 1);
 				entity.setCustomName(Component.literal(("Soldier - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));
-			} else if (rank <= 9) {
+			} else if (rank <= 8) {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_rank, 2);
 				entity.setCustomName(Component.literal(("Officer - " + (viltrumite_prefixes.get((int) random_prefix) instanceof String _s ? _s : "") + (viltrumite_suffixes.get((int) random_suffix) instanceof String _s ? _s : ""))));

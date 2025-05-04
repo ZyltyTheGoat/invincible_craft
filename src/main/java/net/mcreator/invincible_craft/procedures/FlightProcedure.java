@@ -51,7 +51,8 @@ public class FlightProcedure {
 		double pitch = 0;
 		double yaw = 0;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
-			if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get()))) {
+			if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get()))
+					&& !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()))) {
 				if (!Minecraft.getInstance().isPaused()) {
 					if (entity.onGround()) {
 						entity.setDeltaMovement(new Vec3(0, 0, 0));
@@ -80,7 +81,7 @@ public class FlightProcedure {
 								capability.syncPlayerVariables(entity);
 							});
 						}
-						if (entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+						if (entity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							{
 								double _setval = (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying_speed_changed * 0.1;
 								entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -99,7 +100,7 @@ public class FlightProcedure {
 						}
 						entity.noPhysics = false;
 					} else {
-						if (!(entity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(InvincibleCraftModMobEffects.STUN.get()))) {
+						if (!(entity instanceof LivingEntity _livEnt8 && _livEnt8.hasEffect(InvincibleCraftModMobEffects.STUN.get()))) {
 							if (entity.isSprinting() && GLFW.glfwGetKey(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_KEY_W) == GLFW.GLFW_PRESS) {
 								if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).boost_timer <= 0
 										&& (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).boost_cooldown <= 0 && new Object() {
@@ -138,7 +139,7 @@ public class FlightProcedure {
 									if (world instanceof ServerLevel _level)
 										_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.SMALL_GUST.get()), x, y, z, 5, 1, 1, 1, 0);
 								}
-								if (!(entity instanceof LivingEntity _livEnt14 && _livEnt14.isFallFlying())) {
+								if (!(entity instanceof LivingEntity _livEnt15 && _livEnt15.isFallFlying())) {
 									if (entity instanceof Player _plr && !(_plr.isFallFlying())) {
 										_plr.startFallFlying();
 									}

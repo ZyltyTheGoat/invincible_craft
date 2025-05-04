@@ -1,8 +1,8 @@
 package net.mcreator.invincible_craft.procedures;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -20,9 +20,9 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		Entity ent = null;
 		double distance = 0;
 		double combo_rand = 0;
+		Entity ent = null;
 		{
 			String _setval = "Viltrumite";
 			entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -215,20 +215,16 @@ public class ViltrumiteOnEntityTickUpdateProcedure {
 							_datEntSetI.getEntityData().set(ViltrumiteEntity.DATA_SlamMeter, 0);
 					}
 				}
-				if (world.canSeeSkyFromBelowWater(BlockPos.containing(ent.getX(), ent.getY(), ent.getZ()))) {
-					if (ent instanceof Player) {
-						if ((ent.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
-							if (entity instanceof ViltrumiteEntity _datEntSetL)
-								_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, true);
-						}
-					}
-					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.4) {
-						if (entity instanceof ViltrumiteEntity _datEntSetL)
-							_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, true);
-					}
+				if (world.canSeeSkyFromBelowWater(BlockPos.containing(ent.getX(), ent.getY(), ent.getZ()))
+						&& (ent.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying
+						|| ent.getY() - world.getHeight(Heightmap.Types.MOTION_BLOCKING, Mth.floor((ent.getX())), Mth.floor((ent.getZ()))) >= 10) {
+					if (entity instanceof ViltrumiteEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, true);
+					entity.setNoGravity(true);
 				} else {
 					if (entity instanceof ViltrumiteEntity _datEntSetL)
 						_datEntSetL.getEntityData().set(ViltrumiteEntity.DATA_flying, false);
+					entity.setNoGravity(false);
 				}
 			} else {
 				if (entity instanceof ViltrumiteEntity _datEntSetI)

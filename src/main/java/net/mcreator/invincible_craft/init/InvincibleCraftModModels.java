@@ -13,6 +13,7 @@ import net.mcreator.invincible_craft.client.model.Modelinv;
 import net.mcreator.invincible_craft.client.model.Modelguideentity;
 import net.mcreator.invincible_craft.client.model.ModelViltrumiteMale;
 import net.mcreator.invincible_craft.client.model.ModelViltrumiteFemale;
+import net.mcreator.invincible_craft.client.model.ModelLucan;
 import net.mcreator.invincible_craft.client.model.ModelKillCannon;
 import net.mcreator.invincible_craft.client.model.ModelInvincibleArmorModel;
 import net.mcreator.invincible_craft.client.model.ModelInvincibleArmor;
@@ -35,6 +36,7 @@ public class InvincibleCraftModModels {
 		event.registerLayerDefinition(ModelConstructionArmor.LAYER_LOCATION, ModelConstructionArmor::createBodyLayer);
 		event.registerLayerDefinition(ModelViltrumiteMale.LAYER_LOCATION, ModelViltrumiteMale::createBodyLayer);
 		event.registerLayerDefinition(ModelAtomEveFlare.LAYER_LOCATION, ModelAtomEveFlare::createBodyLayer);
+		event.registerLayerDefinition(ModelLucan.LAYER_LOCATION, ModelLucan::createBodyLayer);
 		event.registerLayerDefinition(ModelAtomEveTridentConstruct.LAYER_LOCATION, ModelAtomEveTridentConstruct::createBodyLayer);
 		event.registerLayerDefinition(Modelinv.LAYER_LOCATION, Modelinv::createBodyLayer);
 		event.registerLayerDefinition(ModelDimensionalTravelProjectile1.LAYER_LOCATION, ModelDimensionalTravelProjectile1::createBodyLayer);

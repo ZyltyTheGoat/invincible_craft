@@ -51,6 +51,9 @@ public class TimedDestructionOnEffectActiveTickProcedure {
 			Vec3 lookDirection = entity.getLookAngle();
 			BlockPos centerPos = BlockPos.containing(entity.getX() + lookDirection.x * 2, entity.getY() + lookDirection.y * 2 + 1, entity.getZ() + lookDirection.z * 2);
 			int radius = (int) amplifier;
+			if (radius > 2) {
+				radius = 2;
+			}
 			Random random = new Random();
 			boolean blocksBroken = false; // Track if any blocks were broken
 			for (int i = -radius; i <= radius; i++) {

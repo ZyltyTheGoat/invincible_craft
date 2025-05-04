@@ -31,7 +31,6 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
-import net.mcreator.invincible_craft.init.InvincibleCraftModGameRules;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
 import java.util.List;
@@ -154,22 +153,11 @@ public class ViltrumitePunchAbilityProcedure {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 2, false);
 						}
 					}
-					if (world.getLevelData().getGameRules().getBoolean(InvincibleCraftModGameRules.INVINCIBLE_CRAFT_ENABLE_IMPACT_FRAMES)) {
-						{
-							double _setval = 5;
-							entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.impact_frame_timer = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-					}
-					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
-							(float) (5 + (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength * 0.25));
 					entityiterator.setDeltaMovement(new Vec3((2 * entity.getLookAngle().x), (2 * entity.getLookAngle().y + 0.3), (2 * entity.getLookAngle().z)));
 					entity.getPersistentData().putString("track", (entityiterator.getStringUUID()));
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(),
-								(int) (entity instanceof LivingEntity _livingEntity38 && _livingEntity38.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity38.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0), 0, false,
+								(int) (entity instanceof LivingEntity _livingEntity35 && _livingEntity35.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity35.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0), 0, false,
 								false));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TARGET.get(), 30, 0, false, false));
@@ -181,6 +169,8 @@ public class ViltrumitePunchAbilityProcedure {
 									(int) Math.min(6, Math.max(Math.floor((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength / 10) + 2, 3)),
 									false, false));
 					}
+					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
+							(float) (5 + (entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).stat_strength * 0.25));
 				}
 			}
 		}
