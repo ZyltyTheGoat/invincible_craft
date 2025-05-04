@@ -32,17 +32,23 @@ public class GravityOnDimensionChangeProcedure {
 		double gravity = 0;
 		if ((entity.level().dimension()) == Level.OVERWORLD) {
 			gravity = 0.08;
+			if (entity instanceof LivingEntity _livingEntity3 && _livingEntity3.getAttributes().hasAttribute(ForgeMod.ENTITY_GRAVITY.get()))
+				_livingEntity3.getAttribute(ForgeMod.ENTITY_GRAVITY.get()).setBaseValue(gravity);
 		}
 		if ((entity.level().dimension()) == Level.NETHER) {
 			gravity = 0.08;
+			if (entity instanceof LivingEntity _livingEntity7 && _livingEntity7.getAttributes().hasAttribute(ForgeMod.ENTITY_GRAVITY.get()))
+				_livingEntity7.getAttribute(ForgeMod.ENTITY_GRAVITY.get()).setBaseValue(gravity);
 		}
 		if ((entity.level().dimension()) == Level.END) {
 			gravity = 0.08;
+			if (entity instanceof LivingEntity _livingEntity11 && _livingEntity11.getAttributes().hasAttribute(ForgeMod.ENTITY_GRAVITY.get()))
+				_livingEntity11.getAttribute(ForgeMod.ENTITY_GRAVITY.get()).setBaseValue(gravity);
 		}
 		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("invincible_craft:moon"))) {
 			gravity = 0.0132;
+			if (entity instanceof LivingEntity _livingEntity15 && _livingEntity15.getAttributes().hasAttribute(ForgeMod.ENTITY_GRAVITY.get()))
+				_livingEntity15.getAttribute(ForgeMod.ENTITY_GRAVITY.get()).setBaseValue(gravity);
 		}
-		if (entity instanceof LivingEntity _livingEntity12 && _livingEntity12.getAttributes().hasAttribute(ForgeMod.ENTITY_GRAVITY.get()))
-			_livingEntity12.getAttribute(ForgeMod.ENTITY_GRAVITY.get()).setBaseValue(gravity);
 	}
 }
