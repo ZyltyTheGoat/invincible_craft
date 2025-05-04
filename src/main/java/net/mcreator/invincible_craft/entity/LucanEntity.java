@@ -63,6 +63,8 @@ public class LucanEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_BarrageCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_AttackDuration = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_GlobalAttackCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_UpslamCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_MeleeCooldown = SynchedEntityData.defineId(LucanEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -97,6 +99,8 @@ public class LucanEntity extends Monster implements GeoEntity {
 		this.entityData.define(DATA_BarrageCooldown, 0);
 		this.entityData.define(DATA_AttackDuration, 0);
 		this.entityData.define(DATA_GlobalAttackCooldown, 0);
+		this.entityData.define(DATA_UpslamCooldown, 0);
+		this.entityData.define(DATA_MeleeCooldown, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -197,6 +201,8 @@ public class LucanEntity extends Monster implements GeoEntity {
 		compound.putInt("DataBarrageCooldown", this.entityData.get(DATA_BarrageCooldown));
 		compound.putInt("DataAttackDuration", this.entityData.get(DATA_AttackDuration));
 		compound.putInt("DataGlobalAttackCooldown", this.entityData.get(DATA_GlobalAttackCooldown));
+		compound.putInt("DataUpslamCooldown", this.entityData.get(DATA_UpslamCooldown));
+		compound.putInt("DataMeleeCooldown", this.entityData.get(DATA_MeleeCooldown));
 	}
 
 	@Override
@@ -218,6 +224,10 @@ public class LucanEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_AttackDuration, compound.getInt("DataAttackDuration"));
 		if (compound.contains("DataGlobalAttackCooldown"))
 			this.entityData.set(DATA_GlobalAttackCooldown, compound.getInt("DataGlobalAttackCooldown"));
+		if (compound.contains("DataUpslamCooldown"))
+			this.entityData.set(DATA_UpslamCooldown, compound.getInt("DataUpslamCooldown"));
+		if (compound.contains("DataMeleeCooldown"))
+			this.entityData.set(DATA_MeleeCooldown, compound.getInt("DataMeleeCooldown"));
 	}
 
 	@Override
@@ -270,7 +280,7 @@ public class LucanEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("targeting"));
 		}
 		return PlayState.STOP;
 	}

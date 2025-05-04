@@ -36,8 +36,8 @@ public class PunchImpact3Particle extends TextureSheetParticle {
 		super(world, x, y, z);
 		this.spriteSet = spriteSet;
 		this.setSize(0.4f, 0.4f);
-		this.quadSize *= 24f;
-		this.lifetime = 8;
+		this.quadSize *= 23f;
+		this.lifetime = 7;
 		this.gravity = 0f;
 		this.hasPhysics = true;
 		this.xd = vx * 0;

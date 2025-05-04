@@ -3,6 +3,7 @@ package net.mcreator.invincible_craft.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -34,6 +35,8 @@ public class LucanOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		List<Object> availableAttacks = new ArrayList<>();
+		Entity target = null;
+		boolean canAttack = false;
 		double downslamCooldown = 0;
 		double distance = 0;
 		double dx = 0;
@@ -41,11 +44,16 @@ public class LucanOnEntityTickUpdateProcedure {
 		double dy = 0;
 		double dz = 0;
 		double sonicClapCooldown = 0;
-		Entity target = null;
-		boolean canAttack = false;
+		double meleeCooldown = 0;
+		double upslamCooldown = 0;
+		double sx = 0;
+		double sy = 0;
+		double sz = 0;
+		meleeCooldown = 20;
 		sonicClapCooldown = 120;
 		downslamCooldown = 160;
 		barrageCooldown = 120;
+		upslamCooldown = 100;
 		canAttack = !(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.DENY.get())) && !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()));
 		if (canAttack) {
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -75,6 +83,10 @@ public class LucanOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(LucanEntity.DATA_DownslamCooldown, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_DownslamCooldown) : 0) - 1));
 				if (entity instanceof LucanEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(LucanEntity.DATA_BarrageCooldown, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_BarrageCooldown) : 0) - 1));
+				if (entity instanceof LucanEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(LucanEntity.DATA_UpslamCooldown, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_UpslamCooldown) : 0) - 1));
+				if (entity instanceof LucanEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(LucanEntity.DATA_MeleeCooldown, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_MeleeCooldown) : 0) - 1));
 				if (world.canSeeSkyFromBelowWater(BlockPos.containing(target.getX(), target.getY(), target.getZ()))
 						&& (target.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
 					if (entity instanceof LucanEntity _datEntSetL)
@@ -86,32 +98,74 @@ public class LucanOnEntityTickUpdateProcedure {
 					entity.setNoGravity(false);
 				}
 				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("TARGETING")) {
-					if (entity instanceof LucanEntity _datEntL32 && _datEntL32.getEntityData().get(LucanEntity.DATA_Flying)) {
-						if (entity instanceof LivingEntity _livEnt33 && _livEnt33.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+					if (entity instanceof LucanEntity _datEntL36 && _datEntL36.getEntityData().get(LucanEntity.DATA_Flying)) {
+						if (entity instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance) * 0.1), ((target.getY() - entity.getY()) * (1 / distance) * 0.1), ((target.getZ() - entity.getZ()) * (1 / distance) * 0.1)));
 						} else {
 							entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance)), ((target.getY() - entity.getY()) * (1 / distance)), ((target.getZ() - entity.getZ()) * (1 / distance))));
 						}
 					}
-					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_GlobalAttackCooldown) : 0) <= 0) {
-						if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_SonicClapCooldown) : 0) <= 0) {
-							availableAttacks.add("SONIC_CLAP");
+					if (distance <= 3 && (entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_MeleeCooldown) : 0) <= 0) {
+						if (entity instanceof LucanEntity _datEntSetS)
+							_datEntSetS.getEntityData().set(LucanEntity.DATA_State, "MELEE");
+						if (entity instanceof LucanEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, 0);
+					}
+					if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("TARGETING")) {
+						if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_GlobalAttackCooldown) : 0) <= 0) {
+							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_SonicClapCooldown) : 0) <= 0) {
+								availableAttacks.add("SONIC_CLAP");
+							}
+							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_DownslamCooldown) : 0) <= 0) {
+								availableAttacks.add("DOWNSLAM");
+							}
+							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_BarrageCooldown) : 0) <= 0) {
+								availableAttacks.add("BARRAGE");
+							}
+							if (!availableAttacks.isEmpty()) {
+								if (entity instanceof LucanEntity _datEntSetS)
+									_datEntSetS.getEntityData().set(LucanEntity.DATA_State, (availableAttacks.get(Mth.nextInt(RandomSource.create(), 0, (int) (availableAttacks.size() - 1))) instanceof String _s ? _s : ""));
+								if (entity instanceof LucanEntity _datEntSetI)
+									_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, 0);
+								if (entity instanceof LucanEntity _datEntSetI)
+									_datEntSetI.getEntityData().set(LucanEntity.DATA_GlobalAttackCooldown, 60);
+								availableAttacks.clear();
+							}
 						}
-						if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_DownslamCooldown) : 0) <= 0) {
-							availableAttacks.add("DOWNSLAM");
+					}
+				}
+				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("MELEE")) {
+					if (entity instanceof LucanEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) + 1));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 255, false, false));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 5, 0, false, false));
+					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 1) {
+						if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
+							if (entity instanceof LucanEntity) {
+								((LucanEntity) entity).setAnimation("punch_right");
+							}
+						} else {
+							if (entity instanceof LucanEntity) {
+								((LucanEntity) entity).setAnimation("punch_left");
+							}
 						}
-						if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_BarrageCooldown) : 0) <= 0) {
-							availableAttacks.add("BARRAGE");
-						}
-						if (!availableAttacks.isEmpty()) {
-							if (entity instanceof LucanEntity _datEntSetS)
-								_datEntSetS.getEntityData().set(LucanEntity.DATA_State, (availableAttacks.get(Mth.nextInt(RandomSource.create(), 0, (int) (availableAttacks.size() - 1))) instanceof String _s ? _s : ""));
-							if (entity instanceof LucanEntity _datEntSetI)
-								_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, 0);
-							if (entity instanceof LucanEntity _datEntSetI)
-								_datEntSetI.getEntityData().set(LucanEntity.DATA_GlobalAttackCooldown, 60);
-							availableAttacks.clear();
-						}
+					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 2) {
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.PUNCH_IMPACT_1.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 1, 0, 0, 0, 0);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
+						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
+								(float) (entity instanceof LivingEntity _livingEntity95 && _livingEntity95.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity95.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
+						target.setDeltaMovement(new Vec3((2 * entity.getLookAngle().x), (2 * entity.getLookAngle().y + 0.3), (2 * entity.getLookAngle().z)));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
+					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 10) {
+						if (entity instanceof LucanEntity _datEntSetS)
+							_datEntSetS.getEntityData().set(LucanEntity.DATA_State, "IDLE");
+						if (entity instanceof LucanEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(LucanEntity.DATA_MeleeCooldown, (int) meleeCooldown);
 					}
 				}
 				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("SONIC_CLAP")) {

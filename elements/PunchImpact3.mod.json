@@ -8,11 +8,11 @@
     "width": 0.4,
     "height": 0.4,
     "scale": {
-      "fixedValue": 24.0
+      "fixedValue": 23.0
     },
     "speedFactor": 0.0,
     "gravity": 0.0,
-    "maxAge": 8,
+    "maxAge": 7,
     "maxAgeDiff": 0,
     "angularVelocity": 0.0,
     "angularAcceleration": 0.0,
