@@ -12,6 +12,8 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
+
 import javax.annotation.Nullable;
 
 @Mod.EventBusSubscriber
@@ -30,15 +32,17 @@ public class MidasTouchProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.APPLE) {
-			if (entity instanceof Player _player) {
-				ItemStack _stktoremove = new ItemStack(Items.APPLE);
-				_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
-			}
-			if (entity instanceof Player _player) {
-				ItemStack _setstack = new ItemStack(Items.GOLDEN_APPLE).copy();
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("AtomEve")) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.APPLE) {
+				if (entity instanceof Player _player) {
+					ItemStack _stktoremove = new ItemStack(Items.APPLE);
+					_player.getInventory().clearOrCountMatchingItems(p -> _stktoremove.getItem() == p.getItem(), 1, _player.inventoryMenu.getCraftSlots());
+				}
+				if (entity instanceof Player _player) {
+					ItemStack _setstack = new ItemStack(Items.GOLDEN_APPLE).copy();
+					_setstack.setCount(1);
+					ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+				}
 			}
 		}
 	}

@@ -9389,29 +9389,6 @@
       "path": "~/Items/Weapons/Battle Beast Mace"
     },
     {
-      "name": "TimedDestructionSetMotion",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "timed_destruction_set_motion",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/TimedDestructionSetMotionProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "sourceentity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Effects/Destruction"
-    },
-    {
       "name": "CanLucanFlyingAttack",
       "type": "procedure",
       "compiles": true,
@@ -9478,6 +9455,76 @@
           "src/main/java/net/mcreator/invincible_craft/entity/LucanEntity.java",
           "src/main/java/net/mcreator/invincible_craft/client/renderer/LucanRenderer.java",
           "src/main/resources/assets/invincible_craft/models/item/lucan_spawn_egg.json"
+        ]
+      },
+      "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "LucanUpslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lucan_upslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/LucanUpslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "LucanDownslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lucan_downslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/LucanDownslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
         ]
       },
       "path": "~/Mobs/Lucan"
