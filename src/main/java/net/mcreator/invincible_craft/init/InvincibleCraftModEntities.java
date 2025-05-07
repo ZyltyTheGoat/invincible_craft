@@ -26,6 +26,7 @@ import net.mcreator.invincible_craft.entity.PortalDashPortalEntity;
 import net.mcreator.invincible_craft.entity.OrbsSpawnerPortalEntity;
 import net.mcreator.invincible_craft.entity.OctobossEntity;
 import net.mcreator.invincible_craft.entity.LucanEntity;
+import net.mcreator.invincible_craft.entity.KreggEntity;
 import net.mcreator.invincible_craft.entity.KillCannonEntity;
 import net.mcreator.invincible_craft.entity.KillCannonBlastEntity;
 import net.mcreator.invincible_craft.entity.FireballGlobalEntity;
@@ -37,6 +38,7 @@ import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
 import net.mcreator.invincible_craft.entity.AtomEveConstructTridentProjectileEntity;
 import net.mcreator.invincible_craft.entity.AtomEveAwakeningEntity;
 import net.mcreator.invincible_craft.entity.ArtRosenbaumEntity;
+import net.mcreator.invincible_craft.entity.AnissaEntity;
 import net.mcreator.invincible_craft.InvincibleCraftMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -103,6 +105,14 @@ public class InvincibleCraftModEntities {
 			EntityType.Builder.<LucanEntity>of(LucanEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(LucanEntity::new)
 
 					.sized(1f, 2.2f));
+	public static final RegistryObject<EntityType<KreggEntity>> KREGG = register("kregg",
+			EntityType.Builder.<KreggEntity>of(KreggEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(KreggEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<AnissaEntity>> ANISSA = register("anissa",
+			EntityType.Builder.<AnissaEntity>of(AnissaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(AnissaEntity::new)
+
+					.sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -129,6 +139,8 @@ public class InvincibleCraftModEntities {
 			KillCannonBlastEntity.init();
 			OctobossEntity.init();
 			LucanEntity.init();
+			KreggEntity.init();
+			AnissaEntity.init();
 		});
 	}
 
@@ -152,5 +164,7 @@ public class InvincibleCraftModEntities {
 		event.put(KILL_CANNON_BLAST.get(), KillCannonBlastEntity.createAttributes().build());
 		event.put(OCTOBOSS.get(), OctobossEntity.createAttributes().build());
 		event.put(LUCAN.get(), LucanEntity.createAttributes().build());
+		event.put(KREGG.get(), KreggEntity.createAttributes().build());
+		event.put(ANISSA.get(), AnissaEntity.createAttributes().build());
 	}
 }

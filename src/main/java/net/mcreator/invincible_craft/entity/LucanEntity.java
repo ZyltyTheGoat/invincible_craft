@@ -263,9 +263,9 @@ public class LucanEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.75);
-		builder = builder.add(Attributes.MAX_HEALTH, 200);
+		builder = builder.add(Attributes.MAX_HEALTH, 225);
 		builder = builder.add(Attributes.ARMOR, 5);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 12);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 16);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 98);
 		return builder;
 	}

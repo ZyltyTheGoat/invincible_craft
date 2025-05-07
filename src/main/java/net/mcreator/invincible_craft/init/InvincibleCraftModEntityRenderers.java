@@ -21,6 +21,7 @@ import net.mcreator.invincible_craft.client.renderer.PortalDashPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.OrbsSpawnerPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.OctobossRenderer;
 import net.mcreator.invincible_craft.client.renderer.LucanRenderer;
+import net.mcreator.invincible_craft.client.renderer.KreggRenderer;
 import net.mcreator.invincible_craft.client.renderer.KillCannonRenderer;
 import net.mcreator.invincible_craft.client.renderer.KillCannonBlastRenderer;
 import net.mcreator.invincible_craft.client.renderer.ExchangeCloneRenderer;
@@ -31,6 +32,7 @@ import net.mcreator.invincible_craft.client.renderer.AtomicbBlastRenderer;
 import net.mcreator.invincible_craft.client.renderer.AtomEveConstructTridentProjectileRenderer;
 import net.mcreator.invincible_craft.client.renderer.AtomEveAwakeningRenderer;
 import net.mcreator.invincible_craft.client.renderer.ArtRosenbaumRenderer;
+import net.mcreator.invincible_craft.client.renderer.AnissaRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class InvincibleCraftModEntityRenderers {
@@ -57,5 +59,7 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.FIREBALL_GLOBAL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.OCTOBOSS.get(), OctobossRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.LUCAN.get(), LucanRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.KREGG.get(), KreggRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.ANISSA.get(), AnissaRenderer::new);
 	}
 }

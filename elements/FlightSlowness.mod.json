@@ -14,9 +14,6 @@
     "renderStatusInHUD": false,
     "isCuredByMilk": false,
     "isProtectedByTotem": false,
-    "isCuredbyHoney": false,
-    "onActiveTick": {
-      "name": "FlightSlownessOnEffectActiveTick"
-    }
+    "isCuredbyHoney": false
   }
 }

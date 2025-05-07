@@ -7705,25 +7705,6 @@
       "path": "~/Powers - Abilities/Atom Eve/Awakening"
     },
     {
-      "name": "FlightSlownessOnEffectActiveTick",
-      "type": "procedure",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "flight_slowness_on_effect_active_tick",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/procedures/FlightSlownessOnEffectActiveTickProcedure.java"
-        ],
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          }
-        ]
-      },
-      "path": "~/Effects"
-    },
-    {
       "name": "AtomicBubble",
       "type": "overlay",
       "compiles": true,
@@ -7982,19 +7963,6 @@
         ]
       },
       "path": "~/Powers - Abilities/Atom Eve/Construct/Weapons"
-    },
-    {
-      "name": "Safasd",
-      "type": "command",
-      "compiles": true,
-      "locked_code": false,
-      "registry_name": "safasd",
-      "metadata": {
-        "files": [
-          "src/main/java/net/mcreator/invincible_craft/command/SafasdCommand.java"
-        ]
-      },
-      "path": "~/Commands"
     },
     {
       "name": "AtomEveSuit",
@@ -9528,6 +9496,375 @@
         ]
       },
       "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "Upslam",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/potion/UpslamMobEffect.java"
+        ]
+      },
+      "path": "~/Effects/Upslam"
+    },
+    {
+      "name": "UpslamOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "upslam_on_effect_active_tick",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/UpslamOnEffectActiveTickProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Effects/Upslam"
+    },
+    {
+      "name": "GodMode",
+      "type": "command",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "god_mode",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/command/GodModeCommand.java"
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "GodModeProcedure",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "god_mode_procedure",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/GodModeProcedureProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Commands"
+    },
+    {
+      "name": "Kregg",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kregg",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/model/KreggModel.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/KreggEntity.java",
+          "src/main/resources/assets/invincible_craft/models/item/kregg_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/KreggRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Kregg"
+    },
+    {
+      "name": "KreggOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kregg_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/KreggOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kregg"
+    },
+    {
+      "name": "CanKreggFlyingAttack",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_kregg_flying_attack",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/CanKreggFlyingAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kregg"
+    },
+    {
+      "name": "KreggUpslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kregg_upslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/KreggUpslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kregg"
+    },
+    {
+      "name": "KreggDownslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "kregg_downslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/KreggDownslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Kregg"
+    },
+    {
+      "name": "LucanSonicClap",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "lucan_sonic_clap",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/LucanSonicClapProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Lucan"
+    },
+    {
+      "name": "Anissa",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anissa",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/AnissaRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/anissa_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/AnissaEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/AnissaModel.java"
+        ]
+      },
+      "path": "~/Mobs/Anissa"
+    },
+    {
+      "name": "CanAnissaFlyingAttack",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "can_anissa_flying_attack",
+      "metadata": {
+        "return_type": "logic",
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/CanAnissaFlyingAttackProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      },
+      "path": "~/Mobs/Anissa"
+    },
+    {
+      "name": "AnissaDownslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anissa_downslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AnissaDownslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Anissa"
+    },
+    {
+      "name": "AnisamUpslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anisam_upslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AnisamUpslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Anissa"
+    },
+    {
+      "name": "AnissaOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "anissa_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AnissaOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Anissa"
     }
   ],
   "variable_elements": [
@@ -10228,7 +10565,9 @@
       "BattleBeastMace",
       "WoodenBat",
       "MetalBat",
-      "KillCannon"
+      "KillCannon",
+      "Kregg",
+      "Anissa"
     ]
   },
   "language_map": {
@@ -10244,6 +10583,7 @@
       "gui.invincible_craft.stat_panel_gui.label_sslplayer_info": "§lPLAYER INFO",
       "block.invincible_craft.moon_stone": "Moon Stone",
       "effect.invincible_craft.stun": "Stun",
+      "entity.invincible_craft.anissa": "Anissa",
       "gui.invincible_craft.viltrumite_gui.label_age_100": "Age: 100",
       "gui.invincible_craft.power_picker_gui.label_power_picker": "POWER PICKER",
       "item.invincible_craft.omni_man_suit_boots": "Omni Man Suit Boots",
@@ -10312,6 +10652,7 @@
       "item.invincible_craft.invincible_suit_omni_mark_chestplate": "Invincible Suit (Omni-Mark) Chestplate",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_sinister_m": "Make Invincible Suit (Sinister Mark) - Suit Fabric x4, Black Dye x4, Yellow Dye x4",
       "item.invincible_craft.chain": "Chain",
+      "item.invincible_craft.anissa_spawn_egg": "Anissa Spawn Egg",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_sinister_m": "Make Invincible Suit (Sinister Mark) - Suit Fabric x4, Black Dye x4, Yellow x4",
       "item.invincible_craft.invincible_suit_un_masked_mark_boots": "Invincible Suit (Unmasked Mark) Boots",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_unmasked_m": "Make Invincible Suit (Unmasked Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
@@ -10364,6 +10705,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_original": "Make Invincible Suit (Original) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "item.invincible_craft.invincible_suit_omni_mark_boots": "Invincible Suit (Omni-Mark) Boots",
       "item.invincible_craft.invincible_suit_season_3_chestplate": "Invincible Suit (Season 3) Chestplate",
+      "item.invincible_craft.kregg_spawn_egg": "General Kregg Spawn Egg",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_sinister_m": "Make Invincible Suit (Sinister Mark) - Suit Fabric x4, Black Dye x4, Yellow x4",
       "item.invincible_craft.atomicb_blast_spawn_egg": "Atomicb Blast Spawn Egg",
       "item.invincible_craft.dupli_kate_suit_boots": "Dupli-Kate Boots",
@@ -10452,6 +10794,7 @@
       "item.invincible_craft.power_picker": "Power Picker",
       "subtitles.viltrumite_pierce": "",
       "key.invincible_craft.fly": "Flight - Start",
+      "effect.invincible_craft.upslam": "Upslam",
       "item.invincible_craft.invincible_suit_no_goggles_mark_chestplate": "Invincible Suit (No Goggles Mark) Chestplate",
       "item.invincible_craft.invincible_suit_season_3_leggings": "Invincible Suit (Season 3) Leggings",
       "item.invincible_craft.invincible_suit_no_goggles_mark_leggings": "Invincible Suit (No Goggles Mark) Leggings",
@@ -10468,6 +10811,7 @@
       "effect.invincible_craft.deny": "Deny",
       "death.attack.sonic_clap_damage": "%1$s died",
       "advancements.advancement_dimensional_travel.title": "Stepping Through",
+      "entity.invincible_craft.kregg": "General Kregg",
       "death.attack.repel": "%1$s died",
       "item_group.invincible_craft.invincible_craft_creative_tab": "Invincible Misc",
       "gamerule.randomPowerOnSpawn": "Invincible Craft - Random Power",
@@ -10953,6 +11297,14 @@
           {
             "name": "Lucan",
             "children": []
+          },
+          {
+            "name": "Kregg",
+            "children": []
+          },
+          {
+            "name": "Anissa",
+            "children": []
           }
         ]
       },
@@ -11011,6 +11363,10 @@
           },
           {
             "name": "Deny",
+            "children": []
+          },
+          {
+            "name": "Upslam",
             "children": []
           }
         ]

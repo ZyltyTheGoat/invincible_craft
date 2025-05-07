@@ -52,10 +52,10 @@ public class LucanOnEntityTickUpdateProcedure {
 		double global_cooldown = 0;
 		meleeCooldown = 10;
 		sonicClapCooldown = 80;
-		downslamCooldown = 110;
+		downslamCooldown = 120;
 		barrageCooldown = 100;
-		upslamCooldown = 110;
-		global_cooldown = 30;
+		upslamCooldown = 70;
+		global_cooldown = 20;
 		canAttack = !(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.DENY.get())) && !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(InvincibleCraftModMobEffects.STUN.get()))
 				&& !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()));
 		if (canAttack) {
@@ -64,11 +64,21 @@ public class LucanOnEntityTickUpdateProcedure {
 				distance = Math.sqrt(Math.pow(entity.getX() - target.getX(), 2) + Math.pow(entity.getY() - target.getY(), 2) + Math.pow(entity.getZ() - target.getZ(), 2));
 				if (entity instanceof Mob _mob && _mob.getTarget() != null) {
 					LivingEntity ent = _mob.getTarget();
+					// Calculate Yaw (horizontal rotation)
 					double deltaX = ent.getX() - entity.getX();
 					double deltaZ = ent.getZ() - entity.getZ();
 					float targetYaw = (float) (Math.toDegrees(Math.atan2(deltaZ, deltaX))) - 90.0F;
+					// Calculate Pitch (vertical rotation)
+					double deltaY = ent.getY() + ent.getEyeHeight() - (entity.getY() + entity.getEyeHeight());
+					double horizontalDistance = Math.sqrt(deltaX * deltaX + deltaZ * deltaZ);
+					float targetPitch = (float) -Math.toDegrees(Math.atan2(deltaY, horizontalDistance));
+					// Apply Yaw (left-right rotation)
 					entity.setYRot(targetYaw);
 					entity.yRotO = targetYaw;
+					// Apply Pitch (up-down rotation)
+					entity.setXRot(targetPitch);
+					entity.xRotO = targetPitch;
+					// Sync body & head rotation (for LivingEntity)
 					if (entity instanceof LivingEntity _livingEntity) {
 						_livingEntity.yBodyRot = targetYaw;
 						_livingEntity.yHeadRot = targetYaw;
@@ -116,14 +126,11 @@ public class LucanOnEntityTickUpdateProcedure {
 					}
 					if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("TARGETING")) {
 						if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_GlobalAttackCooldown) : 0) <= 0) {
-							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_SonicClapCooldown) : 0) <= 0) {
+							if (distance <= 12.5 && (entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_SonicClapCooldown) : 0) <= 0) {
 								availableAttacks.add("SONIC_CLAP");
 							}
 							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_DownslamCooldown) : 0) <= 0) {
 								availableAttacks.add("DOWNSLAM");
-							}
-							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_BarrageCooldown) : 0) <= 0) {
-								availableAttacks.add("BARRAGE");
 							}
 							if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_UpslamCooldown) : 0) <= 0) {
 								availableAttacks.add("UPSLAM");
@@ -147,6 +154,7 @@ public class LucanOnEntityTickUpdateProcedure {
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 255, false, false));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 5, 0, false, false));
+					entity.setDeltaMovement(new Vec3(0, 0, 0));
 					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 1) {
 						if (Mth.nextInt(RandomSource.create(), 1, 2) == 1) {
 							if (entity instanceof LucanEntity) {
@@ -162,13 +170,14 @@ public class LucanOnEntityTickUpdateProcedure {
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.PUNCH_IMPACT_2.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 1, 0, 0, 0, 0);
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
-						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
-								(float) (entity instanceof LivingEntity _livingEntity98 && _livingEntity98.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity98.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
-						target.setDeltaMovement(new Vec3((1.5 * entity.getLookAngle().x), (1.5 * entity.getLookAngle().y + 0.2), (1.5 * entity.getLookAngle().z)));
+						target.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (2 / Math.sqrt(Math.pow(target.getX() - entity.getX(), 2) + Math.pow(target.getY() - entity.getY(), 2) + Math.pow(target.getZ() - entity.getZ(), 2)))), 0.5,
+								((target.getZ() - entity.getZ()) * (2 / Math.sqrt(Math.pow(target.getX() - entity.getX(), 2) + Math.pow(target.getY() - entity.getY(), 2) + Math.pow(target.getZ() - entity.getZ(), 2))))));
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
+						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
+								(float) (entity instanceof LivingEntity _livingEntity116 && _livingEntity116.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity116.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 4) {
 						if (entity instanceof LucanEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(LucanEntity.DATA_State, "IDLE");
@@ -191,7 +200,7 @@ public class LucanOnEntityTickUpdateProcedure {
 							((LucanEntity) entity).setAnimation("sonic_clap");
 						}
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 9) {
-						SonicClapAttackProcedure.execute(world, entity);
+						LucanSonicClapProcedure.execute(world, entity);
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 15) {
 						if (entity instanceof LucanEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(LucanEntity.DATA_State, "IDLE");
@@ -241,13 +250,20 @@ public class LucanOnEntityTickUpdateProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 5, 0, false, false));
 					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 1) {
+						if (entity instanceof LucanEntity) {
+							((LucanEntity) entity).setAnimation("upslam");
+						}
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 5, 0, false, false));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 5, 0, false, false));
 						{
 							Entity _ent = entity;
 							_ent.teleportTo((target.getX()), (target.getY() - 1.4), (target.getZ()));
 							if (_ent instanceof ServerPlayer _serverPlayer)
 								_serverPlayer.connection.teleport((target.getX()), (target.getY() - 1.4), (target.getZ()), _ent.getYRot(), _ent.getXRot());
 						}
-					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 3) {
+					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 4) {
 						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY() + 1.4), (target.getZ())));
 						LucanUpslamProcedure.execute(world, x, y, z, entity);
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 5) {
@@ -268,29 +284,22 @@ public class LucanOnEntityTickUpdateProcedure {
 						_datEntSetI.getEntityData().set(LucanEntity.DATA_AttackDuration, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) + 1));
 					if (entity instanceof LucanEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(LucanEntity.DATA_GlobalAttackCooldown, (int) global_cooldown);
+					{
+						Entity _ent = entity;
+						_ent.teleportTo((target.getX() + 1 * target.getLookAngle().x), (target.getY()), (target.getZ() + 1.5 * target.getLookAngle().z));
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport((target.getX() + 1 * target.getLookAngle().x), (target.getY()), (target.getZ() + 1.5 * target.getLookAngle().z), _ent.getYRot(), _ent.getXRot());
+					}
+					entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY() + 1.4), (target.getZ())));
 					if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) == 1) {
-						{
-							Entity _ent = entity;
-							_ent.teleportTo((target.getX() + 1.5 * target.getLookAngle().x), (target.getY() + 1.5 * target.getLookAngle().y), (target.getZ() + 1.5 * target.getLookAngle().z));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport((target.getX() + 1.5 * target.getLookAngle().x), (target.getY() + 1.5 * target.getLookAngle().y), (target.getZ() + 1.5 * target.getLookAngle().z), _ent.getYRot(), _ent.getXRot());
-						}
-						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY() + 1.4), (target.getZ())));
 						if (entity instanceof LucanEntity) {
 							((LucanEntity) entity).setAnimation("barrage");
 						}
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) <= 60
 							&& (entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) % 4 == 0) {
-						{
-							Entity _ent = entity;
-							_ent.teleportTo((target.getX() + 1.5 * target.getLookAngle().x), (target.getY() + 1.5 * target.getLookAngle().y), (target.getZ() + 1.5 * target.getLookAngle().z));
-							if (_ent instanceof ServerPlayer _serverPlayer)
-								_serverPlayer.connection.teleport((target.getX() + 1.5 * target.getLookAngle().x), (target.getY() + 1.5 * target.getLookAngle().y), (target.getZ() + 1.5 * target.getLookAngle().z), _ent.getYRot(), _ent.getXRot());
-						}
-						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY()), (target.getZ())));
-						dx = entity.getX() + 1.5 * entity.getLookAngle().x;
-						dy = entity.getY() + 1.5 * entity.getLookAngle().y;
-						dz = entity.getZ() + 1.5 * entity.getLookAngle().z;
+						dx = entity.getX() + 2 * entity.getLookAngle().x;
+						dy = entity.getY() + 2 * entity.getLookAngle().y;
+						dz = entity.getZ() + 2 * entity.getLookAngle().z;
 						{
 							final Vec3 _center = new Vec3(dx, dy, dz);
 							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3.5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

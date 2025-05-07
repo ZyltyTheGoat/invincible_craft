@@ -11,7 +11,7 @@
       "fixedValue": 1.0
     },
     "speedFactor": 1.0,
-    "gravity": 0.0,
+    "gravity": 1.0,
     "maxAge": 1000,
     "maxAgeDiff": 500,
     "angularVelocity": 0.0,

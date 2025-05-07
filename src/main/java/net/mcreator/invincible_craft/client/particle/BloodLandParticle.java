@@ -37,7 +37,7 @@ public class BloodLandParticle extends TextureSheetParticle {
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
 		this.lifetime = (int) Math.max(1, 1000 + (this.random.nextInt(1000) - 500));
-		this.gravity = 0f;
+		this.gravity = 1f;
 		this.hasPhysics = true;
 		this.xd = vx * 1;
 		this.yd = vy * 1;
