@@ -63,6 +63,8 @@ public class AnissaEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_MeleeCooldown = SynchedEntityData.defineId(AnissaEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_DownslamCooldown = SynchedEntityData.defineId(AnissaEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_DashBarrage = SynchedEntityData.defineId(AnissaEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_DashIndex = SynchedEntityData.defineId(AnissaEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_DashTick = SynchedEntityData.defineId(AnissaEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -99,6 +101,8 @@ public class AnissaEntity extends Monster implements GeoEntity {
 		this.entityData.define(DATA_MeleeCooldown, 0);
 		this.entityData.define(DATA_DownslamCooldown, 0);
 		this.entityData.define(DATA_DashBarrage, 0);
+		this.entityData.define(DATA_DashIndex, 0);
+		this.entityData.define(DATA_DashTick, false);
 	}
 
 	public void setTexture(String texture) {
@@ -195,6 +199,8 @@ public class AnissaEntity extends Monster implements GeoEntity {
 		compound.putInt("DataMeleeCooldown", this.entityData.get(DATA_MeleeCooldown));
 		compound.putInt("DataDownslamCooldown", this.entityData.get(DATA_DownslamCooldown));
 		compound.putInt("DataDashBarrage", this.entityData.get(DATA_DashBarrage));
+		compound.putInt("DataDashIndex", this.entityData.get(DATA_DashIndex));
+		compound.putBoolean("DataDashTick", this.entityData.get(DATA_DashTick));
 	}
 
 	@Override
@@ -220,6 +226,10 @@ public class AnissaEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_DownslamCooldown, compound.getInt("DataDownslamCooldown"));
 		if (compound.contains("DataDashBarrage"))
 			this.entityData.set(DATA_DashBarrage, compound.getInt("DataDashBarrage"));
+		if (compound.contains("DataDashIndex"))
+			this.entityData.set(DATA_DashIndex, compound.getInt("DataDashIndex"));
+		if (compound.contains("DataDashTick"))
+			this.entityData.set(DATA_DashTick, compound.getBoolean("DataDashTick"));
 	}
 
 	@Override

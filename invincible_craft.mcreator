@@ -9865,6 +9865,45 @@
         ]
       },
       "path": "~/Mobs/Anissa"
+    },
+    {
+      "name": "BarrageClash",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "barrage_clash",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/BarrageClashProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Powers - Abilities/Viltrumite/Barrage"
     }
   ],
   "variable_elements": [

@@ -52,8 +52,8 @@ public class FlightProcedure {
 		double yaw = 0;
 		if ((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
 			if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get()))
-					|| !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()))
-					|| !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(InvincibleCraftModMobEffects.STUN.get()))) {
+					&& !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()))
+					&& !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(InvincibleCraftModMobEffects.STUN.get()))) {
 				if (!Minecraft.getInstance().isPaused()) {
 					if (entity.onGround()) {
 						entity.setDeltaMovement(new Vec3(0, 0, 0));

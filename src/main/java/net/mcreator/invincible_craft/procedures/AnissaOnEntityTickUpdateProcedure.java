@@ -47,6 +47,15 @@ public class AnissaOnEntityTickUpdateProcedure {
 		double meleeCooldown = 0;
 		double downslamCooldown = 0;
 		double dashBarrageCooldown = 0;
+		double angleRad = 0;
+		double yOffset = 0;
+		double dashDistance = 0;
+		double startX = 0;
+		double startY = 0;
+		double startZ = 0;
+		double endX = 0;
+		double endY = 0;
+		double endZ = 0;
 		meleeCooldown = 10;
 		barrageCooldown = 60;
 		upslamCooldown = 100;
@@ -313,28 +322,50 @@ public class AnissaOnEntityTickUpdateProcedure {
 					}
 				}
 				if ((entity instanceof AnissaEntity _datEntS ? _datEntS.getEntityData().get(AnissaEntity.DATA_State) : "").equals("DASH_BARRAGE")) {
+					if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 0, false, false));
+					if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 5, 0, false, false));
+					if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 5, 0, false, false));
+					target.setDeltaMovement(new Vec3(0, 0, 0));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
 					if (entity instanceof AnissaEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(AnissaEntity.DATA_AttackDuration, (int) ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) + 1));
 					if (entity instanceof AnissaEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(AnissaEntity.DATA_GlobalAttackCooldown, (int) global_cooldown);
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
-					if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
-					if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get(), 15, 0, false, false));
-					if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 0, false, false));
-					target.setDeltaMovement(new Vec3(0, 0, 0));
-					if ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) <= 60
-							&& (entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) % 6 == 0) {
-						entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance) * 3.5), ((target.getY() - entity.getY()) * (1 / distance) * 3.5), ((target.getZ() - entity.getZ()) * (1 / distance) * 3.5)));
+					if ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) <= 40
+							&& (entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) % 3 == 0) {
+						entity.getPersistentData().putDouble("angleRad", Math.toRadians(Math.ceil(Mth.nextDouble(RandomSource.create(), 0, 360))));
+						entity.getPersistentData().putDouble("yOffset", Math.ceil(Mth.nextDouble(RandomSource.create(), -3, 3)));
+						entity.getPersistentData().putDouble("dashDistance", 6);
+						startX = target.getX() - Math.sin(entity.getPersistentData().getDouble("angleRad")) * entity.getPersistentData().getDouble("dashDistance");
+						startY = target.getY() + entity.getPersistentData().getDouble("yOffset");
+						startZ = target.getZ() - Math.cos(entity.getPersistentData().getDouble("angleRad")) * entity.getPersistentData().getDouble("dashDistance");
+						{
+							Entity _ent = entity;
+							_ent.teleportTo(startX, startY, startZ);
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection.teleport(startX, startY, startZ, _ent.getYRot(), _ent.getXRot());
+						}
+					} else if ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) <= 40
+							&& (entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) % 3 == 2) {
+						endX = target.getX() + Math.sin(entity.getPersistentData().getDouble("angleRad")) * entity.getPersistentData().getDouble("dashDistance");
+						endY = target.getY() - entity.getPersistentData().getDouble("yOffset");
+						endZ = target.getZ() + Math.cos(entity.getPersistentData().getDouble("angleRad")) * entity.getPersistentData().getDouble("dashDistance");
+						{
+							Entity _ent = entity;
+							_ent.teleportTo(endX, endY, endZ);
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection.teleport(endX, endY, endZ, _ent.getYRot(), _ent.getXRot());
+						}
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
 						if (world instanceof ServerLevel _level)
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.PUNCH_IMPACT_2.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 1, 0, 0, 0, 0);
-						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 6);
-					} else if ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) >= 50) {
+						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 8);
+					} else if ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) >= 40) {
 						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((target.getX()), (target.getY()), (target.getZ())));
 						if (entity instanceof AnissaEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(AnissaEntity.DATA_State, "MELEE");

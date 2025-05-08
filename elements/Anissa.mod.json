@@ -71,6 +71,18 @@
         "name": "DashBarrage",
         "type": "integer",
         "value": 0
+      },
+      {
+        "min": -2147483648,
+        "max": 2147483647,
+        "name": "DashIndex",
+        "type": "integer",
+        "value": 0
+      },
+      {
+        "name": "DashTick",
+        "type": "logic",
+        "value": false
       }
     ],
     "modelWidth": 0.6,
