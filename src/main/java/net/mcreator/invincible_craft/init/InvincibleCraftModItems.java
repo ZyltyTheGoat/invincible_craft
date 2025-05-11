@@ -121,6 +121,7 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> LUCAN_SPAWN_EGG = REGISTRY.register("lucan_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.LUCAN, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> KREGG_SPAWN_EGG = REGISTRY.register("kregg_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.KREGG, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> ANISSA_SPAWN_EGG = REGISTRY.register("anissa_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.ANISSA, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> THRAGG_EXILED_SPAWN_EGG = REGISTRY.register("thragg_exiled_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.THRAGG_EXILED, -3522000, -197380, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -11,11 +11,14 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
+import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 
 import java.util.List;
@@ -58,6 +61,8 @@ public class ViltrumitePunchFollowUpProcedure {
 										_serverPlayer.connection.teleport((entityiterator.getX() + (-1.5) * entity.getLookAngle().x), (entityiterator.getY() + (-1.5) * entity.getLookAngle().y),
 												(entityiterator.getZ() + (-1.5) * entity.getLookAngle().z), _ent.getYRot(), _ent.getXRot());
 								}
+								if (world instanceof ServerLevel _level)
+									_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.TELEPORTATION.get()), (entity.getX()), (entity.getY() + 1), (entity.getZ()), 10, 0.2, 0.5, 0.2, 0);
 								entity.getPersistentData().putString("track", "");
 								{
 									boolean _setval = true;

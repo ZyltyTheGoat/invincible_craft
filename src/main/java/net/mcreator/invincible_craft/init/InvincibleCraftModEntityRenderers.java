@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 import net.mcreator.invincible_craft.client.renderer.ViltrumiteRenderer;
+import net.mcreator.invincible_craft.client.renderer.ThraggExiledRenderer;
 import net.mcreator.invincible_craft.client.renderer.TheGiantRenderer;
 import net.mcreator.invincible_craft.client.renderer.SpyDroneOrbRenderer;
 import net.mcreator.invincible_craft.client.renderer.SpikeBallEntityRenderer;
@@ -61,5 +62,6 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.LUCAN.get(), LucanRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.KREGG.get(), KreggRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ANISSA.get(), AnissaRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.THRAGG_EXILED.get(), ThraggExiledRenderer::new);
 	}
 }

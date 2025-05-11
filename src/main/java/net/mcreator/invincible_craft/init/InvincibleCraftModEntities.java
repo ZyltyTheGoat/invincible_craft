@@ -17,6 +17,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.invincible_craft.entity.ViltrumiteEntity;
+import net.mcreator.invincible_craft.entity.ThraggExiledEntity;
 import net.mcreator.invincible_craft.entity.TheGiantEntity;
 import net.mcreator.invincible_craft.entity.SpyDroneOrbEntity;
 import net.mcreator.invincible_craft.entity.SpikeBallEntityEntity;
@@ -113,6 +114,10 @@ public class InvincibleCraftModEntities {
 			EntityType.Builder.<AnissaEntity>of(AnissaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(AnissaEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ThraggExiledEntity>> THRAGG_EXILED = register("thragg_exiled",
+			EntityType.Builder.<ThraggExiledEntity>of(ThraggExiledEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(ThraggExiledEntity::new)
+
+					.sized(1f, 2.2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -141,6 +146,7 @@ public class InvincibleCraftModEntities {
 			LucanEntity.init();
 			KreggEntity.init();
 			AnissaEntity.init();
+			ThraggExiledEntity.init();
 		});
 	}
 
@@ -166,5 +172,6 @@ public class InvincibleCraftModEntities {
 		event.put(LUCAN.get(), LucanEntity.createAttributes().build());
 		event.put(KREGG.get(), KreggEntity.createAttributes().build());
 		event.put(ANISSA.get(), AnissaEntity.createAttributes().build());
+		event.put(THRAGG_EXILED.get(), ThraggExiledEntity.createAttributes().build());
 	}
 }

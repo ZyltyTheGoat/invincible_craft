@@ -4,6 +4,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 
+import net.mcreator.invincible_craft.entity.ThraggExiledEntity;
 import net.mcreator.invincible_craft.entity.TheGiantEntity;
 import net.mcreator.invincible_craft.entity.SpikeBallEntityEntity;
 import net.mcreator.invincible_craft.entity.RefugePortalEntity;
@@ -124,6 +125,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof AnissaEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof ThraggExiledEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

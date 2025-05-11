@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.invincible_craft.client.particle.TeleportationParticle;
 import net.mcreator.invincible_craft.client.particle.SparkParticle;
 import net.mcreator.invincible_craft.client.particle.SonicClapParticle;
 import net.mcreator.invincible_craft.client.particle.SmokeParticle;
@@ -82,5 +83,6 @@ public class InvincibleCraftModParticles {
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.ATOM_EVE_AWAKENING_CLOUD.get(), AtomEveAwakeningCloudParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.KILL_CANNON_CLOUD.get(), KillCannonCloudParticle::provider);
 		event.registerSpriteSet(InvincibleCraftModParticleTypes.KILL_CANNON_SHOCKWAVE.get(), KillCannonShockwaveParticle::provider);
+		event.registerSpriteSet(InvincibleCraftModParticleTypes.TELEPORTATION.get(), TeleportationParticle::provider);
 	}
 }

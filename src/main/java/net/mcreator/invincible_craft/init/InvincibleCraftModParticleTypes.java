@@ -49,4 +49,5 @@ public class InvincibleCraftModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> ATOM_EVE_AWAKENING_CLOUD = REGISTRY.register("atom_eve_awakening_cloud", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> KILL_CANNON_CLOUD = REGISTRY.register("kill_cannon_cloud", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> KILL_CANNON_SHOCKWAVE = REGISTRY.register("kill_cannon_shockwave", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> TELEPORTATION = REGISTRY.register("teleportation", () -> new SimpleParticleType(false));
 }

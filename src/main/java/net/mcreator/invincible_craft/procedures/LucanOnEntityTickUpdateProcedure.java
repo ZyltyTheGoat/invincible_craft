@@ -18,10 +18,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
-import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 import net.mcreator.invincible_craft.entity.LucanEntity;
@@ -57,7 +55,7 @@ public class LucanOnEntityTickUpdateProcedure {
 		upslamCooldown = 70;
 		global_cooldown = 20;
 		canAttack = !(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(InvincibleCraftModMobEffects.DENY.get())) && !(entity instanceof LivingEntity _livEnt1 && _livEnt1.hasEffect(InvincibleCraftModMobEffects.STUN.get()))
-				&& !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get()));
+				&& !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(InvincibleCraftModMobEffects.MOTION.get()));
 		if (canAttack) {
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 				target = entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null;
@@ -100,19 +98,12 @@ public class LucanOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(LucanEntity.DATA_UpslamCooldown, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_UpslamCooldown) : 0) - 1));
 				if (entity instanceof LucanEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(LucanEntity.DATA_MeleeCooldown, (int) ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_MeleeCooldown) : 0) - 1));
-				if (world.canSeeSkyFromBelowWater(BlockPos.containing(target.getX(), target.getY(), target.getZ()))
-						&& (target.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
-					if (entity instanceof LucanEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(LucanEntity.DATA_Flying, true);
-					entity.setNoGravity(true);
-				} else {
-					if (entity instanceof LucanEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(LucanEntity.DATA_Flying, false);
-					entity.setNoGravity(false);
-				}
+				if (entity instanceof LucanEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(LucanEntity.DATA_Flying, true);
+				entity.setNoGravity(true);
 				if ((entity instanceof LucanEntity _datEntS ? _datEntS.getEntityData().get(LucanEntity.DATA_State) : "").equals("TARGETING")) {
-					if (entity instanceof LucanEntity _datEntL37 && _datEntL37.getEntityData().get(LucanEntity.DATA_Flying)) {
-						if (entity instanceof LivingEntity _livEnt38 && _livEnt38.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+					if (entity instanceof LucanEntity _datEntL31 && _datEntL31.getEntityData().get(LucanEntity.DATA_Flying)) {
+						if (entity instanceof LivingEntity _livEnt32 && _livEnt32.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance) * 0.1), ((target.getY() - entity.getY()) * (1 / distance) * 0.1), ((target.getZ() - entity.getZ()) * (1 / distance) * 0.1)));
 						} else {
 							entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance) * 2), ((target.getY() - entity.getY()) * (1 / distance) * 2), ((target.getZ() - entity.getZ()) * (1 / distance) * 2)));
@@ -172,12 +163,14 @@ public class LucanOnEntityTickUpdateProcedure {
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
 						target.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (2 / Math.sqrt(Math.pow(target.getX() - entity.getX(), 2) + Math.pow(target.getY() - entity.getY(), 2) + Math.pow(target.getZ() - entity.getZ(), 2)))), 0.5,
 								((target.getZ() - entity.getZ()) * (2 / Math.sqrt(Math.pow(target.getX() - entity.getX(), 2) + Math.pow(target.getY() - entity.getY(), 2) + Math.pow(target.getZ() - entity.getZ(), 2))))));
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
 						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
-								(float) (entity instanceof LivingEntity _livingEntity116 && _livingEntity116.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity116.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
+								(float) (entity instanceof LivingEntity _livingEntity108 && _livingEntity108.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity108.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.MOTION.get(), 10, 0, false, false));
 					} else if ((entity instanceof LucanEntity _datEntI ? _datEntI.getEntityData().get(LucanEntity.DATA_AttackDuration) : 0) >= 4) {
 						if (entity instanceof LucanEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(LucanEntity.DATA_State, "IDLE");

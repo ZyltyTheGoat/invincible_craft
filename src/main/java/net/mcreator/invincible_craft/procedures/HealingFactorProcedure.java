@@ -30,14 +30,11 @@ public class HealingFactorProcedure {
 		if (entity == null)
 			return;
 		if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("Viltrumite")) {
-			if (world.dayTime() % 100 == 0) {
-				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) < 0.25) {
-					if (entity instanceof LivingEntity _entity) {
-						if (_entity.isAlive()) {
-							float missingHealth = _entity.getMaxHealth() - _entity.getHealth();
-							float healAmount = Math.max(0.5f, missingHealth * 0.25f); // Heal 10% of missing health, min 0.5
-							_entity.heal(healAmount);
-						}
+			if (world.dayTime() % 40 == 0) {
+				if (entity.isAlive()) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1 <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
+						if (entity instanceof LivingEntity _entity)
+							_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1));
 					}
 				}
 			}

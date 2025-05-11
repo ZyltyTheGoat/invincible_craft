@@ -85,10 +85,10 @@ public class ViltrumiteChopAbilityProcedure {
 					world.setBlock(BlockPos.containing(x_pos, y_pos + 1.6, z_pos), Blocks.AIR.defaultBlockState(), 3);
 				}
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x_pos, (y_pos + 1.6), z_pos, 1, 0, 0, 0, 0);
+					_level.sendParticles(ParticleTypes.CLOUD, x_pos, (y_pos + 1.6), z_pos, 1, 0, 0, 0, 0);
 				{
 					final Vec3 _center = new Vec3(x_pos, (y_pos + 1.8), z_pos);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (!(entity == entityiterator) && entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:chop"))), entity),
@@ -119,13 +119,13 @@ public class ViltrumiteChopAbilityProcedure {
 				i = i + 1;
 				hei = hei + -0.133;
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x_pos, (y_pos + 1.8), z_pos, 1, 0, 0, 0, 0);
+					_level.sendParticles(ParticleTypes.CLOUD, x_pos, (y_pos + 1.8), z_pos, 1, 0, 0, 0, 0);
 				if (world.getBlockState(BlockPos.containing(x_pos, y_pos + 1.6, z_pos)).getDestroySpeed(world, BlockPos.containing(x_pos, y_pos + 1.6, z_pos)) != -1) {
 					world.setBlock(BlockPos.containing(x_pos, y_pos + 1.6, z_pos), Blocks.AIR.defaultBlockState(), 3);
 				}
 				{
 					final Vec3 _center = new Vec3(x_pos, (y_pos + 1.6), z_pos);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (!(entity == entityiterator) && entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:chop"))), entity),
@@ -155,13 +155,13 @@ public class ViltrumiteChopAbilityProcedure {
 				z_pos = entity.getZ() + radius * vZ;
 				i = i + 1;
 				if (world instanceof ServerLevel _level)
-					_level.sendParticles(ParticleTypes.SWEEP_ATTACK, x_pos, (y_pos + 1.8), z_pos, 1, 0, 0, 0, 0);
+					_level.sendParticles(ParticleTypes.CLOUD, x_pos, (y_pos + 1.8), z_pos, 1, 0, 0, 0, 0);
 				if (world.getBlockState(BlockPos.containing(x_pos, y_pos + 1.6, z_pos)).getDestroySpeed(world, BlockPos.containing(x_pos, y_pos + 1.6, z_pos)) != -1) {
 					world.setBlock(BlockPos.containing(x_pos, y_pos + 1.6, z_pos), Blocks.AIR.defaultBlockState(), 3);
 				}
 				{
 					final Vec3 _center = new Vec3(x_pos, (y_pos + 1.6), z_pos);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (!(entity == entityiterator) && entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:chop"))), entity),

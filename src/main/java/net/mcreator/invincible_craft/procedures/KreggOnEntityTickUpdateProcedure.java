@@ -18,10 +18,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
-import net.mcreator.invincible_craft.network.InvincibleCraftModVariables;
 import net.mcreator.invincible_craft.init.InvincibleCraftModParticleTypes;
 import net.mcreator.invincible_craft.init.InvincibleCraftModMobEffects;
 import net.mcreator.invincible_craft.entity.KreggEntity;
@@ -83,19 +81,12 @@ public class KreggOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(KreggEntity.DATA_MeleeCooldown, (int) ((entity instanceof KreggEntity _datEntI ? _datEntI.getEntityData().get(KreggEntity.DATA_MeleeCooldown) : 0) - 1));
 				if (entity instanceof KreggEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(KreggEntity.DATA_DownslamCooldown, (int) ((entity instanceof KreggEntity _datEntI ? _datEntI.getEntityData().get(KreggEntity.DATA_DownslamCooldown) : 0) - 1));
-				if (world.canSeeSkyFromBelowWater(BlockPos.containing(target.getX(), target.getY(), target.getZ()))
-						&& (target.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).flying) {
-					if (entity instanceof KreggEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(KreggEntity.DATA_Flying, true);
-					entity.setNoGravity(true);
-				} else {
-					if (entity instanceof KreggEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(KreggEntity.DATA_Flying, false);
-					entity.setNoGravity(false);
-				}
+				if (entity instanceof KreggEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(KreggEntity.DATA_Flying, true);
+				entity.setNoGravity(true);
 				if ((entity instanceof KreggEntity _datEntS ? _datEntS.getEntityData().get(KreggEntity.DATA_State) : "").equals("TARGETING")) {
-					if (entity instanceof KreggEntity _datEntL35 && _datEntL35.getEntityData().get(KreggEntity.DATA_Flying)) {
-						if (entity instanceof LivingEntity _livEnt36 && _livEnt36.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
+					if (entity instanceof KreggEntity _datEntL29 && _datEntL29.getEntityData().get(KreggEntity.DATA_Flying)) {
+						if (entity instanceof LivingEntity _livEnt30 && _livEnt30.hasEffect(InvincibleCraftModMobEffects.FLIGHT_SLOWNESS.get())) {
 							entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance) * 0.1), ((target.getY() - entity.getY()) * (1 / distance) * 0.1), ((target.getZ() - entity.getZ()) * (1 / distance) * 0.1)));
 						} else {
 							entity.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (1 / distance) * 3), ((target.getY() - entity.getY()) * (1 / distance) * 3), ((target.getZ() - entity.getZ()) * (1 / distance) * 3)));
@@ -156,12 +147,14 @@ public class KreggOnEntityTickUpdateProcedure {
 							_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 45, 0.25, 0.25, 0.25, 0.25);
 						target.setDeltaMovement(new Vec3(((target.getX() - entity.getX()) * (2 / Math.sqrt(Math.pow(target.getX() - entity.getX(), 2) + Math.pow(target.getY() - entity.getY(), 2) + Math.pow(target.getZ() - entity.getZ(), 2)))), 0.5,
 								((target.getZ() - entity.getZ()) * (2 / Math.sqrt(Math.pow(target.getX() - entity.getX(), 2) + Math.pow(target.getY() - entity.getY(), 2) + Math.pow(target.getZ() - entity.getZ(), 2))))));
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
-						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
 						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
-								(float) (entity instanceof LivingEntity _livingEntity115 && _livingEntity115.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity115.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
+								(float) (entity instanceof LivingEntity _livingEntity107 && _livingEntity107.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity107.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
+						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.MOTION.get(), 10, 0, false, false));
 					} else if ((entity instanceof KreggEntity _datEntI ? _datEntI.getEntityData().get(KreggEntity.DATA_AttackDuration) : 0) >= 4) {
 						if (entity instanceof KreggEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(KreggEntity.DATA_State, "IDLE");

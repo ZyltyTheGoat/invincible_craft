@@ -16,6 +16,7 @@ import net.mcreator.invincible_craft.potion.TargetMobEffect;
 import net.mcreator.invincible_craft.potion.StunMobEffect;
 import net.mcreator.invincible_craft.potion.ScreenShakeMobEffect;
 import net.mcreator.invincible_craft.potion.PunchLimitMobEffect;
+import net.mcreator.invincible_craft.potion.MotionMobEffect;
 import net.mcreator.invincible_craft.potion.LeapContinueMobEffect;
 import net.mcreator.invincible_craft.potion.FlightSlownessMobEffect;
 import net.mcreator.invincible_craft.potion.DownslamMobEffect;
@@ -38,4 +39,5 @@ public class InvincibleCraftModMobEffects {
 	public static final RegistryObject<MobEffect> TIMED_DESTRUCTION = REGISTRY.register("timed_destruction", () -> new TimedDestructionMobEffect());
 	public static final RegistryObject<MobEffect> DOWNSLAM = REGISTRY.register("downslam", () -> new DownslamMobEffect());
 	public static final RegistryObject<MobEffect> UPSLAM = REGISTRY.register("upslam", () -> new UpslamMobEffect());
+	public static final RegistryObject<MobEffect> MOTION = REGISTRY.register("motion", () -> new MotionMobEffect());
 }

@@ -81,6 +81,7 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.KREGG_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.ANISSA_SPAWN_EGG.get());
+				tabData.accept(InvincibleCraftModItems.THRAGG_EXILED_SPAWN_EGG.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
@@ -101,6 +102,7 @@ public class InvincibleCraftModTabs {
 			tabData.accept(InvincibleCraftModItems.OCTOBOSS_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.KREGG_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.ANISSA_SPAWN_EGG.get());
+			tabData.accept(InvincibleCraftModItems.THRAGG_EXILED_SPAWN_EGG.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 

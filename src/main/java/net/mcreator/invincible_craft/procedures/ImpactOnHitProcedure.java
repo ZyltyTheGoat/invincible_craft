@@ -5,7 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.resources.ResourceLocation;
@@ -34,8 +33,13 @@ public class ImpactOnHitProcedure {
 		double dmg = 0;
 		dmg = amount;
 		knockback = dmg / 5;
-		if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:impact")))) {
-			entity.setDeltaMovement(new Vec3((sourceentity.getLookAngle().x * knockback), (sourceentity.getLookAngle().y * knockback), (sourceentity.getLookAngle().z * knockback)));
+		if (knockback > 2) {
+			knockback = 2;
+		}
+		if (damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:impact"))) || damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch")))) {
+			entity.getPersistentData().putDouble("motX", (sourceentity.getLookAngle().x * knockback));
+			entity.getPersistentData().putDouble("motY", (sourceentity.getLookAngle().y * knockback));
+			entity.getPersistentData().putDouble("motZ", (sourceentity.getLookAngle().z * knockback));
 		}
 	}
 }
