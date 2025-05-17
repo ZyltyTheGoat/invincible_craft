@@ -15,6 +15,7 @@ import net.mcreator.invincible_craft.entity.OctobossEntity;
 import net.mcreator.invincible_craft.entity.LucanEntity;
 import net.mcreator.invincible_craft.entity.KreggEntity;
 import net.mcreator.invincible_craft.entity.KillCannonBlastEntity;
+import net.mcreator.invincible_craft.entity.ConquestEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
 import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
 import net.mcreator.invincible_craft.entity.AtomEveAwakeningEntity;
@@ -132,6 +133,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof ThraggExiledEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof ConquestEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

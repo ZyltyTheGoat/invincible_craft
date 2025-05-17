@@ -30,7 +30,7 @@ public class HealingFactorProcedure {
 		if (entity == null)
 			return;
 		if (((entity.getCapability(InvincibleCraftModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new InvincibleCraftModVariables.PlayerVariables())).power).equals("Viltrumite")) {
-			if (world.dayTime() % 40 == 0) {
+			if (world.dayTime() % 20 == 0) {
 				if (entity.isAlive()) {
 					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 1 <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
 						if (entity instanceof LivingEntity _entity)

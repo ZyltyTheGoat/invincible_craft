@@ -167,11 +167,9 @@ public class AnissaOnEntityTickUpdateProcedure {
 						target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity),
 								(float) (entity instanceof LivingEntity _livingEntity115 && _livingEntity115.getAttributes().hasAttribute(Attributes.ATTACK_DAMAGE) ? _livingEntity115.getAttribute(Attributes.ATTACK_DAMAGE).getBaseValue() : 0));
 						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 15, 0, false, false));
+							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.STUN.get(), 5, 0, false, false));
 						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.TIMED_DESTRUCTION.get(), 5, 3, false, false));
-						if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.MOTION.get(), 10, 0, false, false));
 					} else if ((entity instanceof AnissaEntity _datEntI ? _datEntI.getEntityData().get(AnissaEntity.DATA_AttackDuration) : 0) >= 4) {
 						if (entity instanceof AnissaEntity _datEntSetS)
 							_datEntSetS.getEntityData().set(AnissaEntity.DATA_State, "IDLE");

@@ -27,6 +27,8 @@ import net.mcreator.invincible_craft.client.renderer.KillCannonRenderer;
 import net.mcreator.invincible_craft.client.renderer.KillCannonBlastRenderer;
 import net.mcreator.invincible_craft.client.renderer.ExchangeCloneRenderer;
 import net.mcreator.invincible_craft.client.renderer.DuplicationCloneRenderer;
+import net.mcreator.invincible_craft.client.renderer.ConquestRenderer;
+import net.mcreator.invincible_craft.client.renderer.CastIronRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanishmentPortalRenderer;
 import net.mcreator.invincible_craft.client.renderer.BanditRenderer;
 import net.mcreator.invincible_craft.client.renderer.AtomicbBlastRenderer;
@@ -62,6 +64,8 @@ public class InvincibleCraftModEntityRenderers {
 		event.registerEntityRenderer(InvincibleCraftModEntities.LUCAN.get(), LucanRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.KREGG.get(), KreggRenderer::new);
 		event.registerEntityRenderer(InvincibleCraftModEntities.ANISSA.get(), AnissaRenderer::new);
-		event.registerEntityRenderer(InvincibleCraftModEntities.THRAGG_EXILED.get(), ThraggExiledRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.THRAGG.get(), ThraggExiledRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.CONQUEST.get(), ConquestRenderer::new);
+		event.registerEntityRenderer(InvincibleCraftModEntities.CAST_IRON.get(), CastIronRenderer::new);
 	}
 }

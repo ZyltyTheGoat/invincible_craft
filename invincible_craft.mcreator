@@ -2053,7 +2053,7 @@
           "src/main/java/net/mcreator/invincible_craft/entity/ViltrumiteEntity.java"
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal"
     },
     {
       "name": "CanViltrumiteFlyingAttack",
@@ -2073,7 +2073,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteOnEntityTickUpdate",
@@ -2108,7 +2108,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal"
     },
     {
       "name": "ViltrumiteEntityIsHurt",
@@ -2127,7 +2127,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteOnEntityAttacked",
@@ -2178,7 +2178,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteOnInitialEntitySpawn",
@@ -2197,7 +2197,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal"
     },
     {
       "name": "OrbsSpawnerPortal",
@@ -2574,7 +2574,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "ArtRosenbaum",
@@ -2591,7 +2591,7 @@
           "src/main/resources/data/invincible_craft/forge/biome_modifier/art_rosenbaum_biome_modifier.json"
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum"
+      "path": "~/Mobs/Misc/Art Rosenbaum"
     },
     {
       "name": "ArtRosenbaumRightClickedOnEntity",
@@ -2626,7 +2626,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum"
+      "path": "~/Mobs/Misc/Art Rosenbaum"
     },
     {
       "name": "SuitFabric",
@@ -2672,7 +2672,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "ArtRosenbaumCraftOmniManSuit",
@@ -2691,7 +2691,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "AdvancementBuyFirstSuit",
@@ -2731,7 +2731,7 @@
           "src/main/java/net/mcreator/invincible_craft/entity/BanditEntity.java"
         ]
       },
-      "path": "~/Mobs/Bandit"
+      "path": "~/Mobs/Villians/Bandit"
     },
     {
       "name": "BanditOnInitialEntitySpawn",
@@ -2750,7 +2750,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit"
+      "path": "~/Mobs/Villians/Bandit"
     },
     {
       "name": "BanditDisplayBase1",
@@ -2770,7 +2770,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayBase2",
@@ -2790,7 +2790,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayBase3",
@@ -2810,7 +2810,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayHair1",
@@ -2830,7 +2830,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayHair2",
@@ -2850,7 +2850,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayHair3",
@@ -2870,7 +2870,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayHair4",
@@ -2890,7 +2890,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayHair5",
@@ -2910,7 +2910,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayHair6",
@@ -2930,7 +2930,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayTop1",
@@ -2950,7 +2950,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayTop2",
@@ -2970,7 +2970,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayTop3",
@@ -2990,7 +2990,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayTop4",
@@ -3010,7 +3010,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayTop5",
@@ -3030,7 +3030,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayTop6",
@@ -3050,7 +3050,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayBottom1",
@@ -3070,7 +3070,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayBottom2",
@@ -3090,7 +3090,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayBottom3",
@@ -3110,7 +3110,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayBottom4",
@@ -3130,7 +3130,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayMask1",
@@ -3150,7 +3150,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayMask2",
@@ -3170,7 +3170,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayMask3",
@@ -3190,7 +3190,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayMask4",
@@ -3210,7 +3210,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "BanditDisplayMask5",
@@ -3230,7 +3230,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Bandit/Customization"
+      "path": "~/Mobs/Villians/Bandit/Customization"
     },
     {
       "name": "ArtRosenbaumCraftInvincibleSuitSinister",
@@ -3249,7 +3249,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "ArtRosenbaumCraftInvincibleSuitMohawk",
@@ -3268,7 +3268,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "AdvancementKillViltrumiteAsViltrumite",
@@ -3469,7 +3469,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteComboPunch",
@@ -3504,7 +3504,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "EarthIconSelected",
@@ -5651,7 +5651,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "DupliKateSuit",
@@ -5683,7 +5683,7 @@
           "src/main/resources/assets/invincible_craft/models/item/the_giant_spawn_egg.json"
         ]
       },
-      "path": "~/Mobs/The Giant"
+      "path": "~/Mobs/Villians/The Giant"
     },
     {
       "name": "BattleBeastMace",
@@ -6639,7 +6639,7 @@
           }
         ]
       },
-      "path": "~/Mobs/The Giant"
+      "path": "~/Mobs/Villians/The Giant"
     },
     {
       "name": "WoodenBat",
@@ -6884,7 +6884,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "ArtRosenbaumCraftInvincibleSuitNoGogglesMark",
@@ -6903,7 +6903,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "ArtRosenbaumCraftInvincibleSuitUnmaskedMark",
@@ -6922,7 +6922,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "NextPage",
@@ -6957,7 +6957,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Buttons"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Buttons"
     },
     {
       "name": "PreviousPage",
@@ -6992,7 +6992,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Buttons"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Buttons"
     },
     {
       "name": "DisplayNextPage",
@@ -7012,7 +7012,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Buttons"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Buttons"
     },
     {
       "name": "DisplayPreviousPage",
@@ -7032,7 +7032,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Buttons"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Buttons"
     },
     {
       "name": "ArtRosenbaumCraftInvincibleSuitSeason3",
@@ -7051,7 +7051,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "ArtRosenbaumGUIPage1",
@@ -7066,7 +7066,7 @@
           "src/main/java/net/mcreator/invincible_craft/world/inventory/ArtRosenbaumGUIPage1Menu.java"
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI"
     },
     {
       "name": "ArtRosenbaumGUIPage2",
@@ -7081,7 +7081,7 @@
           "src/main/java/net/mcreator/invincible_craft/network/ArtRosenbaumGUIPage2ButtonMessage.java"
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI"
     },
     {
       "name": "SpikeBallEntity",
@@ -8266,7 +8266,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase2",
@@ -8286,7 +8286,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase3",
@@ -8306,7 +8306,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase4",
@@ -8326,7 +8326,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase5",
@@ -8346,7 +8346,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase6",
@@ -8366,7 +8366,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair1",
@@ -8386,7 +8386,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair2",
@@ -8406,7 +8406,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair3",
@@ -8426,7 +8426,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair4",
@@ -8446,7 +8446,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair5",
@@ -8466,7 +8466,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair6",
@@ -8486,7 +8486,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair7",
@@ -8506,7 +8506,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair8",
@@ -8526,7 +8526,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair9",
@@ -8546,7 +8546,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair10",
@@ -8566,7 +8566,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair11",
@@ -8586,7 +8586,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnGender",
@@ -8606,7 +8606,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair12",
@@ -8626,7 +8626,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair13",
@@ -8646,7 +8646,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair14",
@@ -8666,7 +8666,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair15",
@@ -8686,7 +8686,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteHair16",
@@ -8706,7 +8706,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnGenderMale",
@@ -8726,7 +8726,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase7",
@@ -8746,7 +8746,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase8",
@@ -8766,7 +8766,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase9",
@@ -8786,7 +8786,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase10",
@@ -8806,7 +8806,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase11",
@@ -8826,7 +8826,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReturnViltrumiteBase12",
@@ -8846,7 +8846,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/Customization"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/Customization"
     },
     {
       "name": "ReducedDamage",
@@ -8878,7 +8878,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Art Rosenbaum/GUI/Crafting"
+      "path": "~/Mobs/Misc/Art Rosenbaum/GUI/Crafting"
     },
     {
       "name": "Gauntlet",
@@ -8908,7 +8908,7 @@
           "src/main/java/net/mcreator/invincible_craft/client/renderer/KillCannonRenderer.java"
         ]
       },
-      "path": "~/Mobs/Kill Cannon"
+      "path": "~/Mobs/Villians/Kill Cannon"
     },
     {
       "name": "KillCannonBlast",
@@ -8924,7 +8924,7 @@
           "src/main/java/net/mcreator/invincible_craft/client/renderer/KillCannonBlastRenderer.java"
         ]
       },
-      "path": "~/Mobs/Kill Cannon"
+      "path": "~/Mobs/Villians/Kill Cannon"
     },
     {
       "name": "KillCannonBlastOnEntityTickUpdate",
@@ -8959,7 +8959,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kill Cannon"
+      "path": "~/Mobs/Villians/Kill Cannon"
     },
     {
       "name": "KillCannonCloud",
@@ -9008,7 +9008,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kill Cannon"
+      "path": "~/Mobs/Villians/Kill Cannon"
     },
     {
       "name": "KillCannonShockwave",
@@ -9045,7 +9045,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kill Cannon"
+      "path": "~/Mobs/Villians/Kill Cannon"
     },
     {
       "name": "TimedDestructionOnEffectActiveTick",
@@ -9099,7 +9099,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "ViltrumiteUpslam",
@@ -9134,7 +9134,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Viltrumite Normal/AI"
+      "path": "~/Mobs/Viltrumites/Viltrumite Normal/AI"
     },
     {
       "name": "Deny",
@@ -9219,7 +9219,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Octoboss"
+      "path": "~/Mobs/Villians/Octoboss"
     },
     {
       "name": "OctoBossKnockback",
@@ -9246,7 +9246,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Octoboss"
+      "path": "~/Mobs/Villians/Octoboss"
     },
     {
       "name": "FireballGlobal",
@@ -9295,7 +9295,7 @@
           "src/main/java/net/mcreator/invincible_craft/client/renderer/OctobossRenderer.java"
         ]
       },
-      "path": "~/Mobs/Octoboss"
+      "path": "~/Mobs/Villians/Octoboss"
     },
     {
       "name": "DownslamOnEffectActiveTick",
@@ -9374,7 +9374,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Lucan"
+      "path": "~/Mobs/Viltrumites/Lucan"
     },
     {
       "name": "LucanOnEntityTickUpdate",
@@ -9409,7 +9409,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Lucan"
+      "path": "~/Mobs/Viltrumites/Lucan"
     },
     {
       "name": "Lucan",
@@ -9425,7 +9425,7 @@
           "src/main/resources/assets/invincible_craft/models/item/lucan_spawn_egg.json"
         ]
       },
-      "path": "~/Mobs/Lucan"
+      "path": "~/Mobs/Viltrumites/Lucan"
     },
     {
       "name": "LucanUpslam",
@@ -9460,7 +9460,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Lucan"
+      "path": "~/Mobs/Viltrumites/Lucan"
     },
     {
       "name": "LucanDownslam",
@@ -9495,7 +9495,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Lucan"
+      "path": "~/Mobs/Viltrumites/Lucan"
     },
     {
       "name": "Upslam",
@@ -9575,7 +9575,7 @@
           "src/main/java/net/mcreator/invincible_craft/client/renderer/KreggRenderer.java"
         ]
       },
-      "path": "~/Mobs/Kregg"
+      "path": "~/Mobs/Viltrumites/Kregg"
     },
     {
       "name": "KreggOnEntityTickUpdate",
@@ -9610,7 +9610,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kregg"
+      "path": "~/Mobs/Viltrumites/Kregg"
     },
     {
       "name": "CanKreggFlyingAttack",
@@ -9630,7 +9630,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kregg"
+      "path": "~/Mobs/Viltrumites/Kregg"
     },
     {
       "name": "KreggUpslam",
@@ -9665,7 +9665,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kregg"
+      "path": "~/Mobs/Viltrumites/Kregg"
     },
     {
       "name": "KreggDownslam",
@@ -9700,7 +9700,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Kregg"
+      "path": "~/Mobs/Viltrumites/Kregg"
     },
     {
       "name": "LucanSonicClap",
@@ -9723,7 +9723,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Lucan"
+      "path": "~/Mobs/Viltrumites/Lucan"
     },
     {
       "name": "Anissa",
@@ -9739,7 +9739,7 @@
           "src/main/java/net/mcreator/invincible_craft/entity/model/AnissaModel.java"
         ]
       },
-      "path": "~/Mobs/Anissa"
+      "path": "~/Mobs/Viltrumites/Anissa"
     },
     {
       "name": "CanAnissaFlyingAttack",
@@ -9759,7 +9759,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Anissa"
+      "path": "~/Mobs/Viltrumites/Anissa"
     },
     {
       "name": "AnissaDownslam",
@@ -9794,7 +9794,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Anissa"
+      "path": "~/Mobs/Viltrumites/Anissa"
     },
     {
       "name": "AnisamUpslam",
@@ -9829,7 +9829,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Anissa"
+      "path": "~/Mobs/Viltrumites/Anissa"
     },
     {
       "name": "AnissaOnEntityTickUpdate",
@@ -9864,7 +9864,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Anissa"
+      "path": "~/Mobs/Viltrumites/Anissa"
     },
     {
       "name": "BarrageClash",
@@ -9959,17 +9959,17 @@
       "name": "ThraggExiled",
       "type": "animatedentity",
       "compiles": true,
-      "locked_code": true,
-      "registry_name": "thragg_exiled",
+      "locked_code": false,
+      "registry_name": "thragg",
       "metadata": {
         "files": [
           "src/main/java/net/mcreator/invincible_craft/client/renderer/ThraggExiledRenderer.java",
-          "src/main/resources/assets/invincible_craft/models/item/thragg_exiled_spawn_egg.json",
           "src/main/java/net/mcreator/invincible_craft/entity/ThraggExiledEntity.java",
-          "src/main/java/net/mcreator/invincible_craft/entity/model/ThraggExiledModel.java"
+          "src/main/java/net/mcreator/invincible_craft/entity/model/ThraggExiledModel.java",
+          "src/main/resources/assets/invincible_craft/models/item/thragg_spawn_egg.json"
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
     },
     {
       "name": "ThraggOnEntityTickUpdate",
@@ -10004,7 +10004,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
     },
     {
       "name": "ThraggSonicClap",
@@ -10031,7 +10031,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
     },
     {
       "name": "ThraggUpslam",
@@ -10070,7 +10070,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
     },
     {
       "name": "ThraggMelee",
@@ -10097,7 +10097,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
     },
     {
       "name": "ThraggChop",
@@ -10124,7 +10124,7 @@
           }
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
     },
     {
       "name": "ThraggImpale",
@@ -10151,7 +10151,354 @@
           }
         ]
       },
-      "path": "~/Mobs/Thragg Exiled"
+      "path": "~/Mobs/Viltrumites/Thragg Exiled"
+    },
+    {
+      "name": "Conquest",
+      "type": "animatedentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/entity/ConquestEntity.java",
+          "src/main/java/net/mcreator/invincible_craft/entity/model/ConquestModel.java",
+          "src/main/resources/assets/invincible_craft/models/item/conquest_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/ConquestRenderer.java"
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "ConquestChop",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest_chop",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ConquestChopProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "target",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "ConquestMelee",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest_melee",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ConquestMeleeProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "target",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "ConquestOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ConquestOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "ConquestSonicClap",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest_sonic_clap",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ConquestSonicClapProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "target",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "ConquestUpslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest_upslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ConquestUpslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "target",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "ConquestDownslam",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "conquest_downslam",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/ConquestDownslamProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "target",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Viltrumites/Conquest"
+    },
+    {
+      "name": "InvincibleSuitWhatsapp",
+      "type": "armor",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "invincible_suit_whatsapp",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitWhatsappItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_whatsapp_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_whatsapp_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_whatsapp_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_whatsapp_helmet.json"
+        ]
+      },
+      "path": "~/Items/Armor"
+    },
+    {
+      "name": "InvincibleSuitDiscord",
+      "type": "armor",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "invincible_suit_discord",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitDiscordItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_discord_helmet.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_discord_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_discord_leggings.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_discord_boots.json"
+        ]
+      },
+      "path": "~/Items/Armor"
+    },
+    {
+      "name": "InvincibleSuitSkype",
+      "type": "armor",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "invincible_suit_skype",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/item/InvincibleSuitSkypeItem.java",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_skype_chestplate.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_skype_boots.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_skype_helmet.json",
+          "src/main/resources/assets/invincible_craft/models/item/invincible_suit_skype_leggings.json"
+        ]
+      },
+      "path": "~/Items/Armor"
+    },
+    {
+      "name": "CastIron",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cast_iron",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/client/renderer/CastIronRenderer.java",
+          "src/main/resources/assets/invincible_craft/models/item/cast_iron_spawn_egg.json",
+          "src/main/java/net/mcreator/invincible_craft/entity/CastIronEntity.java",
+          "src/main/resources/data/invincible_craft/forge/biome_modifier/cast_iron_biome_modifier.json"
+        ]
+      },
+      "path": "~/Mobs/Heroes/CastIron"
+    },
+    {
+      "name": "AttackVillians",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "attack_villians",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/AttackVilliansProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Heroes"
+    },
+    {
+      "name": "CastIronOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "cast_iron_on_entity_tick_update",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/invincible_craft/procedures/CastIronOnEntityTickUpdateProcedure.java"
+        ],
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      },
+      "path": "~/Mobs/Heroes/CastIron"
     }
   ],
   "variable_elements": [
@@ -10818,12 +11165,29 @@
     "BLOCKS:minecraft:mineable/pickaxe": [
       "~CUSTOM:MoonStone"
     ],
+    "ENTITIES:invincible_craft:villians": [
+      "CUSTOM:Bandit",
+      "CUSTOM:KillCannon",
+      "CUSTOM:Octoboss",
+      "CUSTOM:TheGiant"
+    ],
+    "ENTITIES:invincible_craft:heroes": [
+      "CUSTOM:CastIron"
+    ],
     "ITEMS:minecraft:swords": [
       "~CUSTOM:MetalBat",
       "~CUSTOM:WoodenBat"
     ],
     "BLOCKS:minecraft:overworld_carver_replaceables": [
       "~CUSTOM:MoonStone"
+    ],
+    "ENTITIES:invincible_craft:viltrumite": [
+      "CUSTOM:Anissa",
+      "CUSTOM:Conquest",
+      "CUSTOM:Kregg",
+      "CUSTOM:Lucan",
+      "CUSTOM:ThraggExiled",
+      "CUSTOM:Viltrumite"
     ]
   },
   "tab_element_order": {
@@ -10839,7 +11203,10 @@
       "ViltrumiteSuit",
       "DupliKateSuit",
       "AtomEveArmorConstruct",
-      "AtomEveSuit"
+      "AtomEveSuit",
+      "InvincibleSuitWhatsapp",
+      "InvincibleSuitDiscord",
+      "InvincibleSuitSkype"
     ],
     "CUSTOM:InvincibleCraftCreativeTab": [
       "PowerPicker",
@@ -10855,7 +11222,9 @@
       "KillCannon",
       "Kregg",
       "Anissa",
-      "ThraggExiled"
+      "Conquest",
+      "ThraggExiled",
+      "CastIron"
     ]
   },
   "language_map": {
@@ -10870,6 +11239,7 @@
       "item.invincible_craft.kill_cannon_blast_spawn_egg": "Kill Cannon Blast Spawn Egg",
       "gui.invincible_craft.stat_panel_gui.label_sslplayer_info": "§lPLAYER INFO",
       "block.invincible_craft.moon_stone": "Moon Stone",
+      "item.invincible_craft.invincible_suit_whatsapp_leggings": "Invincible Suit (Whatsapp) Leggings",
       "effect.invincible_craft.stun": "Stun",
       "entity.invincible_craft.anissa": "Anissa",
       "gui.invincible_craft.viltrumite_gui.label_age_100": "Age: 100",
@@ -10903,11 +11273,13 @@
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "advancements.advancement_invincible_craft.title": "Let’s see how this goes…",
       "entity.invincible_craft.kill_cannon_blast": "Kill Cannon Blast",
+      "item.invincible_craft.invincible_suit_discord_boots": "Invincible Suit (Discord) Boots",
       "gui.invincible_craft.quick_travel_gui.travel_z": "Coordinate Z",
       "death.attack.chop.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_no_goggles": "Make Invincible Suit (No Goggles Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "item.invincible_craft.atom_eve_awakening_armor_helmet": "Atom Eve Awakening Armor Helmet",
       "item.invincible_craft.atom_eve_hammer_construct": "Hammer Construct",
+      "item.invincible_craft.invincible_suit_skype_boots": "Invincible Suit (Skype) Boots",
       "advancements.advancement_buy_first_suit.descr": "Art Rosenbaum\u0027s finest work—wear it well.",
       "item.invincible_craft.lucan_spawn_egg": "Lucan Spawn Egg",
       "gamerule.invincibleCraftXPMultiplier.description": "Multiplies the XP gained by killing mobs. (Deafult - 10)",
@@ -10991,7 +11363,6 @@
       "item.invincible_craft.omni_man_suit_chestplate": "Omni Man Suit Chestplate",
       "gui.invincible_craft.construct_gui.tooltip_construct_hammer": "Construct Hammer",
       "gui.invincible_craft.construct_gui.tooltip_construct_shield": "Construct Shield",
-      "entity.invincible_craft.thragg_exiled": "Thragg (Exiled)",
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_original": "Make Invincible Suit (Original) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "item.invincible_craft.invincible_suit_omni_mark_boots": "Invincible Suit (Omni-Mark) Boots",
       "item.invincible_craft.invincible_suit_season_3_chestplate": "Invincible Suit (Season 3) Chestplate",
@@ -11003,9 +11374,12 @@
       "effect.invincible_craft.bleed": "Bleeding",
       "subtitles.followup": "dash",
       "item.invincible_craft.atom_eve_awakening_armor_leggings": "Atom Eve Awakening Armor Leggings",
+      "item.invincible_craft.conquest_spawn_egg": "Conquest Spawn Egg",
+      "entity.invincible_craft.thragg": "Thragg",
+      "item.invincible_craft.cast_iron_spawn_egg": "Cast Iron Spawn Egg",
       "gui.invincible_craft.construct_gui.tooltip_construct_gauntlet": "Construct Gauntlet",
       "entity.invincible_craft.atom_eve_awakening": "Atom Eve Awakening",
-      "item.invincible_craft.thragg_exiled_spawn_egg": "Thragg (Exiled) Spawn Egg",
+      "item.invincible_craft.invincible_suit_discord_leggings": "Invincible Suit (Discord) Leggings",
       "item.invincible_craft.invincible_suit_no_goggles_mark_boots": "Invincible Suit (No Goggles Mark) Boots",
       "advancements.advancement_atom_eve.descr": "Get Atome Eve\u0027s power.",
       "entity.invincible_craft.viltrumite": "Viltrumite",
@@ -11017,6 +11391,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_season_3": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Blue Dye x4",
       "item.invincible_craft.banishment_portal_spawn_egg": "Banishment Portal Spawn Egg",
       "item.invincible_craft.invincible_suit_sinister_mark_boots": "Invincible Suit (Sinister Mark) Boots",
+      "item.invincible_craft.invincible_suit_skype_chestplate": "Invincible Suit (Skype) Chestplate",
       "item.invincible_craft.wooden_bat": "Wooden Bat",
       "gui.invincible_craft.stat_panel_gui.label_adjust_flight_speed": "Adjust Flight Speed",
       "death.attack.battle_beast_uppercut.item": "%1$s was killed by %2$s using %3$s",
@@ -11029,12 +11404,14 @@
       "entity.invincible_craft.atomicb_blast": "Atomicb Blast",
       "advancements.advancement_suffocation_moon.title": "Moonwalking... Forever",
       "item.invincible_craft.atom_eve_suit_boots": "Atom Eve Boots",
+      "entity.invincible_craft.cast_iron": "Cast Iron",
       "advancements.advancement_invincible_craft.descr": "Welcome to Invincible Craft!",
       "death.attack.viltrumite_punch.player": "%1$s died whilst trying to escape %2$s",
       "item.invincible_craft.octoboss_spawn_egg": "Octoboss Spawn Egg",
       "entity.invincible_craft.duplication_clone": "Duplication Clone",
       "item.invincible_craft.viltrumite_suit_boots": "Viltrumite Suit Boots",
       "item.invincible_craft.invincible_suit_sinister_mark_leggings": "Invincible Suit (Sinister Mark) Leggings",
+      "item.invincible_craft.invincible_suit_skype_leggings": "Invincible Suit (Skype) Leggings",
       "item.invincible_craft.metal_bat": "Metal Bat",
       "death.attack.bleed_damage.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.stat_panel_gui.label_strength": "§lStrength",
@@ -11052,8 +11429,10 @@
       "item.invincible_craft.spike_ball_entity_spawn_egg": "Spike Ball Entity Spawn Egg",
       "item.invincible_craft.invincible_suit_leggings": "Invincible Suit (Original) Leggings",
       "death.attack.blood_hunt": "%1$s died",
+      "item.invincible_craft.invincible_suit_whatsapp_chestplate": "Invincible Suit (Whatsappk) Chestplate",
       "gui.invincible_craft.art_rosenbaum_gui_page_1.tooltip_make_invincible_suit_unmasked_m": "Make Invincible Suit (Unmasked Mark) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
       "entity.invincible_craft.orbs_spawner_portal": "Orb Spawner Portal",
+      "item.invincible_craft.invincible_suit_skype_helmet": "Invincible Suit (Skype) Helmet",
       "death.attack.reduced_damage.player": "%1$s died whilst trying to escape %2$s",
       "gui.invincible_craft.stat_panel_gui.label_adjust_movement_speed": "Adjust Move. Speed",
       "item.invincible_craft.suit_fabric": "Suit Fabric",
@@ -11062,7 +11441,9 @@
       "item.invincible_craft.invincible_suit_un_masked_mark_leggings": "Invincible Suit (Unmasked Mark) Leggings",
       "death.attack.mob_attack.item": "%1$s was killed by %2$s using %3$s",
       "gui.invincible_craft.art_rosenbaum_gui_2.tooltip_make_invincible_suit_og": "Make Invincible Suit (OG) - Suit Fabric x4, Yellow Dye x4, Light Blue Dye x4",
+      "item.invincible_craft.invincible_suit_whatsapp_boots": "Invincible Suit (Whatsapp) Boots",
       "gui.invincible_craft.quick_travel_gui.tooltip_teleports_you_to_the_selected_lo": "Teleports you to the selected location in the Overworld",
+      "item.invincible_craft.invincible_suit_whatsapp_helmet": "Invincible Suit (Whatsapp) Helmet",
       "item.invincible_craft.atom_eve_shield_construct": "Shield Construct",
       "subtitles.battle_beast_roar": "",
       "death.attack.battle_beast_downslam.player": "%1$s died whilst trying to escape %2$s",
@@ -11084,6 +11465,7 @@
       "death.attack.mob_attack": "%1$s died",
       "item.invincible_craft.power_picker": "Power Picker",
       "subtitles.viltrumite_pierce": "",
+      "entity.invincible_craft.conquest": "Conquest",
       "key.invincible_craft.fly": "Flight - Start",
       "effect.invincible_craft.upslam": "Upslam",
       "item.invincible_craft.invincible_suit_no_goggles_mark_chestplate": "Invincible Suit (No Goggles Mark) Chestplate",
@@ -11092,6 +11474,7 @@
       "gui.invincible_craft.art_rosenbaum_gui_page_2.tooltip_make_invincible_suit_omnimark": "Make Invincible Suit (Omni-Mark) - Suit Fabric x4, White Dye x4, Red Dye x4",
       "gui.invincible_craft.leveling_gui.label_viltrumite": "Viltrumite",
       "gui.invincible_craft.power_picker_gui.button_viltrumite": "Viltrumite",
+      "item.invincible_craft.invincible_suit_discord_chestplate": "Invincible Suit (Discord) Chestplate",
       "death.attack.battle_beast_downslam.item": "%1$s was killed by %2$s using %3$s",
       "entity.invincible_craft.exchange_clone": "Exchange Clone",
       "item.invincible_craft.battle_beast_mace": "§6Battle Beast\u0027s Mace",
@@ -11100,6 +11483,7 @@
       "biome.invincible_craft.infinite_desert_biome": "Infinite Desert Biome",
       "gamerule.invincibleCraftEnableImpactFrames.description": "Setting this to false disables Impact Frames.",
       "effect.invincible_craft.deny": "Deny",
+      "item.invincible_craft.thragg_spawn_egg": "Thragg Spawn Egg",
       "death.attack.sonic_clap_damage": "%1$s died",
       "advancements.advancement_dimensional_travel.title": "Stepping Through",
       "entity.invincible_craft.kregg": "General Kregg",
@@ -11124,6 +11508,7 @@
       "gui.invincible_craft.test.button_flying_speed": "Flying Speed",
       "gui.invincible_craft.power_picker_gui.button_atom_eve": "Atom Eve",
       "death.attack.blood_hunt.player": "%1$s died whilst trying to escape %2$s",
+      "item.invincible_craft.invincible_suit_discord_helmet": "Invincible Suit (Discord) Helmet",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_season_32": "Make Invincible Suit (Season 3) - Suit Fabric x4, Gray Dye x4, Cyan Dye x4",
       "gui.invincible_craft.art_rosenbaum_gui.tooltip_make_invincible_suit_season_31": "Make Invincible Suit (Season 3) - Suit Fabric x4, Black Dye x4, Yellow Dye x4",
       "item.invincible_craft.viltrumite_suit_chestplate": "Viltrumite Suit Chestplate",
@@ -11534,29 +11919,72 @@
         "name": "Mobs",
         "children": [
           {
-            "name": "The Giant",
-            "children": []
-          },
-          {
-            "name": "Kill Cannon",
-            "children": []
-          },
-          {
-            "name": "Octoboss",
-            "children": []
-          },
-          {
-            "name": "Art Rosenbaum",
+            "name": "Viltrumites",
             "children": [
               {
-                "name": "GUI",
+                "name": "Anissa",
+                "children": []
+              },
+              {
+                "name": "Viltrumite Normal",
                 "children": [
                   {
-                    "name": "Crafting",
+                    "name": "AI",
                     "children": []
                   },
                   {
-                    "name": "Buttons",
+                    "name": "Customization",
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Thragg Exiled",
+                "children": []
+              },
+              {
+                "name": "Conquest",
+                "children": []
+              },
+              {
+                "name": "Kregg",
+                "children": []
+              },
+              {
+                "name": "Lucan",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Heroes",
+            "children": [
+              {
+                "name": "CastIron",
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Villians",
+            "children": [
+              {
+                "name": "The Giant",
+                "children": []
+              },
+              {
+                "name": "Octoboss",
+                "children": []
+              },
+              {
+                "name": "Kill Cannon",
+                "children": []
+              },
+              {
+                "name": "Bandit",
+                "children": [
+                  {
+                    "name": "Customization",
                     "children": []
                   }
                 ]
@@ -11564,42 +11992,27 @@
             ]
           },
           {
-            "name": "Viltrumite Normal",
+            "name": "Misc",
             "children": [
               {
-                "name": "AI",
-                "children": []
-              },
-              {
-                "name": "Customization",
-                "children": []
+                "name": "Art Rosenbaum",
+                "children": [
+                  {
+                    "name": "GUI",
+                    "children": [
+                      {
+                        "name": "Crafting",
+                        "children": []
+                      },
+                      {
+                        "name": "Buttons",
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
               }
             ]
-          },
-          {
-            "name": "Bandit",
-            "children": [
-              {
-                "name": "Customization",
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "Lucan",
-            "children": []
-          },
-          {
-            "name": "Kregg",
-            "children": []
-          },
-          {
-            "name": "Anissa",
-            "children": []
-          },
-          {
-            "name": "Thragg Exiled",
-            "children": []
           }
         ]
       },

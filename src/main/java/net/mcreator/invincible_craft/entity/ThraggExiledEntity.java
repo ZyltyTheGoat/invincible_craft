@@ -52,7 +52,6 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.invincible_craft.procedures.ThraggOnEntityTickUpdateProcedure;
 import net.mcreator.invincible_craft.init.InvincibleCraftModEntities;
-import net.mcreator.invincible_craft.SlowRotMoveControl;
 
 public class ThraggExiledEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ThraggExiledEntity.class, EntityDataSerializers.BOOLEAN);
@@ -79,7 +78,7 @@ public class ThraggExiledEntity extends Monster implements GeoEntity {
 	private final ServerBossEvent bossInfo = new ServerBossEvent(this.getDisplayName(), ServerBossEvent.BossBarColor.WHITE, ServerBossEvent.BossBarOverlay.PROGRESS);
 
 	public ThraggExiledEntity(PlayMessages.SpawnEntity packet, Level world) {
-		this(InvincibleCraftModEntities.THRAGG_EXILED.get(), world);
+		this(InvincibleCraftModEntities.THRAGG.get(), world);
 	}
 
 	public ThraggExiledEntity(EntityType<ThraggExiledEntity> type, Level world) {
@@ -87,11 +86,10 @@ public class ThraggExiledEntity extends Monster implements GeoEntity {
 		xpReward = 1000;
 		setNoAi(false);
 		setMaxUpStep(1.2f);
-		setCustomName(Component.literal("Thragg (Exiled)"));
+		setCustomName(Component.literal("Thragg"));
 		setCustomNameVisible(true);
 		setPersistenceRequired();
 		this.moveControl = new FlyingMoveControl(this, 10, true);
-		this.moveControl = new SlowRotMoveControl(this);
 	}
 
 	@Override
@@ -293,7 +291,7 @@ public class ThraggExiledEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 1.5);
 		builder = builder.add(Attributes.MAX_HEALTH, 500);
 		builder = builder.add(Attributes.ARMOR, 10);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 30);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 25);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 98);
 		builder = builder.add(Attributes.FLYING_SPEED, 1.5);
 		return builder;

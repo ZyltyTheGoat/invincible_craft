@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "invincible_craft:bandit",
+    "invincible_craft:kill_cannon",
+    "invincible_craft:octoboss",
+    "invincible_craft:the_giant"
+  ]
+}

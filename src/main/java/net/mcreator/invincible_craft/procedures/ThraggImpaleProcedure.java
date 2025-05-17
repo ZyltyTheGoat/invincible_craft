@@ -53,7 +53,7 @@ public class ThraggImpaleProcedure {
 				_level.sendParticles((SimpleParticleType) (InvincibleCraftModParticleTypes.BLOOD_FALL.get()), (target.getX()), (target.getY() + target.getBbHeight() / 2), (target.getZ()), 100, 0.25, 0.25, 0.25, 0.25);
 			if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(InvincibleCraftModMobEffects.BLEED.get(), 200, 1));
-			target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 80);
+			target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 70);
 		} else if ((entity instanceof ThraggExiledEntity _datEntI ? _datEntI.getEntityData().get(ThraggExiledEntity.DATA_AttackDuration) : 0) > 4
 				&& (entity instanceof ThraggExiledEntity _datEntI ? _datEntI.getEntityData().get(ThraggExiledEntity.DATA_AttackDuration) : 0) < 44) {
 			{
@@ -71,7 +71,7 @@ public class ThraggImpaleProcedure {
 			if (entity instanceof ThraggExiledEntity _datEntSetS)
 				_datEntSetS.getEntityData().set(ThraggExiledEntity.DATA_State, "IDLE");
 			if (entity instanceof ThraggExiledEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_ImpaleCooldown, 300);
+				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_ImpaleCooldown, 200);
 		}
 	}
 }

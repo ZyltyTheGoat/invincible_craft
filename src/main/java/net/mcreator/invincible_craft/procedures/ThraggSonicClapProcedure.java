@@ -176,7 +176,7 @@ public class ThraggSonicClapProcedure {
 			if (entity instanceof ThraggExiledEntity _datEntSetS)
 				_datEntSetS.getEntityData().set(ThraggExiledEntity.DATA_State, "IDLE");
 			if (entity instanceof ThraggExiledEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_SonicClapCooldown, 250);
+				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_SonicClapCooldown, 80);
 		}
 	}
 }

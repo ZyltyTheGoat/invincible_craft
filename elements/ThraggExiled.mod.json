@@ -2,8 +2,8 @@
   "_fv": 69,
   "_type": "animatedentity",
   "definition": {
-    "mobName": "Thragg (Exiled)",
-    "mobLabel": "Thragg (Exiled)",
+    "mobName": "Thragg",
+    "mobLabel": "Thragg",
     "mobModelTexture": "exiled_thragg.png",
     "mobModelGlowTexture": "",
     "visualScale": {
@@ -146,7 +146,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 30,
+    "attackStrength": 25,
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 1.5,

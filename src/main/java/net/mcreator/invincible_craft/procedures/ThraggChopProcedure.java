@@ -154,7 +154,7 @@ public class ThraggChopProcedure {
 						for (Entity entityiterator : _entfound) {
 							if (!(entity == entityiterator) && entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:chop"))), entity),
-										55);
+										50);
 							}
 						}
 					}
@@ -170,7 +170,7 @@ public class ThraggChopProcedure {
 			if (entity instanceof ThraggExiledEntity _datEntSetS)
 				_datEntSetS.getEntityData().set(ThraggExiledEntity.DATA_State, "IDLE");
 			if (entity instanceof ThraggExiledEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_ChopCooldown, 300);
+				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_ChopCooldown, 150);
 		}
 	}
 }

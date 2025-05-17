@@ -62,7 +62,7 @@ public class ViltrumiteAbilityOverlayOverlay {
 			event.getGuiGraphics().blit(new ResourceLocation("invincible_craft:textures/screens/ability_viltrumite_barrage.png"), 70, 4, 0, 0, 32, 32, 32, 32);
 
 			if (DisplayHeadCrushProcedure.execute(entity)) {
-				event.getGuiGraphics().blit(new ResourceLocation("invincible_craft:textures/screens/ability_viltrumte_head_crush.png"), 70, 4, 0, 0, 32, 32, 32, 32);
+				event.getGuiGraphics().blit(new ResourceLocation("invincible_craft:textures/screens/ability_viltrumite_head_crush.png"), 70, 4, 0, 0, 32, 32, 32, 32);
 			}
 			event.getGuiGraphics().blit(new ResourceLocation("invincible_craft:textures/screens/ability_viltrumite_grab.png"), 103, 4, 0, 0, 32, 32, 32, 32);
 

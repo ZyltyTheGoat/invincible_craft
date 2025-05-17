@@ -65,6 +65,18 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SUIT_CHESTPLATE.get());
 				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SUIT_LEGGINGS.get());
 				tabData.accept(InvincibleCraftModItems.ATOM_EVE_SUIT_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_WHATSAPP_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_WHATSAPP_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_WHATSAPP_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_WHATSAPP_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_DISCORD_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_DISCORD_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_DISCORD_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_DISCORD_BOOTS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SKYPE_HELMET.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SKYPE_CHESTPLATE.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SKYPE_LEGGINGS.get());
+				tabData.accept(InvincibleCraftModItems.INVINCIBLE_SUIT_SKYPE_BOOTS.get());
 			}).withSearchBar().build());
 	public static final RegistryObject<CreativeModeTab> INVINCIBLE_CRAFT_CREATIVE_TAB = REGISTRY.register("invincible_craft_creative_tab",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.invincible_craft.invincible_craft_creative_tab")).icon(() -> new ItemStack(InvincibleCraftModItems.POWER_PICKER.get())).displayItems((parameters, tabData) -> {
@@ -81,7 +93,9 @@ public class InvincibleCraftModTabs {
 				tabData.accept(InvincibleCraftModItems.KILL_CANNON_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.KREGG_SPAWN_EGG.get());
 				tabData.accept(InvincibleCraftModItems.ANISSA_SPAWN_EGG.get());
-				tabData.accept(InvincibleCraftModItems.THRAGG_EXILED_SPAWN_EGG.get());
+				tabData.accept(InvincibleCraftModItems.CONQUEST_SPAWN_EGG.get());
+				tabData.accept(InvincibleCraftModItems.THRAGG_SPAWN_EGG.get());
+				tabData.accept(InvincibleCraftModItems.CAST_IRON_SPAWN_EGG.get());
 			}).withSearchBar().build());
 
 	@SubscribeEvent
@@ -102,7 +116,9 @@ public class InvincibleCraftModTabs {
 			tabData.accept(InvincibleCraftModItems.OCTOBOSS_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.KREGG_SPAWN_EGG.get());
 			tabData.accept(InvincibleCraftModItems.ANISSA_SPAWN_EGG.get());
-			tabData.accept(InvincibleCraftModItems.THRAGG_EXILED_SPAWN_EGG.get());
+			tabData.accept(InvincibleCraftModItems.THRAGG_SPAWN_EGG.get());
+			tabData.accept(InvincibleCraftModItems.CONQUEST_SPAWN_EGG.get());
+			tabData.accept(InvincibleCraftModItems.CAST_IRON_SPAWN_EGG.get());
 
 		} else if (tabData.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
 

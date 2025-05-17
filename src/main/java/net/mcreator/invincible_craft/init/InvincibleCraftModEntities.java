@@ -33,6 +33,8 @@ import net.mcreator.invincible_craft.entity.KillCannonBlastEntity;
 import net.mcreator.invincible_craft.entity.FireballGlobalEntity;
 import net.mcreator.invincible_craft.entity.ExchangeCloneEntity;
 import net.mcreator.invincible_craft.entity.DuplicationCloneEntity;
+import net.mcreator.invincible_craft.entity.ConquestEntity;
+import net.mcreator.invincible_craft.entity.CastIronEntity;
 import net.mcreator.invincible_craft.entity.BanishmentPortalEntity;
 import net.mcreator.invincible_craft.entity.BanditEntity;
 import net.mcreator.invincible_craft.entity.AtomicbBlastEntity;
@@ -114,10 +116,18 @@ public class InvincibleCraftModEntities {
 			EntityType.Builder.<AnissaEntity>of(AnissaEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(AnissaEntity::new)
 
 					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<ThraggExiledEntity>> THRAGG_EXILED = register("thragg_exiled",
+	public static final RegistryObject<EntityType<ThraggExiledEntity>> THRAGG = register("thragg",
 			EntityType.Builder.<ThraggExiledEntity>of(ThraggExiledEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(ThraggExiledEntity::new)
 
 					.sized(1f, 2.2f));
+	public static final RegistryObject<EntityType<ConquestEntity>> CONQUEST = register("conquest",
+			EntityType.Builder.<ConquestEntity>of(ConquestEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128).setUpdateInterval(3).setCustomClientFactory(ConquestEntity::new)
+
+					.sized(1f, 2.2f));
+	public static final RegistryObject<EntityType<CastIronEntity>> CAST_IRON = register("cast_iron",
+			EntityType.Builder.<CastIronEntity>of(CastIronEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(98).setUpdateInterval(3).setCustomClientFactory(CastIronEntity::new)
+
+					.sized(0.8f, 2f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -147,6 +157,8 @@ public class InvincibleCraftModEntities {
 			KreggEntity.init();
 			AnissaEntity.init();
 			ThraggExiledEntity.init();
+			ConquestEntity.init();
+			CastIronEntity.init();
 		});
 	}
 
@@ -172,6 +184,8 @@ public class InvincibleCraftModEntities {
 		event.put(LUCAN.get(), LucanEntity.createAttributes().build());
 		event.put(KREGG.get(), KreggEntity.createAttributes().build());
 		event.put(ANISSA.get(), AnissaEntity.createAttributes().build());
-		event.put(THRAGG_EXILED.get(), ThraggExiledEntity.createAttributes().build());
+		event.put(THRAGG.get(), ThraggExiledEntity.createAttributes().build());
+		event.put(CONQUEST.get(), ConquestEntity.createAttributes().build());
+		event.put(CAST_IRON.get(), CastIronEntity.createAttributes().build());
 	}
 }

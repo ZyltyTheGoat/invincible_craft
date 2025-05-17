@@ -26,13 +26,16 @@ import net.mcreator.invincible_craft.item.SuitFabricItem;
 import net.mcreator.invincible_craft.item.PowerPickerItem;
 import net.mcreator.invincible_craft.item.OmniManSuitItem;
 import net.mcreator.invincible_craft.item.MetalBatItem;
+import net.mcreator.invincible_craft.item.InvincibleSuitWhatsappItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitUnMaskedMarkItem;
+import net.mcreator.invincible_craft.item.InvincibleSuitSkypeItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitSinisterMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitSeason3Item;
 import net.mcreator.invincible_craft.item.InvincibleSuitOmniMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitNoGogglesMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitMohawkMarkItem;
 import net.mcreator.invincible_craft.item.InvincibleSuitItem;
+import net.mcreator.invincible_craft.item.InvincibleSuitDiscordItem;
 import net.mcreator.invincible_craft.item.GauntletItem;
 import net.mcreator.invincible_craft.item.DupliKateSuitItem;
 import net.mcreator.invincible_craft.item.ChainItem;
@@ -121,7 +124,21 @@ public class InvincibleCraftModItems {
 	public static final RegistryObject<Item> LUCAN_SPAWN_EGG = REGISTRY.register("lucan_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.LUCAN, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> KREGG_SPAWN_EGG = REGISTRY.register("kregg_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.KREGG, -1, -1, new Item.Properties()));
 	public static final RegistryObject<Item> ANISSA_SPAWN_EGG = REGISTRY.register("anissa_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.ANISSA, -1, -1, new Item.Properties()));
-	public static final RegistryObject<Item> THRAGG_EXILED_SPAWN_EGG = REGISTRY.register("thragg_exiled_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.THRAGG_EXILED, -3522000, -197380, new Item.Properties()));
+	public static final RegistryObject<Item> THRAGG_SPAWN_EGG = REGISTRY.register("thragg_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.THRAGG, -3522000, -197380, new Item.Properties()));
+	public static final RegistryObject<Item> CONQUEST_SPAWN_EGG = REGISTRY.register("conquest_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.CONQUEST, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_WHATSAPP_HELMET = REGISTRY.register("invincible_suit_whatsapp_helmet", () -> new InvincibleSuitWhatsappItem.Helmet());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_WHATSAPP_CHESTPLATE = REGISTRY.register("invincible_suit_whatsapp_chestplate", () -> new InvincibleSuitWhatsappItem.Chestplate());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_WHATSAPP_LEGGINGS = REGISTRY.register("invincible_suit_whatsapp_leggings", () -> new InvincibleSuitWhatsappItem.Leggings());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_WHATSAPP_BOOTS = REGISTRY.register("invincible_suit_whatsapp_boots", () -> new InvincibleSuitWhatsappItem.Boots());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_DISCORD_HELMET = REGISTRY.register("invincible_suit_discord_helmet", () -> new InvincibleSuitDiscordItem.Helmet());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_DISCORD_CHESTPLATE = REGISTRY.register("invincible_suit_discord_chestplate", () -> new InvincibleSuitDiscordItem.Chestplate());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_DISCORD_LEGGINGS = REGISTRY.register("invincible_suit_discord_leggings", () -> new InvincibleSuitDiscordItem.Leggings());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_DISCORD_BOOTS = REGISTRY.register("invincible_suit_discord_boots", () -> new InvincibleSuitDiscordItem.Boots());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_SKYPE_HELMET = REGISTRY.register("invincible_suit_skype_helmet", () -> new InvincibleSuitSkypeItem.Helmet());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_SKYPE_CHESTPLATE = REGISTRY.register("invincible_suit_skype_chestplate", () -> new InvincibleSuitSkypeItem.Chestplate());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_SKYPE_LEGGINGS = REGISTRY.register("invincible_suit_skype_leggings", () -> new InvincibleSuitSkypeItem.Leggings());
+	public static final RegistryObject<Item> INVINCIBLE_SUIT_SKYPE_BOOTS = REGISTRY.register("invincible_suit_skype_boots", () -> new InvincibleSuitSkypeItem.Boots());
+	public static final RegistryObject<Item> CAST_IRON_SPAWN_EGG = REGISTRY.register("cast_iron_spawn_egg", () -> new ForgeSpawnEggItem(InvincibleCraftModEntities.CAST_IRON, -2932184, -11446943, new Item.Properties()));
 
 	// Start of user code block custom items
 	// End of user code block custom items

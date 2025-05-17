@@ -37,7 +37,7 @@
       {
         "type": "image",
         "data": {
-          "image": "ability_viltrumte_head_crush.png",
+          "image": "ability_viltrumite_head_crush.png",
           "use1Xscale": false,
           "displayCondition": {
             "name": "DisplayHeadCrush"

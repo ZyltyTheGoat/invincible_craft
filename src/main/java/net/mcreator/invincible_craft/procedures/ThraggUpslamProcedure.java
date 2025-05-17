@@ -58,7 +58,7 @@ public class ThraggUpslamProcedure {
 					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.explode")), SoundSource.NEUTRAL, 1, 2, false);
 				}
 			}
-			target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 25);
+			target.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("invincible_craft:viltrumite_punch"))), entity), 22);
 			knockbackres = Math.min(1,
 					Math.max(target instanceof LivingEntity _livingEntity28 && _livingEntity28.getAttributes().hasAttribute(Attributes.KNOCKBACK_RESISTANCE) ? _livingEntity28.getAttribute(Attributes.KNOCKBACK_RESISTANCE).getValue() : 0, 0));
 			if (target instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -79,7 +79,7 @@ public class ThraggUpslamProcedure {
 			if (entity instanceof ThraggExiledEntity _datEntSetS)
 				_datEntSetS.getEntityData().set(ThraggExiledEntity.DATA_State, "IDLE");
 			if (entity instanceof ThraggExiledEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_UpslamCooldown, 120);
+				_datEntSetI.getEntityData().set(ThraggExiledEntity.DATA_UpslamCooldown, 80);
 		}
 	}
 }
